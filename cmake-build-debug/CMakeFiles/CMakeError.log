@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4beee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4beee.dir/build.make CMakeFiles/cmTC_4beee.dir/build
+make[1]: Wejście do katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4beee.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_4beee.dir/CheckSymbolExists.c.o   -c /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_4beee
+/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4beee.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_4beee.dir/CheckSymbolExists.c.o  -o cmTC_4beee 
+CMakeFiles/cmTC_4beee.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4beee.dir/build.make:97: polecenia dla obiektu 'cmTC_4beee' nie powiodły się
+make[1]: *** [cmTC_4beee] Błąd 1
+make[1]: Opuszczenie katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: polecenia dla obiektu 'cmTC_4beee/fast' nie powiodły się
+make: *** [cmTC_4beee/fast] Błąd 2
+
+File /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5642f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5642f.dir/build.make CMakeFiles/cmTC_5642f.dir/build
+make[1]: Wejście do katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5642f.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5642f.dir/CheckFunctionExists.c.o   -c /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5642f
+/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5642f.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5642f.dir/CheckFunctionExists.c.o  -o cmTC_5642f -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5642f.dir/build.make:97: polecenia dla obiektu 'cmTC_5642f' nie powiodły się
+make[1]: *** [cmTC_5642f] Błąd 1
+make[1]: Opuszczenie katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: polecenia dla obiektu 'cmTC_5642f/fast' nie powiodły się
+make: *** [cmTC_5642f/fast] Błąd 2
+
+

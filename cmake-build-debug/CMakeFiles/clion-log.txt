@@ -1,0 +1,4 @@
+/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/hubert/ClionProjects/TIN_P2P
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug
