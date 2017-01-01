@@ -123,6 +123,60 @@ TIN_P2P/fast:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/build
 .PHONY : TIN_P2P/fast
 
+Dependencies/JsonCpp/jsoncpp.o: Dependencies/JsonCpp/jsoncpp.cpp.o
+
+.PHONY : Dependencies/JsonCpp/jsoncpp.o
+
+# target to build an object file
+Dependencies/JsonCpp/jsoncpp.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o
+.PHONY : Dependencies/JsonCpp/jsoncpp.cpp.o
+
+Dependencies/JsonCpp/jsoncpp.i: Dependencies/JsonCpp/jsoncpp.cpp.i
+
+.PHONY : Dependencies/JsonCpp/jsoncpp.i
+
+# target to preprocess a source file
+Dependencies/JsonCpp/jsoncpp.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.i
+.PHONY : Dependencies/JsonCpp/jsoncpp.cpp.i
+
+Dependencies/JsonCpp/jsoncpp.s: Dependencies/JsonCpp/jsoncpp.cpp.s
+
+.PHONY : Dependencies/JsonCpp/jsoncpp.s
+
+# target to generate assembly for a file
+Dependencies/JsonCpp/jsoncpp.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s
+.PHONY : Dependencies/JsonCpp/jsoncpp.cpp.s
+
+JsonCreator.o: JsonCreator.cpp.o
+
+.PHONY : JsonCreator.o
+
+# target to build an object file
+JsonCreator.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o
+.PHONY : JsonCreator.cpp.o
+
+JsonCreator.i: JsonCreator.cpp.i
+
+.PHONY : JsonCreator.i
+
+# target to preprocess a source file
+JsonCreator.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.i
+.PHONY : JsonCreator.cpp.i
+
+JsonCreator.s: JsonCreator.cpp.s
+
+.PHONY : JsonCreator.s
+
+# target to generate assembly for a file
+JsonCreator.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.s
+.PHONY : JsonCreator.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TIN_P2P"
+	@echo "... Dependencies/JsonCpp/jsoncpp.o"
+	@echo "... Dependencies/JsonCpp/jsoncpp.i"
+	@echo "... Dependencies/JsonCpp/jsoncpp.s"
+	@echo "... JsonCreator.o"
+	@echo "... JsonCreator.i"
+	@echo "... JsonCreator.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

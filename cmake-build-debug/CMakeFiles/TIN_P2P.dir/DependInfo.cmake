@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o"
+  "/home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/main.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

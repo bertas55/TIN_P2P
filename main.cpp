@@ -1,17 +1,20 @@
-/*
-    Simple udp server
-*/
+//
+// Created by Hubert Kuczyński on 01.01.17.
+//
+
 #include<stdio.h> //printf
 #include<string.h> //memset
 #include<stdlib.h> //exit(0);
 #include<arpa/inet.h>
-#include<sys/socket.h>
+
+#include "JsonCreator.h"
 
 #include<thread>
 #include <iostream>
 
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
+#define SERVER "127.0.0.1"
 
 using namespace std;
 
@@ -21,10 +24,10 @@ void die(char *s)
     exit(1);
 }
 
-void listen() {
+void listenForMessages() {
     struct sockaddr_in si_me, si_other;
 
-    int s, i , recv_len;
+    int s , recv_len;
     socklen_t slen = sizeof(si_other);
     char buf[BUFLEN];
 
@@ -62,23 +65,47 @@ void listen() {
         //print details of the client/peer and the data received
         printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
         printf("Data: %s\n" , buf);
+    }
+}
 
-        //now reply the client with the same data
-        if (sendto(s, buf, recv_len, 0, (struct sockaddr*) &si_other, slen) == -1)
-        {
-            die("sendto()");
-        }
+void sendMessage(char* message) {
+    struct sockaddr_in si_other;
+    int s, i;
+    socklen_t slen = sizeof(si_other);
+    char buf[BUFLEN];
+
+
+    if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
+    {
+        die("socket");
+    }
+
+    memset((char *) &si_other, 0, sizeof(si_other));
+    si_other.sin_family = AF_INET;
+    si_other.sin_port = htons(PORT);
+
+    if (inet_aton(SERVER , &si_other.sin_addr) == 0)
+    {
+        fprintf(stderr, "inet_aton() failed\n");
+        return;
+    }
+
+
+
+    //send the message
+    if (sendto(s, message, strlen(message) , 0 , (struct sockaddr *) &si_other, slen)==-1)
+    {
+        die("sendto()");
     }
 }
 
 int main(void)
 {
+    std::thread t1(listenForMessages);
 
-    std::thread t1(listen);
-
-    std::cout<<"After\n";
+//    std::string msgJson = JsonCreator::requestFile("NazwaHosta", "NazwaPliku", 234, 345);
 
     t1.join();
-//    close(s);
+
     return 0;
 }

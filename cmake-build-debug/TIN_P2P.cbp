@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Constants.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/main.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

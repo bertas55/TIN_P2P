@@ -81,17 +81,69 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o.provides: CMakeFiles/TIN_P2P.dir/main.cpp.o.re
 CMakeFiles/TIN_P2P.dir/main.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/main.cpp.o
 
 
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o: ../Dependencies/JsonCpp/jsoncpp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o -c /home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp
+
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp > CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.i
+
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp -o CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s
+
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.requires:
+
+.PHONY : CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.requires
+
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.provides: CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.provides.build
+.PHONY : CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.provides
+
+CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o
+
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o: ../JsonCreator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o -c /home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp > CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.i
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp -o CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.s
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.requires:
+
+.PHONY : CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.requires
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.provides: CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.provides.build
+.PHONY : CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.provides
+
+CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o
+
+
 # Object files for target TIN_P2P
 TIN_P2P_OBJECTS = \
-"CMakeFiles/TIN_P2P.dir/main.cpp.o"
+"CMakeFiles/TIN_P2P.dir/main.cpp.o" \
+"CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o" \
+"CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"
 
 # External object files for target TIN_P2P
 TIN_P2P_EXTERNAL_OBJECTS =
 
 TIN_P2P: CMakeFiles/TIN_P2P.dir/main.cpp.o
+TIN_P2P: CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o
+TIN_P2P: CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/build.make
 TIN_P2P: CMakeFiles/TIN_P2P.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable TIN_P2P"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TIN_P2P"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TIN_P2P.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/TIN_P2P.dir/build: TIN_P2P
 .PHONY : CMakeFiles/TIN_P2P.dir/build
 
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/main.cpp.o.requires
+CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o.requires
+CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o.requires
 
 .PHONY : CMakeFiles/TIN_P2P.dir/requires
 
