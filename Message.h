@@ -61,15 +61,15 @@ struct MessageNewFile : Message {
     }
 };
 
-struct MessageHello : Message {
-    MessageHello() {
-        type = hello;
+struct MessageVeto : Message {
+    MessageVeto() {
+        type = veto;
     }
 };
 
-struct MessageHello : Message {
-    MessageHello() {
-        type = hello;
+struct MessageDeleteFile : Message {
+    MessageDeleteFile() {
+        type = deleteFile;
     }
 };
 
