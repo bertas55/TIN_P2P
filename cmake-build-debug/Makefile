@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E remove -f
+RM = /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hubert/ClionProjects/TIN_P2P
+CMAKE_SOURCE_DIR = /home/lukasz/CLionProjects/TIN_P2P
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug
+CMAKE_BINARY_DIR = /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -393,6 +393,33 @@ UDPAdapter.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.s
 .PHONY : UDPAdapter.cpp.s
 
+WcisloSocket.o: WcisloSocket.cpp.o
+
+.PHONY : WcisloSocket.o
+
+# target to build an object file
+WcisloSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
+.PHONY : WcisloSocket.cpp.o
+
+WcisloSocket.i: WcisloSocket.cpp.i
+
+.PHONY : WcisloSocket.i
+
+# target to preprocess a source file
+WcisloSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.i
+.PHONY : WcisloSocket.cpp.i
+
+WcisloSocket.s: WcisloSocket.cpp.s
+
+.PHONY : WcisloSocket.s
+
+# target to generate assembly for a file
+WcisloSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
+.PHONY : WcisloSocket.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -459,6 +486,9 @@ help:
 	@echo "... UDPAdapter.o"
 	@echo "... UDPAdapter.i"
 	@echo "... UDPAdapter.s"
+	@echo "... WcisloSocket.o"
+	@echo "... WcisloSocket.i"
+	@echo "... WcisloSocket.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

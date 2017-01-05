@@ -19,6 +19,7 @@ private:
     MessageContainer inputMessages; /*Messages recived*/
     MessageContainer outputMessage; /*Messages to send via broadcast*/
     void broadcastMessage(Message);
+    std::thread threadId;
 
 public:
     ServerThread();

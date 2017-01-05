@@ -8,7 +8,7 @@
 
 class Socket
 {
-private:
+protected:
     int descriptor;
     bool closed;
 
