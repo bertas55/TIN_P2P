@@ -32,15 +32,27 @@ struct MessageHello : Message {
 };
 
 struct MessageHandshake : Message {
-    MessageHandshake() {
+    MessageHandshake(string hostName) {
         type = handshake;
+        this.hostName = hostName;
     }
+
+    string hostName;
 };
 
 struct MessageRequestFile : Message {
-    MessageRequestFile() {
+    MessageRequestFile(string hostName, string fileName, unsigned int fileSize, unsigned int offset)) {
         type = requestFile;
+        this.hostName = hostName;
+        this.fileName = fileName;
+        this.fileSize = fileSize;
+        this.offset = offset;
     }
+
+    string hostName;
+    string fileName;
+    unsigned int fileSize;
+    unsigned int offset;
 };
 
 struct MessageRequestList : Message {

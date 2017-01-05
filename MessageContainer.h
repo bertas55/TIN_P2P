@@ -7,6 +7,7 @@
 
 #include "Message.h"
 #include <queue>
+#include <mutex>
 using namespace std;
 
 class MessageContainer {
@@ -21,6 +22,7 @@ public:
 
 private:
     queue<Message> messagesQueue;
+    mutex guard;
 
 };
 
