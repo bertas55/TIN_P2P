@@ -7,6 +7,7 @@
 
 #include "Message.h"
 #include <queue>
+using namespace std;
 
 class MessageContainer {
 
@@ -19,6 +20,7 @@ public:
     void put(Message msg);
 
 private:
+    queue<Message> messagesQueue;
 
 };
 

@@ -108,6 +108,12 @@
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageContainer.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/ServerThread.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
