@@ -7,14 +7,19 @@
 
 #include "Socket.h"
 #include "UDPAdapter.h"
+#include "MessageContainer.h"
+
 /**
  *
  */
 class ServerThread {
 private:
-    UDPAdapter UDPBroadcaster;
-    UDPAdapter UDPReciver;
-    std::thread serverThread;
+    UDPAdapter *UDPBroadcaster;
+    UDPAdapter *UDPReciver;
+    MessageContainer inputMessages; /*Messages recived*/
+    MessageContainer outputMessage; /*Messages to send via broadcast*/
+    void broadcastMessage(Message);
+
 public:
     ServerThread();
     ~ServerThread();

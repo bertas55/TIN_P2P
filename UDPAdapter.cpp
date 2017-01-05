@@ -3,3 +3,19 @@
 //
 
 #include "UDPAdapter.h"
+
+UDPAdapter::UDPAdapter(MessageContainer *container) : serverMessageContainer(container)
+{
+
+}
+UDPAdapter::~UDPAdapter() {
+
+}
+
+void UDPAdapter::listen() {
+
+}
+
+void UDPAdapter::send() {
+
+}

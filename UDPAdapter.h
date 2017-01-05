@@ -6,18 +6,19 @@
 #define TIN_P2P_UDPADAPTER_H
 
 #include "Socket.h"
+#include "MessageContainer.h"
 #include <thread>
 
 class UDPAdapter {
 private:
     Socket socket;
     std::thread UDPThread;
-    //CONTAINER *c;
+    MessageContainer *serverMessageContainer;
 
 public:
-    UDPAdapter();
+    UDPAdapter(MessageContainer*);
     ~UDPAdapter();
-
+    void run();
     void listen();
     void send();
 
