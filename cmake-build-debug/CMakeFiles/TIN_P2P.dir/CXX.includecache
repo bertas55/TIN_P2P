@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/lukasz/CLionProjects/TIN_P2P/Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
 stddef.h
 -
 string
@@ -18,15 +18,15 @@ stdint.h
 cpptl/config.h
 -
 version.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/version.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/version.h
 allocator.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/allocator.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/allocator.h
 config.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/config.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/config.h
 forwards.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/forwards.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/forwards.h
 forwards.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/forwards.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/forwards.h
 string
 -
 vector
@@ -40,9 +40,9 @@ cpptl/smallmap.h
 cpptl/forwards.h
 -
 features.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/features.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/features.h
 value.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/value.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/value.h
 deque
 -
 iosfwd
@@ -54,7 +54,7 @@ string
 istream
 -
 value.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/value.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/value.h
 vector
 -
 string
@@ -66,11 +66,11 @@ stdlib.h
 sstream
 -
 config.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/config.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/config.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp
 json/json.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
 clocale
 -
 json/assertions.h
@@ -80,7 +80,7 @@ json/reader.h
 json/value.h
 -
 json_tool.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json_tool.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json_tool.h
 utility
 -
 cstdio
@@ -122,11 +122,11 @@ cstddef
 algorithm
 -
 json_valueiterator.inl
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json_valueiterator.inl
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json_valueiterator.inl
 json/writer.h
 -
 json_tool.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json_tool.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json_tool.h
 iomanip
 -
 memory
@@ -156,63 +156,65 @@ cmath
 float.h
 -
 
-/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.cpp
+/home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp
 string
 -
 JsonCreator.h
-/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
+/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
 Dependencies/JsonCpp/json/json.h
-/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
+/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
 Constants.h
-/home/lukasz/CLionProjects/TIN_P2P/Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 
-/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
+/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
 string
 -
 
-/home/lukasz/CLionProjects/TIN_P2P/Message.cpp
+/home/hubert/ClionProjects/TIN_P2P/Message.cpp
 Message.h
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
+/home/hubert/ClionProjects/TIN_P2P/Message.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
+/home/hubert/ClionProjects/TIN_P2P/Message.h
 string
 -
 
-/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp
+/home/hubert/ClionProjects/TIN_P2P/MessageContainer.cpp
 MessageContainer.h
-/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
+/home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
 
-/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
+/home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
 Message.h
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
+/home/hubert/ClionProjects/TIN_P2P/Message.h
+queue
+-
 
-/home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp
+/home/hubert/ClionProjects/TIN_P2P/ServerThread.cpp
 ServerThread.h
-/home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
+/home/hubert/ClionProjects/TIN_P2P/ServerThread.h
 
-/home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
+/home/hubert/ClionProjects/TIN_P2P/ServerThread.h
 Socket.h
-/home/lukasz/CLionProjects/TIN_P2P/Socket.h
+/home/hubert/ClionProjects/TIN_P2P/Socket.h
 UDPAdapter.h
-/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
+/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
+/home/hubert/ClionProjects/TIN_P2P/Socket.cpp
 Socket.h
-/home/lukasz/CLionProjects/TIN_P2P/Socket.h
+/home/hubert/ClionProjects/TIN_P2P/Socket.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Socket.h
+/home/hubert/ClionProjects/TIN_P2P/Socket.h
 
-/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp
+/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.cpp
 UDPAdapter.h
-/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
+/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.h
 
-/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
+/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.h
 Socket.h
-/home/lukasz/CLionProjects/TIN_P2P/Socket.h
+/home/hubert/ClionProjects/TIN_P2P/Socket.h
 thread
 -
 
-/home/lukasz/CLionProjects/TIN_P2P/main.cpp
+/home/hubert/ClionProjects/TIN_P2P/main.cpp
 stdio.h
 -
 string.h
@@ -222,7 +224,7 @@ stdlib.h
 arpa/inet.h
 -
 JsonCreator.h
-/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
+/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
 thread
 -
 iostream
