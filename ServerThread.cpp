@@ -8,11 +8,13 @@ ServerThread::ServerThread()
 {
     UDPBroadcaster = new UDPAdapter(&outputMessage);
     UDPReciver = new UDPAdapter(&inputMessages);
+    threadId = std::thread(run());
 }
 ServerThread::~ServerThread()
 {
     delete UDPBroadcaster;
     delete UDPReciver;
+    threadId.join();
 }
 
 void ServerThread::run()

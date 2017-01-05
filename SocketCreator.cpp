@@ -26,7 +26,7 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
     }
     if(connect)
     {
-        if(s->Connect(address, port) == false)
+        if(!s->Connect(address, port))
         {
             delete s;
             s = nullptr;
@@ -34,7 +34,7 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
     }
     else
     {
-        if(s->Bind(address, port) == false)
+        if(!s->Bind(address, port))
         {
             delete s;
             s = nullptr;
@@ -44,30 +44,30 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
 
 }
 
-Socket* SocketCreator::CreateServerSocket(void)
+WcisloSocket* SocketCreator::CreateServerSocket(void)
 {
     int descriptor = socket(AF_INET, SOCK_STREAM, 0);
     if(descriptor < 0)
     {
         return nullptr;
     }
-    return new ServerSocket(descriptor);
+    return new WcisloSocket(descriptor);
 }
 
-Socket* SocketCreator::CreateServerSocket(unsigned short port)
+WcisloSocket* SocketCreator::CreateServerSocket(unsigned short port)
 {
-    Socket* s = CreateServerSocket();
+    WcisloSocket* s = CreateServerSocket();
     if(s == nullptr)
     {
         return nullptr;
     }
-    if(s->Bind(port) == false)
+    if(!s->Bind(port))
     {
         delete s;
         s = nullptr;
         return nullptr;
     }
-    if(s->Listen() == false)
+    if(!s->Listen())
     {
         delete s;
         s = nullptr;
