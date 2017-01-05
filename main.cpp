@@ -97,7 +97,7 @@ void sendMessage(char* message) {
     {
         die("sendto()");
     }
-}
+}ert
 
 int main(void)
 {

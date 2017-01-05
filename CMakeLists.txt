@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(Threads REQUIRED)
 
 
-set(SOURCE_FILES main.cpp Dependencies/JsonCpp/jsoncpp.cpp JsonCreator.cpp JsonCreator.h Constants.h)
+set(SOURCE_FILES main.cpp Dependencies/JsonCpp/jsoncpp.cpp JsonCreator.cpp JsonCreator.h Constants.h Message.cpp Message.h MessageContainer.cpp MessageContainer.h)
 add_executable(TIN_P2P ${SOURCE_FILES})
 target_link_libraries(TIN_P2P Threads::Threads)
