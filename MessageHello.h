@@ -7,11 +7,5 @@
 
 #include "Message.h"
 
-struct MessageHello : Message {
-    MessageHello() {
-        type = hello;
-    }
-};
-
 
 #endif //TIN_P2P_MESSAGEHELLO_H
