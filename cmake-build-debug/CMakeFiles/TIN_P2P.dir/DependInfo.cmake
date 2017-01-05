@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"
+  "/home/lukasz/CLionProjects/TIN_P2P/Message.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Message.cpp.o"
+  "/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/Socket.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Socket.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o"

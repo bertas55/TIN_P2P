@@ -96,6 +96,18 @@
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Message.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Message.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

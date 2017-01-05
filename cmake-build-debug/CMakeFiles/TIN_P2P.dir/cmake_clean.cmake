@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o"
   "CMakeFiles/TIN_P2P.dir/Socket.cpp.o"
   "CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o"
+  "CMakeFiles/TIN_P2P.dir/Message.cpp.o"
+  "CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o"
   "TIN_P2P.pdb"
   "TIN_P2P"
 )

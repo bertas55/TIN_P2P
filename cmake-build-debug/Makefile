@@ -177,6 +177,60 @@ JsonCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.s
 .PHONY : JsonCreator.cpp.s
 
+Message.o: Message.cpp.o
+
+.PHONY : Message.o
+
+# target to build an object file
+Message.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Message.cpp.o
+.PHONY : Message.cpp.o
+
+Message.i: Message.cpp.i
+
+.PHONY : Message.i
+
+# target to preprocess a source file
+Message.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Message.cpp.i
+.PHONY : Message.cpp.i
+
+Message.s: Message.cpp.s
+
+.PHONY : Message.s
+
+# target to generate assembly for a file
+Message.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Message.cpp.s
+.PHONY : Message.cpp.s
+
+MessageContainer.o: MessageContainer.cpp.o
+
+.PHONY : MessageContainer.o
+
+# target to build an object file
+MessageContainer.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o
+.PHONY : MessageContainer.cpp.o
+
+MessageContainer.i: MessageContainer.cpp.i
+
+.PHONY : MessageContainer.i
+
+# target to preprocess a source file
+MessageContainer.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.i
+.PHONY : MessageContainer.cpp.i
+
+MessageContainer.s: MessageContainer.cpp.s
+
+.PHONY : MessageContainer.s
+
+# target to generate assembly for a file
+MessageContainer.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.s
+.PHONY : MessageContainer.cpp.s
+
 ServerThread.o: ServerThread.cpp.o
 
 .PHONY : ServerThread.o
@@ -300,6 +354,12 @@ help:
 	@echo "... JsonCreator.o"
 	@echo "... JsonCreator.i"
 	@echo "... JsonCreator.s"
+	@echo "... Message.o"
+	@echo "... Message.i"
+	@echo "... Message.s"
+	@echo "... MessageContainer.o"
+	@echo "... MessageContainer.i"
+	@echo "... MessageContainer.s"
 	@echo "... ServerThread.o"
 	@echo "... ServerThread.i"
 	@echo "... ServerThread.s"
