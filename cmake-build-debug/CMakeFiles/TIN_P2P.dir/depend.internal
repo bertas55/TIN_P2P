@@ -97,6 +97,8 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h

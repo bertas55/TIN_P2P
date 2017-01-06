@@ -401,4 +401,6 @@ iostream
 -
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
+FileManager.h
+/home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 
