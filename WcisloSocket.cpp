@@ -10,11 +10,10 @@
 
 WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 {
-    broadcastEnable = false;
+    broadcastEnable = 0;
 }
-WcisloSocket::~WcisloSocket() : ~Socket()
+WcisloSocket::~WcisloSocket()
 {
-
 }
 bool WcisloSocket::Bind(unsigned short port)
 {

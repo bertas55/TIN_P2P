@@ -11,11 +11,11 @@ Configuration::Configuration() {
 }
 Configuration::~Configuration() {}
 
-static const unsigned short Configuration::getBroadcastPort() {
+ static const unsigned short Configuration::getBroadcastPort() {
     return  port;
 }
 
-static const char* Configuration::getBroadcastIP() {
+ static const char* Configuration::getBroadcastIP() {
     return broadcastIP.c_str();
 }
 
