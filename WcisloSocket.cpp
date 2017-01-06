@@ -63,3 +63,24 @@ bool WcisloSocket::setBroadcastListerner() {
     broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 }
+
+long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
+{
+    struct sockaddr_in si_other;
+    int s, i;
+    socklen_t slen = sizeof(si_other);
+    sendto(descriptor,bytes,numberOfBytes,0,(struct sockaddr *) &si_other, slen);
+}
+long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
+{
+    struct sockaddr_in si_other;
+    int s, i;
+    socklen_t slen = sizeof(si_other);
+    printf("A TUTAJ KURWO WCHODZISZ?\n");
+    if (recvfrom(descriptor, bytes, numberOfBytes, 0, (struct sockaddr *) &si_other, &slen) == -1)
+    {
+        printf("JAKIESTAM DIE;");
+    }
+    printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
+    printf("Data: %s\n" , bytes);
+}

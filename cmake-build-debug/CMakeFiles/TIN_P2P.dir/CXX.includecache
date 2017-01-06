@@ -331,6 +331,10 @@ sys/socket.h
 -
 netinet/in.h
 -
+cstring
+-
+arpa/inet.h
+-
 
 /home/hubert/ClionProjects/TIN_P2P/SocketCreator.h
 Socket.h

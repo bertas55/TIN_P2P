@@ -122,17 +122,14 @@ void userInterface()
 int main(void)
 {
     FileManager fileManager;
-//
-//    vector<FileInfo> files = fileManager.getFilesList();
-//
+
+    vector<FileInfo> files = fileManager.getFilesList();
+
 //    for (auto fileInfo : files) {
-//        cout << fileInfo.name << " " << fileInfo.size << "\n";
+//        cout << fileInfo.name << "\n";
 //    }
 //
     userInterface();
-
-
-    sendMessage("Pizda z furgotem");
     return 0;
 }
 
