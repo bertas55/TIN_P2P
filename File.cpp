@@ -35,7 +35,7 @@ bool File::isLocked() {
     return locked;
 }
 
-FileInfo File::getFileInfo() {
+struct FileInfo File::getFileInfo() {
     return FileInfo(name, size);
 }
 

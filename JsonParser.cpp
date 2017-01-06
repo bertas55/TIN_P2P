@@ -2,12 +2,9 @@
 // Created by hubert on 05.01.17.
 //
 
-#include <iostream>
-#include <string>
-#include <cstring>
 #include "JsonParser.h"
-#include "Dependencies/JsonCpp/json/json.h"
-#include "Constants.h"
+
+
 using namespace std;
 
 Message JsonParser::parse(string jsonMessage) {
@@ -25,11 +22,11 @@ Message JsonParser::parse(string jsonMessage) {
             // hello, is it me you loking for?
             messageToReturn = MessageHello();
         } else if (strcmp(messageType, Constants::MessageTypes::requestFile) == 0) {
-            string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
+            string hostName2 = parsedJson[Constants::JsonKeys::hostName].asString();
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             unsigned int offset = parsedJson[Constants::JsonKeys::offset].asUInt();
-            messageToReturn = MessageRequestFile(hostName, fileName, fileSize, offset);
+            messageToReturn = MessageRequestFile(hostName2, fileName, fileSize, offset);
         } else if (strcmp(messageType, Constants::MessageTypes::requestList) == 0) {
 
         } else if (strcmp(messageType, Constants::MessageTypes::newFile) == 0) {

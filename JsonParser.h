@@ -7,6 +7,12 @@
 
 
 #include "Message.h"
+//#include "Constants.h"
+#include <iostream>
+#include <string>
+#include <cstring>
+#include "Dependencies/JsonCpp/json/json.h"
+#include "JsonCreator.h"
 
 namespace JsonParser {
     Message parse(string msg);

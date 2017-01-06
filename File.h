@@ -30,7 +30,7 @@ public:
 
     bool isLocked();
 
-    FileInfo getFileInfo();
+    struct FileInfo getFileInfo();
 
 private:
     fstream file;

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/lukasz/CLionProjects/TIN_P2P/Constants.cpp
+Constants.h
+/home/lukasz/CLionProjects/TIN_P2P/Constants.h
+
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
@@ -187,30 +191,30 @@ JsonCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 Dependencies/JsonCpp/json/json.h
 /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
-Constants.h
-/home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 string
 -
+Constants.h
+/home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.cpp
+JsonParser.h
+/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
+
+/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
+Message.h
+/home/lukasz/CLionProjects/TIN_P2P/Message.h
 iostream
 -
 string
 -
 cstring
 -
-JsonParser.h
-/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
 Dependencies/JsonCpp/json/json.h
 /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
-Constants.h
-/home/lukasz/CLionProjects/TIN_P2P/Constants.h
-
-/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
-Message.h
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
+JsonCreator.h
+/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Message.cpp
 Message.h
@@ -341,8 +345,6 @@ stdlib.h
 -
 arpa/inet.h
 -
-JsonCreator.h
-/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 thread
 -
 iostream

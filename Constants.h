@@ -1,30 +1,30 @@
 //
 // Created by Hubert Kuczyński on 01.01.17.
 //
-
+#pragma once
 #ifndef TIN_P2P_CONSTANTS_H
 #define TIN_P2P_CONSTANTS_H
 
 namespace Constants {
     namespace JsonKeys {
-        const char* type = "type";
-        const char* hostName = "hostName";
-        const char* fileName = "fileName";
-        const char* fileSize = "fileSize";
-        const char* offset = "offset";
+        extern const char* type;
+        extern const char* hostName;
+        extern const char* fileName;
+        extern const char* fileSize;
+        extern const char* offset;
     }
 
     namespace MessageTypes {
-        const char* hello = "Hello";
-        const char* requestFile = "RequestFile";
-        const char* requestList = "RequestList";
-        const char* newFile = "NewFile";
-        const char* veto = "Veto";
-        const char* deleteFile = "Delete";
+        extern const char* hello;
+        extern const char* requestFile;
+        extern const char* requestList;
+        extern const char* newFile;
+        extern const char* veto;
+        extern const char* deleteFile;
     }
 
     namespace File {
-        unsigned int partSize = 256;
+        extern const unsigned int partSize;
     }
 }
 

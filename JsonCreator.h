@@ -6,6 +6,7 @@
 #define TIN_P2P_JSONCREATOR_H
 
 #include <string>
+#include "Constants.h"
 
 namespace JsonCreator {
     // Hello
