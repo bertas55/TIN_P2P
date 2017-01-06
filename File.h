@@ -18,7 +18,9 @@ enum FileState {
 class File {
 
 public:
-    File(string name);
+    File(string path, string name);
+
+    ~File();
 
     char* getFilePart(unsigned int partNumber);
 
@@ -34,8 +36,8 @@ private:
     fstream file;
     string name;
     unsigned int size;
-    bool isOwner;
-    bool isLocked;
+    bool owner;
+    bool locked;
     FileState state;
 };
 
