@@ -9,7 +9,7 @@ ServerThread::ServerThread()
 
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::CreateServerSocket());
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::CreateServerSocket());
-    threadId = std::thread(run());
+    threadId = std::thread(&ServerThread::run,this);
 }
 ServerThread::~ServerThread()
 {

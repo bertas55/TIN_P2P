@@ -12,7 +12,7 @@ class WcisloSocket : protected Socket {
 
 public:
     WcisloSocket(int);
-    using ~Socket::~Socket;
+    ~WcisloSocket();
     bool Bind(unsigned short port);
     bool Listen(void);
     Socket* Accept(void);

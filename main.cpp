@@ -99,21 +99,29 @@ void sendMessage(char* message) {
         die("sendto()");
     }
 }
+void userInterface()
+{
+    ServerInterface serverInterface;
+    int myAction;
+    do {
+        cout << "Welcome Pirate!\n";
+        cout << "0. RefreshList\n1.DownloadFile\n2.Disbale File\n";
+        cout << "3.EnableFile\n4.Remove File\n5.Exit";
+        cin >> myAction;
+        serverInterface.userAction((UserAction)myAction);
 
+    } while (myAction!=UserAction::Exit);
+
+}
 int main(void)
 {
-    std::thread t1(listenForMessages);
+//    std::thread t1(listenForMessages);
 
 //    std::string msgJson = JsonCreator::requestFile("NazwaHosta", "NazwaPliku", 234, 345);
 
-    t1.join();
+//    t1.join();
+    userInterface();
 
     return 0;
 }
 
-void userInterface()
-{
-
-
-
-}

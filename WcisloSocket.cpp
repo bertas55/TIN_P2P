@@ -12,6 +12,10 @@ WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 {
 
 }
+WcisloSocket::~WcisloSocket()
+{
+
+}
 bool WcisloSocket::Bind(unsigned short port)
 {
     sockaddr_in server;
