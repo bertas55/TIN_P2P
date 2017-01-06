@@ -24,7 +24,7 @@ FileManager::FileManager() {
     } else {
         /* could not open directory */
         perror ("");
-        return EXIT_FAILURE;
+//        return EXIT_FAILURE;
     }
 }
 

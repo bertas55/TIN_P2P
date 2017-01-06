@@ -10,7 +10,6 @@
 #include "MessageContainer.h"
 #include "Message.h"
 #include "SocketCreator.h"
-#include "ServerInterface.h"
 
 /**
  *

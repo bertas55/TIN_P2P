@@ -8,8 +8,8 @@
 
 class Configuration {
 public:
-    static const unsigned short getBroadcastPort();
-    static const char* getBroadcastIP();
+     static unsigned short getBroadcastPort();
+     static std::string getBroadcastIP();
 
     static const char* getDirectoryPath();
 
@@ -17,7 +17,10 @@ private:
     static unsigned short port;
     static std::string broadcastIP;
     static std::string directoryPath;
+
     Configuration();
+    Configuration(Configuration const&);
+    Configuration& operator=(Configuration const&);
     ~Configuration();
 
 };
