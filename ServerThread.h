@@ -8,6 +8,8 @@
 #include "Socket.h"
 #include "UDPAdapter.h"
 #include "MessageContainer.h"
+#include "Message.h"
+#include "SocketCreator.h"
 
 /**
  *
@@ -18,8 +20,11 @@ private:
     UDPAdapter *UDPReciver;
     MessageContainer inputMessages; /*Messages recived*/
     MessageContainer outputMessage; /*Messages to send via broadcast*/
-    void broadcastMessage(Message);
     std::thread threadId;
+    WcisloSocket *serverSocket;
+
+    void broadcastMessage(Message);
+    void checkForMessages();
 
 public:
     ServerThread();
