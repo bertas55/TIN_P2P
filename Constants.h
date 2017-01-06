@@ -22,6 +22,10 @@ namespace Constants {
         const char* veto = "Veto";
         const char* deleteFile = "Delete";
     }
+
+    namespace File {
+        unsigned int partSize = 256;
+    }
 }
 
 #endif //TIN_P2P_CONSTANTS_H

@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug"/>
+				<Option working_dir="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug"/>
+				<Option working_dir="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug"/>
+				<Option working_dir="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TIN_P2P">
-				<Option output="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/TIN_P2P" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug"/>
+				<Option output="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/TIN_P2P" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 TIN_P2P"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 TIN_P2P"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TIN_P2P/fast">
-				<Option output="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/TIN_P2P" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug"/>
+				<Option output="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/TIN_P2P" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,83 +77,95 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 TIN_P2P/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 TIN_P2P/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Constants.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Constants.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/File.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/File.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/JsonParser.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/FileManager.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/FileManager.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Message.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Message.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonParser.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/JsonParser.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageHello.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Message.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/MessageHello.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Message.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageContainer.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/ServerThread.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageContainer.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Socket.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Socket.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/SocketCreator.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/ServerThread.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/ServerThread.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Socket.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Socket.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/SocketCreator.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/SocketCreator.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/main.cpp">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/CMakeLists.txt">
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/WcisloSocket.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/main.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
