@@ -6,28 +6,33 @@
 #include <string>
 using namespace std;
 
-File::File(string name) {
+File::File(string path, string name) {
+    string fullPath = path + name;
+    file.open (fullPath);
+}
 
+File::~File() {
+    file.close();
 }
 
 void File::lock() {
-    if (!isLocked) {
-        isLocked = true;
+    if (!locked) {
+        locked = true;
     } else {
         // throw "is already locked"
     }
 }
 
 void File::unlock() {
-    if (isLocked) {
-        isLocked = false;
+    if (locked) {
+        locked = false;
     } else {
         // throw "is already unlocked"
     }
 }
 
 bool File::isLocked() {
-    return isLocked;
+    return locked;
 }
 
 FileInfo File::getFileInfo() {
