@@ -53,12 +53,12 @@ void UDPAdapter::send() {
     char buf[BUFLEN] = "CHUJ W DUPE POLICJI";
     while(true)
     {
-        Message msg;
-        try {
-            msg = serverMessageContainer->get();
-        } catch(NoElementsException e) {
-            cout << "Chuj w send\n";
-        }
+//        Message msg;
+//        try {
+//            msg = serverMessageContainer->get();
+//        } catch(NoElementsException e) {
+//            cout << "Chuj w send\n";
+//        }
 
         socket->Send(buf,BUFLEN);
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));

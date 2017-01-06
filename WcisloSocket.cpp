@@ -6,7 +6,10 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include <iostream>
 #include "WcisloSocket.h"
+#include <cstring>
+#include <arpa/inet.h>
 
 WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 {
@@ -67,9 +70,18 @@ bool WcisloSocket::setBroadcastListerner() {
 long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;
+    memset((char *) &si_other, 0, sizeof(si_other));
+    si_other.sin_family = AF_INET;
+    si_other.sin_port = htons(8888);
+
+    if (inet_aton("192.168.0.255" , &si_other.sin_addr) == 0)
+    {
+        fprintf(stderr, "inet_aton() failed\n");
+    }
     int s, i;
     socklen_t slen = sizeof(si_other);
-    sendto(descriptor,bytes,numberOfBytes,0,(struct sockaddr *) &si_other, slen);
+    std::cout << sendto(descriptor,bytes,numberOfBytes,0,(struct sockaddr *) &si_other, slen);
+//    sendto(s, message, strlen(message) , 0 , (struct sockaddr *) &si_other, slen
 }
 long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
 {

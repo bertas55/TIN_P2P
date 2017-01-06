@@ -105,8 +105,6 @@ WcisloSocket* SocketCreator::broadcasterSocket(void)
     int s , recv_len;
     socklen_t slen = sizeof(si_other);
     char buf[BUFLEN];
-    int broadcastEnable=1;
-    int ret=setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
     //create a UDP socket
     if ((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
     {
@@ -140,7 +138,8 @@ WcisloSocket* SocketCreator::broadcasterSenderSocket(void)
     {
 //        die("socket");
     }
-
+    int broadcastEnable=1;
+    int ret=setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
     memset((char *) &si_other, 0, sizeof(si_other));
     si_other.sin_family = AF_INET;
     si_other.sin_port = htons(8888);

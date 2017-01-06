@@ -379,8 +379,14 @@ netinet/in.h
 -
 unistd.h
 -
+iostream
+-
 WcisloSocket.h
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+cstring
+-
+arpa/inet.h
+-
 
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 Socket.h
