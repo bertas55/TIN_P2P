@@ -66,7 +66,10 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../MessageContainer.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ServerInterface.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ServerThread.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Socket.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPAdapter.cpp
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPAdapter.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../WcisloSocket.h

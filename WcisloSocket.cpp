@@ -10,9 +10,9 @@
 
 WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 {
-
+    broadcastEnable = false;
 }
-WcisloSocket::~WcisloSocket()
+WcisloSocket::~WcisloSocket() : ~Socket()
 {
 
 }
@@ -38,4 +38,23 @@ Socket* WcisloSocket::Accept(void)
         return nullptr;
     }
     return new Socket(socketDescriptor);
+}
+
+bool WcisloSocket::setBroadcast() {
+    broadcastEnable=1;
+    int ret=setsockopt(descriptor, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
+    struct sockaddr_in broadcastAddr;
+    broadcastAddr.sin_family = AF_INET;
+    broadcastAddr.sin_port = htons(Configuration::getBroadcastPort());
+    broadcastAddr.sin_addr.s_addr = inet_addr(Configuration::getBroadcastIP());
+    return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
+/* Add other code, sockaddr, sendto() etc. */
+}
+
+bool WcisloSocket::setBroadcastListerner() {
+    struct sockaddr_in broadcastAddr;
+    broadcastAddr.sin_family = AF_INET;
+    broadcastAddr.sin_port = htons(Configuration::getBroadcastPort());
+    broadcastAddr.sin_addr.s_addr = inet_addr(Configuration::getBroadcastIP());
+    return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 }

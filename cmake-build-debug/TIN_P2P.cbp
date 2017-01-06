@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Configuration.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Constants.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

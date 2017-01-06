@@ -4,6 +4,7 @@
 
 #include "MessageContainer.h"
 #include <queue>
+#include <iostream>
 using namespace std;
 
 
@@ -15,6 +16,7 @@ Message MessageContainer::get() {
     lock_guard<mutex> lock(guard);
     Message msgToReturn = messagesQueue.front();
     messagesQueue.pop();
+//    if (msgToReturn == NULL) cout << "dupa\n";
     return msgToReturn;
 }
 

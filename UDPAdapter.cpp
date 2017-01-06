@@ -3,9 +3,20 @@
 //
 
 #include "UDPAdapter.h"
+#include "ServerInterface.h"
 
-UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket) : serverMessageContainer(container), socket(_socket)
+UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool broadcastEnable) :
+        serverMessageContainer(container),
+        socket(_socket),
+        broadcaster(broadcastEnable)
 {
+    if (broadcaster){
+        socket->setBroadcast();
+    }
+    else
+    {
+
+    }
 
 }
 UDPAdapter::~UDPAdapter() {
@@ -19,4 +30,8 @@ void UDPAdapter::listen() {
 
 void UDPAdapter::send() {
 
+}
+
+void UDPAdapter::run() {
+    //socket->Bind();
 }

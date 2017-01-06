@@ -9,14 +9,19 @@
 ServerInterface::ServerInterface()
 {
 
+    server = new ServerThread();
+
+
 }
 ServerInterface::~ServerInterface()
 {
 
+    delete server;
 }
 
 bool ServerInterface::loadConfig(string path) {
 
+    return true;
 }
 void ServerInterface::userAction(UserAction action)
 {

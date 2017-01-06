@@ -9,6 +9,7 @@
 
 enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
 
+
 class ServerInterface {
 public:
     ServerInterface();
@@ -17,7 +18,7 @@ public:
     void userAction(UserAction);
 
 private:
-    ServerThread server;
+    ServerThread *server;
     string serverPort, clientPort;
     string broadcastAdress;
 

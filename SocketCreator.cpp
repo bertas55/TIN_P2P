@@ -4,6 +4,7 @@
 
 #include "SocketCreator.h"
 #include <sys/socket.h>
+#include <netinet/in.h>
 
 using namespace std;
 SocketCreator::SocketCreator()
@@ -48,7 +49,8 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
 
 WcisloSocket* SocketCreator::CreateServerSocket(void)
 {
-    int descriptor = socket(AF_INET, SOCK_STREAM, 0);
+    //
+    int descriptor = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if(descriptor < 0)
     {
         return nullptr;

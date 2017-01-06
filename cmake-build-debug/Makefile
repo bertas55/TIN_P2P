@@ -123,6 +123,33 @@ TIN_P2P/fast:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/build
 .PHONY : TIN_P2P/fast
 
+Configuration.o: Configuration.cpp.o
+
+.PHONY : Configuration.o
+
+# target to build an object file
+Configuration.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.o
+.PHONY : Configuration.cpp.o
+
+Configuration.i: Configuration.cpp.i
+
+.PHONY : Configuration.i
+
+# target to preprocess a source file
+Configuration.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.i
+.PHONY : Configuration.cpp.i
+
+Configuration.s: Configuration.cpp.s
+
+.PHONY : Configuration.s
+
+# target to generate assembly for a file
+Configuration.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.s
+.PHONY : Configuration.cpp.s
+
 Constants.o: Constants.cpp.o
 
 .PHONY : Constants.o
@@ -564,6 +591,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TIN_P2P"
+	@echo "... Configuration.o"
+	@echo "... Configuration.i"
+	@echo "... Configuration.s"
 	@echo "... Constants.o"
 	@echo "... Constants.i"
 	@echo "... Constants.s"
