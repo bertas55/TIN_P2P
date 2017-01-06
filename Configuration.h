@@ -11,9 +11,12 @@ public:
     static const unsigned short getBroadcastPort();
     static const char* getBroadcastIP();
 
+    static const char* getDirectoryPath();
+
 private:
     static unsigned short port;
     static std::string broadcastIP;
+    static std::string directoryPath;
     Configuration();
     ~Configuration();
 

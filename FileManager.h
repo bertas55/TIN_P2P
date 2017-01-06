@@ -14,6 +14,8 @@ class FileManager {
 
 public:
 
+    FileManager();
+
     void lockFile(string name, unsigned int size);
 
     void unlockFile(string name, unsigned int size);

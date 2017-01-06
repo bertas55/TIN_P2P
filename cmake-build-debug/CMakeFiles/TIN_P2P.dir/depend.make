@@ -16,6 +16,7 @@ CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.cpp
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.h
 
+CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../FileManager.cpp
