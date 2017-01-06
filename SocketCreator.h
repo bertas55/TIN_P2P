@@ -13,6 +13,8 @@ public:
     static Socket* CreateSocket(const std::string& address, unsigned short port, bool connect);
     static WcisloSocket* CreateServerSocket(void);
     static WcisloSocket* CreateServerSocket(unsigned short port);
+    static WcisloSocket* broadcasterSocket(void);
+    static WcisloSocket* broadcasterSenderSocket(void);
 
 private:
     SocketCreator(void);

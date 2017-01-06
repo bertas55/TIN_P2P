@@ -15,12 +15,12 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
         broadcaster(broadcastEnable)
 {
     if (broadcaster){
-        socket->setBroadcast();
+//        socket->setBroadcast();
         UDPThread = std::thread(&UDPAdapter::send, this);
     }
     else
     {
-        socket->setBroadcastListerner();
+//        socket->setBroadcastListerner();
         UDPThread = std::thread(&UDPAdapter::listen, this);
     }
 

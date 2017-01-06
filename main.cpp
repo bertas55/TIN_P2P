@@ -16,7 +16,7 @@
 
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
-#define SERVER "127.0.0.1"
+#define SERVER "192.168.0.255"
 
 using namespace std;
 
@@ -126,11 +126,12 @@ int main(void)
 
     vector<FileInfo> files = fileManager.getFilesList();
 
-    for (auto fileInfo : files) {
-        cout << fileInfo.name << "\n";
-    }
-
-//    userInterface();
+//    for (auto fileInfo : files) {
+//        cout << fileInfo.name << "\n";
+//    }
+//
+   userInterface();
+//     listenForMessages();
 
     return 0;
 }

@@ -5,6 +5,8 @@
 #include "SocketCreator.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <cstring>
+#include <arpa/inet.h>
 
 using namespace std;
 SocketCreator::SocketCreator()
@@ -51,9 +53,26 @@ WcisloSocket* SocketCreator::CreateServerSocket(void)
 {
     //
     int descriptor = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-    if(descriptor < 0)
+    const int BUFLEN = 512;
+    struct sockaddr_in si_me, si_other;
+    int s , recv_len;
+    socklen_t slen = sizeof(si_other);
+    char buf[BUFLEN];
+    //create a UDP socket
+    if ((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
     {
-        return nullptr;
+//        die("socket");
+    }
+    // zero out the structure
+    memset((char *) &si_me, 0, sizeof(si_me));
+
+    si_me.sin_family = AF_INET;
+    si_me.sin_port = htons(8888);
+    si_me.sin_addr.s_addr = htonl(INADDR_ANY);
+
+    //bind socket to port
+    if( bind(s , (struct sockaddr*)&si_me, sizeof(si_me) ) == -1)
+    {
     }
     return new WcisloSocket(descriptor);
 }
@@ -77,4 +96,59 @@ WcisloSocket* SocketCreator::CreateServerSocket(unsigned short port)
         s = nullptr;
     }
     return s;
+}
+
+WcisloSocket* SocketCreator::broadcasterSocket(void)
+{
+    struct sockaddr_in si_me, si_other;
+    const int BUFLEN = 512;
+    int s , recv_len;
+    socklen_t slen = sizeof(si_other);
+    char buf[BUFLEN];
+    int broadcastEnable=1;
+    int ret=setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
+    //create a UDP socket
+    if ((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
+    {
+//        die("socket");
+    }
+
+    // zero out the structure
+    memset((char *) &si_me, 0, sizeof(si_me));
+
+    si_me.sin_family = AF_INET;
+    si_me.sin_port = htons(8888);
+    si_me.sin_addr.s_addr = htonl(INADDR_ANY);
+
+    //bind socket to port
+    if( bind(s , (struct sockaddr*)&si_me, sizeof(si_me) ) == -1)
+    {
+//        die("bind");
+    }
+    return new WcisloSocket(s);
+}
+WcisloSocket* SocketCreator::broadcasterSenderSocket(void)
+{
+    struct sockaddr_in si_other;
+    int s, i;
+    const int BUFLEN = 512;
+    socklen_t slen = sizeof(si_other);
+    char buf[BUFLEN];
+
+
+    if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
+    {
+//        die("socket");
+    }
+
+    memset((char *) &si_other, 0, sizeof(si_other));
+    si_other.sin_family = AF_INET;
+    si_other.sin_port = htons(8888);
+
+    if (inet_aton("192.168.0.255" , &si_other.sin_addr) == 0)
+    {
+        fprintf(stderr, "inet_aton() failed\n");
+    }
+
+    return new WcisloSocket(s);
 }
