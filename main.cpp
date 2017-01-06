@@ -12,6 +12,7 @@
 #include<thread>
 #include <iostream>
 #include "ServerInterface.h"
+#include "FileManager.h"
 
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
@@ -120,7 +121,16 @@ int main(void)
 //    std::string msgJson = JsonCreator::requestFile("NazwaHosta", "NazwaPliku", 234, 345);
 
 //    t1.join();
-    userInterface();
+
+    FileManager fileManager;
+
+    vector<FileInfo> files = fileManager.getFilesList();
+
+    for (auto fileInfo : files) {
+        cout << fileInfo.name << "\n";
+    }
+
+//    userInterface();
 
     return 0;
 }

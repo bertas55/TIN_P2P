@@ -9,6 +9,8 @@ using namespace std;
 File::File(string path, string name) {
     string fullPath = path + name;
     file.open (fullPath);
+    this->name = name;
+    // jeszcze size
 }
 
 File::~File() {

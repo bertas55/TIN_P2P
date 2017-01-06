@@ -94,6 +94,8 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.cpp
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../ServerInterface.h

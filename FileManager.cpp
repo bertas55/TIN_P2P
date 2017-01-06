@@ -12,13 +12,22 @@
 using namespace std;
 
 FileManager::FileManager() {
+    loadFiles();
+}
+
+void FileManager::loadFiles() {
     DIR *dir;
-    const char* dirPath = Configuration::getDirectoryPath();
+    const char* dirPath = ".";
     struct dirent *ent;
     if ((dir = opendir (dirPath)) != NULL) {
         /* print all the files and directories within directory */
         while ((ent = readdir (dir)) != NULL) {
             printf ("%s\n", ent->d_name);
+            File *newFile = new File(dirPath, ent->d_name);
+
+            files.push_back(newFile);
+
+
         }
         closedir (dir);
     } else {
@@ -26,6 +35,12 @@ FileManager::FileManager() {
         perror ("");
 //        return EXIT_FAILURE;
     }
+}
+
+std::ifstream::pos_type FileManager::getFileSize(const char* filename)
+{
+    std::ifstream in(filename, std::ifstream::ate | std::ifstream::binary);
+    return in.tellg();
 }
 
 void FileManager::lockFile(string name, unsigned int size) {

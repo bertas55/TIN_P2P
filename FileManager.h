@@ -29,6 +29,10 @@ public:
 
 private:
     vector<File*> files;
+
+    void loadFiles();
+
+    std::ifstream::pos_type getFileSize(const char* filename);
 };
 
 
