@@ -16,6 +16,7 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
     else
     {
 
+        socket->setBroadcastListerner();
     }
 
 }

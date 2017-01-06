@@ -8,13 +8,15 @@
 
 class Configuration {
 public:
-     static const unsigned short getBroadcastPort();
-     static const char* getBroadcastIP();
+     static unsigned short getBroadcastPort();
+     static std::string getBroadcastIP();
 
 private:
-    static unsigned short port;
-    static std::string broadcastIP;
+//    static unsigned short port = 8888;
+//    static std::string broadcastIP = "127.0.0.1";
     Configuration();
+    Configuration(Configuration const&);
+    Configuration& operator=(Configuration const&);
     ~Configuration();
 
 };

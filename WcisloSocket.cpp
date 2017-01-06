@@ -43,17 +43,23 @@ bool WcisloSocket::setBroadcast() {
     broadcastEnable=1;
     int ret=setsockopt(descriptor, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
     struct sockaddr_in broadcastAddr;
+
+    unsigned short port = 8888;
+    std::string addressIP = "127.0.0.1";
+
     broadcastAddr.sin_family = AF_INET;
-    broadcastAddr.sin_port = htons(Configuration::getBroadcastPort());
-    broadcastAddr.sin_addr.s_addr = inet_addr(Configuration::getBroadcastIP());
+    broadcastAddr.sin_port = htons(port);
+    broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 /* Add other code, sockaddr, sendto() etc. */
 }
 
 bool WcisloSocket::setBroadcastListerner() {
     struct sockaddr_in broadcastAddr;
+    unsigned short port = 8888;
+    std::string addressIP = "127.0.0.1";
     broadcastAddr.sin_family = AF_INET;
-    broadcastAddr.sin_port = htons(Configuration::getBroadcastPort());
-    broadcastAddr.sin_addr.s_addr = inet_addr(Configuration::getBroadcastIP());
+    broadcastAddr.sin_port = htons(port);
+    broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 }
