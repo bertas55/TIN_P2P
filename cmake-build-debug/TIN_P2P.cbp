@@ -99,6 +99,12 @@
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/File.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

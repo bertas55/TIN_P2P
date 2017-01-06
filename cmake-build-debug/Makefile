@@ -204,6 +204,33 @@ Dependencies/JsonCpp/jsoncpp.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s
 .PHONY : Dependencies/JsonCpp/jsoncpp.cpp.s
 
+Exceptions.o: Exceptions.cpp.o
+
+.PHONY : Exceptions.o
+
+# target to build an object file
+Exceptions.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
+.PHONY : Exceptions.cpp.o
+
+Exceptions.i: Exceptions.cpp.i
+
+.PHONY : Exceptions.i
+
+# target to preprocess a source file
+Exceptions.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.i
+.PHONY : Exceptions.cpp.i
+
+Exceptions.s: Exceptions.cpp.s
+
+.PHONY : Exceptions.s
+
+# target to generate assembly for a file
+Exceptions.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.s
+.PHONY : Exceptions.cpp.s
+
 File.o: File.cpp.o
 
 .PHONY : File.o
@@ -600,6 +627,9 @@ help:
 	@echo "... Dependencies/JsonCpp/jsoncpp.o"
 	@echo "... Dependencies/JsonCpp/jsoncpp.i"
 	@echo "... Dependencies/JsonCpp/jsoncpp.s"
+	@echo "... Exceptions.o"
+	@echo "... Exceptions.i"
+	@echo "... Exceptions.s"
 	@echo "... File.o"
 	@echo "... File.i"
 	@echo "... File.s"

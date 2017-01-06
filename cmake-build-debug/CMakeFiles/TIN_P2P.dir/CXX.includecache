@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp
+Configuration.h
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+string
+-
+
 /home/lukasz/CLionProjects/TIN_P2P/Constants.cpp
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
@@ -160,6 +168,14 @@ cmath
 float.h
 -
 
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+exception
+-
+
 /home/lukasz/CLionProjects/TIN_P2P/File.cpp
 File.h
 /home/lukasz/CLionProjects/TIN_P2P/File.h
@@ -173,8 +189,12 @@ fstream
 -
 
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.cpp
+vector
+-
 FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 vector
@@ -201,6 +221,8 @@ Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.cpp
 JsonParser.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
 Message.h
@@ -229,8 +251,8 @@ MessageContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
 queue
 -
-iostream
--
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
 Message.h
@@ -275,6 +297,8 @@ Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 SocketCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ServerInterface.h
+/home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h
@@ -323,6 +347,8 @@ thread
 -
 WcisloSocket.h
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+Configuration.h
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp
 sys/socket.h
@@ -343,6 +369,8 @@ Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
 string
 -
+Configuration.h
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/main.cpp
 stdio.h

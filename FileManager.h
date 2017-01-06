@@ -22,7 +22,7 @@ public:
 
     void removeFile(string name, unsigned int size);
 
-    void getFilesList();
+    vector<FileInfo> getFilesList();
 
 
 private:

@@ -3,7 +3,7 @@
 //
 
 #include "JsonParser.h"
-
+#include "Exceptions.h"
 
 using namespace std;
 
@@ -16,7 +16,6 @@ Message JsonParser::parse(string jsonMessage) {
     {
         Json::Value messageTypeVal = parsedJson[Constants::JsonKeys::type];
         const char* messageType = messageTypeVal.asCString();
-
 
         if (strcmp(messageType, Constants::MessageTypes::hello) == 0) {
             // hello, is it me you loking for?
@@ -35,10 +34,12 @@ Message JsonParser::parse(string jsonMessage) {
 
         } else if (strcmp(messageType, Constants::MessageTypes::deleteFile) == 0) {
 
+        } else {
+            throw UnknownMessageException();
         }
 
     } else {
-        // ????
+        throw JsonParsingException();
     }
 
     return messageToReturn;
