@@ -4,6 +4,7 @@
 
 #include "MessageContainer.h"
 #include <queue>
+#include "Exceptions.h"
 using namespace std;
 
 
@@ -13,9 +14,14 @@ MessageContainer::MessageContainer() {
 
 Message MessageContainer::get() {
     lock_guard<mutex> lock(guard);
-    Message msgToReturn = messagesQueue.front();
-    messagesQueue.pop();
-    return msgToReturn;
+    if (!messagesQueue.empty()) {
+        Message msgToReturn = messagesQueue.front();
+        messagesQueue.pop();
+        return msgToReturn;
+    } else {
+        throw NoElementsException();
+    }
+
 }
 
 void MessageContainer::put(Message msg) {

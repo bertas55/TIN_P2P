@@ -23,7 +23,6 @@ public:
 private:
     queue<Message> messagesQueue;
     mutex guard;
-
 };
 
 

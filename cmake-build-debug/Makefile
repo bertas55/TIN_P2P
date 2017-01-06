@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lukasz/CLionProjects/TIN_P2P
+CMAKE_SOURCE_DIR = /home/hubert/ClionProjects/TIN_P2P
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug
+CMAKE_BINARY_DIR = /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,6 +176,33 @@ Dependencies/JsonCpp/jsoncpp.s: Dependencies/JsonCpp/jsoncpp.cpp.s
 Dependencies/JsonCpp/jsoncpp.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s
 .PHONY : Dependencies/JsonCpp/jsoncpp.cpp.s
+
+Exceptions.o: Exceptions.cpp.o
+
+.PHONY : Exceptions.o
+
+# target to build an object file
+Exceptions.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
+.PHONY : Exceptions.cpp.o
+
+Exceptions.i: Exceptions.cpp.i
+
+.PHONY : Exceptions.i
+
+# target to preprocess a source file
+Exceptions.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.i
+.PHONY : Exceptions.cpp.i
+
+Exceptions.s: Exceptions.cpp.s
+
+.PHONY : Exceptions.s
+
+# target to generate assembly for a file
+Exceptions.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Exceptions.cpp.s
+.PHONY : Exceptions.cpp.s
 
 File.o: File.cpp.o
 
@@ -570,6 +597,9 @@ help:
 	@echo "... Dependencies/JsonCpp/jsoncpp.o"
 	@echo "... Dependencies/JsonCpp/jsoncpp.i"
 	@echo "... Dependencies/JsonCpp/jsoncpp.s"
+	@echo "... Exceptions.o"
+	@echo "... Exceptions.i"
+	@echo "... Exceptions.s"
 	@echo "... File.o"
 	@echo "... File.i"
 	@echo "... File.s"
