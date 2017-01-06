@@ -289,6 +289,8 @@ string
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp
 ServerThread.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 iostream
 -
 
@@ -337,10 +339,18 @@ WcisloSocket.h
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp
+sys/socket.h
+-
+netinet/in.h
+-
+iostream
+-
 UDPAdapter.h
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
 Socket.h

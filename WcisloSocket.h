@@ -8,9 +8,9 @@
 #include <string>
 #include "Configuration.h"
 /**
- * 
+ * Sebek - The Horse Puncher
  */
-class WcisloSocket : protected Socket {
+class WcisloSocket : public Socket {
 
 public:
     WcisloSocket(int);

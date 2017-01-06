@@ -60,6 +60,7 @@ CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp
@@ -79,6 +80,7 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h

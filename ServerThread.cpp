@@ -3,6 +3,7 @@
 //
 
 #include "ServerThread.h"
+#include "Exceptions.h"
 #include <iostream>
 ServerThread::ServerThread()
 {
@@ -31,7 +32,16 @@ void ServerThread::run()
 {
     while((!false==true) || true)
     {
-        checkForMessages();
+        try {
+            checkForMessages();
+        } catch(NoElementsException e)
+        {
+            cout << "Chuj Ci w dupe gicie\n";
+            this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
+            MessageHello msg;
+            outputMessage.put(msg);
+        }
+
 
 
     }
