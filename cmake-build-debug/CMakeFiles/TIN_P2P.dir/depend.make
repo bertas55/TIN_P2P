@@ -60,7 +60,6 @@ CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../MessageContainer.h
-CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerInterface.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerThread.cpp
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerThread.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Socket.h

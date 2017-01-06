@@ -297,8 +297,6 @@ Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 SocketCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
-ServerInterface.h
-/home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h

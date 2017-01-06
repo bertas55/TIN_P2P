@@ -8,8 +8,8 @@
 
 class Configuration {
 public:
-    static const unsigned short getBroadcastPort();
-    static const char* getBroadcastIP();
+     static const unsigned short getBroadcastPort();
+     static const char* getBroadcastIP();
 
 private:
     static unsigned short port;
