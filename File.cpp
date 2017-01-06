@@ -10,11 +10,17 @@ File::File(string path, string name) {
     string fullPath = path + name;
     file.open (fullPath);
     this->name = name;
-    // jeszcze size
+    this->size = readSize();
 }
 
 File::~File() {
     file.close();
+}
+
+std::ifstream::pos_type File::readSize()
+{
+    std::ifstream in(name, std::ifstream::ate | std::ifstream::binary);
+    return in.tellg();
 }
 
 void File::lock() {

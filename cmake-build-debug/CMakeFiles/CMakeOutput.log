@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/lukasz/CLionProjects/TIN
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fa25a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fa25a.dir/build.make CMakeFiles/cmTC_fa25a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0dc37/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0dc37.dir/build.make CMakeFiles/cmTC_0dc37.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fa25a.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_fa25a.dir/testCCompiler.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_fa25a
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa25a.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_fa25a.dir/testCCompiler.c.o  -o cmTC_fa25a 
+Building C object CMakeFiles/cmTC_0dc37.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_0dc37.dir/testCCompiler.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_0dc37
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0dc37.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_0dc37.dir/testCCompiler.c.o  -o cmTC_0dc37 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_247d9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_247d9.dir/build.make CMakeFiles/cmTC_247d9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3e27c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3e27c.dir/build.make CMakeFiles/cmTC_3e27c.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_247d9
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_247d9.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o  -o cmTC_247d9  
+Building C object CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_3e27c
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e27c.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o  -o cmTC_3e27c  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -59,9 +59,9 @@ Thread model: posix
 gcc version 6.2.0 20161005 (Ubuntu 6.2.0-5ubuntu12) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_247d9' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoOTaTj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_247d9 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_247d9' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e27c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYao618.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3e27c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e27c' '-mtune=generic' '-march=x86-64'
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -69,14 +69,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_247d9/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_247d9.dir/build.make CMakeFiles/cmTC_247d9.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3e27c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3e27c.dir/build.make CMakeFiles/cmTC_3e27c.dir/build]
   ignore line: [make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_247d9]
-  ignore line: [/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_247d9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o  -o cmTC_247d9  ]
+  ignore line: [Building C object CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_3e27c]
+  ignore line: [/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e27c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o  -o cmTC_3e27c  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.2.0 20161005 (Ubuntu 6.2.0-5ubuntu12) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_247d9' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoOTaTj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_247d9 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3e27c' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYao618.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3e27c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccoOTaTj.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYao618.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -111,7 +111,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_247d9] ==> ignore
+    arg [cmTC_3e27c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -123,7 +123,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_247d9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_3e27c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -157,14 +157,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f1151/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f1151.dir/build.make CMakeFiles/cmTC_f1151.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e42dc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e42dc.dir/build.make CMakeFiles/cmTC_e42dc.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f1151.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_f1151.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_f1151
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1151.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_f1151.dir/feature_tests.c.o  -o cmTC_f1151 
+Building C object CMakeFiles/cmTC_e42dc.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_e42dc.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e42dc
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e42dc.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e42dc.dir/feature_tests.c.o  -o cmTC_e42dc 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -177,14 +177,14 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_75a37/fast"
-/usr/bin/make -f CMakeFiles/cmTC_75a37.dir/build.make CMakeFiles/cmTC_75a37.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_819ed/fast"
+/usr/bin/make -f CMakeFiles/cmTC_819ed.dir/build.make CMakeFiles/cmTC_819ed.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_75a37.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_75a37.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_75a37
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75a37.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_75a37.dir/feature_tests.c.o  -o cmTC_75a37 
+Building C object CMakeFiles/cmTC_819ed.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_819ed.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_819ed
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_819ed.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_819ed.dir/feature_tests.c.o  -o cmTC_819ed 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -197,14 +197,14 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_11081/fast"
-/usr/bin/make -f CMakeFiles/cmTC_11081.dir/build.make CMakeFiles/cmTC_11081.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_9cc3d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9cc3d.dir/build.make CMakeFiles/cmTC_9cc3d.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_11081.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_11081.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_11081
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11081.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_11081.dir/feature_tests.c.o  -o cmTC_11081 
+Building C object CMakeFiles/cmTC_9cc3d.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_9cc3d.dir/feature_tests.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9cc3d
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cc3d.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_9cc3d.dir/feature_tests.c.o  -o cmTC_9cc3d 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -215,28 +215,28 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fb172/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fb172.dir/build.make CMakeFiles/cmTC_fb172.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_5e6a8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5e6a8.dir/build.make CMakeFiles/cmTC_5e6a8.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_fb172.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_fb172.dir/testCXXCompiler.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fb172
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb172.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_fb172.dir/testCXXCompiler.cxx.o  -o cmTC_fb172 
+Building CXX object CMakeFiles/cmTC_5e6a8.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_5e6a8.dir/testCXXCompiler.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_5e6a8
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e6a8.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_5e6a8.dir/testCXXCompiler.cxx.o  -o cmTC_5e6a8 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e7494/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e7494.dir/build.make CMakeFiles/cmTC_e7494.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_67060/fast"
+/usr/bin/make -f CMakeFiles/cmTC_67060.dir/build.make CMakeFiles/cmTC_67060.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_e7494
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7494.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e7494  
+Building CXX object CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_67060
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67060.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_67060  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -246,9 +246,9 @@ Thread model: posix
 gcc version 6.2.0 20161005 (Ubuntu 6.2.0-5ubuntu12) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e7494' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBNnUK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e7494 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e7494' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67060' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccorKi2C.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_67060 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67060' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -256,14 +256,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e7494/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e7494.dir/build.make CMakeFiles/cmTC_e7494.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_67060/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_67060.dir/build.make CMakeFiles/cmTC_67060.dir/build]
   ignore line: [make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_e7494]
-  ignore line: [/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7494.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_e7494  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_67060]
+  ignore line: [/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67060.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_67060  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -273,13 +273,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.2.0 20161005 (Ubuntu 6.2.0-5ubuntu12) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e7494' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLBNnUK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e7494 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_67060' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccorKi2C.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_67060 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccLBNnUK.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccorKi2C.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -298,7 +298,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e7494] ==> ignore
+    arg [cmTC_67060] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -310,7 +310,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_e7494.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_67060.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -342,14 +342,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_542e6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_542e6.dir/build.make CMakeFiles/cmTC_542e6.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_80dc9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_80dc9.dir/build.make CMakeFiles/cmTC_80dc9.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_542e6.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_542e6.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_542e6
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_542e6.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_542e6.dir/feature_tests.cxx.o  -o cmTC_542e6 
+Building CXX object CMakeFiles/cmTC_80dc9.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_80dc9.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_80dc9
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80dc9.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_80dc9.dir/feature_tests.cxx.o  -o cmTC_80dc9 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -415,14 +415,14 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_39d8a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_39d8a.dir/build.make CMakeFiles/cmTC_39d8a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f3205/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f3205.dir/build.make CMakeFiles/cmTC_f3205.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_39d8a.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_39d8a.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_39d8a
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39d8a.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_39d8a.dir/feature_tests.cxx.o  -o cmTC_39d8a 
+Building CXX object CMakeFiles/cmTC_f3205.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_f3205.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f3205
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3205.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_f3205.dir/feature_tests.cxx.o  -o cmTC_f3205 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -488,14 +488,14 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ef4d9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ef4d9.dir/build.make CMakeFiles/cmTC_ef4d9.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6382a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6382a.dir/build.make CMakeFiles/cmTC_6382a.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ef4d9.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_ef4d9.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ef4d9
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef4d9.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_ef4d9.dir/feature_tests.cxx.o  -o cmTC_ef4d9 
+Building CXX object CMakeFiles/cmTC_6382a.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_6382a.dir/feature_tests.cxx.o -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6382a
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6382a.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_6382a.dir/feature_tests.cxx.o  -o cmTC_6382a 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -559,28 +559,28 @@ make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-de
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2fa00/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2fa00.dir/build.make CMakeFiles/cmTC_2fa00.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_00592/fast"
+/usr/bin/make -f CMakeFiles/cmTC_00592.dir/build.make CMakeFiles/cmTC_00592.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2fa00.dir/CheckIncludeFile.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_2fa00.dir/CheckIncludeFile.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_2fa00
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fa00.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_2fa00.dir/CheckIncludeFile.c.o  -o cmTC_2fa00 
+Building C object CMakeFiles/cmTC_00592.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_00592.dir/CheckIncludeFile.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_00592
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00592.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_00592.dir/CheckIncludeFile.c.o  -o cmTC_00592 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_689de/fast"
-/usr/bin/make -f CMakeFiles/cmTC_689de.dir/build.make CMakeFiles/cmTC_689de.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2acb9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2acb9.dir/build.make CMakeFiles/cmTC_2acb9.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_689de.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_689de.dir/CheckFunctionExists.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_689de
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_689de.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_689de.dir/CheckFunctionExists.c.o  -o cmTC_689de -lpthread 
+Building C object CMakeFiles/cmTC_2acb9.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2acb9.dir/CheckFunctionExists.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2acb9
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2acb9.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_2acb9.dir/CheckFunctionExists.c.o  -o cmTC_2acb9 -lpthread 
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 

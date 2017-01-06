@@ -77,10 +77,15 @@ void sendMessage(char* message) {
     char buf[BUFLEN];
 
 
+
+
     if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
     {
         die("socket");
     }
+
+    int broadcastEnable = 1;
+    int ret=setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
 
     memset((char *) &si_other, 0, sizeof(si_other));
     si_other.sin_family = AF_INET;
@@ -116,12 +121,6 @@ void userInterface()
 }
 int main(void)
 {
-//    std::thread t1(listenForMessages);
-
-//    std::string msgJson = JsonCreator::requestFile("NazwaHosta", "NazwaPliku", 234, 345);
-
-//    t1.join();
-
     FileManager fileManager;
 
     vector<FileInfo> files = fileManager.getFilesList();
@@ -130,9 +129,7 @@ int main(void)
 //        cout << fileInfo.name << "\n";
 //    }
 //
-   userInterface();
-//     listenForMessages();
-
+    userInterface();
     return 0;
 }
 
