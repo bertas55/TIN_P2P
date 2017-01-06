@@ -9,22 +9,44 @@
 #include <fstream>
 using namespace std;
 
+enum FileState {
+    blocked,
+    toRemove,
+    normal
+};
+
 class File {
 
 public:
-    File();
+    File(string name);
 
     char* getFilePart(unsigned int partNumber);
 
-    string getFileName();
+    void lock();
 
-    unsigned int getFileSize();
+    void unlock();
+
+    bool isLocked();
+
+    FileInfo getFileInfo();
 
 private:
     fstream file;
     string name;
     unsigned int size;
+    bool isOwner;
+    bool isLocked;
+    FileState state;
+};
 
+struct FileInfo {
+    string name;
+    unsigned int size;
+
+    FileInfo(string name, unsigned int size) {
+        this->name = name;
+        this->size = size;
+    }
 };
 
 

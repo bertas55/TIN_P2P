@@ -6,11 +6,24 @@
 #define TIN_P2P_FILEMANAGER_H
 
 #include <vector>
+#include <string>
 #include "File.h"
+using namespace std;
 
 class FileManager {
 
 public:
+
+    void lockFile(string name, unsigned int size);
+
+    void unlockFile(string name, unsigned int size);
+
+    bool isFileLocked(string name, unsigned int size);
+
+    void removeFile(string name, unsigned int size);
+
+    void getFilesList();
+
 
 private:
     vector<File*> files;
