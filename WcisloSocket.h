@@ -6,7 +6,7 @@
 #define TIN_P2P_WCISLOSOCKET_H
 #include "Socket.h"
 /**
- * Class made as contribution to the man who is the best at "Walenie Konia"
+ * 
  */
 class WcisloSocket : protected Socket {
 
