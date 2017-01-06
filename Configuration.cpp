@@ -4,11 +4,15 @@
 
 #include "Configuration.h"
 
-Configuration::Configuration()  {
+
+Configuration::Configuration() {
 }
+
+
 Configuration::~Configuration() {
 
 }
+
 
 unsigned short Configuration::getBroadcastPort() {
 //    return  port;
@@ -16,4 +20,9 @@ unsigned short Configuration::getBroadcastPort() {
 
 std::string Configuration::getBroadcastIP() {
 //    return  broadcastIP;
+}
+
+
+ const char* Configuration::getDirectoryPath() {
+
 }

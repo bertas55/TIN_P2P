@@ -5,7 +5,28 @@
 #include <vector>
 #include "FileManager.h"
 #include "Exceptions.h"
+#include <dirent.h>
+#include <stdlib.h>
+#include "Configuration.h"
+
 using namespace std;
+
+FileManager::FileManager() {
+    DIR *dir;
+    const char* dirPath = Configuration::getDirectoryPath();
+    struct dirent *ent;
+    if ((dir = opendir (dirPath)) != NULL) {
+        /* print all the files and directories within directory */
+        while ((ent = readdir (dir)) != NULL) {
+            printf ("%s\n", ent->d_name);
+        }
+        closedir (dir);
+    } else {
+        /* could not open directory */
+        perror ("");
+//        return EXIT_FAILURE;
+    }
+}
 
 void FileManager::lockFile(string name, unsigned int size) {
     bool success = false;

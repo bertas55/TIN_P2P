@@ -11,9 +11,13 @@ public:
      static unsigned short getBroadcastPort();
      static std::string getBroadcastIP();
 
+    static const char* getDirectoryPath();
+
 private:
-//    static unsigned short port = 8888;
-//    static std::string broadcastIP = "127.0.0.1";
+    static unsigned short port;
+    static std::string broadcastIP;
+    static std::string directoryPath;
+
     Configuration();
     Configuration(Configuration const&);
     Configuration& operator=(Configuration const&);

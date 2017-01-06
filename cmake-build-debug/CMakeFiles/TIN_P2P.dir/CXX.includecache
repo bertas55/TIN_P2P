@@ -195,6 +195,12 @@ FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+dirent.h
+-
+stdlib.h
+-
+Configuration.h
+/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 vector
