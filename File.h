@@ -22,7 +22,7 @@ public:
 
     ~File();
 
-    char* getFilePart(unsigned int partNumber);
+    char* getFilePart();
 
     void lock();
 
@@ -39,6 +39,8 @@ private:
     bool owner;
     bool locked;
     FileState state;
+
+    std::ifstream::pos_type readSize();
 };
 
 struct FileInfo {

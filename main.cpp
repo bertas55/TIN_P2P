@@ -16,7 +16,7 @@
 
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
-#define SERVER "127.0.0.1"
+#define SERVER "192.168.0.255"
 
 using namespace std;
 
@@ -77,10 +77,15 @@ void sendMessage(char* message) {
     char buf[BUFLEN];
 
 
+
+
     if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
     {
         die("socket");
     }
+
+    int broadcastEnable = 1;
+    int ret=setsockopt(s, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
 
     memset((char *) &si_other, 0, sizeof(si_other));
     si_other.sin_family = AF_INET;
@@ -116,22 +121,18 @@ void userInterface()
 }
 int main(void)
 {
-//    std::thread t1(listenForMessages);
-
-//    std::string msgJson = JsonCreator::requestFile("NazwaHosta", "NazwaPliku", 234, 345);
-
-//    t1.join();
-
     FileManager fileManager;
+//
+//    vector<FileInfo> files = fileManager.getFilesList();
+//
+//    for (auto fileInfo : files) {
+//        cout << fileInfo.name << " " << fileInfo.size << "\n";
+//    }
+//
+    userInterface();
 
-    vector<FileInfo> files = fileManager.getFilesList();
 
-    for (auto fileInfo : files) {
-        cout << fileInfo.name << "\n";
-    }
-
-//    userInterface();
-
+    sendMessage("Pizda z furgotem");
     return 0;
 }
 

@@ -45,7 +45,7 @@ bool WcisloSocket::setBroadcast() {
     struct sockaddr_in broadcastAddr;
 
     unsigned short port = 8888;
-    std::string addressIP = "127.0.0.1";
+    std::string addressIP = "192.168.0.255";
 
     broadcastAddr.sin_family = AF_INET;
     broadcastAddr.sin_port = htons(port);
@@ -57,7 +57,7 @@ bool WcisloSocket::setBroadcast() {
 bool WcisloSocket::setBroadcastListerner() {
     struct sockaddr_in broadcastAddr;
     unsigned short port = 8888;
-    std::string addressIP = "127.0.0.1";
+    std::string addressIP = "192.168.0.255";
     broadcastAddr.sin_family = AF_INET;
     broadcastAddr.sin_port = htons(port);
     broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());

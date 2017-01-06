@@ -37,12 +37,6 @@ void FileManager::loadFiles() {
     }
 }
 
-std::ifstream::pos_type FileManager::getFileSize(const char* filename)
-{
-    std::ifstream in(filename, std::ifstream::ate | std::ifstream::binary);
-    return in.tellg();
-}
-
 void FileManager::lockFile(string name, unsigned int size) {
     bool success = false;
     for (auto file : files) {
