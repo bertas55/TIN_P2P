@@ -4,11 +4,12 @@
 
 #include "UDPAdapter.h"
 
-UDPAdapter::UDPAdapter(MessageContainer *container) : serverMessageContainer(container)
+UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket) : serverMessageContainer(container), socket(_socket)
 {
 
 }
 UDPAdapter::~UDPAdapter() {
+    delete socket;
 
 }
 

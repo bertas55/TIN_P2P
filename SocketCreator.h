@@ -15,9 +15,9 @@ public:
     static WcisloSocket* CreateServerSocket(unsigned short port);
 
 private:
-    SocketFactory(void);
-    SocketFactory(const SocketFactory&);
-    SocketFactory& operator=(const SocketFactory&);
+    SocketCreator(void);
+    SocketCreator(const SocketCreator&);
+    SocketCreator& operator=(const SocketCreator&);
 };
 
 

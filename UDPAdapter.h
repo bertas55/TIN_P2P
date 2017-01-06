@@ -8,15 +8,15 @@
 #include "Socket.h"
 #include "MessageContainer.h"
 #include <thread>
-
+#include "WcisloSocket.h"
 class UDPAdapter {
 private:
-    Socket socket;
+    WcisloSocket* socket;
     std::thread UDPThread;
     MessageContainer *serverMessageContainer;
 
 public:
-    UDPAdapter(MessageContainer*);
+    UDPAdapter(MessageContainer*, WcisloSocket*);
     ~UDPAdapter();
     void run();
     void listen();

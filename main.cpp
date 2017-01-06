@@ -11,6 +11,7 @@
 
 #include<thread>
 #include <iostream>
+#include "ServerInterface.h"
 
 #define BUFLEN 512  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
@@ -108,4 +109,11 @@ int main(void)
     t1.join();
 
     return 0;
+}
+
+void userInterface()
+{
+
+
+
 }

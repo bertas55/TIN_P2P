@@ -6,6 +6,8 @@
 #include <sys/socket.h>
 
 using namespace std;
+SocketCreator::SocketCreator()
+{}
 
 Socket* SocketCreator::CreateSocket(void)
 {
