@@ -181,6 +181,8 @@ File.h
 /home/hubert/ClionProjects/TIN_P2P/File.h
 Constants.h
 /home/hubert/ClionProjects/TIN_P2P/Constants.h
+Exceptions.h
+/home/hubert/ClionProjects/TIN_P2P/Exceptions.h
 string
 -
 iostream
@@ -191,6 +193,8 @@ string
 -
 fstream
 -
+Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 
 /home/hubert/ClionProjects/TIN_P2P/FileManager.cpp
 vector

@@ -15,10 +15,12 @@ CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
+ /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.cpp
  /home/hubert/ClionProjects/TIN_P2P/File.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.cpp
@@ -52,6 +54,7 @@ CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/MessageHello.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
@@ -107,6 +110,7 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h

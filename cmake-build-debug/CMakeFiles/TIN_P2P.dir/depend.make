@@ -14,10 +14,12 @@ CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.cpp
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.h
 
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.cpp
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.h
 
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../FileManager.cpp
@@ -51,6 +53,7 @@ CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.cpp
 CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.h
 
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../MessageContainer.h
@@ -106,6 +109,7 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.cpp
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Message.h
