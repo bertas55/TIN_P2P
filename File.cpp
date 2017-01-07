@@ -56,7 +56,7 @@ char* File::getFilePart(unsigned int partNumber) {
         //throw
     }
 
-    fstream file;
+    ifstream file;
     file.open("./testFile", ios::in | ios::binary | ios::trunc);
     file.seekg(offset);
     unsigned int readLength, d;
@@ -65,7 +65,7 @@ char* File::getFilePart(unsigned int partNumber) {
     } else {
         readLength = d;
     }
-    char buff[readLength];
+    char *buff = new char[readLength];
     file.read(buff, readLength);
     file.close();
     return buff;
