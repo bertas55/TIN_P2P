@@ -56,10 +56,6 @@ CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
- /home/lukasz/CLionProjects/TIN_P2P/Message.h
- /home/lukasz/CLionProjects/TIN_P2P/MessageHello.cpp
- /home/lukasz/CLionProjects/TIN_P2P/MessageHello.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
@@ -81,6 +77,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp

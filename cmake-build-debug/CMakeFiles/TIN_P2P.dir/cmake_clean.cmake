@@ -7,7 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o"
   "CMakeFiles/TIN_P2P.dir/Message.cpp.o"
   "CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o"
-  "CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o"
   "CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o"
   "CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o"
   "CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o"

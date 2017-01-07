@@ -56,10 +56,6 @@ CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../MessageContainer.cpp
 CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../MessageContainer.h
 
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../Message.h
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.cpp
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.h
-
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Constants.h
@@ -80,6 +76,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerThread.cpp

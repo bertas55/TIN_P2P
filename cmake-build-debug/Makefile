@@ -420,33 +420,6 @@ MessageContainer.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.s
 .PHONY : MessageContainer.cpp.s
 
-MessageHello.o: MessageHello.cpp.o
-
-.PHONY : MessageHello.o
-
-# target to build an object file
-MessageHello.cpp.o:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
-.PHONY : MessageHello.cpp.o
-
-MessageHello.i: MessageHello.cpp.i
-
-.PHONY : MessageHello.i
-
-# target to preprocess a source file
-MessageHello.cpp.i:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.i
-.PHONY : MessageHello.cpp.i
-
-MessageHello.s: MessageHello.cpp.s
-
-.PHONY : MessageHello.s
-
-# target to generate assembly for a file
-MessageHello.cpp.s:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.s
-.PHONY : MessageHello.cpp.s
-
 ServerInterface.o: ServerInterface.cpp.o
 
 .PHONY : ServerInterface.o
@@ -678,9 +651,6 @@ help:
 	@echo "... MessageContainer.o"
 	@echo "... MessageContainer.i"
 	@echo "... MessageContainer.s"
-	@echo "... MessageHello.o"
-	@echo "... MessageHello.i"
-	@echo "... MessageHello.s"
 	@echo "... ServerInterface.o"
 	@echo "... ServerInterface.i"
 	@echo "... ServerInterface.s"

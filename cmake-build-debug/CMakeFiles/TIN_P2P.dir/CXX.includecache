@@ -296,14 +296,6 @@ queue
 mutex
 -
 
-/home/lukasz/CLionProjects/TIN_P2P/MessageHello.cpp
-MessageHello.h
-/home/lukasz/CLionProjects/TIN_P2P/MessageHello.h
-
-/home/lukasz/CLionProjects/TIN_P2P/MessageHello.h
-Message.h
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
-
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.cpp
 iostream
 -
@@ -345,6 +337,8 @@ File.h
 /home/lukasz/CLionProjects/TIN_P2P/File.h
 ActionContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
+FileManager.h
+/home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h
