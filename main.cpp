@@ -117,6 +117,7 @@ void userInterface()
         serverInterface.userAction((UserAction)myAction);
 
     } while (myAction!=UserAction::Exit);
+    cout << "Finished!\n";
 
 }
 int main(void)
@@ -130,16 +131,17 @@ int main(void)
 //
 //        if (fileInfo)
 //    }
+//
+//    File test(".", "testFile");
+//
+//    cout << "Name " << test.getFileInfo().name << endl;
+//
+//    char* ret = test.getFilePart(0);
+//
+//    cout << ret << endl;
 
-    File test(".", "testFile");
+    userInterface();
 
-    cout << "Name " << test.getFileInfo().name << endl;
-
-    char* ret = test.getFilePart(0);
-
-    cout << ret << endl;
-
-//    userInterface();
     return 0;
 }
 

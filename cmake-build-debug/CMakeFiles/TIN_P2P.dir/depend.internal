@@ -52,6 +52,7 @@ CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/MessageHello.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/File.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
  /home/hubert/ClionProjects/TIN_P2P/ServerInterface.cpp
@@ -83,7 +84,12 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
+ /home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
+ /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
+ /home/hubert/ClionProjects/TIN_P2P/JsonParser.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
  /home/hubert/ClionProjects/TIN_P2P/ServerInterface.h
@@ -95,6 +101,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/Socket.h
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.cpp
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h

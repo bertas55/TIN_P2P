@@ -291,6 +291,8 @@ ServerInterface.h
 /home/hubert/ClionProjects/TIN_P2P/ServerInterface.h
 ServerThread.h
 /home/hubert/ClionProjects/TIN_P2P/ServerThread.h
+File.h
+/home/hubert/ClionProjects/TIN_P2P/File.h
 string
 -
 
@@ -363,6 +365,8 @@ ServerInterface.h
 /home/hubert/ClionProjects/TIN_P2P/ServerInterface.h
 Exceptions.h
 /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
+JsonParser.h
+/home/hubert/ClionProjects/TIN_P2P/JsonParser.h
 
 /home/hubert/ClionProjects/TIN_P2P/UDPAdapter.h
 Socket.h
@@ -395,6 +399,8 @@ cstring
 -
 arpa/inet.h
 -
+Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 
 /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
 Socket.h

@@ -27,6 +27,12 @@ namespace Constants {
     namespace File {
         extern const unsigned int partSize;
     }
+
+    namespace Configuration {
+        extern const unsigned short port;
+        extern const char* broadcastIP;
+        extern const char* directoryPath;
+    }
 }
 
 #endif //TIN_P2P_CONSTANTS_H

@@ -26,4 +26,10 @@ namespace Constants {
     namespace File {
         const unsigned int partSize = 256;
     }
+
+    namespace Configuration {
+        const unsigned short port = 8888;
+        const char* broadcastIP = "192.168.1.255";
+        const char* directoryPath= "";
+    }
 }

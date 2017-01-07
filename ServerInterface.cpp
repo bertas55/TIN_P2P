@@ -9,7 +9,7 @@
 ServerInterface::ServerInterface()
 {
 
-    server = new ServerThread();
+    server = new ServerThread(&container);
 
 
 }
@@ -70,7 +70,8 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::RefreshList):
         {
-
+            MessageHello msg;
+            container.put(msg);
             break;
         }
         case (UserAction::DownloadFile):

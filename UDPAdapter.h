@@ -17,12 +17,13 @@
 class UDPAdapter {
 private:
     WcisloSocket* socket;
+    bool *exitFlag;
     std::thread UDPThread;
     MessageContainer *serverMessageContainer;
     bool broadcaster;
 
 public:
-    UDPAdapter(MessageContainer*, WcisloSocket*,bool);
+    UDPAdapter(MessageContainer*, WcisloSocket*,bool,bool*);
     ~UDPAdapter();
     void run();
     void listen();
