@@ -177,6 +177,33 @@ Configuration.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.s
 .PHONY : Configuration.cpp.s
 
+Connection.o: Connection.cpp.o
+
+.PHONY : Connection.o
+
+# target to build an object file
+Connection.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.o
+.PHONY : Connection.cpp.o
+
+Connection.i: Connection.cpp.i
+
+.PHONY : Connection.i
+
+# target to preprocess a source file
+Connection.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.i
+.PHONY : Connection.cpp.i
+
+Connection.s: Connection.cpp.s
+
+.PHONY : Connection.s
+
+# target to generate assembly for a file
+Connection.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.s
+.PHONY : Connection.cpp.s
+
 Constants.o: Constants.cpp.o
 
 .PHONY : Constants.o
@@ -528,6 +555,33 @@ SocketCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.s
 .PHONY : SocketCreator.cpp.s
 
+TCPManager.o: TCPManager.cpp.o
+
+.PHONY : TCPManager.o
+
+# target to build an object file
+TCPManager.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
+.PHONY : TCPManager.cpp.o
+
+TCPManager.i: TCPManager.cpp.i
+
+.PHONY : TCPManager.i
+
+# target to preprocess a source file
+TCPManager.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.i
+.PHONY : TCPManager.cpp.i
+
+TCPManager.s: TCPManager.cpp.s
+
+.PHONY : TCPManager.s
+
+# target to generate assembly for a file
+TCPManager.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.s
+.PHONY : TCPManager.cpp.s
+
 UDPAdapter.o: UDPAdapter.cpp.o
 
 .PHONY : UDPAdapter.o
@@ -582,6 +636,33 @@ WcisloSocket.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
 .PHONY : WcisloSocket.cpp.s
 
+fileInfoContainer.o: fileInfoContainer.cpp.o
+
+.PHONY : fileInfoContainer.o
+
+# target to build an object file
+fileInfoContainer.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.o
+.PHONY : fileInfoContainer.cpp.o
+
+fileInfoContainer.i: fileInfoContainer.cpp.i
+
+.PHONY : fileInfoContainer.i
+
+# target to preprocess a source file
+fileInfoContainer.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.i
+.PHONY : fileInfoContainer.cpp.i
+
+fileInfoContainer.s: fileInfoContainer.cpp.s
+
+.PHONY : fileInfoContainer.s
+
+# target to generate assembly for a file
+fileInfoContainer.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.s
+.PHONY : fileInfoContainer.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -624,6 +705,9 @@ help:
 	@echo "... Configuration.o"
 	@echo "... Configuration.i"
 	@echo "... Configuration.s"
+	@echo "... Connection.o"
+	@echo "... Connection.i"
+	@echo "... Connection.s"
 	@echo "... Constants.o"
 	@echo "... Constants.i"
 	@echo "... Constants.s"
@@ -663,12 +747,18 @@ help:
 	@echo "... SocketCreator.o"
 	@echo "... SocketCreator.i"
 	@echo "... SocketCreator.s"
+	@echo "... TCPManager.o"
+	@echo "... TCPManager.i"
+	@echo "... TCPManager.s"
 	@echo "... UDPAdapter.o"
 	@echo "... UDPAdapter.i"
 	@echo "... UDPAdapter.s"
 	@echo "... WcisloSocket.o"
 	@echo "... WcisloSocket.i"
 	@echo "... WcisloSocket.s"
+	@echo "... fileInfoContainer.o"
+	@echo "... fileInfoContainer.i"
+	@echo "... fileInfoContainer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

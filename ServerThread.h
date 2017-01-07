@@ -13,7 +13,7 @@
 #include "File.h"
 #include "ActionContainer.h"
 #include "FileManager.h"
-
+#include "FileInfoContainer.h"
 
 /**
  * Klasa reprezentujaca watek nadzorcy serwera.
@@ -29,7 +29,7 @@ private:
     ActionContainer *actionContainer;
     FileManager *fileManager;
     std::thread threadId;
-    WcisloSocket *serverSocket;
+    FileInfoContainer fileInfoContainer;
     bool exitFlag;
 
     void sendInitialMessage();
