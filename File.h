@@ -22,7 +22,7 @@ public:
 
     ~File();
 
-    char* getFilePart();
+    char* getFilePart(unsigned int);
 
     void lock();
 

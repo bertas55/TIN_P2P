@@ -47,3 +47,7 @@ struct FileInfo File::getFileInfo() {
     return FileInfo(name, size);
 }
 
+char* getFilePart(unsigned int partNumber) {
+
+}
+

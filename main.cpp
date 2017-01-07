@@ -129,7 +129,7 @@ int main(void)
 //        cout << fileInfo.name << "\n";
 //    }
 //
-    userInterface();
+//    userInterface();
     return 0;
 }
 

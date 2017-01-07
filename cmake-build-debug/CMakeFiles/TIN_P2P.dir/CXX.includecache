@@ -245,8 +245,12 @@ JsonCreator.h
 /home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
 
 /home/hubert/ClionProjects/TIN_P2P/Message.cpp
+string
+-
 Message.h
 /home/hubert/ClionProjects/TIN_P2P/Message.h
+JsonCreator.h
+/home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
 
 /home/hubert/ClionProjects/TIN_P2P/Message.h
 string
@@ -379,8 +383,14 @@ netinet/in.h
 -
 unistd.h
 -
+iostream
+-
 WcisloSocket.h
 /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
+cstring
+-
+arpa/inet.h
+-
 
 /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
 Socket.h

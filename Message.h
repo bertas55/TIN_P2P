@@ -20,15 +20,20 @@ enum MessageType {
 };
 
 struct Message {
-
     MessageType type;
 
+    virtual string toString();
+
+    Message() {};
+    virtual ~Message() {};
 };
 
-struct MessageHello : Message {
+struct MessageHello : virtual Message {
     MessageHello() {
         type = hello;
     }
+
+    string toString();
 };
 
 struct MessageHandshake : Message {
@@ -38,6 +43,8 @@ struct MessageHandshake : Message {
     }
 
     string hostName;
+
+    string toString();
 };
 
 struct MessageRequestFile : Message {
@@ -53,36 +60,48 @@ struct MessageRequestFile : Message {
     string fileName;
     unsigned int fileSize;
     unsigned int offset;
+
+    string toString();
 };
 
 struct MessageRequestList : Message {
     MessageRequestList() {
         type = requestList;
     }
+
+    string toString();
 };
 
 struct MessageMyList : Message {
     MessageMyList() {
         type = myList;
     }
+
+    string toString();
 };
 
 struct MessageNewFile : Message {
     MessageNewFile() {
         type = newFile;
     }
+
+    string toString();
 };
 
 struct MessageVeto : Message {
     MessageVeto() {
         type = veto;
     }
+
+    string toString();
 };
 
 struct MessageDeleteFile : Message {
     MessageDeleteFile() {
         type = deleteFile;
     }
+
+    string toString();
 };
 
 
