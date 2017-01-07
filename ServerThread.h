@@ -19,15 +19,17 @@ private:
     UDPAdapter *UDPBroadcaster;
     UDPAdapter *UDPReciver;
     MessageContainer inputMessages; /*Messages recived*/
-    MessageContainer outputMessage; /*Messages to send via broadcast*/
+    MessageContainer *outputMessage; /*Messages to send via broadcast*/
     std::thread threadId;
     WcisloSocket *serverSocket;
+    bool exitFlag;
 
     void broadcastMessage(Message);
     void checkForMessages();
 
 public:
     ServerThread();
+    ServerThread(MessageContainer*);
     ~ServerThread();
 
     void run();

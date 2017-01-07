@@ -7,16 +7,29 @@
 #include <iostream>
 ServerThread::ServerThread()
 {
-
-    UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true);
-    UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false);
+    exitFlag = false;
+    UDPBroadcaster = new UDPAdapter(outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
+    UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
+    threadId = std::thread(&ServerThread::run,this);
+}
+ServerThread::ServerThread(MessageContainer *container)
+{
+    exitFlag = false;
+    outputMessage = container;
+    UDPBroadcaster = new UDPAdapter(outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
+    UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
     threadId = std::thread(&ServerThread::run,this);
 }
 ServerThread::~ServerThread()
 {
+    exitFlag = true;
+    cout << "[0]ServerThreadDestruction\n";
     delete UDPBroadcaster;
+    cout << "[0.5]ServerThreadDestruction\n";
     delete UDPReciver;
+    cout << "[1]ServerThreadDestruction\n";
     threadId.join();
+    cout << "[2]ServerThreadDestruction\n";
 }
 /*
  *     hello,
@@ -36,10 +49,10 @@ void ServerThread::run()
             checkForMessages();
         } catch(NoElementsException e)
         {
-            cout << "Chuj Ci w dupe gicie\n";
+//            cout << "You don't have any message.\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
-            MessageHello msg;
-            outputMessage.put(msg);
+//            MessageHello msg;
+//            outputMessage.put(msg);
         }
 
 
@@ -49,7 +62,7 @@ void ServerThread::run()
 }
 
 void ServerThread::broadcastMessage(Message msg) {
-    outputMessage.put(msg);
+    outputMessage->put(msg);
 }
 
 void ServerThread::checkForMessages() {

@@ -79,7 +79,11 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Exceptions.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonCreator.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ServerInterface.h

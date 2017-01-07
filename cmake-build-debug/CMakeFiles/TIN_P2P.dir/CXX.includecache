@@ -355,6 +355,8 @@ ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+JsonParser.h
+/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
 
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
 Socket.h

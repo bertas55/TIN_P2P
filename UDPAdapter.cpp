@@ -8,11 +8,13 @@
 #include "UDPAdapter.h"
 #include "ServerInterface.h"
 #include "Exceptions.h"
+#include "JsonParser.h"
 
-UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool broadcastEnable) :
+UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool broadcastEnable,bool *exit) :
         serverMessageContainer(container),
         socket(_socket),
-        broadcaster(broadcastEnable)
+        broadcaster(broadcastEnable),
+        exitFlag(exit)
 {
     if (broadcaster){
 //        socket->setBroadcast();
@@ -28,7 +30,10 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
 UDPAdapter::~UDPAdapter() {
     delete socket;
     UDPThread.join();
-
+    if (broadcaster) cout << "Sender destruction.\n";
+    else {
+        cout << "Listener destruction.\n";
+    }
 }
 
 void UDPAdapter::listen() {
@@ -37,13 +42,15 @@ void UDPAdapter::listen() {
     struct sockaddr_in si_other;
     socklen_t slen = sizeof(si_other);
     char buf[BUFLEN];
-    while (true)
+    while (!(*exitFlag))
     {
         socket->Receive(buf,BUFLEN);
+        Message msg = JsonParser::parse(buf);
+        serverMessageContainer->put(msg);
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
         cout << buf << endl;
     }
-
+    cout <<"Listend end.\n";
 
 
 }
@@ -51,18 +58,20 @@ void UDPAdapter::listen() {
 void UDPAdapter::send() {
     const int BUFLEN = 512;
     char buf[BUFLEN] = "CHUJ W DUPE POLICJI";
-    while(true)
+    while(!(*exitFlag))
     {
-//        Message msg;
-//        try {
-//            msg = serverMessageContainer->get();
-//        } catch(NoElementsException e) {
-//            cout << "Chuj w send\n";
-//        }
-
+        Message msg;
+        try {
+            msg = serverMessageContainer->get();
+        } catch(NoElementsException e) {
+            cout << "No message in container. Going to sleep for 2 seconds.\n";
+            this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
+            continue;
+        }
+        strncpy(buf,JsonCreator::hello().c_str(),sizeof(buf));
         socket->Send(buf,BUFLEN);
-        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
+    cout <<"Send end.\n";
 
 }
 

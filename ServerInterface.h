@@ -19,6 +19,7 @@ public:
 
 private:
     ServerThread *server;
+    MessageContainer container;
     string serverPort, clientPort;
     string broadcastAdress;
 

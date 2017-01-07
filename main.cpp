@@ -117,6 +117,7 @@ void userInterface()
         serverInterface.userAction((UserAction)myAction);
 
     } while (myAction!=UserAction::Exit);
+    cout << "Finished!\n";
 
 }
 int main(void)

@@ -80,7 +80,11 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+ /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
