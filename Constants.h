@@ -32,6 +32,7 @@ namespace Constants {
         extern const unsigned short port;
         extern const char* broadcastIP;
         extern const char* directoryPath;
+        extern const char* localhostAddress;
     }
 }
 

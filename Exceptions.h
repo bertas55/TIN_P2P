@@ -32,5 +32,17 @@ struct FileNotFoundException : public exception {
     }
 };
 
+struct LoadingFileException : public exception {
+    const char * what () const throw () {
+        return "Could not load file";
+    }
+};
+
+struct OutOfRangeException : public exception {
+    const char * what () const throw () {
+        return "Tried to access file part that is out of range";
+    }
+};
+
 
 #endif //TIN_P2P_EXCEPTIONS_H

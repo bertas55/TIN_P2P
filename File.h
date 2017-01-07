@@ -7,6 +7,7 @@
 
 #include <string>
 #include <fstream>
+#include "Constants.h"
 using namespace std;
 
 enum FileState {
@@ -24,6 +25,8 @@ public:
 
     char* getFilePart(unsigned int);
 
+    void saveFilePart(unsigned int, unsigned int, char*);
+
     void lock();
 
     void unlock();
@@ -35,6 +38,7 @@ public:
 private:
     fstream file;
     string name;
+    string path;
     unsigned int size;
     bool owner;
     bool locked;
@@ -46,10 +50,12 @@ private:
 struct FileInfo {
     string name;
     unsigned int size;
+    string hostAddress;
 
     FileInfo(string name, unsigned int size) {
         this->name = name;
         this->size = size;
+        this->hostAddress = Constants::Configuration::localhostAddress;
     }
 };
 
