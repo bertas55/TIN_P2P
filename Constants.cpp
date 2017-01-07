@@ -20,9 +20,16 @@ namespace Constants {
         const char* newFile = "NewFile";
         const char* veto = "Veto";
         const char* deleteFile = "Delete";
+        const char* bye = "Bye";
     }
 
     namespace File {
         const unsigned int partSize = 256;
+    }
+
+    namespace Configuration {
+        const unsigned short port = 8888;
+        const char* broadcastIP = "192.168.1.255";
+        const char* directoryPath= "";
     }
 }

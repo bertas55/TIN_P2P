@@ -13,6 +13,7 @@ CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o: ../Dependencies/JsonC
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.cpp
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.h
 
+CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.cpp
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.h
 
@@ -50,6 +51,7 @@ CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.cpp
 CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.h
 
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../ServerInterface.cpp
@@ -84,6 +86,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Exceptions.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonCreator.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Message.h
@@ -97,6 +100,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPAdapter.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../Configuration.h
+CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.cpp
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.h

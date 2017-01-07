@@ -14,6 +14,7 @@ CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/File.cpp
  /home/lukasz/CLionProjects/TIN_P2P/File.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o
@@ -51,6 +52,7 @@ CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/MessageHello.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/File.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.cpp
@@ -85,6 +87,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+ /home/lukasz/CLionProjects/TIN_P2P/File.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
@@ -98,6 +101,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h

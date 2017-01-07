@@ -114,5 +114,5 @@ void ServerThread::sendInitialMessage()
 }
 void ServerThread::sendExitMessage()
 {
-
+    broadcastMessage(MessageBye());
 }

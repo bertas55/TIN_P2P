@@ -16,7 +16,8 @@ enum MessageType {
     myList,
     newFile,
     veto,
-    deleteFile
+    deleteFile,
+    bye
 };
 
 struct Message {
@@ -104,7 +105,13 @@ struct MessageDeleteFile : Message {
     string toString();
 };
 
+struct MessageBye : Message {
+    MessageBye() {
+        type = bye;
+    }
 
+    string toString();
+};
 
 
 

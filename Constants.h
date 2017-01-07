@@ -21,10 +21,17 @@ namespace Constants {
         extern const char* newFile;
         extern const char* veto;
         extern const char* deleteFile;
+        extern const char* bye;
     }
 
     namespace File {
         extern const unsigned int partSize;
+    }
+
+    namespace Configuration {
+        extern const unsigned short port;
+        extern const char* broadcastIP;
+        extern const char* directoryPath;
     }
 }
 

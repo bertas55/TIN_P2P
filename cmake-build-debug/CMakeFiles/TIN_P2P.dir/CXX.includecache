@@ -179,7 +179,11 @@ exception
 /home/lukasz/CLionProjects/TIN_P2P/File.cpp
 File.h
 /home/lukasz/CLionProjects/TIN_P2P/File.h
+Constants.h
+/home/lukasz/CLionProjects/TIN_P2P/Constants.h
 string
+-
+iostream
 -
 
 /home/lukasz/CLionProjects/TIN_P2P/File.h
@@ -287,6 +291,8 @@ ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 ServerThread.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
 string
 -
 
@@ -393,6 +399,8 @@ cstring
 -
 arpa/inet.h
 -
+Constants.h
+/home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 Socket.h

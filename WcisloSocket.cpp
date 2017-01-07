@@ -10,6 +10,7 @@
 #include "WcisloSocket.h"
 #include <cstring>
 #include <arpa/inet.h>
+#include "Constants.h"
 
 WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 {
@@ -47,23 +48,18 @@ bool WcisloSocket::setBroadcast() {
     int ret=setsockopt(descriptor, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
     struct sockaddr_in broadcastAddr;
 
-    unsigned short port = 8888;
-    std::string addressIP = "192.168.1.255";
-
     broadcastAddr.sin_family = AF_INET;
-    broadcastAddr.sin_port = htons(port);
-    broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
+    broadcastAddr.sin_port = htons(Constants::Configuration::port);
+    broadcastAddr.sin_addr.s_addr = inet_addr(Constants::Configuration::broadcastIP);
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 /* Add other code, sockaddr, sendto() etc. */
 }
 
 bool WcisloSocket::setBroadcastListerner() {
     struct sockaddr_in broadcastAddr;
-    unsigned short port = 8888;
-    std::string addressIP = "192.168.1.255";
     broadcastAddr.sin_family = AF_INET;
-    broadcastAddr.sin_port = htons(port);
-    broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
+    broadcastAddr.sin_port = htons(Constants::Configuration::port);
+    broadcastAddr.sin_addr.s_addr = inet_addr(Constants::Configuration::broadcastIP);
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 }
 
@@ -72,9 +68,9 @@ long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
     struct sockaddr_in si_other;
     memset((char *) &si_other, 0, sizeof(si_other));
     si_other.sin_family = AF_INET;
-    si_other.sin_port = htons(8888);
+    si_other.sin_port = htons(Constants::Configuration::port);
 
-    if (inet_aton("192.168.1.255" , &si_other.sin_addr) == 0)
+    if (inet_aton(Constants::Configuration::broadcastIP , &si_other.sin_addr) == 0)
     {
         fprintf(stderr, "inet_aton() failed\n");
     }

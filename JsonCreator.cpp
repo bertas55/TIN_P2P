@@ -71,6 +71,13 @@ namespace JsonCreator {
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
+
+    string bye() {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::bye;
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
 }
 
 
