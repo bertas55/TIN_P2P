@@ -36,6 +36,8 @@ CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
 CMakeFiles/TIN_P2P.dir/Message.cpp.o
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.cpp
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
 CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o

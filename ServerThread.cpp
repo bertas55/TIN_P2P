@@ -107,3 +107,12 @@ void ServerThread::checkForMessages() {
         }
     }
 }
+
+void ServerThread::sendInitialMessage()
+{
+    broadcastMessage(MessageHello());
+}
+void ServerThread::sendExitMessage()
+{
+
+}

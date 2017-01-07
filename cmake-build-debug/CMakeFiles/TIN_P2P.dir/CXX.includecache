@@ -245,8 +245,12 @@ JsonCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Message.cpp
+string
+-
 Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
+JsonCreator.h
+/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 string

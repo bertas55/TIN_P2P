@@ -48,7 +48,6 @@ void UDPAdapter::listen() {
         Message msg = JsonParser::parse(buf);
         serverMessageContainer->put(msg);
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
-        cout << buf << endl;
     }
     cout <<"Listend end.\n";
 
@@ -57,7 +56,7 @@ void UDPAdapter::listen() {
 
 void UDPAdapter::send() {
     const int BUFLEN = 512;
-    char buf[BUFLEN] = "CHUJ W DUPE POLICJI";
+    char buf[BUFLEN];
     while(!(*exitFlag))
     {
         Message msg;

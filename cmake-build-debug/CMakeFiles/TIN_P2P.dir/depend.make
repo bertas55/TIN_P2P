@@ -35,6 +35,8 @@ CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../JsonParser.cpp
 CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../Message.h
 
+CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../JsonCreator.h
 CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../Message.cpp
 CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../Message.h
 

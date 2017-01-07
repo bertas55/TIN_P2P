@@ -48,7 +48,7 @@ bool WcisloSocket::setBroadcast() {
     struct sockaddr_in broadcastAddr;
 
     unsigned short port = 8888;
-    std::string addressIP = "192.168.0.255";
+    std::string addressIP = "192.168.1.255";
 
     broadcastAddr.sin_family = AF_INET;
     broadcastAddr.sin_port = htons(port);
@@ -60,7 +60,7 @@ bool WcisloSocket::setBroadcast() {
 bool WcisloSocket::setBroadcastListerner() {
     struct sockaddr_in broadcastAddr;
     unsigned short port = 8888;
-    std::string addressIP = "192.168.0.255";
+    std::string addressIP = "192.168.1.255";
     broadcastAddr.sin_family = AF_INET;
     broadcastAddr.sin_port = htons(port);
     broadcastAddr.sin_addr.s_addr = inet_addr(addressIP.c_str());
@@ -74,7 +74,7 @@ long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
     si_other.sin_family = AF_INET;
     si_other.sin_port = htons(8888);
 
-    if (inet_aton("192.168.0.255" , &si_other.sin_addr) == 0)
+    if (inet_aton("192.168.1.255" , &si_other.sin_addr) == 0)
     {
         fprintf(stderr, "inet_aton() failed\n");
     }
@@ -88,7 +88,6 @@ long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
     struct sockaddr_in si_other;
     int s, i;
     socklen_t slen = sizeof(si_other);
-    printf("A TUTAJ KURWO WCHODZISZ?\n");
     if (recvfrom(descriptor, bytes, numberOfBytes, 0, (struct sockaddr *) &si_other, &slen) == -1)
     {
         printf("JAKIESTAM DIE;");
