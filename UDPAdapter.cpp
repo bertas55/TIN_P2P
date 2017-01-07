@@ -28,12 +28,18 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
 
 }
 UDPAdapter::~UDPAdapter() {
-    delete socket;
-    UDPThread.join();
-    if (broadcaster) cout << "Sender destruction.\n";
+
+    if (broadcaster){
+        sendMessage(MessageBye());
+        cout << "Sender destruction.\n";
+    }
     else {
         cout << "Listener destruction.\n";
     }
+    delete socket;
+    UDPThread.join();
+    cout << "[3]";
+
 }
 
 void UDPAdapter::listen() {
@@ -45,8 +51,7 @@ void UDPAdapter::listen() {
     while (!(*exitFlag))
     {
         socket->Receive(buf,BUFLEN);
-        Message msg = JsonParser::parse(buf);
-        serverMessageContainer->put(msg);
+        serverMessageContainer->put(JsonParser::parse(buf));
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
     cout <<"Listend end.\n";
@@ -55,23 +60,29 @@ void UDPAdapter::listen() {
 }
 
 void UDPAdapter::send() {
-    const int BUFLEN = 512;
-    char buf[BUFLEN];
+
     while(!(*exitFlag))
     {
         Message msg;
         try {
             msg = serverMessageContainer->get();
+            sendMessage(msg);
         } catch(NoElementsException e) {
-            cout << "No message in container. Going to sleep for 2 seconds.\n";
+//            cout << "No message in container. Going to sleep for 2 seconds.\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
             continue;
         }
-        strncpy(buf,JsonCreator::hello().c_str(),sizeof(buf));
-        socket->Send(buf,BUFLEN);
+
     }
     cout <<"Send end.\n";
 
+}
+
+void UDPAdapter::sendMessage(Message msg) {
+    const int BUFLEN = 512;
+    char buf[BUFLEN];
+    strncpy(buf,JsonCreator::hello().c_str(),sizeof(buf));
+    socket->Send(buf,BUFLEN);
 }
 
 void UDPAdapter::run() {

@@ -6,6 +6,7 @@
 #define TIN_P2P_MESSAGECONTAINER_H
 
 #include "Message.h"
+#include "File.h"
 #include <queue>
 #include <mutex>
 using namespace std;
@@ -20,10 +21,14 @@ public:
 
     void put(Message msg);
 
+    int getSize();
+
 private:
     queue<Message> messagesQueue;
     mutex guard;
 };
+
+
 
 
 #endif //TIN_P2P_MESSAGECONTAINER_H

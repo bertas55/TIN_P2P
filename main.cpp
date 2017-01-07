@@ -108,15 +108,7 @@ void sendMessage(char* message) {
 void userInterface()
 {
     ServerInterface serverInterface;
-    int myAction;
-    do {
-        cout << "Welcome Pirate!\n";
-        cout << "0. RefreshList\n1.DownloadFile\n2.Disbale File\n";
-        cout << "3.EnableFile\n4.Remove File\n5.Exit";
-        cin >> myAction;
-        serverInterface.userAction((UserAction)myAction);
-
-    } while (myAction!=UserAction::Exit);
+    serverInterface.consoleInterface();
     cout << "Finished!\n";
 
 }
@@ -141,6 +133,7 @@ int main(void)
 //    cout << ret << endl;
 
     userInterface();
+
 
     return 0;
 }

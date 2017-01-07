@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.cpp
+ActionContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+
+/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
+queue
+-
+mutex
+-
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
+
 /home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp
 Configuration.h
 /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
@@ -271,6 +285,8 @@ Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
 Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
 queue
 -
 mutex
@@ -285,6 +301,8 @@ Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.cpp
+iostream
+-
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 
@@ -295,6 +313,10 @@ File.h
 /home/lukasz/CLionProjects/TIN_P2P/File.h
 string
 -
+ActionContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
+FileManager.h
+/home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp
 ServerThread.h
@@ -315,6 +337,10 @@ Message.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 SocketCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
+ActionContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h

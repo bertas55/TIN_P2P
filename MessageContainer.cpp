@@ -29,3 +29,7 @@ void MessageContainer::put(Message msg) {
     lock_guard<mutex> lock(guard);
     messagesQueue.push(msg);
 }
+
+int MessageContainer::getSize() {
+    return messagesQueue.size();
+}
