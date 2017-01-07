@@ -6,7 +6,9 @@
 #define TIN_P2P_SOCKETCREATOR_H
 #include "Socket.h"
 #include "WcisloSocket.h"
-
+/**
+ * Singleton reprezentujacy
+ */
 class SocketCreator {
 public:
     static Socket* CreateSocket(void);

@@ -12,6 +12,7 @@
 #include "SocketCreator.h"
 #include "File.h"
 #include "ActionContainer.h"
+#include "FileManager.h"
 
 
 /**
@@ -26,6 +27,7 @@ private:
     MessageContainer inputMessages; /*Messages recived*/
     MessageContainer outputMessage; /*Messages to send via broadcast*/
     ActionContainer *actionContainer;
+    FileManager *fileManager;
     std::thread threadId;
     WcisloSocket *serverSocket;
     bool exitFlag;
@@ -38,7 +40,7 @@ private:
 
 public:
     ServerThread();
-    ServerThread(ActionContainer*);
+    ServerThread(ActionContainer*,FileManager*);
     ~ServerThread();
 
     void run();

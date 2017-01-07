@@ -13,7 +13,7 @@ ServerThread::ServerThread()
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
 
 }
-ServerThread::ServerThread(ActionContainer *container) : actionContainer(container)
+ServerThread::ServerThread(ActionContainer *container, FileManager *fm) : actionContainer(container), fileManager(fm)
 {
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
@@ -29,14 +29,7 @@ ServerThread::~ServerThread()
     threadId.detach();
 }
 /*
- *     hello,
-    handshake,
-    requestFile,
-    requestList,
-    myList,
-    newFile,
-    veto,
-    deleteFile
+ * Glowna petla watku
  */
 void ServerThread::run()
 {
@@ -55,16 +48,19 @@ void ServerThread::run()
 
         }
 
-
-
     }
 
 }
-
+/**
+ * Wyslanie wiadomosci poprzez broadcast
+ * @param msg
+ */
 void ServerThread::broadcastMessage(Message msg) {
     outputMessage.put(msg);
 }
-
+/**
+ * Sprawdzenie wiadomosci otrzymanych przez siec
+ */
 void ServerThread::checkForMessages() {
     Message msg = inputMessages.get();
     std::cout<< msg.toString() << "Mesejdz\n1";
@@ -122,6 +118,9 @@ void ServerThread::checkForMessages() {
         }
     }
 }
+/**
+ * Sprawdzenie dostepnych akcji
+ */
 void ServerThread::checkForActions() {
     Action action = actionContainer->get();
     switch (action.action)
@@ -161,6 +160,7 @@ void ServerThread::checkForActions() {
     }
 
 }
+
 void ServerThread::sendInitialMessage()
 {
     broadcastMessage(MessageHello());

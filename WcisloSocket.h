@@ -9,6 +9,7 @@
 #include "Configuration.h"
 /**
  * Sebek - The Horse Puncher
+ * Klasa poki co do UDP broadcast i odbieranie broadcastow
  */
 class WcisloSocket : public Socket {
 
