@@ -179,7 +179,11 @@ exception
 /home/hubert/ClionProjects/TIN_P2P/File.cpp
 File.h
 /home/hubert/ClionProjects/TIN_P2P/File.h
+Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 string
+-
+iostream
 -
 
 /home/hubert/ClionProjects/TIN_P2P/File.h

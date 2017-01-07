@@ -127,8 +127,18 @@ int main(void)
 
 //    for (auto fileInfo : files) {
 //        cout << fileInfo.name << "\n";
-//    }
 //
+//        if (fileInfo)
+//    }
+
+    File test(".", "testFile");
+
+    cout << "Name " << test.getFileInfo().name << endl;
+
+    char* ret = test.getFilePart(0);
+
+    cout << ret << endl;
+
 //    userInterface();
     return 0;
 }

@@ -21,6 +21,7 @@ namespace Constants {
         extern const char* newFile;
         extern const char* veto;
         extern const char* deleteFile;
+        extern const char* bye;
     }
 
     namespace File {

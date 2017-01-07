@@ -45,4 +45,8 @@ string MessageDeleteFile::toString() {
     return "Not implemented yet";
 }
 
+string MessageBye::toString() {
+    return "Not implemented yet";
+}
+
 
