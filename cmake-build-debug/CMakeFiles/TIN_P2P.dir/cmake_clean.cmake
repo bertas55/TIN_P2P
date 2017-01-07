@@ -17,6 +17,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TIN_P2P.dir/Constants.cpp.o"
   "CMakeFiles/TIN_P2P.dir/Configuration.cpp.o"
   "CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o"
+  "CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o"
   "TIN_P2P.pdb"
   "TIN_P2P"
 )

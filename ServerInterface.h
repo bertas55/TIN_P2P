@@ -7,8 +7,8 @@
 #include "ServerThread.h"
 #include "File.h"
 #include <string>
-
-enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
+#include "ActionContainer.h"
+#include "FileManager.h"
 
 
 class ServerInterface {
@@ -16,25 +16,24 @@ public:
     ServerInterface();
     ~ServerInterface();
 
-    void userAction(UserAction);
-
-//    void downloadFile(int index);
-//    void refreshList();
-//    void enableFile(File);
-//    void disableFile(File);
-//    void userExit();
-//    void getDownloadProgress(File);
+    void consoleInterface();
+    void downloadFile(int index);
+    void refreshList();
+    void enableFile(File*);
+    void disableFile(File*);
+    void userExit();
+    void getDownloadProgress(File);
+    void removeFile(File *);
 
 
 private:
     ServerThread *server;
-    MessageContainer container;
+    FileManager fileManager;
+    ActionContainer container;
     string serverPort, clientPort;
     string broadcastAdress;
 
-    void fileManagerAction(UserAction);
     void putServerAction(UserAction);
-    bool loadConfig(string);
 };
 
 

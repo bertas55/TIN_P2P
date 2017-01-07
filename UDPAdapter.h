@@ -21,6 +21,8 @@ private:
     std::thread UDPThread;
     MessageContainer *serverMessageContainer;
     bool broadcaster;
+    void sendMessage(Message);
+
 
 public:
     UDPAdapter(MessageContainer*, WcisloSocket*,bool,bool*);

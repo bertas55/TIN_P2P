@@ -7,29 +7,26 @@
 #include <iostream>
 ServerThread::ServerThread()
 {
-    exitFlag = false;
-    UDPBroadcaster = new UDPAdapter(outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
-    UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
     threadId = std::thread(&ServerThread::run,this);
+    exitFlag = false;
+    UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
+    UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
+
 }
-ServerThread::ServerThread(MessageContainer *container)
+ServerThread::ServerThread(ActionContainer *container) : actionContainer(container)
 {
     exitFlag = false;
-    outputMessage = container;
-    UDPBroadcaster = new UDPAdapter(outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
+    UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
     threadId = std::thread(&ServerThread::run,this);
 }
 ServerThread::~ServerThread()
 {
     exitFlag = true;
-    cout << "[0]ServerThreadDestruction\n";
+    sendExitMessage();
     delete UDPBroadcaster;
-    cout << "[0.5]ServerThreadDestruction\n";
     delete UDPReciver;
-    cout << "[1]ServerThreadDestruction\n";
-    threadId.join();
-    cout << "[2]ServerThreadDestruction\n";
+    threadId.detach();
 }
 /*
  *     hello,
@@ -49,10 +46,13 @@ void ServerThread::run()
             checkForMessages();
         } catch(NoElementsException e)
         {
-//            cout << "You don't have any message.\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
-//            MessageHello msg;
-//            outputMessage.put(msg);
+        }
+        try {
+            checkForActions();
+        }catch(NoElementsException e)
+        {
+
         }
 
 
@@ -62,14 +62,17 @@ void ServerThread::run()
 }
 
 void ServerThread::broadcastMessage(Message msg) {
-    outputMessage->put(msg);
+    outputMessage.put(msg);
 }
 
 void ServerThread::checkForMessages() {
-    switch(inputMessages.get().type)
+    Message msg = inputMessages.get();
+    std::cout<< msg.toString() << "Mesejdz\n1";
+    switch(msg.type)
     {
         case(MessageType::hello): {
             std::cout << "Odebrano wiadomosc Hello\n";
+
             break;
         }
         case(MessageType::handshake):{
@@ -77,27 +80,39 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestFile):{
+//            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
             std::cout << "Odebrano wiadomosc RequestFile\n";
             break;
         }
         case(MessageType::myList):{
+//            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
             std::cout << "Odebrano wiadomosc myList\n";
             break;
         }
         case(MessageType::requestList):{
+//            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
+            broadcastMessage(MessageMyList());
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
         case(MessageType::veto):{
+//            @TODO sprawdzenie czy dany plik zostal przez nas dodany
             std::cout << "Odebrano wiadomosc veto\n";
             break;
         }
         case(MessageType::newFile):{
             std::cout << "Odebrano wiadomosc newFile\n";
+//            @TODO sprawdzenie czy plik posiadamy, konstruktor MesseageVeto powinien moc podac nazwe i rozmiar pliku
+//            broadcastMessage(MessageVeto());
             break;
         }
         case(MessageType::deleteFile):{
             std::cout << "Odebrano wiadomosc deleteFile\n";
+//            @TODO akcja do FileManagera by usunal plik
+            break;
+        }
+        case (MessageType::bye):{
+
             break;
         }
         default:
@@ -107,7 +122,45 @@ void ServerThread::checkForMessages() {
         }
     }
 }
+void ServerThread::checkForActions() {
+    Action action = actionContainer->get();
+    switch (action.action)
+    {
+        case (UserAction::DisableFile):
+        {
+//      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
+            break;
+        }
+        case (UserAction::EnableFile):
+        {
+//      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
+            break;
+        }
+        case (UserAction::RemoveFile):
+        {
+//        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
+            broadcastMessage(MessageDeleteFile());
+            break;
+        }
+        case (UserAction::RefreshList):
+        {
+//          @TODO yyy
+            broadcastMessage(MessageRequestList());
+            break;
+        }
+        case (UserAction::DownloadFile):
+        {
+//            @TODO
+            break;
+        }
+        case (UserAction::Exit):
+        {
 
+            break;
+        }
+    }
+
+}
 void ServerThread::sendInitialMessage()
 {
     broadcastMessage(MessageHello());
