@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/Exceptions.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/File.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/File.cpp.o"
+  "/home/hubert/ClionProjects/TIN_P2P/FileDownload.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/FileManager.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/FileManager.cpp.o"
   "/home/hubert/ClionProjects/TIN_P2P/JsonCreator.cpp" "/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"

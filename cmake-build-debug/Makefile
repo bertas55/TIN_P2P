@@ -312,6 +312,33 @@ File.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/File.cpp.s
 .PHONY : File.cpp.s
 
+FileDownload.o: FileDownload.cpp.o
+
+.PHONY : FileDownload.o
+
+# target to build an object file
+FileDownload.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o
+.PHONY : FileDownload.cpp.o
+
+FileDownload.i: FileDownload.cpp.i
+
+.PHONY : FileDownload.i
+
+# target to preprocess a source file
+FileDownload.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileDownload.cpp.i
+.PHONY : FileDownload.cpp.i
+
+FileDownload.s: FileDownload.cpp.s
+
+.PHONY : FileDownload.s
+
+# target to generate assembly for a file
+FileDownload.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileDownload.cpp.s
+.PHONY : FileDownload.cpp.s
+
 FileInfoContainer.o: FileInfoContainer.cpp.o
 
 .PHONY : FileInfoContainer.o
@@ -720,6 +747,9 @@ help:
 	@echo "... File.o"
 	@echo "... File.i"
 	@echo "... File.s"
+	@echo "... FileDownload.o"
+	@echo "... FileDownload.i"
+	@echo "... FileDownload.s"
 	@echo "... FileInfoContainer.o"
 	@echo "... FileInfoContainer.i"
 	@echo "... FileInfoContainer.s"

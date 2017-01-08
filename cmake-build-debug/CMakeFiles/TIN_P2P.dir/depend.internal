@@ -40,6 +40,11 @@ CMakeFiles/TIN_P2P.dir/File.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.cpp
  /home/hubert/ClionProjects/TIN_P2P/File.h
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
+ /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileDownload.cpp
+ /home/hubert/ClionProjects/TIN_P2P/FileDownload.h
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/File.h

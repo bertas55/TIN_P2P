@@ -40,6 +40,11 @@ CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.cpp
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.h
 
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: ../FileDownload.cpp
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: ../FileDownload.h
+
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../FileInfoContainer.cpp

@@ -230,6 +230,16 @@ fstream
 Constants.h
 /home/hubert/ClionProjects/TIN_P2P/Constants.h
 
+/home/hubert/ClionProjects/TIN_P2P/FileDownload.cpp
+FileDownload.h
+/home/hubert/ClionProjects/TIN_P2P/FileDownload.h
+
+/home/hubert/ClionProjects/TIN_P2P/FileDownload.h
+queue
+-
+File.h
+/home/hubert/ClionProjects/TIN_P2P/File.h
+
 /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.cpp
 FileInfoContainer.h
 /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h

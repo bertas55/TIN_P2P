@@ -48,4 +48,8 @@ string MessageBye::toString() {
     return JsonCreator::bye();
 }
 
+string MessageDenied::toString() {
+    return JsonCreator::denied();
+}
+
 

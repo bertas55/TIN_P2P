@@ -28,6 +28,7 @@ namespace Constants {
         extern const char* veto;
         extern const char* deleteFile;
         extern const char* bye;
+        extern const char* denied;
     }
 
     namespace File {
@@ -39,6 +40,7 @@ namespace Constants {
         extern const unsigned short TCPort;
         extern const char* broadcastIP;
         extern const char* directoryPath;
+        extern const char* downloadPath;
         extern const char* localhostAddress;
     }
 }
