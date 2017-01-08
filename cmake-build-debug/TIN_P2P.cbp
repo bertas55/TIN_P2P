@@ -123,6 +123,12 @@
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/File.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/FileDownload.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/FileDownload.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

@@ -14,6 +14,7 @@
 #include "ActionContainer.h"
 #include "FileManager.h"
 #include "FileInfoContainer.h"
+#include "TCPManager.h"
 
 /**
  * Klasa reprezentujaca watek nadzorcy serwera.
@@ -28,6 +29,7 @@ private:
     MessageContainer outputMessage; /*Messages to send via broadcast*/
     ActionContainer *actionContainer;
     FileManager *fileManager;
+    TCPManager tcpManager;
     std::thread threadId;
     FileInfoContainer fileInfoContainer;
     bool exitFlag;

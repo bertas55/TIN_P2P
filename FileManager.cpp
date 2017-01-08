@@ -23,7 +23,7 @@ void FileManager::loadFiles() {
         /* print all the files and directories within directory */
         while ((ent = readdir (dir)) != NULL) {
             printf ("%s\n", ent->d_name);
-            File *newFile = new File(dirPath, ent->d_name);
+            File *newFile = new File(ent->d_name);
             files.push_back(newFile);
         }
         closedir (dir);

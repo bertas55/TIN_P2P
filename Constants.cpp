@@ -25,6 +25,7 @@ namespace Constants {
         const char* veto = "Veto";
         const char* deleteFile = "Delete";
         const char* bye = "Bye";
+        const char* denied = "Denied";
     }
 
     namespace File {
@@ -36,6 +37,7 @@ namespace Constants {
         const unsigned short TCPort = 9970;
         const char* broadcastIP = "192.168.0.255";
         const char* directoryPath = "";
+        const char* downloadPath = "";
         const char* localhostAddress = "127.0.0.1";
     }
 }

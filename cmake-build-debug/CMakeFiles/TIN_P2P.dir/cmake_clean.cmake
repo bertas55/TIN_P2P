@@ -20,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o"
   "CMakeFiles/TIN_P2P.dir/Connection.cpp.o"
   "CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o"
+  "CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o"
   "TIN_P2P.pdb"
   "TIN_P2P"
 )

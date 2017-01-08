@@ -51,6 +51,10 @@ Message* JsonParser::parse(string jsonMessage) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             messageToReturn = new MessageDeleteFile(fileName, fileSize);
+        } else if (strcmp(messageType, Constants::MessageTypes::bye) == 0) {
+            messageToReturn = new MessageBye();
+        } else if (strcmp(messageType, Constants::MessageTypes::denied) == 0) {
+            messageToReturn = new MessageDenied();
         } else {
             throw UnknownMessageException();
         }

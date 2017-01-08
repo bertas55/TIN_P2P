@@ -19,7 +19,7 @@ enum FileState {
 class File {
 
 public:
-    File(string path, string name);
+    File(string name);
 
     char* getFilePart(unsigned int);
 
@@ -37,7 +37,7 @@ public:
 
     struct FileInfo getFileInfo();
 
-private:
+protected:
     string name;
     string path;
     unsigned int size;

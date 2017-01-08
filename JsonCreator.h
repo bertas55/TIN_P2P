@@ -29,6 +29,8 @@ namespace JsonCreator {
     std::string deleteFile(std::string, unsigned int);
     // Bye
     std::string bye();
+    // Denied
+    std::string denied();
 };
 
 

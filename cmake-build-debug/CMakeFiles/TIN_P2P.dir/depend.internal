@@ -20,6 +20,7 @@ CMakeFiles/TIN_P2P.dir/Connection.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
@@ -41,6 +42,11 @@ CMakeFiles/TIN_P2P.dir/File.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.cpp
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.cpp
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
@@ -85,8 +91,10 @@ CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
@@ -96,14 +104,17 @@ CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
  /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
@@ -112,6 +123,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
  /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/Socket.cpp.o
@@ -131,6 +143,7 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
@@ -143,10 +156,12 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
@@ -157,6 +172,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
  /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp
  /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
@@ -171,8 +187,10 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
 CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
+ /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
@@ -181,6 +199,7 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
  /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h
  /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
  /home/lukasz/CLionProjects/TIN_P2P/main.cpp

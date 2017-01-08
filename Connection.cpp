@@ -13,7 +13,7 @@ Connection::Connection(Socket *s, FileManager *fm) :
 {
     threadId = std::thread(&Connection::run,this);
 }
-Connection::Connection(Socket *s , File *file) : sock(s), running(true)
+Connection::Connection(Socket *s , FileDownload *file) : sock(s), running(true)
 {
     threadId = std::thread(&Connection::recieveFile,this,file);
 }
@@ -35,10 +35,20 @@ void Connection::sendMessage(Message *msg) {
     sock->Send(msg->toString().c_str(),512);
 }
 
-void Connection::recieveFile(File* file)
+void Connection::recieveFile(FileDownload* file)
 {
     while (true)
     {
+        long part = file->getPartToDownload();
+        if (part!=-1)
+        {
+            sendMessage(new MessageRequestFile("ZXCZX",file->getName(),file->getSize(),part));
+            cout << "Wyslalem wiadomosc\n";
+            char buf[Constants::File::partSize];
+            sock->Receive(buf,Constants::File::partSize);
+            file->saveFilePart(part,sizeof(buf),buf);
+        }
+        else break;
 //        hostName niepotrzebny? Download manager, ktory mowi ktora czesc?
 //        Pobieranie koejnych numerkow z kontenera, w przypadku niepowodzenia odlozenie?
 //        sendMessage(MessageRequestFile( ,file->getName() ,file->getSize(),));

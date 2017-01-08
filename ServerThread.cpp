@@ -5,7 +5,8 @@
 #include "ServerThread.h"
 #include "Exceptions.h"
 #include <iostream>
-ServerThread::ServerThread()
+ServerThread::ServerThread() :
+        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages)
 {
     threadId = std::thread(&ServerThread::run,this);
     exitFlag = false;
@@ -13,7 +14,10 @@ ServerThread::ServerThread()
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
 
 }
-ServerThread::ServerThread(ActionContainer *container, FileManager *fm) : actionContainer(container), fileManager(fm)
+ServerThread::ServerThread(ActionContainer *container, FileManager *fm) :
+        actionContainer(container),
+        fileManager(fm),
+        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages)
 {
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
@@ -136,6 +140,7 @@ void ServerThread::checkForActions() {
         case (UserAction::EnableFile):
         {
 //      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
+            tcpManager.test();
             break;
         }
         case (UserAction::RemoveFile):

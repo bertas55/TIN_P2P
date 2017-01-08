@@ -20,7 +20,8 @@ enum MessageType {
     newFile,
     veto,
     deleteFile,
-    bye
+    bye,
+    denied
 };
 
 struct Message {
@@ -133,7 +134,14 @@ struct MessageBye : Message {
     string toString();
 };
 
+struct MessageDenied : Message {
+    MessageDenied() {
+        type = denied;
 
+    }
+
+    string toString();
+};
 
 
 

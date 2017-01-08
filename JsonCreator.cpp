@@ -95,6 +95,13 @@ namespace JsonCreator {
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
+
+    string denied() {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::denied;
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
 }
 
 

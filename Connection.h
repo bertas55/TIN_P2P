@@ -9,6 +9,7 @@
 #include "thread"
 #include "File.h"
 #include "FileManager.h"
+#include "FileDownload.h"
 
 /**
  * Klasa reprezentujaca polaczenie TCP
@@ -16,12 +17,12 @@
 class Connection {
 
 public:
-    Connection(Socket*, File*);     // Konstruktor z podanym plikiem do wysylania
+    Connection(Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
     Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
     ~Connection();
 
     void sendFile(File*, int);
-    void recieveFile(File*);
+    void recieveFile(FileDownload*);
     void run();
 
 private:

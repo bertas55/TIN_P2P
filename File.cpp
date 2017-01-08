@@ -10,9 +10,9 @@
 
 using namespace std;
 
-File::File(string path, string name) {
+File::File(string name) {
     this->name = name;
-    this->path = path;
+    this->path = Constants::Configuration::directoryPath;
     this->size = readSize();
 }
 
