@@ -16,10 +16,6 @@ File::File(string path, string name) {
     this->size = readSize();
 }
 
-File::~File() {
-    file.close();
-}
-
 std::ifstream::pos_type File::readSize()
 {
     std::ifstream in(name, std::ifstream::ate | std::ifstream::binary);
@@ -47,7 +43,7 @@ bool File::isLocked() {
 }
 
 struct FileInfo File::getFileInfo() {
-    return FileInfo(name, size);
+    return FileInfo(name, size, blocked, owner);
 }
 
 char* File::getFilePart(unsigned int partNumber) {

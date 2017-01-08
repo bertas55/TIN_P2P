@@ -11,12 +11,16 @@ namespace Constants {
         const char* fileName = "fileName";
         const char* fileSize = "fileSize";
         const char* offset = "offset";
+        const char* files = "files";
+        const char* blocked = "blocked";
+        const char* owner = "owner";
     }
 
     namespace MessageTypes {
         const char* hello = "Hello";
         const char* requestFile = "RequestFile";
         const char* requestList = "RequestList";
+        const char* myList = "MyList";
         const char* newFile = "NewFile";
         const char* veto = "Veto";
         const char* deleteFile = "Delete";

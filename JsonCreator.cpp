@@ -5,6 +5,7 @@
 #include <string>
 #include "JsonCreator.h"
 #include "Dependencies/JsonCpp/json/json.h"
+#include "File.h"
 
 
 using namespace std;
@@ -25,7 +26,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string requestFile(std::string hostName, std::string fileName, unsigned int fileSize, unsigned int offset) {
+    string requestFile(string hostName, string fileName, unsigned int fileSize, unsigned int offset) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::requestFile;
         json[Constants::JsonKeys::hostName] = hostName;
@@ -43,9 +44,25 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    // TODO: MyList
+    string myList(vector<FileInfo> files) {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::myList;
+        Json::Value filesArray(Json::arrayValue);
+        // Mozna wyniesc do oddzielnej metody
+        for (auto file : files) {
+            Json::Value fileJson;
+            fileJson[Constants::JsonKeys::fileName] = file.name;
+            fileJson[Constants::JsonKeys::fileSize] = file.size;
+            fileJson[Constants::JsonKeys::owner] = file.owner;
+            fileJson[Constants::JsonKeys::blocked] = file.blocked;
+            filesArray.append(fileJson);
+        }
+        json[Constants::JsonKeys::files] = filesArray;
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
 
-    std::string newFile(std::string fileName, unsigned int fileSize) {
+    string newFile(string fileName, unsigned int fileSize) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::newFile;
         json[Constants::JsonKeys::fileName] = fileName;
@@ -54,7 +71,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    std::string veto(std::string fileName, unsigned int fileSize) {
+    string veto(string fileName, unsigned int fileSize) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::veto;
         json[Constants::JsonKeys::fileName] = fileName;
@@ -63,7 +80,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    std::string deleteFile(std::string fileName, unsigned int fileSize) {
+    string deleteFile(string fileName, unsigned int fileSize) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::deleteFile;
         json[Constants::JsonKeys::fileName] = fileName;

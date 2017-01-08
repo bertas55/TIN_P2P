@@ -14,12 +14,16 @@ namespace Constants {
         extern const char* fileName;
         extern const char* fileSize;
         extern const char* offset;
+        extern const char* files;
+        extern const char* blocked;
+        extern const char* owner;
     }
 
     namespace MessageTypes {
         extern const char* hello;
         extern const char* requestFile;
         extern const char* requestList;
+        extern const char* myList;
         extern const char* newFile;
         extern const char* veto;
         extern const char* deleteFile;

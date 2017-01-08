@@ -9,8 +9,7 @@
 using namespace std;
 
 string Message::toString() {
-    // unimplemented
-    return "base";
+    return "Base message class. You should not do this";
 }
 
 string MessageHello::toString() {
@@ -30,23 +29,23 @@ string MessageRequestList::toString() {
 }
 
 string MessageMyList::toString() {
-    return "Not implemented yet";
+    return JsonCreator::myList(files);
 }
 
 string MessageNewFile::toString() {
-    return "Not implemented yet";
+    return JsonCreator::newFile(fileName, fileSize);
 }
 
 string MessageVeto::toString() {
-    return "Not implemented yet";
+    return JsonCreator::veto(fileName, fileSize);
 }
 
 string MessageDeleteFile::toString() {
-    return "Not implemented yet";
+    return JsonCreator::deleteFile(fileName, fileSize);
 }
 
 string MessageBye::toString() {
-    return "Not implemented yet";
+    return JsonCreator::bye();
 }
 
 

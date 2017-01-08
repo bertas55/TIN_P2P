@@ -271,12 +271,18 @@ JsonCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 Dependencies/JsonCpp/json/json.h
 /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
 
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 string
 -
+vector
+-
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
 
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.cpp
 JsonParser.h
@@ -309,6 +315,10 @@ JsonCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/Message.h
 string
 -
+vector
+-
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
 
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp
 MessageContainer.h
@@ -483,17 +493,9 @@ Configuration.h
 /home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/main.cpp
-stdio.h
--
-string.h
--
-stdlib.h
--
-arpa/inet.h
+iostream
 -
 thread
--
-iostream
 -
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
