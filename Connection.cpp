@@ -6,12 +6,14 @@
 #include "Connection.h"
 #include "JsonParser.h"
 
-Connection::Connection(Socket *s) : sock(s) {
-
+Connection::Connection(Socket *s, FileManager *fm) :
+        sock(s),
+        running(true) ,
+        fileManager(fm)
+{
     threadId = std::thread(&Connection::run,this);
-
 }
-Connection::Connection(Socket *s , File *file) : sock(s)
+Connection::Connection(Socket *s , File *file) : sock(s), running(true)
 {
     threadId = std::thread(&Connection::sendFile,this,file);
 }
@@ -54,7 +56,8 @@ void Connection::interpreteMessage(Message *msg) {
     {
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
-            std::cout << "Odebrano wiadomosc RequestFile\n";
+            dynamic_cast<MessageRequestFile&>(*msg).fileName;
+//            fileManager->
             break;
         }
         case(MessageType::myList):{
@@ -62,13 +65,8 @@ void Connection::interpreteMessage(Message *msg) {
             std::cout << "Odebrano wiadomosc myList\n";
             break;
         }
-        case(MessageType::requestList):{
-//            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
-            std::cout << "Odebrano wiadomosc requestList\n";
-            break;
-        }
         case (MessageType::bye):{
-
+            running = false;
             break;
         }
     }

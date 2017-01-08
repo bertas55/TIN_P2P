@@ -8,6 +8,7 @@
 #include "Socket.h"
 #include "thread"
 #include "File.h"
+#include "FileManager.h"
 
 /**
  * Klasa reprezentujaca polaczenie TCP
@@ -16,7 +17,7 @@ class Connection {
 
 public:
     Connection(Socket*, File*);     // Konstruktor z podanym plikiem do wysylania
-    Connection(Socket*);            // Konstruktor do wysylania??
+    Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
     ~Connection();
 
     void sendFile(File*);
@@ -25,9 +26,13 @@ public:
 
 private:
     std::thread threadId;
+    FileManager *fileManager;
     int descriptor;
+    bool running;
     Socket *sock;
     void interpreteMessage(Message *msg);
+    void sendMessages(Message *msg);
+
 
 
 };

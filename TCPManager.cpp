@@ -4,7 +4,11 @@
 
 #include "TCPManager.h"
 
-TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag) :fileManager(fm), fileInfoContainer(fic), exitFlag(flag)
+TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, MessageContainer* mc) :
+        fileManager(fm),
+        fileInfoContainer(fic),
+        exitFlag(flag),
+        inputMessages(mc)
 {
 
 }
