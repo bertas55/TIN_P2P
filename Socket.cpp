@@ -42,6 +42,26 @@ bool Socket::Bind(const string &address, unsigned short port)
     return true;
 }
 
+bool Socket::Bind(unsigned short port)
+{
+    sockaddr_in server;
+    server.sin_family = AF_INET;
+    server.sin_port = htons(port);
+    server.sin_addr.s_addr = INADDR_ANY;
+    return (bind(descriptor, reinterpret_cast<sockaddr*>(&server), sizeof(server)) != 0);
+}
+bool Socket::Listen()
+{
+    return listen(descriptor, SOMAXCONN) == 0;
+}
+Socket* Socket::Accept() {
+    int socketDescriptor = accept(descriptor, nullptr, nullptr);
+    if(socketDescriptor == -1)
+    {
+        return nullptr;
+    }
+    return new Socket(socketDescriptor);
+}
 bool Socket::Connect(const string &address, unsigned short port)
 {
     sockaddr_in server;

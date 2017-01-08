@@ -5,6 +5,7 @@
 #ifndef TIN_P2P_CONFIGURATION_H
 #define TIN_P2P_CONFIGURATION_H
 #include <string>
+#include "Message.h"
 
 class Configuration {
 public:

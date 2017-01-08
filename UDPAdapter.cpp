@@ -49,8 +49,19 @@ void UDPAdapter::listen() {
     while (!(*exitFlag))
     {
         socket->Receive(buf,BUFLEN);
-        Message *m = JsonParser::parse(buf);
-        serverMessageContainer->put(m);
+        try {
+            cout << JsonParser::parse(buf)->toString();
+            Message *m = JsonParser::parse(buf);
+            cout << m->toString();
+            serverMessageContainer->put(m);
+        } catch (JsonParsingException e)
+        {
+            e.what();
+        } catch (UnknownMessageException e)
+        {
+            e.what();
+        }
+
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
     cout <<"Listend end.\n";

@@ -62,6 +62,7 @@ void ServerThread::broadcastMessage(Message *msg) {
  * Sprawdzenie wiadomosci otrzymanych przez siec
  */
 void ServerThread::checkForMessages() {
+
     Message *msg = inputMessages.get();
     std::cout<< msg->toString() << "Mesejdz\n";
     switch(msg->type)

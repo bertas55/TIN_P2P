@@ -3,6 +3,7 @@
 //
 
 #include "SocketCreator.h"
+#include "Constants.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <cstring>
@@ -150,4 +151,25 @@ WcisloSocket* SocketCreator::broadcasterSenderSocket(void)
     }
 
     return new WcisloSocket(s);
+}
+
+
+Socket* SocketCreator::createTCPListener()
+{
+    int sock, length;
+    struct sockaddr_in server;
+    int msgsock;
+    char buf[1024];
+    int rval;
+
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == -1) {
+//        @TODO Socket creationException
+        perror("opening stream socket");
+    }
+    Socket *s = new Socket(sock);
+    s->Bind(Constants::Configuration::TCPort);
+    s->Listen();
+    return s;
+
 }

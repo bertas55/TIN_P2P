@@ -32,6 +32,7 @@ namespace Constants {
 
     namespace Configuration {
         extern const unsigned short port;
+        extern const unsigned short TCPort;
         extern const char* broadcastIP;
         extern const char* directoryPath;
         extern const char* localhostAddress;
