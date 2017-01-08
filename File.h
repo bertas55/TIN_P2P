@@ -25,6 +25,10 @@ public:
 
     void saveFilePart(unsigned int, unsigned int, char*);
 
+    string getName();
+
+    unsigned int getSize();
+
     void lock();
 
     void unlock();

@@ -28,13 +28,11 @@ std::vector<struct FileInfo> FileInfoContainer::getAllHostsContains(struct FileI
 }
 
 void FileInfoContainer::remove(struct FileInfo file) {
-    for (int i = 0 ; i < fileInfoVector.size() ; ++i)
-    {
-        if (file.size== fileInfoVector[i].size
-            && file.name == fileInfoVector[i].name
-                && file.hostAddress == fileInfoVector[i].hostAddress)
-        {
-//            @TODO
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+        if (file.size== fileInfo->size
+            && file.name == fileInfo->name
+            && file.hostAddress == fileInfo->hostAddress) {
+            fileInfoVector.erase(fileInfo);
         }
     }
 }

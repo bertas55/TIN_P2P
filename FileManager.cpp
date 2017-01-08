@@ -34,6 +34,14 @@ void FileManager::loadFiles() {
     }
 }
 
+File* FileManager::getFile(string name, unsigned int size) {
+    for (auto file : files) {
+        if (file->getName() == name && file->getSize() == size) {
+            return file;
+        }
+    }
+}
+
 void FileManager::lockFile(string name, unsigned int size) {
     bool success = false;
     for (auto file : files) {

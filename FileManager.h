@@ -16,6 +16,8 @@ public:
 
     FileManager();
 
+    File* getFile(string name, unsigned int size);
+
     void lockFile(string name, unsigned int size);
 
     void unlockFile(string name, unsigned int size);
