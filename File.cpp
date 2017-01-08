@@ -78,7 +78,9 @@ void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *
     if (!file.is_open()) {
         throw LoadingFileException();
     }
-    file.seekp(offset);
-    file.write((char*)data, dataLength);
+    file.seekp(0, ios::beg);
+//    file.put('X');
+//    file.write(data, dataLength);
+    file.write("X", 1);
     file.close();
 }
