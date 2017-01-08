@@ -6,6 +6,9 @@
 #define TIN_P2P_MESSAGE_H
 
 #include <string>
+#include <vector>
+#include "File.h"
+
 using namespace std;
 
 enum MessageType {
@@ -74,33 +77,50 @@ struct MessageRequestList : Message {
 };
 
 struct MessageMyList : Message {
-    MessageMyList() {
+    MessageMyList(vector<FileInfo> files) {
         type = myList;
+        this->files = files;
     }
 
+    vector<FileInfo> files;
     string toString();
 };
 
 struct MessageNewFile : Message {
-    MessageNewFile() {
+    MessageNewFile(string fileName, unsigned int fileSize) {
         type = newFile;
+        this->fileName = fileName;
+        this->fileSize = fileSize;
     }
+
+    string fileName;
+    unsigned int fileSize;
 
     string toString();
 };
 
 struct MessageVeto : Message {
-    MessageVeto() {
+    MessageVeto(string fileName, unsigned int fileSize) {
         type = veto;
+        this->fileName = fileName;
+        this->fileSize = fileSize;
     }
+
+    string fileName;
+    unsigned int fileSize;
 
     string toString();
 };
 
 struct MessageDeleteFile : Message {
-    MessageDeleteFile() {
+    MessageDeleteFile(string fileName, unsigned int fileSize) {
         type = deleteFile;
+        this->fileName = fileName;
+        this->fileSize = fileSize;
     }
+
+    string fileName;
+    unsigned int fileSize;
 
     string toString();
 };

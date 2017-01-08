@@ -87,7 +87,7 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::requestList):{
 //            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
-            broadcastMessage(new MessageMyList());
+//            broadcastMessage(new MessageMyList());
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
@@ -140,7 +140,8 @@ void ServerThread::checkForActions() {
         case (UserAction::RemoveFile):
         {
 //        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
-            broadcastMessage(new MessageDeleteFile());
+//            broadcastMessage(new MessageDeleteFile());
+            cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
             break;
         }
         case (UserAction::RefreshList):

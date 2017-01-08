@@ -24,10 +24,7 @@ void FileManager::loadFiles() {
         while ((ent = readdir (dir)) != NULL) {
             printf ("%s\n", ent->d_name);
             File *newFile = new File(dirPath, ent->d_name);
-
             files.push_back(newFile);
-
-
         }
         closedir (dir);
     } else {

@@ -18,26 +18,42 @@ Message* JsonParser::parse(string jsonMessage) {
         const char* messageType = messageTypeVal.asCString();
 
         if (strcmp(messageType, Constants::MessageTypes::hello) == 0) {
-            // hello, is it me you loking for?
+            // hello, is it me you looking for?
             messageToReturn = new MessageHello();
         } else if (strcmp(messageType, Constants::MessageTypes::requestFile) == 0) {
-            string hostName2 = parsedJson[Constants::JsonKeys::hostName].asString();
+            string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             unsigned int offset = parsedJson[Constants::JsonKeys::offset].asUInt();
-            messageToReturn = new MessageRequestFile(hostName2, fileName, fileSize, offset);
+            messageToReturn = new MessageRequestFile(hostName, fileName, fileSize, offset);
         } else if (strcmp(messageType, Constants::MessageTypes::requestList) == 0) {
+            messageToReturn = new MessageRequestList();
+        } else if (strcmp(messageType, Constants::MessageTypes::myList) == 0) {
+            vector<FileInfo> fileInfos;
+            for (auto file : parsedJson[Constants::JsonKeys::files]) {
+                string fileName = file[Constants::JsonKeys::fileName].asString();
+                unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
+                bool owner = file[Constants::JsonKeys::owner].asBool();
+                bool blocked = file[Constants::JsonKeys::blocked].asBool();
+                fileInfos.push_back(FileInfo(fileName, fileSize, blocked, owner));
+            }
+            messageToReturn = new MessageMyList(fileInfos);
 
         } else if (strcmp(messageType, Constants::MessageTypes::newFile) == 0) {
-
+            string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
+            unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
+            messageToReturn = new MessageNewFile(fileName, fileSize);
         } else if (strcmp(messageType, Constants::MessageTypes::veto) == 0) {
-
+            string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
+            unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
+            messageToReturn = new MessageVeto(fileName, fileSize);
         } else if (strcmp(messageType, Constants::MessageTypes::deleteFile) == 0) {
-
+            string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
+            unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
+            messageToReturn = new MessageDeleteFile(fileName, fileSize);
         } else {
             throw UnknownMessageException();
         }
-
     } else {
         throw JsonParsingException();
     }

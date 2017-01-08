@@ -6,7 +6,9 @@
 #define TIN_P2P_JSONCREATOR_H
 
 #include <string>
+#include <vector>
 #include "Constants.h"
+#include "File.h"
 
 namespace JsonCreator {
     // Hello
@@ -17,7 +19,8 @@ namespace JsonCreator {
     std::string requestFile(std::string, std::string, unsigned int, unsigned int);
     // RequestList
     std::string requestList();
-    // TODO: MyList
+    // MyList
+    std::string myList(std::vector<FileInfo>);
     // NewFile
     std::string newFile(std::string, unsigned int);
     // Veto

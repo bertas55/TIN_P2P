@@ -21,8 +21,6 @@ class File {
 public:
     File(string path, string name);
 
-    ~File();
-
     char* getFilePart(unsigned int);
 
     void saveFilePart(unsigned int, unsigned int, char*);
@@ -36,7 +34,6 @@ public:
     struct FileInfo getFileInfo();
 
 private:
-    fstream file;
     string name;
     string path;
     unsigned int size;
@@ -51,11 +48,15 @@ struct FileInfo {
     string name;
     unsigned int size;
     string hostAddress;
+    bool blocked;
+    bool owner;
 
-    FileInfo(string name, unsigned int size) {
+    FileInfo(string name, unsigned int size, bool blocked, bool owner) {
         this->name = name;
         this->size = size;
         this->hostAddress = Constants::Configuration::localhostAddress;
+        this->blocked = blocked;
+        this->owner = owner;
     }
 };
 
