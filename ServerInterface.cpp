@@ -10,7 +10,7 @@
 ServerInterface::ServerInterface()
 {
 
-    server = new ServerThread(&container);
+    server = new ServerThread(&container,&fileManager);
 
 
 }

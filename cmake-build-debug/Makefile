@@ -177,6 +177,33 @@ Configuration.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.s
 .PHONY : Configuration.cpp.s
 
+Connection.o: Connection.cpp.o
+
+.PHONY : Connection.o
+
+# target to build an object file
+Connection.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.o
+.PHONY : Connection.cpp.o
+
+Connection.i: Connection.cpp.i
+
+.PHONY : Connection.i
+
+# target to preprocess a source file
+Connection.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.i
+.PHONY : Connection.cpp.i
+
+Connection.s: Connection.cpp.s
+
+.PHONY : Connection.s
+
+# target to generate assembly for a file
+Connection.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Connection.cpp.s
+.PHONY : Connection.cpp.s
+
 Constants.o: Constants.cpp.o
 
 .PHONY : Constants.o
@@ -284,6 +311,33 @@ File.s: File.cpp.s
 File.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/File.cpp.s
 .PHONY : File.cpp.s
+
+FileInfoContainer.o: FileInfoContainer.cpp.o
+
+.PHONY : FileInfoContainer.o
+
+# target to build an object file
+FileInfoContainer.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o
+.PHONY : FileInfoContainer.cpp.o
+
+FileInfoContainer.i: FileInfoContainer.cpp.i
+
+.PHONY : FileInfoContainer.i
+
+# target to preprocess a source file
+FileInfoContainer.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.i
+.PHONY : FileInfoContainer.cpp.i
+
+FileInfoContainer.s: FileInfoContainer.cpp.s
+
+.PHONY : FileInfoContainer.s
+
+# target to generate assembly for a file
+FileInfoContainer.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.s
+.PHONY : FileInfoContainer.cpp.s
 
 FileManager.o: FileManager.cpp.o
 
@@ -420,33 +474,6 @@ MessageContainer.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.s
 .PHONY : MessageContainer.cpp.s
 
-MessageHello.o: MessageHello.cpp.o
-
-.PHONY : MessageHello.o
-
-# target to build an object file
-MessageHello.cpp.o:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
-.PHONY : MessageHello.cpp.o
-
-MessageHello.i: MessageHello.cpp.i
-
-.PHONY : MessageHello.i
-
-# target to preprocess a source file
-MessageHello.cpp.i:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.i
-.PHONY : MessageHello.cpp.i
-
-MessageHello.s: MessageHello.cpp.s
-
-.PHONY : MessageHello.s
-
-# target to generate assembly for a file
-MessageHello.cpp.s:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/MessageHello.cpp.s
-.PHONY : MessageHello.cpp.s
-
 ServerInterface.o: ServerInterface.cpp.o
 
 .PHONY : ServerInterface.o
@@ -555,6 +582,33 @@ SocketCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.s
 .PHONY : SocketCreator.cpp.s
 
+TCPManager.o: TCPManager.cpp.o
+
+.PHONY : TCPManager.o
+
+# target to build an object file
+TCPManager.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
+.PHONY : TCPManager.cpp.o
+
+TCPManager.i: TCPManager.cpp.i
+
+.PHONY : TCPManager.i
+
+# target to preprocess a source file
+TCPManager.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.i
+.PHONY : TCPManager.cpp.i
+
+TCPManager.s: TCPManager.cpp.s
+
+.PHONY : TCPManager.s
+
+# target to generate assembly for a file
+TCPManager.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/TCPManager.cpp.s
+.PHONY : TCPManager.cpp.s
+
 UDPAdapter.o: UDPAdapter.cpp.o
 
 .PHONY : UDPAdapter.o
@@ -651,6 +705,9 @@ help:
 	@echo "... Configuration.o"
 	@echo "... Configuration.i"
 	@echo "... Configuration.s"
+	@echo "... Connection.o"
+	@echo "... Connection.i"
+	@echo "... Connection.s"
 	@echo "... Constants.o"
 	@echo "... Constants.i"
 	@echo "... Constants.s"
@@ -663,6 +720,9 @@ help:
 	@echo "... File.o"
 	@echo "... File.i"
 	@echo "... File.s"
+	@echo "... FileInfoContainer.o"
+	@echo "... FileInfoContainer.i"
+	@echo "... FileInfoContainer.s"
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
@@ -678,9 +738,6 @@ help:
 	@echo "... MessageContainer.o"
 	@echo "... MessageContainer.i"
 	@echo "... MessageContainer.s"
-	@echo "... MessageHello.o"
-	@echo "... MessageHello.i"
-	@echo "... MessageHello.s"
 	@echo "... ServerInterface.o"
 	@echo "... ServerInterface.i"
 	@echo "... ServerInterface.s"
@@ -693,6 +750,9 @@ help:
 	@echo "... SocketCreator.o"
 	@echo "... SocketCreator.i"
 	@echo "... SocketCreator.s"
+	@echo "... TCPManager.o"
+	@echo "... TCPManager.i"
+	@echo "... TCPManager.s"
 	@echo "... UDPAdapter.o"
 	@echo "... UDPAdapter.i"
 	@echo "... UDPAdapter.s"

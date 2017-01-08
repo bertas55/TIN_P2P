@@ -96,6 +96,12 @@
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Configuration.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Connection.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Connection.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/Constants.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
@@ -115,6 +121,12 @@
 			<Option target="TIN_P2P"/>
 		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/File.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/FileManager.cpp">
@@ -147,12 +159,6 @@
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageContainer.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.cpp">
-			<Option target="TIN_P2P"/>
-		</Unit>
-		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/MessageHello.h">
-			<Option target="TIN_P2P"/>
-		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/ServerInterface.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
@@ -175,6 +181,12 @@
 			<Option target="TIN_P2P"/>
 		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/SocketCreator.h">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/TCPManager.cpp">
+			<Option target="TIN_P2P"/>
+		</Unit>
+		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/TCPManager.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
 		<Unit filename="/home/hubert/ClionProjects/TIN_P2P/UDPAdapter.cpp">

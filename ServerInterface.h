@@ -10,7 +10,9 @@
 #include "ActionContainer.h"
 #include "FileManager.h"
 
-
+/**
+ * Interfejs do serwera.
+ */
 class ServerInterface {
 public:
     ServerInterface();

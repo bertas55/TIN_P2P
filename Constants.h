@@ -4,7 +4,9 @@
 #pragma once
 #ifndef TIN_P2P_CONSTANTS_H
 #define TIN_P2P_CONSTANTS_H
-
+/*
+ * Stale
+ */
 namespace Constants {
     namespace JsonKeys {
         extern const char* type;

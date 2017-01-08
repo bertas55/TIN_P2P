@@ -12,7 +12,8 @@
 #include "SocketCreator.h"
 #include "File.h"
 #include "ActionContainer.h"
-
+#include "FileManager.h"
+#include "FileInfoContainer.h"
 
 /**
  * Klasa reprezentujaca watek nadzorcy serwera.
@@ -26,8 +27,9 @@ private:
     MessageContainer inputMessages; /*Messages recived*/
     MessageContainer outputMessage; /*Messages to send via broadcast*/
     ActionContainer *actionContainer;
+    FileManager *fileManager;
     std::thread threadId;
-    WcisloSocket *serverSocket;
+    FileInfoContainer fileInfoContainer;
     bool exitFlag;
 
     void sendInitialMessage();
@@ -38,7 +40,7 @@ private:
 
 public:
     ServerThread();
-    ServerThread(ActionContainer*);
+    ServerThread(ActionContainer*,FileManager*);
     ~ServerThread();
 
     void run();

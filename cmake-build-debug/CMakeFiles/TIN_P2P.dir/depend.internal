@@ -10,6 +10,9 @@ CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o
 CMakeFiles/TIN_P2P.dir/Configuration.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.cpp
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
+CMakeFiles/TIN_P2P.dir/Connection.cpp.o
+ /home/hubert/ClionProjects/TIN_P2P/Connection.cpp
+ /home/hubert/ClionProjects/TIN_P2P/Connection.h
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Constants.cpp
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
@@ -24,6 +27,9 @@ CMakeFiles/TIN_P2P.dir/File.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.cpp
  /home/hubert/ClionProjects/TIN_P2P/File.h
+CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.cpp
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
@@ -56,15 +62,12 @@ CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.cpp
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o
- /home/hubert/ClionProjects/TIN_P2P/Message.h
- /home/hubert/ClionProjects/TIN_P2P/MessageHello.cpp
- /home/hubert/ClionProjects/TIN_P2P/MessageHello.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/ActionContainer.h
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
@@ -81,6 +84,8 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
+ /home/hubert/ClionProjects/TIN_P2P/FileManager.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
  /home/hubert/ClionProjects/TIN_P2P/ServerThread.cpp
@@ -98,6 +103,14 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/SocketCreator.cpp
  /home/hubert/ClionProjects/TIN_P2P/SocketCreator.h
  /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
+ /home/hubert/ClionProjects/TIN_P2P/Connection.h
+ /home/hubert/ClionProjects/TIN_P2P/Constants.h
+ /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
+ /home/hubert/ClionProjects/TIN_P2P/FileManager.h
+ /home/hubert/ClionProjects/TIN_P2P/TCPManager.cpp
+ /home/hubert/ClionProjects/TIN_P2P/TCPManager.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/ActionContainer.h
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
@@ -105,6 +118,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/hubert/ClionProjects/TIN_P2P/Exceptions.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.h
  /home/hubert/ClionProjects/TIN_P2P/JsonCreator.h
  /home/hubert/ClionProjects/TIN_P2P/JsonParser.h
@@ -128,6 +142,7 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/Configuration.h
  /home/hubert/ClionProjects/TIN_P2P/Constants.h
  /home/hubert/ClionProjects/TIN_P2P/File.h
+ /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h

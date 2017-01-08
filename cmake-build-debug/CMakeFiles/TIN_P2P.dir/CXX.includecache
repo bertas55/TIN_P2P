@@ -28,6 +28,12 @@ Configuration.h
 string
 -
 
+/home/hubert/ClionProjects/TIN_P2P/Connection.cpp
+Connection.h
+/home/hubert/ClionProjects/TIN_P2P/Connection.h
+
+/home/hubert/ClionProjects/TIN_P2P/Connection.h
+
 /home/hubert/ClionProjects/TIN_P2P/Constants.cpp
 Constants.h
 /home/hubert/ClionProjects/TIN_P2P/Constants.h
@@ -210,6 +216,12 @@ fstream
 Constants.h
 /home/hubert/ClionProjects/TIN_P2P/Constants.h
 
+/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.cpp
+FileInfoContainer.h
+/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
+
+/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
+
 /home/hubert/ClionProjects/TIN_P2P/FileManager.cpp
 vector
 -
@@ -296,14 +308,6 @@ queue
 mutex
 -
 
-/home/hubert/ClionProjects/TIN_P2P/MessageHello.cpp
-MessageHello.h
-/home/hubert/ClionProjects/TIN_P2P/MessageHello.h
-
-/home/hubert/ClionProjects/TIN_P2P/MessageHello.h
-Message.h
-/home/hubert/ClionProjects/TIN_P2P/Message.h
-
 /home/hubert/ClionProjects/TIN_P2P/ServerInterface.cpp
 iostream
 -
@@ -345,6 +349,10 @@ File.h
 /home/hubert/ClionProjects/TIN_P2P/File.h
 ActionContainer.h
 /home/hubert/ClionProjects/TIN_P2P/ActionContainer.h
+FileManager.h
+/home/hubert/ClionProjects/TIN_P2P/FileManager.h
+FileInfoContainer.h
+/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
 
 /home/hubert/ClionProjects/TIN_P2P/Socket.cpp
 Socket.h
@@ -381,6 +389,18 @@ Socket.h
 /home/hubert/ClionProjects/TIN_P2P/Socket.h
 WcisloSocket.h
 /home/hubert/ClionProjects/TIN_P2P/WcisloSocket.h
+
+/home/hubert/ClionProjects/TIN_P2P/TCPManager.cpp
+TCPManager.h
+/home/hubert/ClionProjects/TIN_P2P/TCPManager.h
+
+/home/hubert/ClionProjects/TIN_P2P/TCPManager.h
+Connection.h
+/home/hubert/ClionProjects/TIN_P2P/Connection.h
+FileManager.h
+/home/hubert/ClionProjects/TIN_P2P/FileManager.h
+FileInfoContainer.h
+/home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
 
 /home/hubert/ClionProjects/TIN_P2P/UDPAdapter.cpp
 sys/socket.h

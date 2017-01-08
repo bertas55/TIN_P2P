@@ -10,6 +10,9 @@ CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/Configuration.cpp.o: ../Configuration.cpp
 CMakeFiles/TIN_P2P.dir/Configuration.cpp.o: ../Configuration.h
 
+CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Connection.cpp
+CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Connection.h
+
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o: ../Constants.cpp
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o: ../Constants.h
 
@@ -23,6 +26,9 @@ CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.cpp
 CMakeFiles/TIN_P2P.dir/File.cpp.o: ../File.h
+
+CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../FileInfoContainer.cpp
+CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../FileInfoContainer.h
 
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/FileManager.cpp.o: ../Constants.h
@@ -56,14 +62,11 @@ CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../MessageContainer.cpp
 CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o: ../MessageContainer.h
 
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../Message.h
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.cpp
-CMakeFiles/TIN_P2P.dir/MessageHello.cpp.o: ../MessageHello.h
-
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../MessageContainer.h
@@ -80,6 +83,8 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileInfoContainer.h
+CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerThread.cpp
@@ -98,12 +103,21 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../SocketCreator.cpp
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../WcisloSocket.h
 
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Connection.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../FileInfoContainer.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.cpp
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.h
+
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonCreator.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonParser.h
@@ -127,6 +141,7 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Configuration.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../MessageContainer.h
