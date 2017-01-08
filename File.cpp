@@ -42,6 +42,14 @@ bool File::isLocked() {
     return locked;
 }
 
+string File::getName() {
+    return name;
+}
+
+unsigned int File::getSize() {
+    return size;
+}
+
 struct FileInfo File::getFileInfo() {
     return FileInfo(name, size, blocked, owner);
 }
