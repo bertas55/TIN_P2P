@@ -70,9 +70,12 @@ struct MessageRequestFile : Message {
 };
 
 struct MessageRequestList : Message {
-    MessageRequestList() {
+    MessageRequestList(string hostName) {
         type = requestList;
+        this->hostName = hostName;
     }
+
+    string hostName;
 
     string toString();
 };
@@ -137,7 +140,6 @@ struct MessageBye : Message {
 struct MessageDenied : Message {
     MessageDenied() {
         type = denied;
-
     }
 
     string toString();

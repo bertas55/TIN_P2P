@@ -23,6 +23,10 @@ unsigned int FileDownload::getPartToDownload() {
     return part;
 }
 
+unsigned long FileDownload::partsLeftCount() {
+    return partsLeft.size();
+}
+
 void FileDownload::addPartToDownload(unsigned int partNumber) {
     partsLeft.push(partNumber);
 }

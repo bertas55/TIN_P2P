@@ -37,9 +37,10 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string requestList() {
+    string requestList(string hostName) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::requestList;
+        json[Constants::JsonKeys::hostName] = hostName;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }

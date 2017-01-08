@@ -149,7 +149,7 @@ void ServerThread::checkForActions() {
         {
 //          @TODO yyy
             cout << "Wysylam RequestList\n";
-            broadcastMessage(new MessageRequestList());
+//            broadcastMessage(new MessageRequestList());
             break;
         }
         case (UserAction::DownloadFile):

@@ -18,6 +18,8 @@ public:
 
     void addPartToDownload(unsigned int);
 
+    unsigned long partsLeftCount();
+
 private:
     queue<unsigned int> partsLeft;
 };
