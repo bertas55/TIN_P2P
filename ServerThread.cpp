@@ -63,7 +63,7 @@ void ServerThread::broadcastMessage(Message msg) {
  */
 void ServerThread::checkForMessages() {
     Message msg = inputMessages.get();
-    std::cout<< msg.toString() << "Mesejdz\n1";
+    std::cout<< msg.toString() << "Mesejdz\n";
     switch(msg.type)
     {
         case(MessageType::hello): {
@@ -128,6 +128,8 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
+            cout << "Wysylam Hello\n";
+            broadcastMessage(MessageHello());
             break;
         }
         case (UserAction::EnableFile):
@@ -144,6 +146,7 @@ void ServerThread::checkForActions() {
         case (UserAction::RefreshList):
         {
 //          @TODO yyy
+            cout << "Wysylam RequestList\n";
             broadcastMessage(MessageRequestList());
             break;
         }

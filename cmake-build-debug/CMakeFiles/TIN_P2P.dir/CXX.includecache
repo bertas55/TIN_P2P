@@ -28,6 +28,22 @@ Configuration.h
 string
 -
 
+/home/lukasz/CLionProjects/TIN_P2P/Connection.cpp
+sys/socket.h
+-
+Connection.h
+/home/lukasz/CLionProjects/TIN_P2P/Connection.h
+
+/home/lukasz/CLionProjects/TIN_P2P/Connection.h
+SocketCreator.h
+/home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+Socket.h
+/home/lukasz/CLionProjects/TIN_P2P/Socket.h
+thread
+/home/lukasz/CLionProjects/TIN_P2P/thread
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
+
 /home/lukasz/CLionProjects/TIN_P2P/Constants.cpp
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
@@ -210,6 +226,18 @@ fstream
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.cpp
+FileInfoContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
+
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
+vector
+-
+mutex
+-
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
+
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.cpp
 vector
 -
@@ -339,6 +367,8 @@ ActionContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
 FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+FileInfoContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h
@@ -375,6 +405,18 @@ Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
 WcisloSocket.h
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+
+/home/lukasz/CLionProjects/TIN_P2P/TCPManager.cpp
+TCPManager.h
+/home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
+
+/home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
+Connection.h
+/home/lukasz/CLionProjects/TIN_P2P/Connection.h
+FileManager.h
+/home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+FileInfoContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp
 sys/socket.h

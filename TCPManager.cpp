@@ -9,8 +9,9 @@ TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic) :fileManager(fm),
 
 }
 
-void sendFile(File*, char* recieverAddress, unsigned short recieverPort) /*Wysylanie pliku do zadanego hosta*/
+void sendFile(File* f, char* recieverAddress, unsigned short recieverPort) /*Wysylanie pliku do zadanego hosta*/
 {
+    Connection conn(SocketCreator::CreateSocket(recieverAddress,recieverPort,true),f);
     /**
      * Rozpoczyna polaczenie z zadanym portem. Do tego wykorzystywana jest klasa Connection
      */

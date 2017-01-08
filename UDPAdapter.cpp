@@ -17,12 +17,10 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
         exitFlag(exit)
 {
     if (broadcaster){
-//        socket->setBroadcast();
         UDPThread = std::thread(&UDPAdapter::send, this);
     }
     else
     {
-//        socket->setBroadcastListerner();
         UDPThread = std::thread(&UDPAdapter::listen, this);
     }
 
@@ -81,7 +79,7 @@ void UDPAdapter::send() {
 void UDPAdapter::sendMessage(Message msg) {
     const int BUFLEN = 512;
     char buf[BUFLEN];
-    strncpy(buf,JsonCreator::hello().c_str(),sizeof(buf));
+    strncpy(buf,msg.toString().c_str(),sizeof(buf));
     socket->Send(buf,BUFLEN);
 }
 

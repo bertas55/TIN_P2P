@@ -4,24 +4,24 @@
 
 #ifndef TIN_P2P_FILEINFOCONTAINER_H
 #define TIN_P2P_FILEINFOCONTAINER_H
-
-
+#include <vector>
+#include <mutex>
+#include "File.h"
+/**
+ * Kontener przechowujacy informacje o plikach dostepnych w sieci
+ */
 class FileInfoContainer {
-/*
- * public:
 
-    ActionContainer();
+public:
+    FileInfoContainer();
 
-    Action get();
-
-    void put(Action);
-
-    int getSize();
+    void put(struct FileInfo);
+    std::vector<struct FileInfo> getAllHostsContains(struct FileInfo);
+    void remove (struct FileInfo);
 
 private:
-    queue<Action> actionQueue;
-    mutex guard;
- */
+    std::vector<struct FileInfo> fileInfoVector;
+    std::mutex guard;
 };
 
 

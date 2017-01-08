@@ -92,7 +92,7 @@ void ServerInterface::consoleInterface() {
     do {
         cout << "Welcome Pirate!\n";
         cout << "0. RefreshList\n1.DownloadFile\n2.Disbale File\n";
-        cout << "3.EnableFile\n4.Remove File\n5.Exit";
+        cout << "3.EnableFile\n4.Remove File\n5.Exit" << endl;
         cin >> myAction;
         putServerAction((UserAction)myAction);
 ;

@@ -312,6 +312,33 @@ File.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/File.cpp.s
 .PHONY : File.cpp.s
 
+FileInfoContainer.o: FileInfoContainer.cpp.o
+
+.PHONY : FileInfoContainer.o
+
+# target to build an object file
+FileInfoContainer.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o
+.PHONY : FileInfoContainer.cpp.o
+
+FileInfoContainer.i: FileInfoContainer.cpp.i
+
+.PHONY : FileInfoContainer.i
+
+# target to preprocess a source file
+FileInfoContainer.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.i
+.PHONY : FileInfoContainer.cpp.i
+
+FileInfoContainer.s: FileInfoContainer.cpp.s
+
+.PHONY : FileInfoContainer.s
+
+# target to generate assembly for a file
+FileInfoContainer.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.s
+.PHONY : FileInfoContainer.cpp.s
+
 FileManager.o: FileManager.cpp.o
 
 .PHONY : FileManager.o
@@ -636,33 +663,6 @@ WcisloSocket.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
 .PHONY : WcisloSocket.cpp.s
 
-fileInfoContainer.o: fileInfoContainer.cpp.o
-
-.PHONY : fileInfoContainer.o
-
-# target to build an object file
-fileInfoContainer.cpp.o:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.o
-.PHONY : fileInfoContainer.cpp.o
-
-fileInfoContainer.i: fileInfoContainer.cpp.i
-
-.PHONY : fileInfoContainer.i
-
-# target to preprocess a source file
-fileInfoContainer.cpp.i:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.i
-.PHONY : fileInfoContainer.cpp.i
-
-fileInfoContainer.s: fileInfoContainer.cpp.s
-
-.PHONY : fileInfoContainer.s
-
-# target to generate assembly for a file
-fileInfoContainer.cpp.s:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/fileInfoContainer.cpp.s
-.PHONY : fileInfoContainer.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -720,6 +720,9 @@ help:
 	@echo "... File.o"
 	@echo "... File.i"
 	@echo "... File.s"
+	@echo "... FileInfoContainer.o"
+	@echo "... FileInfoContainer.i"
+	@echo "... FileInfoContainer.s"
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
@@ -756,9 +759,6 @@ help:
 	@echo "... WcisloSocket.o"
 	@echo "... WcisloSocket.i"
 	@echo "... WcisloSocket.s"
-	@echo "... fileInfoContainer.o"
-	@echo "... fileInfoContainer.i"
-	@echo "... fileInfoContainer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
