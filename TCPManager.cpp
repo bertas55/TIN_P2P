@@ -41,7 +41,7 @@ void TCPManager::connectionAccepter()
     {
 //        @TODO jakies wyjatki?
         Socket *newSocket = s->Accept();
-        connList.push_back(new Connection(newSocket));
+//        connList.push_back(Connection(newSocket));
     }
     delete s;
 }

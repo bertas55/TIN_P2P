@@ -20,8 +20,8 @@ public:
     Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
     ~Connection();
 
-    void sendFile(File*);
-    void recieveFile();
+    void sendFile(File*, int);
+    void recieveFile(File*);
     void run();
 
 private:
@@ -31,7 +31,7 @@ private:
     bool running;
     Socket *sock;
     void interpreteMessage(Message *msg);
-    void sendMessages(Message *msg);
+    void sendMessage(Message *msg);
 
 
 

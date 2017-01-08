@@ -28,7 +28,7 @@ namespace Constants {
     }
 
     namespace File {
-        const unsigned int partSize = 256;
+        const unsigned int partSize = 2048;
     }
 
     namespace Configuration {

@@ -19,6 +19,7 @@ CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Connection.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../JsonCreator.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Message.h
@@ -132,6 +133,7 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Message.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.cpp
