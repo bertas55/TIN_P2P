@@ -17,6 +17,7 @@ public:
     static WcisloSocket* CreateServerSocket(unsigned short port);
     static WcisloSocket* broadcasterSocket(void);
     static WcisloSocket* broadcasterSenderSocket(void);
+    static Socket* createTCPListener();
 
 private:
     SocketCreator(void);

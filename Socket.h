@@ -18,9 +18,13 @@ public:
     Socket(int _descriptor);
     ~Socket(void);
     bool Bind(const std::string& address, unsigned short port);
+    bool Bind(unsigned short port);
+    bool Listen();
+    Socket* Accept();
     bool Connect(const std::string& address, unsigned short port);
     long Send(const char* bytes, unsigned long numberOfBytes);
     long Receive(char* bytes, unsigned long numberOfBytes);
+
     void Close(void);
 };
 

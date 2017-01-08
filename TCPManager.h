@@ -10,11 +10,13 @@
 
 /**
  * Klasa zarzadzajaca polczeniami TCP
+ *
  */
 class TCPManager {
 
 public:
-    TCPManager(FileManager*, FileInfoContainer*);
+    TCPManager(FileManager*, FileInfoContainer*, bool*);
+    ~TCPManager();
     void sendFile(File*, char* recieverAddress, unsigned short recieverPort); /*Wysylanie pliku do zadanego hosta*/
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
 
@@ -22,7 +24,12 @@ public:
 private:
     FileManager *fileManager;
     FileInfoContainer *fileInfoContainer;
+    vector<Connection*> connList;
     std::thread id;
+    Socket *s;
+    bool *exitFlag;
+
+    void connectionAccepter();
 
 
 };

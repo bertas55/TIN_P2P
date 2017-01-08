@@ -21,11 +21,13 @@ public:
 
     void sendFile(File*);
     void recieveFile();
+    void run();
 
 private:
     std::thread threadId;
     int descriptor;
     Socket *sock;
+    void interpreteMessage(Message *msg);
 
 
 };

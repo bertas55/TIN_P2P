@@ -27,12 +27,16 @@ Configuration.h
 /home/hubert/ClionProjects/TIN_P2P/Configuration.h
 string
 -
+Message.h
+/home/hubert/ClionProjects/TIN_P2P/Message.h
 
 /home/hubert/ClionProjects/TIN_P2P/Connection.cpp
 sys/socket.h
 -
 Connection.h
 /home/hubert/ClionProjects/TIN_P2P/Connection.h
+JsonParser.h
+/home/hubert/ClionProjects/TIN_P2P/JsonParser.h
 
 /home/hubert/ClionProjects/TIN_P2P/Connection.h
 SocketCreator.h
@@ -401,6 +405,8 @@ string
 /home/hubert/ClionProjects/TIN_P2P/SocketCreator.cpp
 SocketCreator.h
 /home/hubert/ClionProjects/TIN_P2P/SocketCreator.h
+Constants.h
+/home/hubert/ClionProjects/TIN_P2P/Constants.h
 sys/socket.h
 -
 netinet/in.h
