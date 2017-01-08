@@ -14,14 +14,14 @@ public:
 
     FileDownload(string name, unsigned int size);
 
-    unsigned int getPartToDownload();
+    long getPartToDownload();
 
-    void addPartToDownload(unsigned int);
+    void addPartToDownload(long);
 
     unsigned long partsLeftCount();
 
 private:
-    queue<unsigned int> partsLeft;
+    queue<long> partsLeft;
 };
 
 

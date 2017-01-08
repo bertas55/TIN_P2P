@@ -14,7 +14,7 @@ FileDownload::FileDownload(string name, unsigned int size) : File(name) {
     }
 }
 
-unsigned int FileDownload::getPartToDownload() {
+long FileDownload::getPartToDownload() {
     if (partsLeft.empty()) {
         return -1;
     }
@@ -27,6 +27,6 @@ unsigned long FileDownload::partsLeftCount() {
     return partsLeft.size();
 }
 
-void FileDownload::addPartToDownload(unsigned int partNumber) {
+void FileDownload::addPartToDownload(long partNumber) {
     partsLeft.push(partNumber);
 }
