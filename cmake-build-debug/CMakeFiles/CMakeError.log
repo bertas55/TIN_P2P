@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bbd40/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bbd40.dir/build.make CMakeFiles/cmTC_bbd40.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2a584/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2a584.dir/build.make CMakeFiles/cmTC_2a584.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bbd40.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_bbd40.dir/CheckSymbolExists.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_bbd40
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bbd40.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_bbd40.dir/CheckSymbolExists.c.o  -o cmTC_bbd40 
-CMakeFiles/cmTC_bbd40.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_2a584.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_2a584.dir/CheckSymbolExists.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2a584
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a584.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_2a584.dir/CheckSymbolExists.c.o  -o cmTC_2a584 
+CMakeFiles/cmTC_2a584.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_bbd40.dir/build.make:97: polecenia dla obiektu 'cmTC_bbd40' nie powiodły się
-make[1]: *** [cmTC_bbd40] Błąd 1
+CMakeFiles/cmTC_2a584.dir/build.make:97: polecenia dla obiektu 'cmTC_2a584' nie powiodły się
+make[1]: *** [cmTC_2a584] Błąd 1
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:126: polecenia dla obiektu 'cmTC_bbd40/fast' nie powiodły się
-make: *** [cmTC_bbd40/fast] Błąd 2
+Makefile:126: polecenia dla obiektu 'cmTC_2a584/fast' nie powiodły się
+make: *** [cmTC_2a584/fast] Błąd 2
 
 File /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_494c2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_494c2.dir/build.make CMakeFiles/cmTC_494c2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_92599/fast"
+/usr/bin/make -f CMakeFiles/cmTC_92599.dir/build.make CMakeFiles/cmTC_92599.dir/build
 make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_494c2.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_494c2.dir/CheckFunctionExists.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_494c2
-/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_494c2.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_494c2.dir/CheckFunctionExists.c.o  -o cmTC_494c2 -lpthreads 
+Building C object CMakeFiles/cmTC_92599.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_92599.dir/CheckFunctionExists.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
+Linking C executable cmTC_92599
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92599.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_92599.dir/CheckFunctionExists.c.o  -o cmTC_92599 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_494c2.dir/build.make:97: polecenia dla obiektu 'cmTC_494c2' nie powiodły się
-make[1]: *** [cmTC_494c2] Błąd 1
+CMakeFiles/cmTC_92599.dir/build.make:97: polecenia dla obiektu 'cmTC_92599' nie powiodły się
+make[1]: *** [cmTC_92599] Błąd 1
 make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:126: polecenia dla obiektu 'cmTC_494c2/fast' nie powiodły się
-make: *** [cmTC_494c2/fast] Błąd 2
+Makefile:126: polecenia dla obiektu 'cmTC_92599/fast' nie powiodły się
+make: *** [cmTC_92599/fast] Błąd 2
 
 

@@ -27,7 +27,8 @@ Message* JsonParser::parse(string jsonMessage) {
             unsigned int offset = parsedJson[Constants::JsonKeys::offset].asUInt();
             messageToReturn = new MessageRequestFile(hostName, fileName, fileSize, offset);
         } else if (strcmp(messageType, Constants::MessageTypes::requestList) == 0) {
-            messageToReturn = new MessageRequestList();
+            string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
+            messageToReturn = new MessageRequestList(hostName);
         } else if (strcmp(messageType, Constants::MessageTypes::myList) == 0) {
             vector<FileInfo> fileInfos;
             for (auto file : parsedJson[Constants::JsonKeys::files]) {

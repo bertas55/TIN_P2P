@@ -18,7 +18,7 @@ namespace JsonCreator {
     // RequestFile
     std::string requestFile(std::string, std::string, unsigned int, unsigned int);
     // RequestList
-    std::string requestList();
+    std::string requestList(std::string);
     // MyList
     std::string myList(std::vector<FileInfo>);
     // NewFile

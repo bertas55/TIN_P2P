@@ -25,7 +25,7 @@ string MessageRequestFile::toString() {
 }
 
 string MessageRequestList::toString() {
-    return JsonCreator::requestList();
+    return JsonCreator::requestList(hostName);
 }
 
 string MessageMyList::toString() {
