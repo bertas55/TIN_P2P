@@ -15,7 +15,7 @@
 #include "JsonCreator.h"
 
 namespace JsonParser {
-    Message parse(string msg);
+    Message* parse(string msg);
 }
 
 

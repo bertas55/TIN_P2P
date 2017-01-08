@@ -28,7 +28,7 @@ UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool b
 UDPAdapter::~UDPAdapter() {
 
     if (broadcaster){
-        sendMessage(MessageBye());
+        sendMessage(new MessageBye());
         cout << "Sender destruction.\n";
     }
     else {
@@ -49,7 +49,8 @@ void UDPAdapter::listen() {
     while (!(*exitFlag))
     {
         socket->Receive(buf,BUFLEN);
-        serverMessageContainer->put(JsonParser::parse(buf));
+        Message *m = JsonParser::parse(buf);
+        serverMessageContainer->put(m);
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
     cout <<"Listend end.\n";
@@ -61,7 +62,7 @@ void UDPAdapter::send() {
 
     while(!(*exitFlag))
     {
-        Message msg;
+        Message *msg;
         try {
             msg = serverMessageContainer->get();
             sendMessage(msg);
@@ -76,10 +77,10 @@ void UDPAdapter::send() {
 
 }
 
-void UDPAdapter::sendMessage(Message msg) {
+void UDPAdapter::sendMessage(Message *msg) {
     const int BUFLEN = 512;
     char buf[BUFLEN];
-    strncpy(buf,msg.toString().c_str(),sizeof(buf));
+    strncpy(buf,msg->toString().c_str(),sizeof(buf));
     socket->Send(buf,BUFLEN);
 }
 

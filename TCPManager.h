@@ -22,7 +22,7 @@ public:
 private:
     FileManager *fileManager;
     FileInfoContainer *fileInfoContainer;
-
+    std::thread id;
 
 
 };

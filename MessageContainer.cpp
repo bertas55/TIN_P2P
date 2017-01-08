@@ -12,11 +12,11 @@ MessageContainer::MessageContainer() {
 
 }
 
-Message MessageContainer::get() {
+Message* MessageContainer::get() {
     lock_guard<mutex> lock(guard);
 
     if (!messagesQueue.empty()) {
-        Message msgToReturn = messagesQueue.front();
+        Message *msgToReturn = messagesQueue.front();
         messagesQueue.pop();
         return msgToReturn;
     } else {
@@ -25,7 +25,7 @@ Message MessageContainer::get() {
 
 }
 
-void MessageContainer::put(Message msg) {
+void MessageContainer::put(Message *msg) {
     lock_guard<mutex> lock(guard);
     messagesQueue.push(msg);
 }

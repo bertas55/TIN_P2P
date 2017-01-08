@@ -34,7 +34,7 @@ private:
 
     void sendInitialMessage();
     void sendExitMessage();
-    void broadcastMessage(Message);
+    void broadcastMessage(Message*);
     void checkForMessages();
     void checkForActions();
 

@@ -7,8 +7,8 @@
 
 using namespace std;
 
-Message JsonParser::parse(string jsonMessage) {
-    Message messageToReturn;
+Message* JsonParser::parse(string jsonMessage) {
+    Message *messageToReturn;
     Json::Value parsedJson;
     Json::Reader reader;
     bool parsingSuccessful = reader.parse(jsonMessage, parsedJson);
@@ -19,13 +19,13 @@ Message JsonParser::parse(string jsonMessage) {
 
         if (strcmp(messageType, Constants::MessageTypes::hello) == 0) {
             // hello, is it me you loking for?
-            messageToReturn = MessageHello();
+            messageToReturn = new MessageHello();
         } else if (strcmp(messageType, Constants::MessageTypes::requestFile) == 0) {
             string hostName2 = parsedJson[Constants::JsonKeys::hostName].asString();
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             unsigned int offset = parsedJson[Constants::JsonKeys::offset].asUInt();
-            messageToReturn = MessageRequestFile(hostName2, fileName, fileSize, offset);
+            messageToReturn = new MessageRequestFile(hostName2, fileName, fileSize, offset);
         } else if (strcmp(messageType, Constants::MessageTypes::requestList) == 0) {
 
         } else if (strcmp(messageType, Constants::MessageTypes::newFile) == 0) {

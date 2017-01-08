@@ -55,16 +55,16 @@ void ServerThread::run()
  * Wyslanie wiadomosci poprzez broadcast
  * @param msg
  */
-void ServerThread::broadcastMessage(Message msg) {
+void ServerThread::broadcastMessage(Message *msg) {
     outputMessage.put(msg);
 }
 /**
  * Sprawdzenie wiadomosci otrzymanych przez siec
  */
 void ServerThread::checkForMessages() {
-    Message msg = inputMessages.get();
-    std::cout<< msg.toString() << "Mesejdz\n";
-    switch(msg.type)
+    Message *msg = inputMessages.get();
+    std::cout<< msg->toString() << "Mesejdz\n";
+    switch(msg->type)
     {
         case(MessageType::hello): {
             std::cout << "Odebrano wiadomosc Hello\n";
@@ -87,7 +87,7 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::requestList):{
 //            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
-            broadcastMessage(MessageMyList());
+            broadcastMessage(new MessageMyList());
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
@@ -129,7 +129,7 @@ void ServerThread::checkForActions() {
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
             cout << "Wysylam Hello\n";
-            broadcastMessage(MessageHello());
+            broadcastMessage(new MessageHello());
             break;
         }
         case (UserAction::EnableFile):
@@ -140,14 +140,14 @@ void ServerThread::checkForActions() {
         case (UserAction::RemoveFile):
         {
 //        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
-            broadcastMessage(MessageDeleteFile());
+            broadcastMessage(new MessageDeleteFile());
             break;
         }
         case (UserAction::RefreshList):
         {
 //          @TODO yyy
             cout << "Wysylam RequestList\n";
-            broadcastMessage(MessageRequestList());
+            broadcastMessage(new MessageRequestList());
             break;
         }
         case (UserAction::DownloadFile):
@@ -166,9 +166,9 @@ void ServerThread::checkForActions() {
 
 void ServerThread::sendInitialMessage()
 {
-    broadcastMessage(MessageHello());
+    broadcastMessage(new MessageHello());
 }
 void ServerThread::sendExitMessage()
 {
-    broadcastMessage(MessageBye());
+    broadcastMessage(new MessageBye());
 }

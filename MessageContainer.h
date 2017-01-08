@@ -17,14 +17,14 @@ public:
 
     MessageContainer();
 
-    Message get();
+    Message* get();
 
-    void put(Message msg);
+    void put(Message *msg);
 
     int getSize();
 
 private:
-    queue<Message> messagesQueue;
+    queue<Message*> messagesQueue;
     mutex guard;
 };
 

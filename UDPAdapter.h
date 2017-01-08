@@ -21,7 +21,7 @@ private:
     std::thread UDPThread;
     MessageContainer *serverMessageContainer;
     bool broadcaster;
-    void sendMessage(Message);
+    void sendMessage(Message*);
 
 
 public:
