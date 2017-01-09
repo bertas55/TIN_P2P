@@ -14,6 +14,12 @@ ServerInterface::ServerInterface()
 
 
 }
+
+ServerInterface::ServerInterface(LogContainer* lg)
+{
+
+}
+
 ServerInterface::~ServerInterface()
 {
 

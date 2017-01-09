@@ -322,6 +322,18 @@ Dependencies/JsonCpp/json/json.h
 JsonCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
 
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.cpp
+LogContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
+queue
+-
+mutex
+-
+
 /home/lukasz/CLionProjects/TIN_P2P/Message.cpp
 string
 -
@@ -373,6 +385,8 @@ ActionContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
 FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+LogContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.cpp
 ServerThread.h

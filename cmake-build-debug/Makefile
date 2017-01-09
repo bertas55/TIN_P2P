@@ -447,6 +447,33 @@ JsonParser.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/JsonParser.cpp.s
 .PHONY : JsonParser.cpp.s
 
+LogContainer.o: LogContainer.cpp.o
+
+.PHONY : LogContainer.o
+
+# target to build an object file
+LogContainer.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o
+.PHONY : LogContainer.cpp.o
+
+LogContainer.i: LogContainer.cpp.i
+
+.PHONY : LogContainer.i
+
+# target to preprocess a source file
+LogContainer.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/LogContainer.cpp.i
+.PHONY : LogContainer.cpp.i
+
+LogContainer.s: LogContainer.cpp.s
+
+.PHONY : LogContainer.s
+
+# target to generate assembly for a file
+LogContainer.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/LogContainer.cpp.s
+.PHONY : LogContainer.cpp.s
+
 Message.o: Message.cpp.o
 
 .PHONY : Message.o
@@ -690,33 +717,6 @@ WcisloSocket.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
 .PHONY : WcisloSocket.cpp.s
 
-logContainer.o: logContainer.cpp.o
-
-.PHONY : logContainer.o
-
-# target to build an object file
-logContainer.cpp.o:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/logContainer.cpp.o
-.PHONY : logContainer.cpp.o
-
-logContainer.i: logContainer.cpp.i
-
-.PHONY : logContainer.i
-
-# target to preprocess a source file
-logContainer.cpp.i:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/logContainer.cpp.i
-.PHONY : logContainer.cpp.i
-
-logContainer.s: logContainer.cpp.s
-
-.PHONY : logContainer.s
-
-# target to generate assembly for a file
-logContainer.cpp.s:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/logContainer.cpp.s
-.PHONY : logContainer.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -789,6 +789,9 @@ help:
 	@echo "... JsonParser.o"
 	@echo "... JsonParser.i"
 	@echo "... JsonParser.s"
+	@echo "... LogContainer.o"
+	@echo "... LogContainer.i"
+	@echo "... LogContainer.s"
 	@echo "... Message.o"
 	@echo "... Message.i"
 	@echo "... Message.s"
@@ -816,9 +819,6 @@ help:
 	@echo "... WcisloSocket.o"
 	@echo "... WcisloSocket.i"
 	@echo "... WcisloSocket.s"
-	@echo "... logContainer.o"
-	@echo "... logContainer.i"
-	@echo "... logContainer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

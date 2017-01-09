@@ -75,6 +75,10 @@ CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../JsonParser.cpp
 CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o: ../Message.h
 
+CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o: ../Exceptions.h
+CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o: ../LogContainer.cpp
+CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o: ../LogContainer.h
+
 CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/Message.cpp.o: ../JsonCreator.h
@@ -96,6 +100,7 @@ CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../FileDownload.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../ServerInterface.cpp
@@ -165,6 +170,7 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../FileManager.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonCreator.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../JsonParser.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ServerInterface.h
@@ -192,6 +198,7 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileDownload.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../ServerInterface.h

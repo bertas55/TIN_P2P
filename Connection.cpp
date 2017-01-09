@@ -12,13 +12,13 @@ Connection::Connection(Socket *s, FileManager *fm) :
         running(true) ,
         fileManager(fm)
 {
-//    threadId = std::thread(&Connection::run,this);
+    threadId = std::thread(&Connection::run,this);
 //    threadId.detach();
 }
 Connection::Connection(Socket *s , FileDownload *file) : sock(s), running(true)
 {
 
-    threadId = std::thread(&Connection::testMethod,this);
+    threadId = std::thread(&Connection::recieveFile,this,file);
 //    threadId.detach();
 }
 

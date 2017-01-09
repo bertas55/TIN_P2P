@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukasz/CLionProjects/TIN_P2P/FileManager.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/FileManager.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/JsonCreator.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/JsonCreator.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/JsonParser.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o"
+  "/home/lukasz/CLionProjects/TIN_P2P/LogContainer.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/Message.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Message.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/MessageContainer.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/ServerInterface.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o"
@@ -25,7 +26,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukasz/CLionProjects/TIN_P2P/TCPManager.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o"
-  "/home/lukasz/CLionProjects/TIN_P2P/logContainer.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/logContainer.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/main.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -27,3 +27,8 @@ void LogContainer::put(struct Log a) {
     std::lock_guard<std::mutex> lock(guard);
     logContainer.push(a);
 }
+
+unsigned long LogContainer::size()
+{
+    return logContainer.size();
+}

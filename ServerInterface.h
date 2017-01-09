@@ -9,6 +9,7 @@
 #include <string>
 #include "ActionContainer.h"
 #include "FileManager.h"
+#include "LogContainer.h"
 
 /**
  * Interfejs do serwera.
@@ -16,6 +17,7 @@
 class ServerInterface {
 public:
     ServerInterface();
+    ServerInterface(LogContainer*);
     ~ServerInterface();
 
     void consoleInterface();

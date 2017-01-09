@@ -6,7 +6,16 @@
 #define TIN_P2P_LOGCONTAINER_H
 #include <queue>
 #include <mutex>
-enum LogType {DownloadFileProgres, FileVeto};
+/**
+ * Typy logow
+ */
+enum LogType {
+    DownloadFileProgres, //Informacja o postepie pobierania: Log(DownloadFileProgresm, NazwaPobiernaegoPliku, RozmiarDocelowyPliku
+    FileVeto            // Informacja o zgloszeniu roszczenia do pliku: Log(FileVeto, NazwaPliku, RozmiarPliku)
+};
+/**
+ * Struktura do opisu komunikatu przesylanaego do GUI
+ */
 struct Log
 {
     LogType logType;
@@ -17,13 +26,16 @@ struct Log
     {
     }
 };
-
+/**
+ * Kontener do przechowywania logow
+ */
 class LogContainer {
 public:
     LogContainer();
 
     void put(struct Log);
     struct Log get();
+    unsigned long size();
 
 private:
     std::queue<struct Log> logContainer;
