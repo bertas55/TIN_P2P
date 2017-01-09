@@ -121,6 +121,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileDownload.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../MessageContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ServerThread.cpp

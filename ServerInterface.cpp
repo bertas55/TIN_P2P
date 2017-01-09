@@ -20,7 +20,7 @@ ServerInterface::ServerInterface()
     setMyIp();
     debug("Konstuktor ServerInterface::ServerInterface()");
     logContainer = new LogContainer();
-    if (!guiDebug()) server = new ServerThread(&container,&fileManager);
+    if (!guiDebug()) server = new ServerThread(&container,&fileManager,logContainer);
 }
 
 ServerInterface::ServerInterface(LogContainer* lg): logContainer(lg)

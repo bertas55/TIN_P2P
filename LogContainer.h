@@ -31,7 +31,7 @@ enum LogType {
 /**
  * Struktura do opisu komunikatu przesylanaego do GUI
  */
-struct Log
+typedef struct Log
 {
     LogType logType;
     std::string data[2];
@@ -42,7 +42,7 @@ struct Log
         data[0]= name;
         data[1]= host;
     }
-};
+}Logs;
 /**
  * Kontener do przechowywania logow
  */
@@ -50,7 +50,7 @@ class LogContainer {
 public:
     LogContainer();
 
-    void put(struct Log);
+    void put(Log);
     struct Log get();
     unsigned long size();
 
