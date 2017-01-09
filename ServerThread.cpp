@@ -144,7 +144,7 @@ void ServerThread::checkForActions() {
         {
 //      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
             fileManager->unlockFile(action.data[0],action.arg);
-            tcpManager.test();
+//            tcpManager.test();
             break;
         }
         case (UserAction::RemoveFile):
@@ -153,12 +153,15 @@ void ServerThread::checkForActions() {
 //            fileManager->isOwner(action.data[0], action.arg)
 //            broadcastMessage(new MessageDeleteFile());
 //            fileManager->removeFile(action.data[0],action.arg);
+/*            if (fileManager->removeFile(action.data[0],action.arg))
+                broadcastMessage(new MessageDeleteFile(action.data[0],action.arg,"DUPA"));
+                ;*/
             cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
             break;
         }
         case (UserAction::RefreshList):
         {
-//          @TODO yyy
+//          @TODO OGARNAC SWLASNE AJPI!!!!!!!!!!!!!!!!!!!!!
             cout << "Wysylam RequestList\n";
 //            broadcastMessage(new MessageRequestList());
             break;
@@ -166,11 +169,21 @@ void ServerThread::checkForActions() {
         case (UserAction::DownloadFile):
         {
 //            @TODO
+            FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
+            if (fileInfo!=nullptr) tcpManager.recieveFile(fileInfo);
             break;
+        }
+        case (UserAction::RevokeFile):
+        {
+            if (fileManager->isOwner(action.data[0],action.arg))
+            {
+                //                broadcastMessage(new MessageRevoke(action.data[0],action.arg));
+            }
         }
         case (UserAction::Exit):
         {
-
+            broadcastMessage(new MessageBye());
+            exitFlag = true;
             break;
         }
     }

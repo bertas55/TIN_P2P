@@ -18,6 +18,7 @@ public:
     void put(struct FileInfo);
     std::vector<struct FileInfo> getAllHostsContains(struct FileInfo);
     void remove (struct FileInfo);
+    struct FileInfo* has(string fileName, unsigned long fileSize);
 
 private:
     std::vector<struct FileInfo> fileInfoVector;

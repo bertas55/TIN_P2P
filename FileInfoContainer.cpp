@@ -36,3 +36,13 @@ void FileInfoContainer::remove(struct FileInfo file) {
         }
     }
 }
+
+struct FileInfo* FileInfoContainer::has(string fileName, unsigned long fileSize) {
+    for (unsigned int i =0 ; i < fileInfoVector.size() ; ++i)
+    {
+        if (fileInfoVector[i].size == fileSize
+            && fileInfoVector[i].name == fileName) return &fileInfoVector[i];
+    }
+    return nullptr;
+
+}

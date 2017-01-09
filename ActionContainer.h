@@ -9,7 +9,7 @@
 #include <mutex>
 #include "File.h"
 
-enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, AddFile, Exit };
+enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, AddFile, RevokeFile, Exit };
 typedef struct Actions {
     UserAction action;
     string data[2];

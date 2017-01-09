@@ -102,6 +102,11 @@ void ServerInterface::addFile(string fileName, string filePath) {
     if (!guiDebug()) container.put(Action(UserAction::AddFile,fileName,filePath,0));
 }
 
+void ServerInterface::revokeFile(string fileName, unsigned long fileSize) {
+    if (!guiDebug()) container.put(Action(UserAction::RevokeFile,fileName,"",fileSize));
+}
+
+
 void ServerInterface::consoleInterface() {
     int myAction;
     do {
