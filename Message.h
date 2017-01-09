@@ -12,7 +12,7 @@
 using namespace std;
 
 enum MessageType {
-    hello,
+    ok,
     handshake,
     requestFile,
     requestList,
@@ -33,9 +33,9 @@ struct Message {
     virtual ~Message() {};
 };
 
-struct MessageHello : virtual Message {
-    MessageHello() {
-        type = hello;
+struct MessageOk : virtual Message {
+    MessageOk() {
+        type = ok;
     }
 
     string toString();
@@ -91,14 +91,16 @@ struct MessageMyList : Message {
 };
 
 struct MessageNewFile : Message {
-    MessageNewFile(string fileName, unsigned int fileSize) {
+    MessageNewFile(string fileName, unsigned int fileSize, string hostName) {
         type = newFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
+        this->hostName = hostName;
     }
 
     string fileName;
     unsigned int fileSize;
+    string hostName;
 
     string toString();
 };
@@ -117,14 +119,16 @@ struct MessageVeto : Message {
 };
 
 struct MessageDeleteFile : Message {
-    MessageDeleteFile(string fileName, unsigned int fileSize) {
+    MessageDeleteFile(string fileName, unsigned int fileSize, string hostName) {
         type = deleteFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
+        this->hostName = hostName;
     }
 
     string fileName;
     unsigned int fileSize;
+    string hostName;
 
     string toString();
 };
@@ -144,8 +148,5 @@ struct MessageDenied : Message {
 
     string toString();
 };
-
-
-
 
 #endif //TIN_P2P_MESSAGE_H

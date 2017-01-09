@@ -17,7 +17,7 @@ namespace Constants {
     }
 
     namespace MessageTypes {
-        const char* hello = "Hello";
+        const char* ok = "Ok";
         const char* requestFile = "RequestFile";
         const char* requestList = "RequestList";
         const char* myList = "MyList";

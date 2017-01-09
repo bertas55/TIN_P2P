@@ -23,30 +23,26 @@ std::ifstream::pos_type File::readSize()
 }
 
 void File::lock() {
-    if (!locked) {
-        locked = true;
-    } else {
-        // throw "is already locked"
-    }
+    locked = true;
 }
 
 void File::unlock() {
-    if (locked) {
-        locked = false;
-    } else {
-        // throw "is already unlocked"
-    }
+    locked = false;
 }
 
 bool File::isLocked() {
     return locked;
 }
 
+bool File::isOwner() {
+    return owner;
+}
+
 string File::getName() {
     return name;
 }
 
-unsigned int File::getSize() {
+unsigned long File::getSize() {
     return size;
 }
 
@@ -55,8 +51,9 @@ struct FileInfo File::getFileInfo() {
 }
 
 char* File::getFilePart(unsigned int partNumber) {
+    cout << "Get part: " << partNumber << endl;
     unsigned int offset = partNumber * Constants::File::partSize;
-    if (offset + Constants::File::partSize >= size) {
+    if (offset >= size) {
         throw OutOfRangeException();
     }
     string fullPath = path + name;
@@ -73,9 +70,9 @@ char* File::getFilePart(unsigned int partNumber) {
 }
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *data) {
-//    std::lock_guard<std::mutex> lock(guard);
+    std::lock_guard<std::mutex> lock(guard);
     unsigned int offset = partNumber * Constants::File::partSize;
-    if (offset + dataLength > size) {
+    if (offset + dataLength >= size) {
         throw OutOfRangeException();
     }
     string fullPath = path + name;
@@ -84,8 +81,6 @@ void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *
         throw LoadingFileException();
     }
     file.seekp(offset, ios::beg);
-//    file.put('X');
     file.write(data, dataLength);
-//    file.write("X", 1);
     file.close();
 }

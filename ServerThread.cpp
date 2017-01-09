@@ -71,7 +71,7 @@ void ServerThread::checkForMessages() {
     std::cout<< msg->toString() << "Mesejdz\n";
     switch(msg->type)
     {
-        case(MessageType::hello): {
+        case(MessageType::ok): {
             std::cout << "Odebrano wiadomosc Hello\n";
 
             break;
@@ -134,7 +134,7 @@ void ServerThread::checkForActions() {
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
             cout << "Wysylam Hello\n";
-            broadcastMessage(new MessageHello());
+            broadcastMessage(new MessageOk());
             break;
         }
         case (UserAction::EnableFile):
@@ -173,7 +173,7 @@ void ServerThread::checkForActions() {
 
 void ServerThread::sendInitialMessage()
 {
-    broadcastMessage(new MessageHello());
+    broadcastMessage(new MessageOk());
 }
 void ServerThread::sendExitMessage()
 {

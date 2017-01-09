@@ -12,7 +12,7 @@
 
 namespace JsonCreator {
     // Hello
-    std::string hello();
+    std::string ok();
     // Handshake
     std::string handshake(std::string);
     // RequestFile
@@ -22,11 +22,11 @@ namespace JsonCreator {
     // MyList
     std::string myList(std::vector<FileInfo>);
     // NewFile
-    std::string newFile(std::string, unsigned int);
+    std::string newFile(std::string, unsigned int, std::string);
     // Veto
     std::string veto(std::string, unsigned int);
     // Delete
-    std::string deleteFile(std::string, unsigned int);
+    std::string deleteFile(std::string, unsigned int, std::string);
     // Bye
     std::string bye();
     // Denied

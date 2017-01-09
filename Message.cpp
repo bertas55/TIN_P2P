@@ -12,8 +12,8 @@ string Message::toString() {
     return "Base message class. You should not do this";
 }
 
-string MessageHello::toString() {
-    return JsonCreator::hello();
+string MessageOk::toString() {
+    return JsonCreator::ok();
 }
 
 string MessageHandshake::toString() {
@@ -33,7 +33,7 @@ string MessageMyList::toString() {
 }
 
 string MessageNewFile::toString() {
-    return JsonCreator::newFile(fileName, fileSize);
+    return JsonCreator::newFile(fileName, fileSize, hostName);
 }
 
 string MessageVeto::toString() {
@@ -41,7 +41,7 @@ string MessageVeto::toString() {
 }
 
 string MessageDeleteFile::toString() {
-    return JsonCreator::deleteFile(fileName, fileSize);
+    return JsonCreator::deleteFile(fileName, fileSize, hostName);
 }
 
 string MessageBye::toString() {
