@@ -12,11 +12,11 @@ TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, Messag
         exitFlag(flag),
         inputMessages(mc)
 {
-
+    id = thread(&TCPManager::connectionAccepter,this);
 }
 TCPManager::~TCPManager()
 {
-
+    id.join();
 }
 
 void TCPManager::sendFile(File* f, char* recieverAddress, unsigned short recieverPort) /*Wysylanie pliku do zadanego hosta*/
@@ -43,9 +43,16 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
         FileDownload file(fi->name,fi->size);
         for (int i=0; i < host.size();++i)
         {
-            cout << "Uruchamiam polaczenia\n";
-            Connection(SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file);
+            cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
+            Connection *c = new Connection( SocketCreator::CreateSocket(), &file);
+//            Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file);
+//            connList.push_back( new Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file));
+//            std::thread(connList.back()->recieveFile,connList.back(), file);
+//            std::thread t(&Connection::recieveFile, Connection(SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file),file );
+            cout <<"Next\n";
+            this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
         }
+
     }
 
 }
@@ -57,8 +64,9 @@ void TCPManager::connectionAccepter()
     while (!(*exitFlag))
     {
 //        @TODO jakies wyjatki?
-        Socket *newSocket = s->Accept();
-        Connection(newSocket,fileManager);
+//        Socket *newSocket = s->Accept();
+        Connection( s->Accept(),fileManager);
+        cout << "New connection\n";
     }
     delete s;
 }

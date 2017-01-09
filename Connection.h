@@ -33,6 +33,7 @@ private:
     Socket *sock;
     void interpreteMessage(Message *msg);
     void sendMessage(Message *msg);
+    void testMethod();
 
 
 

@@ -74,17 +74,17 @@ char* File::getFilePart(unsigned int partNumber) {
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *data) {
     unsigned int offset = partNumber * Constants::File::partSize;
-    if (offset + dataLength >= size) {
+    if (offset + dataLength > size) {
         throw OutOfRangeException();
     }
     string fullPath = path + name;
-    ofstream file(fullPath);
+    ofstream file(fullPath,ios::in | ios::out | ios::binary);
     if (!file.is_open()) {
         throw LoadingFileException();
     }
-    file.seekp(0, ios::beg);
+    file.seekp(offset, ios::beg);
 //    file.put('X');
-//    file.write(data, dataLength);
-    file.write("X", 1);
+    file.write(data, dataLength);
+//    file.write("X", 1);
     file.close();
 }

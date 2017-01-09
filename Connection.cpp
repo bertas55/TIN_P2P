@@ -3,6 +3,7 @@
 //
 
 #include <sys/socket.h>
+#include <unistd.h>
 #include "Connection.h"
 #include "JsonParser.h"
 
@@ -11,15 +12,19 @@ Connection::Connection(Socket *s, FileManager *fm) :
         running(true) ,
         fileManager(fm)
 {
-    threadId = std::thread(&Connection::run,this);
+//    threadId = std::thread(&Connection::run,this);
+//    threadId.detach();
 }
 Connection::Connection(Socket *s , FileDownload *file) : sock(s), running(true)
 {
-    threadId = std::thread(&Connection::recieveFile,this,file);
+
+    threadId = std::thread(&Connection::testMethod,this);
+//    threadId.detach();
 }
 
 Connection::~Connection()
 {
+    sendMessage(new MessageBye);
     threadId.join();
 }
 
@@ -45,13 +50,19 @@ void Connection::recieveFile(FileDownload* file)
             sendMessage(new MessageRequestFile("ZXCZX",file->getName(),file->getSize(),part));
             cout << "Wyslalem wiadomosc\n";
             char buf[Constants::File::partSize];
-            sock->Receive(buf,Constants::File::partSize);
-            file->saveFilePart(part,sizeof(buf),buf);
+
+            int numberOfBytes;
+            if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
+            else numberOfBytes=Constants::File::partSize;
+            sock->Receive(buf,numberOfBytes);
+            cout << "Odebralem dane.\n";
+            file->saveFilePart(part,numberOfBytes,buf);
         }
         else break;
 //        hostName niepotrzebny? Download manager, ktory mowi ktora czesc?
 //        Pobieranie koejnych numerkow z kontenera, w przypadku niepowodzenia odlozenie?
 //        sendMessage(MessageRequestFile( ,file->getName() ,file->getSize(),));
+        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
 }
 /**
@@ -61,12 +72,15 @@ void Connection::run()
 {
     const unsigned short BUFLEN = 512;
     char buf[BUFLEN];
+    Message *m;
     while (true)
     {
-        sock->Receive(buf,BUFLEN);
-        Message *m = JsonParser::parse(buf);
+        if (sock==NULL) return;
+        if (!sock->Receive(buf,BUFLEN)) break;
+        m = JsonParser::parse(buf);
         interpreteMessage(m);
     }
+    delete m;
 }
 
 void Connection::interpreteMessage(Message *msg) {
@@ -88,5 +102,14 @@ void Connection::interpreteMessage(Message *msg) {
             running = false;
             break;
         }
+    }
+}
+
+void Connection::testMethod() {
+
+    for (int i=0;i<10;i++)
+    {
+        cout << "dzialam\n";
+        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
 }

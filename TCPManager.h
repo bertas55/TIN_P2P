@@ -21,10 +21,14 @@ public:
     void sendFile(File*, char* recieverAddress, unsigned short recieverPort); /*Wysylanie pliku do zadanego hosta*/
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
     void test(){
+        FileInfo f2("testFile",10245,false,false);
+        f2.hostAddress="192.168.0.85";
+        fileInfoContainer->put(f2);
         FileInfo f("testFile",10245,false,false);
         f.hostAddress="192.168.0.10";
         fileInfoContainer->put(f);
-        recieveFile(&f);
+
+        recieveFile(&f2);
     }
 
 

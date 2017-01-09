@@ -12,9 +12,13 @@ FileDownload::FileDownload(string name, unsigned int size) : File(name) {
     for (int i = 0; i < partsCount; i++) {
         addPartToDownload(i);
     }
+    std::ofstream ofs(name, std::ios::binary | std::ios::out);
+    ofs.seekp(size - 1);
+    ofs.write("", 1);
 }
 
 long FileDownload::getPartToDownload() {
+    std::lock_guard<std::mutex> lock(guard);
     if (partsLeft.empty()) {
         return -1;
     }

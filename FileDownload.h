@@ -6,6 +6,7 @@
 #define TIN_P2P_FILEDOWNLOAD_H
 
 #include <queue>
+#include <mutex>
 #include "File.h"
 
 class FileDownload : public File {
@@ -20,6 +21,7 @@ public:
 
     unsigned long partsLeftCount();
 
+    mutex guard;
 private:
     queue<long> partsLeft;
 };

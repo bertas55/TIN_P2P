@@ -29,13 +29,13 @@ namespace Constants {
     }
 
     namespace File {
-        const unsigned int partSize = 2048;
+        const unsigned int partSize = 256;
     }
 
     namespace Configuration {
         const unsigned short port = 8888;
         const unsigned short TCPort = 9970;
-        const char* broadcastIP = "192.168.0.255";
+        const char* broadcastIP = "127.0.0.1";
         const char* directoryPath = "";
         const char* downloadPath = "";
         const char* localhostAddress = "127.0.0.1";
