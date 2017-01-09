@@ -423,6 +423,8 @@ TCPManager.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.cpp
 Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 sys/socket.h
 -
 sys/types.h
@@ -443,6 +445,8 @@ SocketCreator.h
 /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 sys/socket.h
 -
 netinet/in.h
@@ -465,6 +469,8 @@ TCPManager.h
 /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
 FileDownload.h
 /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
 Connection.h

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "TCPManager.h"
 #include "FileDownload.h"
+#include "Exceptions.h"
 
 TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, MessageContainer* mc) :
         fileManager(fm),
@@ -40,16 +41,12 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
     std::cout << "Zajebisty debuger\n";
     if (host.size()>0)
     {
-        FileDownload file(fi->name,fi->size);
+        FileDownload *file = new FileDownload(fi->name,fi->size);
         for (int i=0; i < host.size();++i)
         {
             cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
-            Connection *c = new Connection( SocketCreator::CreateSocket(), &file);
+            Connection *c = new Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), file);
             connList.push_back(c);
-//            Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file);
-//            connList.push_back( new Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file));
-//            std::thread(connList.back()->recieveFile,connList.back(), file);
-//            std::thread t(&Connection::recieveFile, Connection(SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), &file),file );
             cout <<"Next\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
         }
@@ -76,8 +73,14 @@ void TCPManager::connectionAccepter()
     {
 //        @TODO jakies wyjatki?
 //        Socket *newSocket = s->Accept();
-        connectionSocket = s->Accept();
-         c = new Connection( s->Accept(),fileManager);
+        try {
+            connectionSocket = s->Accept();
+        } catch (ConnectionException e){
+            e.what();
+            continue;
+        }
+
+        c = new Connection( connectionSocket,fileManager);
         connList.push_back(c);
         cout << "New connection\n";
     }

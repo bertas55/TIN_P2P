@@ -33,17 +33,17 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::DisableFile):
         {
-            disableFile("","");
+            disableFile("",0);
             break;
         }
         case (UserAction::EnableFile):
         {
-            enableFile("","");
+            enableFile("",0);
             break;
         }
         case (UserAction::RemoveFile):
         {
-            removeFile("","");
+            removeFile("",0);
             break;
         }
         case (UserAction::RefreshList):
@@ -53,7 +53,7 @@ void ServerInterface::putServerAction(UserAction action)
         }
         case (UserAction::DownloadFile):
         {
-            downloadFile("","");
+            downloadFile("",0);
             break;
         }
         case (UserAction::Exit):
@@ -64,10 +64,10 @@ void ServerInterface::putServerAction(UserAction action)
     }
 }
 
-void ServerInterface::downloadFile(string fileName,string fileSize)
+void ServerInterface::downloadFile(string fileName,unsigned long fileSize)
 {
-    debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+","+fileSize+")");
-    if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+",");
+    if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,"", fileSize));
 }
 void ServerInterface::refreshList()
 {
@@ -75,15 +75,15 @@ void ServerInterface::refreshList()
     if (!guiDebug()) container.put(Action(UserAction::RefreshList,"","",0));
 
 }
-void ServerInterface::enableFile(string fileName,string fileSize)
+void ServerInterface::enableFile(string fileName,unsigned long fileSize)
 {
-    debug("Wywolano funkcje ServerInterface::enableFile("+fileName+","+fileSize+")");
-    if (!guiDebug()) container.put(Action(UserAction::EnableFile,fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::enableFile("+fileName+",");
+    if (!guiDebug()) container.put(Action(UserAction::EnableFile,fileName,"",fileSize));
 }
-void ServerInterface::disableFile(string fileName,string fileSize)
+void ServerInterface::disableFile(string fileName,unsigned long fileSize)
 {
-    debug("Wywolano funkcje ServerInterface::disableFile("+fileName+","+fileSize+")");
-    if (!guiDebug()) container.put(Action(UserAction::DisableFile,fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::disableFile("+fileName+",");
+    if (!guiDebug()) container.put(Action(UserAction::DisableFile,fileName,"",fileSize));
 }
 void ServerInterface::userExit()
 {
@@ -91,10 +91,10 @@ void ServerInterface::userExit()
     if (!guiDebug()) container.put(Action(UserAction::Exit,"","",0));
 }
 
-void ServerInterface::removeFile(string fileName,string fileSize) {
-    debug("Wywolano funkcje ServerInterface::enableFile("+fileName+","+fileSize+")");
+void ServerInterface::removeFile(string fileName, unsigned long fileSize) {
+    debug("Wywolano funkcje ServerInterface::enableFile("+fileName);
     if (!guiDebug())
-        container.put(Action(UserAction::RemoveFile,fileName,fileSize,0));
+        container.put(Action(UserAction::RemoveFile,fileName,"",fileSize));
 }
 
 void ServerInterface::addFile(string fileName, string filePath) {

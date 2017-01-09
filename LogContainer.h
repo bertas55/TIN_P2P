@@ -35,9 +35,9 @@ struct Log
 {
     LogType logType;
     std::string data[2];
-    int argument;
-    Log(LogType lt,std::string name,std::string host, int arg) :
-            logType(lt), argument(arg)
+    unsigned long argument;
+    Log(LogType lt,std::string name,std::string host, unsigned long size) :
+            logType(lt), argument(size)
     {
         data[0]= name;
         data[1]= host;

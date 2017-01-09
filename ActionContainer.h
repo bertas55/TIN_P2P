@@ -13,8 +13,8 @@ enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile,
 typedef struct Actions {
     UserAction action;
     string data[2];
-    int arg;
-    Actions(UserAction u, string fName, string fSize, int i): action(u),arg(i)
+    unsigned long arg;
+    Actions(UserAction u, string fName, string fSize, unsigned long i): action(u),arg(i)
     {
         data[0]=fName;
         data[1]=fSize;

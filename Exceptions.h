@@ -43,6 +43,12 @@ struct OutOfRangeException : public exception {
         return "Tried to access file part that is out of range";
     }
 };
+struct ConnectionException : public exception
+{
+    const char * what () const throw () {
+        return "Failed to set up TCP connection";
+    }
+};
 
 
 #endif //TIN_P2P_EXCEPTIONS_H

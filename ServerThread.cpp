@@ -37,7 +37,7 @@ ServerThread::~ServerThread()
  */
 void ServerThread::run()
 {
-    while((!false==true) || true)
+    while(!exitFlag)
     {
         try {
             checkForMessages();
@@ -133,20 +133,24 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
-            cout << "Wysylam Hello\n";
-            broadcastMessage(new MessageHello());
+            fileManager->lockFile(action.data[0],action.arg);
+//            cout << "Wysylam Hello\n";
+//            broadcastMessage(new MessageHello());
             break;
         }
         case (UserAction::EnableFile):
         {
 //      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
+            fileManager->unlockFile(action.data[0],action.arg);
             tcpManager.test();
             break;
         }
         case (UserAction::RemoveFile):
         {
 //        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
+//            fileManager->isOwner(action.data[0], action.arg)
 //            broadcastMessage(new MessageDeleteFile());
+            fileManager->removeFile(action.data[0],action.arg);
             cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
             break;
         }

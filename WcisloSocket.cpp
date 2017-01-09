@@ -83,6 +83,8 @@ long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
     std::cout << sendto(descriptor,bytes,numberOfBytes,0,(struct sockaddr *) &si_other, slen);
 //    sendto(s, message, strlen(message) , 0 , (struct sockaddr *) &si_other, slen
 }
+
+//@TODO hostname niech zapisuje do wskznika (+1 arguemnt)
 long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;

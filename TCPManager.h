@@ -23,10 +23,10 @@ public:
     void sendMyList(Message*);
     void sendVeto(Message*);
     void test(){
-        FileInfo f2("testFile",10245,false,false);
-        f2.hostAddress="192.168.0.91";
+        FileInfo f2("testFile",10232,false,false);
+        f2.hostAddress="192.168.0.98";
 //        fileInfoContainer->put(f2);
-        FileInfo f("testFile",10245,false,false);
+        FileInfo f("testFile",10232,false,false);
         f.hostAddress="192.168.0.10";
         fileInfoContainer->put(f);
         recieveFile(&f2);

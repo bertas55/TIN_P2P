@@ -4,6 +4,7 @@
 
 #include "SocketCreator.h"
 #include "Constants.h"
+#include "Exceptions.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <cstring>
@@ -36,6 +37,7 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
         {
             delete s;
             s = nullptr;
+            throw ConnectionException();
         }
     }
     else

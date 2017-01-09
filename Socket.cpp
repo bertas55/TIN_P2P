@@ -3,6 +3,7 @@
 //
 
 #include "Socket.h"
+#include "Exceptions.h"
 
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -58,7 +59,7 @@ Socket* Socket::Accept() {
     int socketDescriptor = accept(descriptor, nullptr, nullptr);
     if(socketDescriptor == -1)
     {
-        return nullptr;
+        throw ConnectionException();
     }
     return new Socket(socketDescriptor);
 }

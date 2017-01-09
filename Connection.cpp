@@ -62,7 +62,7 @@ void Connection::recieveFile(FileDownload* file)
 //        hostName niepotrzebny? Download manager, ktory mowi ktora czesc?
 //        Pobieranie koejnych numerkow z kontenera, w przypadku niepowodzenia odlozenie?
 //        sendMessage(MessageRequestFile( ,file->getName() ,file->getSize(),));
-        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
+//        this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
     }
 }
 /**
