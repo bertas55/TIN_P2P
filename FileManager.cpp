@@ -34,7 +34,7 @@ void FileManager::loadFiles() {
     }
 }
 
-File* FileManager::getFile(string name, unsigned int size) {
+File* FileManager::getFile(string name, unsigned long size) {
     for (auto file : files) {
         if (file->getName() == name && file->getSize() == size) {
             return file;
@@ -42,7 +42,7 @@ File* FileManager::getFile(string name, unsigned int size) {
     }
 }
 
-void FileManager::lockFile(string name, unsigned int size) {
+void FileManager::lockFile(string name, unsigned long size) {
     bool success = false;
     for (auto file : files) {
         FileInfo fileInfo = file->getFileInfo();
@@ -58,7 +58,7 @@ void FileManager::lockFile(string name, unsigned int size) {
     }
 }
 
-void FileManager::unlockFile(string name, unsigned int size) {
+void FileManager::unlockFile(string name, unsigned long size) {
     bool success = false;
     for (auto file : files) {
         FileInfo fileInfo = file->getFileInfo();
@@ -74,14 +74,23 @@ void FileManager::unlockFile(string name, unsigned int size) {
     }
 }
 
-bool FileManager::isFileLocked(string name, unsigned int size) {
+bool FileManager::isFileLocked(string name, unsigned long size) {
     for (auto file : files) {
         FileInfo fileInfo = file->getFileInfo();
         if (fileInfo.name == name && fileInfo.size == size) {
             return file->isLocked();
         }
     }
+    throw FileNotFoundException();
+}
 
+bool FileManager::isOwner(string name, unsigned long size) {
+    for (auto file : files) {
+        FileInfo fileInfo = file->getFileInfo();
+        if (fileInfo.name == name && fileInfo.size == size) {
+            return file->isOwner();
+        }
+    }
     throw FileNotFoundException();
 }
 

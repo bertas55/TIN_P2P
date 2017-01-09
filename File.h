@@ -14,7 +14,7 @@ using namespace std;
 enum FileState {
     blocked,
     toRemove,
-    normal
+    s
 };
 
 class File {
@@ -28,13 +28,15 @@ public:
 
     string getName();
 
-    unsigned int getSize();
+    unsigned long getSize();
 
     void lock();
 
     void unlock();
 
     bool isLocked();
+
+    bool isOwner();
 
     struct FileInfo getFileInfo();
 
@@ -52,7 +54,7 @@ protected:
 
 struct FileInfo {
     string name;
-    unsigned int size;
+    unsigned long size;
     string hostAddress;
     bool blocked;
     bool owner;

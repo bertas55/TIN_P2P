@@ -17,9 +17,9 @@ Message* JsonParser::parse(string jsonMessage) {
         Json::Value messageTypeVal = parsedJson[Constants::JsonKeys::type];
         const char* messageType = messageTypeVal.asCString();
 
-        if (strcmp(messageType, Constants::MessageTypes::hello) == 0) {
+        if (strcmp(messageType, Constants::MessageTypes::ok) == 0) {
             // hello, is it me you looking for?
-            messageToReturn = new MessageHello();
+            messageToReturn = new MessageOk();
         } else if (strcmp(messageType, Constants::MessageTypes::requestFile) == 0) {
             string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
@@ -43,7 +43,8 @@ Message* JsonParser::parse(string jsonMessage) {
         } else if (strcmp(messageType, Constants::MessageTypes::newFile) == 0) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
-            messageToReturn = new MessageNewFile(fileName, fileSize);
+            string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
+            messageToReturn = new MessageNewFile(fileName, fileSize, hostName);
         } else if (strcmp(messageType, Constants::MessageTypes::veto) == 0) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
@@ -51,7 +52,8 @@ Message* JsonParser::parse(string jsonMessage) {
         } else if (strcmp(messageType, Constants::MessageTypes::deleteFile) == 0) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned int fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
-            messageToReturn = new MessageDeleteFile(fileName, fileSize);
+            string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
+            messageToReturn = new MessageDeleteFile(fileName, fileSize, hostName);
         } else if (strcmp(messageType, Constants::MessageTypes::bye) == 0) {
             messageToReturn = new MessageBye();
         } else if (strcmp(messageType, Constants::MessageTypes::denied) == 0) {

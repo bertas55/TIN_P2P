@@ -20,7 +20,7 @@ namespace Constants {
     }
 
     namespace MessageTypes {
-        extern const char* hello;
+        extern const char* ok;
         extern const char* requestFile;
         extern const char* requestList;
         extern const char* myList;

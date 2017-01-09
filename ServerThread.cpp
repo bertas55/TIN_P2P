@@ -71,7 +71,7 @@ void ServerThread::checkForMessages() {
     std::cout<< msg->toString() << "Mesejdz\n";
     switch(msg->type)
     {
-        case(MessageType::hello): {
+        case(MessageType::ok): {
             std::cout << "Odebrano wiadomosc Hello\n";
 
             break;
@@ -133,9 +133,10 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
+
             fileManager->lockFile(action.data[0],action.arg);
 //            cout << "Wysylam Hello\n";
-//            broadcastMessage(new MessageHello());
+//            broadcastMessage(new MessageOk());
             break;
         }
         case (UserAction::EnableFile):
@@ -150,7 +151,7 @@ void ServerThread::checkForActions() {
 //        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
 //            fileManager->isOwner(action.data[0], action.arg)
 //            broadcastMessage(new MessageDeleteFile());
-            fileManager->removeFile(action.data[0],action.arg);
+//            fileManager->removeFile(action.data[0],action.arg);
             cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
             break;
         }
@@ -177,7 +178,7 @@ void ServerThread::checkForActions() {
 
 void ServerThread::sendInitialMessage()
 {
-    broadcastMessage(new MessageHello());
+    broadcastMessage(new MessageOk());
 }
 void ServerThread::sendExitMessage()
 {

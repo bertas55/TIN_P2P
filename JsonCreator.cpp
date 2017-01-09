@@ -11,16 +11,16 @@
 using namespace std;
 
 namespace JsonCreator {
-    string hello() {
+    string ok() {
         Json::Value json;
-        json[Constants::JsonKeys::type] = Constants::MessageTypes::hello;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::ok;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
 
     string handshake(string hostName) {
         Json::Value json;
-        json[Constants::JsonKeys::type] = Constants::MessageTypes::hello;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::ok;
         json[Constants::JsonKeys::hostName] = hostName;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
@@ -49,7 +49,6 @@ namespace JsonCreator {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::myList;
         Json::Value filesArray(Json::arrayValue);
-        // Mozna wyniesc do oddzielnej metody
         for (auto file : files) {
             Json::Value fileJson;
             fileJson[Constants::JsonKeys::fileName] = file.name;
@@ -63,11 +62,12 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string newFile(string fileName, unsigned int fileSize) {
+    string newFile(string fileName, unsigned int fileSize, string hostName) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::newFile;
         json[Constants::JsonKeys::fileName] = fileName;
         json[Constants::JsonKeys::fileSize] = fileSize;
+        json[Constants::JsonKeys::hostName] = hostName;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
@@ -81,11 +81,12 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string deleteFile(string fileName, unsigned int fileSize) {
+    string deleteFile(string fileName, unsigned int fileSize, string hostName) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::deleteFile;
         json[Constants::JsonKeys::fileName] = fileName;
         json[Constants::JsonKeys::fileSize] = fileSize;
+        json[Constants::JsonKeys::hostName] = hostName;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
@@ -104,5 +105,3 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 }
-
-

@@ -16,15 +16,17 @@ public:
 
     FileManager();
 
-    File* getFile(string name, unsigned int size);
+    File* getFile(string name, unsigned long size);
 
-    void lockFile(string name, unsigned int size);
+    void lockFile(string name, unsigned long size);
 
-    void unlockFile(string name, unsigned int size);
+    void unlockFile(string name, unsigned long size);
 
-    bool isFileLocked(string name, unsigned int size);
+    bool isFileLocked(string name, unsigned long size);
 
-    void removeFile(string name, unsigned int size);
+    bool isOwner(string name, unsigned long size);
+
+    void removeFile(string name, unsigned long size);
 
     vector<FileInfo> getFilesList();
 
