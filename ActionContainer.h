@@ -9,13 +9,16 @@
 #include <mutex>
 #include "File.h"
 
-enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
+enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, AddFile, Exit };
 typedef struct Actions {
     UserAction action;
-    File *file;
+    string data[2];
     int arg;
-    Actions(UserAction u, File *f, int i): action(u),file(f),arg(i)
-    {};
+    Actions(UserAction u, string fName, string fSize, int i): action(u),arg(i)
+    {
+        data[0]=fName;
+        data[1]=fSize;
+    };
 
 }Action;
 

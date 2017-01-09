@@ -98,6 +98,10 @@ void Connection::interpreteMessage(Message *msg) {
             std::cout << "Odebrano wiadomosc myList\n";
             break;
         }
+        case(MessageType::denied): {
+//            @TODO Dodanie wiadomosci do logu?
+            break;
+        }
         case (MessageType::bye):{
             running = false;
             break;

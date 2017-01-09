@@ -32,17 +32,17 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::DisableFile):
         {
-            disableFile(NULL);
+//            disableFile(NULL);
             break;
         }
         case (UserAction::EnableFile):
         {
-            enableFile(NULL);
+//            enableFile(NULL);
             break;
         }
         case (UserAction::RemoveFile):
         {
-            removeFile(NULL);
+//            removeFile(NULL);
             break;
         }
         case (UserAction::RefreshList):
@@ -52,7 +52,7 @@ void ServerInterface::putServerAction(UserAction action)
         }
         case (UserAction::DownloadFile):
         {
-            downloadFile(NULL);
+//            downloadFile(NULL);
             break;
         }
         case (UserAction::Exit):
@@ -63,34 +63,34 @@ void ServerInterface::putServerAction(UserAction action)
     }
 }
 
-void ServerInterface::downloadFile(int index)
+void ServerInterface::downloadFile(string fileName,string fileSize)
 {
-    container.put(Action(UserAction::DownloadFile,NULL,index));
+    container.put(Action(UserAction::DownloadFile, fileName,fileSize,0));
 }
 void ServerInterface::refreshList()
 {
-    container.put(Action(UserAction::RefreshList,NULL,0));
+//    container.put(Action(UserAction::RefreshList,fileName,fileSize,0));
 
 }
-void ServerInterface::enableFile(File* f)
+void ServerInterface::enableFile(string fileName,string fileSize)
 {
-    container.put(Action(UserAction::EnableFile,f,0));
+    container.put(Action(UserAction::EnableFile,fileName,fileSize,0));
 }
-void ServerInterface::disableFile(File* f)
+void ServerInterface::disableFile(string fileName,string fileSize)
 {
-    container.put(Action(UserAction::DisableFile,f,0));
+//    container.put(Action(UserAction::DisableFile,f,0));
 }
 void ServerInterface::userExit()
 {
-    container.put(Action(UserAction::Exit,NULL,0));
-}
-void ServerInterface::getDownloadProgress(File f)
-{
-
+    container.put(Action(UserAction::Exit,"","",0));
 }
 
-void ServerInterface::removeFile(File *f) {
-    container.put(Action(UserAction::RemoveFile,f,0));
+void ServerInterface::removeFile(string fileName,string fileSize) {
+//    container.put(Action(UserAction::RemoveFile,f,0));
+}
+
+void ServerInterface::addFile(string fileName, string filePath) {
+    container.put(Action(UserAction::AddFile,fileName,filePath,0));
 }
 
 void ServerInterface::consoleInterface() {
