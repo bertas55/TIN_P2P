@@ -85,7 +85,7 @@ long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
 }
 
 //@TODO hostname niech zapisuje do wskznika (+1 arguemnt)
-long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
+char* WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;
     int s, i;
@@ -95,6 +95,6 @@ long WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
         printf("JAKIESTAM DIE;");
     }
     printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
+    return  inet_ntoa(si_other.sin_addr);
 
-    printf("Data: %s\n" , bytes);
 }

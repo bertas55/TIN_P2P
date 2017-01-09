@@ -22,7 +22,7 @@ public:
     bool setBroadcast();
     bool setBroadcastListerner();
     long Send(const char* bytes, unsigned long numberOfBytes);
-    long Receive(char* bytes, unsigned long numberOfBytes);
+    char* Receive(char* bytes, unsigned long numberOfBytes);
 
 private:
     int broadcastEnable;

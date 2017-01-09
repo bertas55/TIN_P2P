@@ -23,7 +23,7 @@ namespace Constants {
         const char* myList = "MyList";
         const char* newFile = "NewFile";
         const char* veto = "Veto";
-        const char* deleteFile = "Delete";
+        const char* removedFile = "removedFile";
         const char* bye = "Bye";
         const char* denied = "Denied";
         const char* revoke = "Revoke";
