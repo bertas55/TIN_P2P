@@ -20,7 +20,7 @@ namespace JsonCreator {
     // RequestList
     std::string requestList(std::string);
     // MyList
-    std::string myList(std::vector<FileInfo>);
+    std::string myList();
     // NewFile
     std::string newFile(std::string, unsigned long, std::string);
     // Veto
@@ -33,6 +33,8 @@ namespace JsonCreator {
     std::string denied();
     // Revoke
     std::string revokeFile(std::string, unsigned long);
+    // MyFile
+    std::string myFile(std::string, unsigned long, std::string, bool, bool);
 };
 
 

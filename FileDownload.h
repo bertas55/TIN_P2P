@@ -13,7 +13,7 @@ class FileDownload : public File {
 
 public:
 
-    FileDownload(string name, unsigned int size);
+    FileDownload(string name, string path, unsigned int size);
 
     long getPartToDownload();
 

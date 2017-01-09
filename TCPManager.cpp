@@ -31,7 +31,7 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
     std::cout << "Zajebisty debuger\n";
     if (host.size()>0)
     {
-        FileDownload *file = new FileDownload(fi->name,fi->size);
+        FileDownload *file = new FileDownload(fi->name, Constants::Configuration::downloadPath, fi->size);
         for (int i=0; i < host.size();++i)
         {
             cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
