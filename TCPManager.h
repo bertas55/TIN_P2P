@@ -20,6 +20,8 @@ public:
     ~TCPManager();
     void sendFile(File*, char* recieverAddress, unsigned short recieverPort); /*Wysylanie pliku do zadanego hosta*/
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
+    void sendMyList(Message*);
+    void sendVeto(Message*);
     void test(){
         FileInfo f2("testFile",10245,false,false);
         f2.hostAddress="192.168.0.85";
@@ -27,7 +29,6 @@ public:
         FileInfo f("testFile",10245,false,false);
         f.hostAddress="192.168.0.10";
         fileInfoContainer->put(f);
-
         recieveFile(&f2);
     }
 

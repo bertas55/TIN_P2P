@@ -18,6 +18,10 @@ WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
 }
 WcisloSocket::~WcisloSocket()
 {
+    if(!closed)
+    {
+        Close();
+    }
 }
 bool WcisloSocket::Bind(unsigned short port)
 {

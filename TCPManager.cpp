@@ -57,15 +57,26 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
 
 }
 
+void TCPManager::sendMyList(Message* msg)
+{
+
+}
+void TCPManager::sendVeto(Message* msg)
+{
+
+}
+
 void TCPManager::connectionAccepter()
 {
     s = SocketCreator::createTCPListener();
-
+    Connection *c;
+    Socket *connectionSocket;
     while (!(*exitFlag))
     {
 //        @TODO jakies wyjatki?
 //        Socket *newSocket = s->Accept();
-        Connection( s->Accept(),fileManager);
+        connectionSocket = s->Accept();
+         c = new Connection(connectionSocket,fileManager);
         cout << "New connection\n";
     }
     delete s;

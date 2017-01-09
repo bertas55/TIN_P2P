@@ -33,17 +33,17 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::DisableFile):
         {
-//            disableFile(NULL);
+            disableFile("","");
             break;
         }
         case (UserAction::EnableFile):
         {
-//            enableFile(NULL);
+            enableFile("","");
             break;
         }
         case (UserAction::RemoveFile):
         {
-//            removeFile(NULL);
+            removeFile("","");
             break;
         }
         case (UserAction::RefreshList):
@@ -53,7 +53,7 @@ void ServerInterface::putServerAction(UserAction action)
         }
         case (UserAction::DownloadFile):
         {
-//            downloadFile(NULL);
+            downloadFile("","");
             break;
         }
         case (UserAction::Exit):
