@@ -33,10 +33,13 @@ private:
     ServerThread *server;
     FileManager fileManager;
     ActionContainer container;
+    LogContainer *logContainer;
     string serverPort, clientPort;
     string broadcastAdress;
 
     void putServerAction(UserAction);
+    void debug(string);
+    bool guiDebug();
 };
 
 

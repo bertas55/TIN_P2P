@@ -9,21 +9,22 @@
 //enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
 ServerInterface::ServerInterface()
 {
-
-    server = new ServerThread(&container,&fileManager);
-
-
+    debug("Konstuktor ServerInterface::ServerInterface()");
+    logContainer = new LogContainer();
+    if (!guiDebug()) server = new ServerThread(&container,&fileManager);
 }
 
-ServerInterface::ServerInterface(LogContainer* lg)
+ServerInterface::ServerInterface(LogContainer* lg): logContainer(lg)
 {
-
+    debug("Konstuktor ServerInterface::ServerInterface(LogContainer* lg)");
 }
 
 ServerInterface::~ServerInterface()
 {
-
-    delete server;
+    if (!guiDebug()) {
+        delete server;
+        delete logContainer;
+    }
 }
 
 void ServerInterface::putServerAction(UserAction action)
@@ -65,32 +66,40 @@ void ServerInterface::putServerAction(UserAction action)
 
 void ServerInterface::downloadFile(string fileName,string fileSize)
 {
-    container.put(Action(UserAction::DownloadFile, fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+","+fileSize+")");
+    if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,fileSize,0));
 }
 void ServerInterface::refreshList()
 {
-//    container.put(Action(UserAction::RefreshList,fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::refreshList()");
+    if (!guiDebug()) container.put(Action(UserAction::RefreshList,"","",0));
 
 }
 void ServerInterface::enableFile(string fileName,string fileSize)
 {
-    container.put(Action(UserAction::EnableFile,fileName,fileSize,0));
+    debug("Wywolano funkcje ServerInterface::enableFile("+fileName+","+fileSize+")");
+    if (!guiDebug()) container.put(Action(UserAction::EnableFile,fileName,fileSize,0));
 }
 void ServerInterface::disableFile(string fileName,string fileSize)
 {
-//    container.put(Action(UserAction::DisableFile,f,0));
+    debug("Wywolano funkcje ServerInterface::disableFile("+fileName+","+fileSize+")");
+    if (!guiDebug()) container.put(Action(UserAction::DisableFile,fileName,fileSize,0));
 }
 void ServerInterface::userExit()
 {
-    container.put(Action(UserAction::Exit,"","",0));
+    debug("Wywolano funkcje ServerInterface::userExit");
+    if (!guiDebug()) container.put(Action(UserAction::Exit,"","",0));
 }
 
 void ServerInterface::removeFile(string fileName,string fileSize) {
-//    container.put(Action(UserAction::RemoveFile,f,0));
+    debug("Wywolano funkcje ServerInterface::enableFile("+fileName+","+fileSize+")");
+    if (!guiDebug())
+        container.put(Action(UserAction::RemoveFile,fileName,fileSize,0));
 }
 
 void ServerInterface::addFile(string fileName, string filePath) {
-    container.put(Action(UserAction::AddFile,fileName,filePath,0));
+    debug("Wywolano funkcje ServerInterface::addFile("+fileName+","+filePath+")");
+    if (!guiDebug()) container.put(Action(UserAction::AddFile,fileName,filePath,0));
 }
 
 void ServerInterface::consoleInterface() {
@@ -103,4 +112,13 @@ void ServerInterface::consoleInterface() {
         putServerAction((UserAction)myAction);
 ;
     } while (myAction!=UserAction::Exit);
+}
+
+void ServerInterface::debug(string message)
+{
+    if (Constants::Configuration::debugMode) cout << message << endl;
+}
+
+bool ServerInterface::guiDebug() {
+    return Constants::Configuration::guiTest;
 }

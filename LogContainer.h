@@ -17,11 +17,16 @@ enum LogType {
      * 1. Usuniecie pliku z widocznych dla uztykownika
      * 2. Wybranie nowego poprzez QDialog lub porzucenie dodawania*/
     FileDisappeared,     // Informacja o zniknieciu pliku z dostepnych sieciowo:    Log(FileDisappeared, NazwaPliku, HostName, RozmiarPliku);
+    FileAppeared,        // Informacja o pojawieniu sie pliku w sieci               Log(FileAppeared,NazwaPliku,HostName,RozmiarPliku);
     FileRemoved,         // Informacja o usunieciu pliku                            Log(FileRemoved,NazwaPliku,"",RozmiarPliku);
+    /*Inny host moze zazadac by usunac plik, ktorego jest wlascicielem.
+     * W tym przypadku musimy usunac plik z posiadanych*/
     FileBlocked,         // Informacja o zablkowaniu pliku                          Log(FileBlocked,NazwaPliku,HostName,RozmiarPliku);
     FileUnblocked,       // Informacja o odblokowaniu pliku                         Log(FileUnblocked,NazwaPliku,HostName,RozmiarPliku);
-    FileAppeared,        // Informacja o pojawieniu sie pliku w sieci               Log(FileAppeared,NazwaPliku,HostName,RozmiarPliku);
-    ServerError          // Informacja o bledzie w dzialaniu serwera                Log(ServerError, Komunikat, "", 0);
+    ServerError          // Informacja o bledzie w dzialaniu serwera                Log(ServerError, Komunikat, "", 0 lub 1);
+    /*0 - nie wymaga zamkniecia aplikacji,
+     * 1 wymaga natychmiastowego zamkniecia aplikacji
+     * */
 };
 /**
  * Struktura do opisu komunikatu przesylanaego do GUI

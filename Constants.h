@@ -42,6 +42,8 @@ namespace Constants {
         extern const char* directoryPath;
         extern const char* downloadPath;
         extern const char* localhostAddress;
+        extern const bool debugMode;
+        extern const bool guiTest;
     }
 }
 

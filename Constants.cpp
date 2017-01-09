@@ -39,5 +39,7 @@ namespace Constants {
         const char* directoryPath = "";
         const char* downloadPath = "";
         const char* localhostAddress = "127.0.0.1";
+        const bool debugMode = true;
+        const bool guiTest = false;
     }
 }
