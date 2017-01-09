@@ -104,3 +104,17 @@ vector<FileInfo> FileManager::getFilesList() {
 
     return filesInfo;
 }
+
+bool FileManager::removeFile(string name, unsigned long size)
+{
+    bool success = false;
+    for (vector<File*>::const_iterator iter = files.begin(); iter != files.end(); iter++) {
+        FileInfo fileInfo = (*iter)->getFileInfo();
+        if (fileInfo.name == name && fileInfo.size == size) {
+            files.erase(iter);
+            success = true;
+            break;
+        }
+    }
+    return success;
+}

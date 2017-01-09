@@ -135,9 +135,9 @@ void ServerThread::checkForActions() {
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
 
-            fileManager->lockFile(action.data[0],action.arg);
+//            fileManager->lockFile(action.data[0],action.arg);
 //            cout << "Wysylam Hello\n";
-//            broadcastMessage(new MessageOk());
+            broadcastMessage(new MessageOk());
             break;
         }
         case (UserAction::EnableFile):
