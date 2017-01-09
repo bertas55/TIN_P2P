@@ -35,7 +35,7 @@ namespace Constants {
     namespace Configuration {
         const unsigned short port = 8888;
         const unsigned short TCPort = 9970;
-        const char* broadcastIP = "127.0.0.1";
+        const char* broadcastIP = "192.168.0.255";
         const char* directoryPath = "";
         const char* downloadPath = "";
         const char* localhostAddress = "127.0.0.1";
