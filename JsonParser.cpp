@@ -49,11 +49,11 @@ Message* JsonParser::parse(string jsonMessage) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned long fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             messageToReturn = new MessageVeto(fileName, fileSize);
-        } else if (strcmp(messageType, Constants::MessageTypes::deleteFile) == 0) {
+        } else if (strcmp(messageType, Constants::MessageTypes::removedFile) == 0) {
             string fileName = parsedJson[Constants::JsonKeys::fileName].asString();
             unsigned long fileSize = parsedJson[Constants::JsonKeys::fileSize].asUInt();
             string hostName = parsedJson[Constants::JsonKeys::hostName].asString();
-            messageToReturn = new MessageDeleteFile(fileName, fileSize, hostName);
+            messageToReturn = new MessageFileRemoved(fileName, fileSize, hostName);
         } else if (strcmp(messageType, Constants::MessageTypes::bye) == 0) {
             messageToReturn = new MessageBye();
         } else if (strcmp(messageType, Constants::MessageTypes::denied) == 0) {

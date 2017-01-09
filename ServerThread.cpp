@@ -108,7 +108,7 @@ void ServerThread::checkForMessages() {
 //            broadcastMessage(MessageVeto());
             break;
         }
-        case(MessageType::deleteFile):{
+        case(MessageType::removedFile):{
             std::cout << "Odebrano wiadomosc deleteFile\n";
 //            @TODO akcja do FileManagera by usunal plik
             break;

@@ -26,7 +26,7 @@ namespace Constants {
         extern const char* myList;
         extern const char* newFile;
         extern const char* veto;
-        extern const char* deleteFile;
+        extern const char* removedFile;
         extern const char* bye;
         extern const char* denied;
         extern const char* revoke;

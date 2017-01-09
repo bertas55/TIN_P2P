@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8c5ff/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8c5ff.dir/build.make CMakeFiles/cmTC_8c5ff.dir/build
-make[1]: Wejście do katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8c5ff.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_8c5ff.dir/CheckSymbolExists.c.o   -c /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_8c5ff
-/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c5ff.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_8c5ff.dir/CheckSymbolExists.c.o  -o cmTC_8c5ff 
-CMakeFiles/cmTC_8c5ff.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_c20e1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c20e1.dir/build.make CMakeFiles/cmTC_c20e1.dir/build
+make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c20e1.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c20e1.dir/CheckSymbolExists.c.o   -c /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c20e1
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c20e1.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_c20e1.dir/CheckSymbolExists.c.o  -o cmTC_c20e1 
+CMakeFiles/cmTC_c20e1.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_8c5ff.dir/build.make:97: polecenia dla obiektu 'cmTC_8c5ff' nie powiodły się
-make[1]: *** [cmTC_8c5ff] Błąd 1
-make[1]: Opuszczenie katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:126: polecenia dla obiektu 'cmTC_8c5ff/fast' nie powiodły się
-make: *** [cmTC_8c5ff/fast] Błąd 2
+CMakeFiles/cmTC_c20e1.dir/build.make:97: polecenia dla obiektu 'cmTC_c20e1' nie powiodły się
+make[1]: *** [cmTC_c20e1] Błąd 1
+make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: polecenia dla obiektu 'cmTC_c20e1/fast' nie powiodły się
+make: *** [cmTC_c20e1/fast] Błąd 2
 
-File /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0319c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0319c.dir/build.make CMakeFiles/cmTC_0319c.dir/build
-make[1]: Wejście do katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0319c.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0319c.dir/CheckFunctionExists.c.o   -c /home/hubert/Pobrane/clion-2016.3.1/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0319c
-/home/hubert/Pobrane/clion-2016.3.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0319c.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0319c.dir/CheckFunctionExists.c.o  -o cmTC_0319c -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_97204/fast"
+/usr/bin/make -f CMakeFiles/cmTC_97204.dir/build.make CMakeFiles/cmTC_97204.dir/build
+make[1]: Wejście do katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97204.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_97204.dir/CheckFunctionExists.c.o   -c /home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
+Linking C executable cmTC_97204
+/home/lukasz/Pulpit/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97204.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_97204.dir/CheckFunctionExists.c.o  -o cmTC_97204 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_0319c.dir/build.make:97: polecenia dla obiektu 'cmTC_0319c' nie powiodły się
-make[1]: *** [cmTC_0319c] Błąd 1
-make[1]: Opuszczenie katalogu '/home/hubert/ClionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:126: polecenia dla obiektu 'cmTC_0319c/fast' nie powiodły się
-make: *** [cmTC_0319c/fast] Błąd 2
+CMakeFiles/cmTC_97204.dir/build.make:97: polecenia dla obiektu 'cmTC_97204' nie powiodły się
+make[1]: *** [cmTC_97204] Błąd 1
+make[1]: Opuszczenie katalogu '/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: polecenia dla obiektu 'cmTC_97204/fast' nie powiodły się
+make: *** [cmTC_97204/fast] Błąd 2
 
 

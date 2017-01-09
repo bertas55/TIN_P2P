@@ -41,6 +41,7 @@ private:
     void putServerAction(UserAction);
     void debug(string);
     bool guiDebug();
+    void setMyIp();
 };
 
 

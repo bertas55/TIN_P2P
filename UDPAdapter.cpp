@@ -46,13 +46,13 @@ void UDPAdapter::listen() {
     struct sockaddr_in si_other;
     socklen_t slen = sizeof(si_other);
     char buf[BUFLEN];
+    char* address;
     while (!(*exitFlag))
     {
-        socket->Receive(buf,BUFLEN);
+        address= socket->Receive(buf,BUFLEN);
         try {
-            cout << JsonParser::parse(buf)->toString();
             Message *m = JsonParser::parse(buf);
-            cout << m->toString();
+            m->hostName = string(address);
             serverMessageContainer->put(m);
         } catch (JsonParsingException e)
         {

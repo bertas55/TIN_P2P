@@ -40,8 +40,8 @@ string MessageVeto::toString() {
     return JsonCreator::veto(fileName, fileSize);
 }
 
-string MessageDeleteFile::toString() {
-    return JsonCreator::deleteFile(fileName, fileSize, hostName);
+string MessageFileRemoved::toString() {
+    return JsonCreator::removedFile(fileName, fileSize, hostName);
 }
 
 string MessageBye::toString() {

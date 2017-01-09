@@ -19,7 +19,7 @@ enum MessageType {
     myList,
     newFile,
     veto,
-    deleteFile,
+    removedFile,
     bye,
     denied,
     revokeFile
@@ -27,7 +27,7 @@ enum MessageType {
 
 struct Message {
     MessageType type;
-
+    string hostName;
     virtual string toString();
 
     Message() {};
@@ -119,9 +119,9 @@ struct MessageVeto : Message {
     string toString();
 };
 
-struct MessageDeleteFile : Message {
-    MessageDeleteFile(string fileName, unsigned long fileSize, string hostName) {
-        type = deleteFile;
+struct MessageFileRemoved : Message {
+    MessageFileRemoved(string fileName, unsigned long fileSize, string hostName) {
+        type = removedFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
         this->hostName = hostName;

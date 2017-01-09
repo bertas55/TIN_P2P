@@ -81,9 +81,9 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string deleteFile(string fileName, unsigned long fileSize, string hostName) {
+    string removedFile(string fileName, unsigned long fileSize, string hostName) {
         Json::Value json;
-        json[Constants::JsonKeys::type] = Constants::MessageTypes::deleteFile;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::removedFile;
         json[Constants::JsonKeys::fileName] = fileName;
         json[Constants::JsonKeys::fileSize] = fileSize;
         json[Constants::JsonKeys::hostName] = hostName;
