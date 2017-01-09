@@ -29,6 +29,7 @@ namespace Constants {
         extern const char* deleteFile;
         extern const char* bye;
         extern const char* denied;
+        extern const char* revoke;
     }
 
     namespace File {

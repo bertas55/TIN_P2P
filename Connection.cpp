@@ -22,6 +22,14 @@ Connection::Connection(Socket *s , FileDownload *file) : sock(s), running(true)
 //    threadId.detach();
 }
 
+Connection::Connection(Socket *s) :
+        sock(s),
+        running(true)
+{
+    threadId = std::thread(&Connection::run,this);
+//    threadId.detach();
+}
+
 Connection::~Connection()
 {
     sendMessage(new MessageBye);
@@ -96,6 +104,7 @@ void Connection::interpreteMessage(Message *msg) {
         case(MessageType::myList):{
 //            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
             std::cout << "Odebrano wiadomosc myList\n";
+
             break;
         }
         case(MessageType::denied): {

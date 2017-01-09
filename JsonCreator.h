@@ -16,21 +16,23 @@ namespace JsonCreator {
     // Handshake
     std::string handshake(std::string);
     // RequestFile
-    std::string requestFile(std::string, std::string, unsigned int, unsigned int);
+    std::string requestFile(std::string, std::string, unsigned long, unsigned int);
     // RequestList
     std::string requestList(std::string);
     // MyList
     std::string myList(std::vector<FileInfo>);
     // NewFile
-    std::string newFile(std::string, unsigned int, std::string);
+    std::string newFile(std::string, unsigned long, std::string);
     // Veto
-    std::string veto(std::string, unsigned int);
+    std::string veto(std::string, unsigned long);
     // Delete
-    std::string deleteFile(std::string, unsigned int, std::string);
+    std::string deleteFile(std::string, unsigned long, std::string);
     // Bye
     std::string bye();
     // Denied
     std::string denied();
+    // Revoke
+    std::string revokeFile(std::string, unsigned long);
 };
 
 

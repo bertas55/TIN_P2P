@@ -52,4 +52,7 @@ string MessageDenied::toString() {
     return JsonCreator::denied();
 }
 
+string MessageRevoke::toString() {
+    return JsonCreator::revokeFile(fileName, fileSize);
+}
 

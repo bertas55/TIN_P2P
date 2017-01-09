@@ -19,6 +19,7 @@ class Connection {
 public:
     Connection(Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
     Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
+    Connection(Socket*);
     ~Connection();
 
     void sendFile(File*, int);

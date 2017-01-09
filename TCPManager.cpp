@@ -20,16 +20,6 @@ TCPManager::~TCPManager()
     id.join();
 }
 
-void TCPManager::sendFile(File* f, char* recieverAddress, unsigned short recieverPort) /*Wysylanie pliku do zadanego hosta*/
-{
-//    Connection conn(SocketCreator::CreateSocket(recieverAddress,recieverPort,true),f);
-    /**
-     * Rozpoczyna polaczenie z zadanym portem. Do tego wykorzystywana jest klasa Connection
-     */
-}
-
-
-
 void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
 {
     /**
@@ -37,7 +27,7 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
      * Z podanych adresow nawiazuje polaczenie. To powinno robic sie w oddielnym watku.
      * Zarzada ktora czesc, od ktorego hosta pobrac.
      */
-     std::vector<struct FileInfo> host = fileInfoContainer->getAllHostsContains(*fi);
+    std::vector<struct FileInfo> host = fileInfoContainer->getAllHostsContains(*fi);
     std::cout << "Zajebisty debuger\n";
     if (host.size()>0)
     {
@@ -52,11 +42,11 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
         }
 
     }
-
 }
 
-void TCPManager::sendMyList(Message* msg)
+void TCPManager::sendMyList(string hostName)
 {
+    vector<FileInfo> list = fileManager->getFilesList();
 
 }
 void TCPManager::sendVeto(Message* msg)

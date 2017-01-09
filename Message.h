@@ -21,7 +21,8 @@ enum MessageType {
     veto,
     deleteFile,
     bye,
-    denied
+    denied,
+    revokeFile
 };
 
 struct Message {
@@ -53,7 +54,7 @@ struct MessageHandshake : Message {
 };
 
 struct MessageRequestFile : Message {
-    MessageRequestFile(string hostName, string fileName, unsigned int fileSize, unsigned int offset) {
+    MessageRequestFile(string hostName, string fileName, unsigned long fileSize, unsigned int offset) {
         type = requestFile;
         this->hostName = hostName;
         this->fileName = fileName;
@@ -63,7 +64,7 @@ struct MessageRequestFile : Message {
 
     string hostName;
     string fileName;
-    unsigned int fileSize;
+    unsigned long fileSize;
     unsigned int offset;
 
     string toString();
@@ -91,7 +92,7 @@ struct MessageMyList : Message {
 };
 
 struct MessageNewFile : Message {
-    MessageNewFile(string fileName, unsigned int fileSize, string hostName) {
+    MessageNewFile(string fileName, unsigned long fileSize, string hostName) {
         type = newFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
@@ -99,27 +100,27 @@ struct MessageNewFile : Message {
     }
 
     string fileName;
-    unsigned int fileSize;
+    unsigned long fileSize;
     string hostName;
 
     string toString();
 };
 
 struct MessageVeto : Message {
-    MessageVeto(string fileName, unsigned int fileSize) {
+    MessageVeto(string fileName, unsigned long fileSize) {
         type = veto;
         this->fileName = fileName;
         this->fileSize = fileSize;
     }
 
     string fileName;
-    unsigned int fileSize;
+    unsigned long fileSize;
 
     string toString();
 };
 
 struct MessageDeleteFile : Message {
-    MessageDeleteFile(string fileName, unsigned int fileSize, string hostName) {
+    MessageDeleteFile(string fileName, unsigned long fileSize, string hostName) {
         type = deleteFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
@@ -127,7 +128,7 @@ struct MessageDeleteFile : Message {
     }
 
     string fileName;
-    unsigned int fileSize;
+    unsigned long fileSize;
     string hostName;
 
     string toString();
@@ -145,6 +146,19 @@ struct MessageDenied : Message {
     MessageDenied() {
         type = denied;
     }
+
+    string toString();
+};
+
+struct MessageRevoke : Message {
+    MessageRevoke(string fileName, unsigned long fileSize) {
+        type = revokeFile;
+        this->fileName = fileName;
+        this->fileSize = fileSize;
+    }
+
+    string fileName;
+    unsigned long fileSize;
 
     string toString();
 };

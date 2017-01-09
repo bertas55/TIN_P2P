@@ -93,6 +93,7 @@ void ServerThread::checkForMessages() {
         case(MessageType::requestList):{
 //            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
 //            broadcastMessage(new MessageMyList());
+
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }

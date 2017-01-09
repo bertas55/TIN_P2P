@@ -18,9 +18,8 @@ class TCPManager {
 public:
     TCPManager(FileManager*, FileInfoContainer*, bool*, MessageContainer*);
     ~TCPManager();
-    void sendFile(File*, char* recieverAddress, unsigned short recieverPort); /*Wysylanie pliku do zadanego hosta*/
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
-    void sendMyList(Message*);
+    void sendMyList(string hostName);
     void sendVeto(Message*);
     void test(){
         FileInfo f2("testFile",10232,false,false);

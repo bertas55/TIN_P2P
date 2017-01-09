@@ -26,6 +26,7 @@ namespace Constants {
         const char* deleteFile = "Delete";
         const char* bye = "Bye";
         const char* denied = "Denied";
+        const char* revoke = "Revoke";
     }
 
     namespace File {

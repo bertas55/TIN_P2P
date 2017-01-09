@@ -26,7 +26,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string requestFile(string hostName, string fileName, unsigned int fileSize, unsigned int offset) {
+    string requestFile(string hostName, string fileName, unsigned long fileSize, unsigned int offset) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::requestFile;
         json[Constants::JsonKeys::hostName] = hostName;
@@ -62,7 +62,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string newFile(string fileName, unsigned int fileSize, string hostName) {
+    string newFile(string fileName, unsigned long fileSize, string hostName) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::newFile;
         json[Constants::JsonKeys::fileName] = fileName;
@@ -72,7 +72,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string veto(string fileName, unsigned int fileSize) {
+    string veto(string fileName, unsigned long fileSize) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::veto;
         json[Constants::JsonKeys::fileName] = fileName;
@@ -81,7 +81,7 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string deleteFile(string fileName, unsigned int fileSize, string hostName) {
+    string deleteFile(string fileName, unsigned long fileSize, string hostName) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::deleteFile;
         json[Constants::JsonKeys::fileName] = fileName;
@@ -101,6 +101,15 @@ namespace JsonCreator {
     string denied() {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::denied;
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
+
+    string revokeFile(string fileName, unsigned long fileSize) {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::revoke;
+        json[Constants::JsonKeys::fileName] = fileName;
+        json[Constants::JsonKeys::fileSize] = fileSize;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
