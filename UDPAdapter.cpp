@@ -61,8 +61,6 @@ void UDPAdapter::listen() {
         {
             e.what();
         }
-
-        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
     cout <<"Listend end.\n";
 

@@ -26,7 +26,7 @@ public:
 
     bool isOwner(string name, unsigned long size);
 
-    void removeFile(string name, unsigned long size);
+    bool removeFile(string name, unsigned long size);
 
     vector<FileInfo> getFilesList();
 
