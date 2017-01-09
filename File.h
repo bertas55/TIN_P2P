@@ -7,6 +7,7 @@
 
 #include <string>
 #include <fstream>
+#include <mutex>
 #include "Constants.h"
 using namespace std;
 
@@ -44,6 +45,7 @@ protected:
     bool owner;
     bool locked;
     FileState state;
+    mutex guard;
 
     std::ifstream::pos_type readSize();
 };

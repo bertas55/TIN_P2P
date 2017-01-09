@@ -73,6 +73,7 @@ char* File::getFilePart(unsigned int partNumber) {
 }
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *data) {
+//    std::lock_guard<std::mutex> lock(guard);
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset + dataLength > size) {
         throw OutOfRangeException();

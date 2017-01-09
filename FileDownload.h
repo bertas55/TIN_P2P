@@ -21,7 +21,7 @@ public:
 
     unsigned long partsLeftCount();
 
-    mutex guard;
+
 private:
     queue<long> partsLeft;
 };
