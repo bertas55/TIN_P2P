@@ -7,6 +7,18 @@
 #include "Connection.h"
 #include "JsonParser.h"
 
+Connection::Connection(Socket *s, vector<FileInfo> f):
+        sock(s),
+        running(true)
+{
+
+}
+Connection::Connection(Socket *s, string fname, unsigned long fsize):
+        sock(s),
+        running(true)
+{
+
+}
 Connection::Connection(Socket *s, FileManager *fm) :
         sock(s),
         running(true) ,
@@ -78,7 +90,7 @@ void Connection::recieveFile(FileDownload* file)
  */
 void Connection::run()
 {
-    const unsigned short BUFLEN = 512;
+    const unsigned short BUFLEN = Constants::File::partSize;
     char buf[BUFLEN];
     Message *m;
     while (true)
@@ -98,12 +110,14 @@ void Connection::interpreteMessage(Message *msg) {
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
             MessageRequestFile request = dynamic_cast<MessageRequestFile&>(*msg);
             File *file = fileManager->getFile(request.fileName, request.fileSize);
+            if (file == nullptr) sendMessage(new MessageDenied());
             sendFile(file,request.offset);
             break;
         }
         case(MessageType::myList):{
 //            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
             std::cout << "Odebrano wiadomosc myList\n";
+            sendMessage(new MessageOk());
 
             break;
         }
@@ -125,4 +139,56 @@ void Connection::testMethod() {
         cout << "dzialam\n";
         this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
+}
+
+void Connection::sendVeto(string fname, unsigned long fsize)
+{
+    sendMessage(new MessageVeto(fname,fsize));
+}
+void Connection::sendMyList(vector<File>* vf)
+{
+    const unsigned short BUFLEN = Constants::File::partSize;
+    char buf[BUFLEN];
+    Message *m;
+    unsigned long vsize = vf->size();
+    string fileName;
+    unsigned long fileSize;
+    string hostName = Constants::Configuration::localhostAddress;
+    bool locked;
+    bool owner;
+    for (unsigned long i =0 ; i < vsize ; ++i)
+    {
+        sendMessage(new MessageMyList());
+        if (sock==NULL) return;
+        if (!sock->Receive(buf,BUFLEN)) return;
+        m = JsonParser::parse(buf);
+        if (m->type!=MessageType::ok) return;
+        fileName = (*vf)[i].getName();
+        fileSize = (*vf)[i].getSize();
+        locked = (*vf)[i].isLocked();
+        owner = (*vf)[i].isOwner();
+        sendMessage(new MessageMyFile(fileName,fileSize,hostName,locked,owner));
+        if (sock==NULL) return;
+        if (!sock->Receive(buf,BUFLEN)) return;
+        m = JsonParser::parse(buf);
+        if (m->type!=MessageType::ok) return;
+    }
+    sendMessage(new MessageBye());
+}
+
+bool Connection::receiveFileInfo()
+{
+
+}
+bool Connection::receiveFilePart(FileDownload*)
+{
+
+}
+bool Connection::sendFilePart(File *)
+{
+
+}
+Message* Connection::receiveMessage()
+{
+
 }

@@ -84,6 +84,7 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
+
             std::cout << "Odebrano wiadomosc RequestFile\n";
             break;
         }
@@ -93,9 +94,7 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestList):{
-//            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
-//            broadcastMessage(new MessageMyList());
-
+            tcpManager.sendMyList(msg->hostName);
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
@@ -107,6 +106,12 @@ void ServerThread::checkForMessages() {
         case(MessageType::newFile):{
             std::cout << "Odebrano wiadomosc newFile\n";
 //            @TODO sprawdzenie czy plik posiadamy, konstruktor MesseageVeto powinien moc podac nazwe i rozmiar pliku
+            MessageNewFile msgNewFile = dynamic_cast<MessageNewFile&>(*msg);
+            File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
+            if (f!= nullptr)
+            {
+                tcpManager.sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
+            }
 //            broadcastMessage(MessageVeto());
             break;
         }
