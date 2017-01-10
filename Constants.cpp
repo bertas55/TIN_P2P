@@ -14,6 +14,7 @@ namespace Constants {
         const char* files = "files";
         const char* blocked = "blocked";
         const char* owner = "owner";
+        const char* checksum = "checksum";
     }
 
     namespace MessageTypes {
@@ -28,6 +29,7 @@ namespace Constants {
         const char* denied = "Denied";
         const char* revoke = "Revoke";
         const char* myFile = "MyFile";
+        const char* checksum = "Checksum";
     }
 
     namespace File {

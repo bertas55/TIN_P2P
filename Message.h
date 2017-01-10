@@ -23,7 +23,8 @@ enum MessageType {
     bye,
     denied,
     revokeFile,
-    myFile
+    myFile,
+    checksumPart
 };
 
 struct Message {
@@ -177,6 +178,17 @@ struct MessageMyFile : Message {
     string hostName;
     bool owner;
     bool locked;
+
+    string toString();
+};
+
+struct MessageChecksum : Message {
+    MessageChecksum(string checksum) {
+        type = checksumPart;
+        this->checksum = checksum;
+    }
+
+    string checksum;
 
     string toString();
 };

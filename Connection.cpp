@@ -59,7 +59,7 @@ Connection::~Connection()
 void Connection::sendFile(File* file, int offset)
 {
 
-    sock->Send(file->getFilePart(offset), Constants::File::partSize);
+    sock->Send(file->getFilePart(offset).data, Constants::File::partSize);
 
 }
 
@@ -233,6 +233,7 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
     File *file = fileManager->getFile(fileName, fileSize);
     if (file == nullptr) sendMessage(new MessageDenied());
     else {
+        Data data = file->getFilePart(offset);
         sendFile(file, offset);
         success = true;
     }

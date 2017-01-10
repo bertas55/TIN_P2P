@@ -115,4 +115,13 @@ namespace JsonCreator {
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
+
+    string checksum(string checksum) {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::checksum;
+        json[Constants::JsonKeys::checksum] = checksum;
+
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
 }

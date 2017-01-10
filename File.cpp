@@ -7,6 +7,8 @@
 #include "Exceptions.h"
 #include <string>
 #include <iostream>
+#include <cstring>
+#include "Dependencies/CRC.h"
 
 using namespace std;
 
@@ -50,7 +52,7 @@ struct FileInfo File::getFileInfo() {
     return FileInfo(name, size, blocked, owner);
 }
 
-char* File::getFilePart(unsigned int partNumber) {
+Data File::getFilePart(unsigned int partNumber) {
     cout << "Get part: " << partNumber << endl;
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset >= size) {
@@ -66,7 +68,8 @@ char* File::getFilePart(unsigned int partNumber) {
     char *buff = new char[readLength];
     file.read(buff, readLength);
     file.close();
-    return buff;
+    unsigned int checksum = genChecksum(buff);
+    return Data(buff, checksum);
 }
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *data) {
@@ -83,4 +86,8 @@ void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *
     file.seekp(offset, ios::beg);
     file.write(data, dataLength);
     file.close();
+}
+
+unsigned int File::genChecksum(char* data) {
+    return CRC::Calculate(data, sizeof(data), CRC::CRC_32());
 }

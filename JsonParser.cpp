@@ -61,6 +61,9 @@ Message* JsonParser::parse(string jsonMessage) {
             bool owner = parsedJson[Constants::JsonKeys::owner].asBool();
             bool blocked = parsedJson[Constants::JsonKeys::blocked].asBool();
             messageToReturn = new MessageMyFile(fileName, fileSize, hostName, blocked, owner);
+        } else if (strcmp(messageType, Constants::MessageTypes::checksum) == 0) {
+            string checksum = parsedJson[Constants::JsonKeys::checksum].asString();
+            messageToReturn = new MessageChecksum(checksum);
         } else {
             throw UnknownMessageException();
         }

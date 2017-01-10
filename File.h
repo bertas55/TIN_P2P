@@ -17,12 +17,22 @@ enum FileState {
     s
 };
 
+struct Data {
+    char* data;
+    unsigned int checksum;
+
+    Data(char* data, unsigned int checksum) {
+            this->data = data;
+            this->checksum = checksum;
+    }
+};
+
 class File {
 
 public:
     File(string name, string path);
 
-    char* getFilePart(unsigned int);
+    Data getFilePart(unsigned int);
 
     void saveFilePart(unsigned int, unsigned int, char*);
 
@@ -50,6 +60,7 @@ protected:
     mutex guard;
 
     std::ifstream::pos_type readSize();
+    unsigned int genChecksum(char*);
 };
 
 struct FileInfo {

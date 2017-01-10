@@ -35,6 +35,8 @@ namespace JsonCreator {
     std::string revokeFile(std::string, unsigned long);
     // MyFile
     std::string myFile(std::string, unsigned long, std::string, bool, bool);
+    // Checksum
+    std::string checksum(std::string);
 };
 
 

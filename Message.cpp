@@ -60,3 +60,7 @@ string MessageMyFile::toString() {
     return JsonCreator::myFile(fileName, fileSize, hostName, locked, owner);
 }
 
+string MessageChecksum::toString() {
+    return JsonCreator::checksum(checksum);
+}
+

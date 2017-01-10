@@ -17,6 +17,7 @@ namespace Constants {
         extern const char* files;
         extern const char* blocked;
         extern const char* owner;
+        extern const char* checksum;
     }
 
     namespace MessageTypes {
@@ -31,6 +32,7 @@ namespace Constants {
         extern const char* denied;
         extern const char* revoke;
         extern const char* myFile;
+        extern const char* checksum;
     }
 
     namespace File {
