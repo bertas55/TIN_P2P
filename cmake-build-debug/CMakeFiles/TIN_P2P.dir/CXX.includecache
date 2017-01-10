@@ -389,6 +389,10 @@ net/if.h
 -
 cstring
 -
+sstream
+-
+stdlib.h
+-
 ServerInterface.h
 /home/hubert/ClionProjects/TIN_P2P/ServerInterface.h
 

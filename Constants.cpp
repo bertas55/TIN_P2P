@@ -35,13 +35,14 @@ namespace Constants {
     }
 
     namespace Configuration {
-        const unsigned short port = 8888;
-        const unsigned short TCPort = 9970;
-        const char* broadcastIP = "192.168.0.255";
+        unsigned short port = 8888;
+        unsigned short TCPort = 9970;
+        char* broadcastIP = "192.168.0.255";
+        char* localhostAddress = "127.0.0.1";
         const char* directoryPath = "";
         const char* downloadPath = "";
-        const char* localhostAddress = "127.0.0.1";
         const bool debugMode = true;
         const bool guiTest = false;
+        const char* configPath = "config.ini";
     }
 }

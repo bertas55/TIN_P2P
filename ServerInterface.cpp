@@ -11,6 +11,8 @@
 #include <netinet/in.h>
 #include <net/if.h>
 #include <cstring>
+#include <sstream>
+#include <stdlib.h>
 #include "ServerInterface.h"
 
 
@@ -180,4 +182,22 @@ void ServerInterface::setMyIp() {
 
     /* display result */
     printf("%s\n", inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
+}
+
+void ServerInterface::loadConfiguration() {
+    ifstream infile(Constants::Configuration::configPath);
+    std::string line;
+
+    getline(infile, line);
+    std::istringstream iss(line);
+    Constants::Configuration::port = stoi(line);
+
+    getline(infile, line);
+    Constants::Configuration::TCPort = stoi(line);
+
+    getline(infile, line);
+    strcpy(Constants::Configuration::broadcastIP, line.c_str());
+
+    getline(infile, line);
+    strcpy(Constants::Configuration::localhostAddress, line.c_str());
 }

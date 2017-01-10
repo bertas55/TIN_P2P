@@ -29,6 +29,7 @@ public:
     void userExit();                                               // wywolane w momencie gdy uzytkownik konczy dzialanie programu
     void removeFile(string fileName,unsigned long fileSize);       // Wywlane, gdy uzytkownik usuwa wlasny plik
     void revokeFile(string fileName,unsigned long fileSize);       // Wywolane gdy uzytkownik chce uniewaznic plik
+    void loadConfiguration();
 
 private:
     ServerThread *server;
