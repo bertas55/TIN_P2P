@@ -71,7 +71,6 @@ void ServerThread::broadcastMessage(Message *msg) {
 void ServerThread::checkForMessages() {
 
     Message *msg = inputMessages.get();
-    std::cout<< msg->toString() << "Mesejdz\n";
     switch(msg->type)
     {
         case(MessageType::ok): {
@@ -101,7 +100,7 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::veto):{
-//            @TODO sprawdzenie czy dany plik zostal przez nas dodany
+//            @TODO
             std::cout << "Odebrano wiadomosc veto\n";
             break;
         }
@@ -113,12 +112,19 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::removedFile):{
             std::cout << "Odebrano wiadomosc deleteFile\n";
+//            fileInfoContainer.remove()
 //            @TODO akcja do FileManagera by usunal plik
             break;
         }
         case (MessageType::bye):{
+//            @TODO removeAll
 
             break;
+        }
+        case (MessageType::revokeFile)
+        {
+            MessageRevoke revoke = dynamic_cast<MessageRevoke&>(*msg);
+            fileManager->removeFile(revoke.fileName,revoke.fileSize);
         }
         default:
         {
@@ -137,7 +143,7 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
-            
+
             try {
                 fileManager->lockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
@@ -160,12 +166,7 @@ void ServerThread::checkForActions() {
         case (UserAction::RemoveFile):
         {
 //        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
-//            fileManager->isOwner(action.data[0], action.arg)
-//            broadcastMessage(new MessageDeleteFile());
-//            fileManager->removeFile(action.data[0],action.arg);
-/*            if (fileManager->removeFile(action.data[0],action.arg))
-                broadcastMessage(new MessageDeleteFile(action.data[0],action.arg,"DUPA"));
-                ;*/
+            if (!fileManager->removeFile(action.data[0], action.arg) logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
             break;
         }
