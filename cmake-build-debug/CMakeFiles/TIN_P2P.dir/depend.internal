@@ -122,6 +122,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o
  /home/hubert/ClionProjects/TIN_P2P/FileDownload.h
  /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
  /home/hubert/ClionProjects/TIN_P2P/FileManager.h
+ /home/hubert/ClionProjects/TIN_P2P/LogContainer.h
  /home/hubert/ClionProjects/TIN_P2P/Message.h
  /home/hubert/ClionProjects/TIN_P2P/MessageContainer.h
  /home/hubert/ClionProjects/TIN_P2P/ServerThread.cpp

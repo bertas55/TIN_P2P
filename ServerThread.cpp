@@ -8,16 +8,18 @@
 ServerThread::ServerThread() :
         tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages)
 {
+    logContainer = new LogContainer();
     threadId = std::thread(&ServerThread::run,this);
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
 
 }
-ServerThread::ServerThread(ActionContainer *container, FileManager *fm) :
+ServerThread::ServerThread(ActionContainer *container, FileManager *fm, LogContainer* l) :
         actionContainer(container),
         fileManager(fm),
-        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages)
+        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages),
+        logContainer(l)
 {
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
@@ -26,6 +28,7 @@ ServerThread::ServerThread(ActionContainer *container, FileManager *fm) :
 }
 ServerThread::~ServerThread()
 {
+
     exitFlag = true;
     sendExitMessage();
     delete UDPBroadcaster;
@@ -134,16 +137,23 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
+            
+            try {
+                fileManager->lockFile(action.data[0],action.arg);
+            }catch(FileNotFoundException e){
+                logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
+            }
 
-//            fileManager->lockFile(action.data[0],action.arg);
-//            cout << "Wysylam Hello\n";
             broadcastMessage(new MessageOk());
             break;
         }
         case (UserAction::EnableFile):
         {
 //      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
-            fileManager->unlockFile(action.data[0],action.arg);
+            try {fileManager->unlockFile(action.data[0],action.arg);
+            }catch(FileNotFoundException e){
+                logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
+            }
 //            tcpManager.test();
             break;
         }
@@ -163,7 +173,7 @@ void ServerThread::checkForActions() {
         {
 //          @TODO OGARNAC SWLASNE AJPI!!!!!!!!!!!!!!!!!!!!!
             cout << "Wysylam RequestList\n";
-//            broadcastMessage(new MessageRequestList());
+               broadcastMessage(new MessageRequestList(Constants::Configuration::localhostAddress));
             break;
         }
         case (UserAction::DownloadFile):
@@ -177,7 +187,7 @@ void ServerThread::checkForActions() {
         {
             if (fileManager->isOwner(action.data[0],action.arg))
             {
-                //                broadcastMessage(new MessageRevoke(action.data[0],action.arg));
+                broadcastMessage(new MessageRevoke(action.data[0],action.arg));
             }
         }
         case (UserAction::Exit):

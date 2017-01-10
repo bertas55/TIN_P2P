@@ -15,6 +15,7 @@
 #include "FileManager.h"
 #include "FileInfoContainer.h"
 #include "TCPManager.h"
+#include "LogContainer.h"
 
 /**
  * Klasa reprezentujaca watek nadzorcy serwera.
@@ -28,6 +29,7 @@ private:
     MessageContainer inputMessages; /*Messages recived*/
     MessageContainer outputMessage; /*Messages to send via broadcast*/
     ActionContainer *actionContainer;
+    LogContainer* logContainer;
     FileManager *fileManager;
     TCPManager tcpManager;
     std::thread threadId;
@@ -42,7 +44,7 @@ private:
 
 public:
     ServerThread();
-    ServerThread(ActionContainer*,FileManager*);
+    ServerThread(ActionContainer*,FileManager*,LogContainer*);
     ~ServerThread();
 
     void run();

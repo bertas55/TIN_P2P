@@ -435,6 +435,8 @@ FileInfoContainer.h
 /home/hubert/ClionProjects/TIN_P2P/FileInfoContainer.h
 TCPManager.h
 /home/hubert/ClionProjects/TIN_P2P/TCPManager.h
+LogContainer.h
+/home/hubert/ClionProjects/TIN_P2P/LogContainer.h
 
 /home/hubert/ClionProjects/TIN_P2P/Socket.cpp
 Socket.h
