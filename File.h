@@ -20,7 +20,7 @@ enum FileState {
 class File {
 
 public:
-    File(string name);
+    File(string name, string path);
 
     char* getFilePart(unsigned int);
 

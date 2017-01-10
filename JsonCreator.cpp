@@ -45,19 +45,9 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string myList(vector<FileInfo> files) {
+    string myList() {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::myList;
-        Json::Value filesArray(Json::arrayValue);
-        for (auto file : files) {
-            Json::Value fileJson;
-            fileJson[Constants::JsonKeys::fileName] = file.name;
-            fileJson[Constants::JsonKeys::fileSize] = file.size;
-            fileJson[Constants::JsonKeys::owner] = file.owner;
-            fileJson[Constants::JsonKeys::blocked] = file.blocked;
-            filesArray.append(fileJson);
-        }
-        json[Constants::JsonKeys::files] = filesArray;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }
@@ -110,6 +100,18 @@ namespace JsonCreator {
         json[Constants::JsonKeys::type] = Constants::MessageTypes::revoke;
         json[Constants::JsonKeys::fileName] = fileName;
         json[Constants::JsonKeys::fileSize] = fileSize;
+        Json::FastWriter fastWriter;
+        return fastWriter.write(json);
+    }
+
+    string myFile(string fileName, unsigned long fileSize, string hostName, bool locked, bool owner) {
+        Json::Value json;
+        json[Constants::JsonKeys::type] = Constants::MessageTypes::myFile;
+        json[Constants::JsonKeys::fileName] = fileName;
+        json[Constants::JsonKeys::fileSize] = fileSize;
+        json[Constants::JsonKeys::hostName] = hostName;
+        json[Constants::JsonKeys::blocked] = locked;
+        json[Constants::JsonKeys::owner] = owner;
         Json::FastWriter fastWriter;
         return fastWriter.write(json);
     }

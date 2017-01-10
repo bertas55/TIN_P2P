@@ -29,7 +29,7 @@ string MessageRequestList::toString() {
 }
 
 string MessageMyList::toString() {
-    return JsonCreator::myList(files);
+    return JsonCreator::myList();
 }
 
 string MessageNewFile::toString() {
@@ -54,5 +54,9 @@ string MessageDenied::toString() {
 
 string MessageRevoke::toString() {
     return JsonCreator::revokeFile(fileName, fileSize);
+}
+
+string MessageMyFile::toString() {
+    return JsonCreator::myFile(fileName, fileSize, hostName, locked, owner);
 }
 

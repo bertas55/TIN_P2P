@@ -30,6 +30,7 @@ namespace Constants {
         extern const char* bye;
         extern const char* denied;
         extern const char* revoke;
+        extern const char* myFile;
     }
 
     namespace File {

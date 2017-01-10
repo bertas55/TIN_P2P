@@ -21,36 +21,6 @@ void userInterface()
 
 int main(void)
 {
-    FileManager fileManager;
-
-    vector<FileInfo> files = fileManager.getFilesList();
-
-    MessageMyList myList(files);
-
-    cout << myList.toString() << endl;
-
-//    for (auto fileInfo : files) {
-//        cout << fileInfo.name << "\n";
-//
-//        if (fileInfo)
-//    }
-//
-//    File test("", "testFile");
-//
-//    cout << "Name " << test.getFileInfo().name << endl;
-//
-//    char* ret = test.getFilePart(0);
-//
-//    cout << ret << endl;
-//
-//    char *x = "X";
-//
-//    test.saveFilePart(0, 1, x);
-//
-//    ret = test.getFilePart(0);
-//
-//    cout << ret << endl;
-//
     userInterface();
 
 //    struct ifaddrs *ifap, *ifa;

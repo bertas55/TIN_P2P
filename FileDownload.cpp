@@ -4,8 +4,7 @@
 
 #include "FileDownload.h"
 
-FileDownload::FileDownload(string name, unsigned int size) : File(name) {
-    this->path = Constants::Configuration::downloadPath;
+FileDownload::FileDownload(string name, string path, unsigned int size) : File(name, path) {
     this->size = size;
     int partsCount;
     partsCount = (size + Constants::File::partSize - 1) / Constants::File::partSize;

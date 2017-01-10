@@ -82,12 +82,10 @@ struct MessageRequestList : Message {
 };
 
 struct MessageMyList : Message {
-    MessageMyList(vector<FileInfo> files) {
+    MessageMyList() {
         type = myList;
-        this->files = files;
     }
 
-    vector<FileInfo> files;
     string toString();
 };
 
@@ -159,6 +157,25 @@ struct MessageRevoke : Message {
 
     string fileName;
     unsigned long fileSize;
+
+    string toString();
+};
+
+struct MessageMyFile : Message {
+    MessageMyFile(string fileName, unsigned long fileSize, string hostName, bool locked, bool owner) {
+        type = newFile;
+        this->fileName = fileName;
+        this->fileSize = fileSize;
+        this->hostName = hostName;
+        this->owner = owner;
+        this->locked = locked;
+    }
+
+    string fileName;
+    unsigned long fileSize;
+    string hostName;
+    bool owner;
+    bool locked;
 
     string toString();
 };

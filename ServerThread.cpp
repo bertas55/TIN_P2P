@@ -137,15 +137,14 @@ void ServerThread::checkForActions() {
         case (UserAction::DisableFile):
         {
 //      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
-
+            
             try {
                 fileManager->lockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
                 logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             }
 
-//            cout << "Wysylam Hello\n";
-//            broadcastMessage(new MessageOk());
+            broadcastMessage(new MessageOk());
             break;
         }
         case (UserAction::EnableFile):

@@ -16,21 +16,23 @@ FileManager::FileManager() {
 }
 
 void FileManager::loadFiles() {
-    DIR *dir;
-    const char* dirPath = ".";
-    struct dirent *ent;
-    if ((dir = opendir (dirPath)) != NULL) {
-        /* print all the files and directories within directory */
-        while ((ent = readdir (dir)) != NULL) {
-            printf ("%s\n", ent->d_name);
-            File *newFile = new File(ent->d_name);
-            files.push_back(newFile);
-        }
-        closedir (dir);
-    } else {
-        /* could not open directory */
-        perror ("");
+    if (Constants::Configuration::debugMode) {
+        DIR *dir;
+        const char* dirPath = ".";
+        struct dirent *ent;
+        if ((dir = opendir (dirPath)) != NULL) {
+            /* print all the files and directories within directory */
+            while ((ent = readdir (dir)) != NULL) {
+                printf ("%s\n", ent->d_name);
+                File *newFile = new File(ent->d_name, Constants::Configuration::directoryPath);
+                files.push_back(newFile);
+            }
+            closedir (dir);
+        } else {
+            /* could not open directory */
+            perror ("");
 //        return EXIT_FAILURE;
+        }
     }
 }
 
@@ -103,4 +105,18 @@ vector<FileInfo> FileManager::getFilesList() {
     }
 
     return filesInfo;
+}
+
+bool FileManager::removeFile(string name, unsigned long size)
+{
+    bool success = false;
+    for (vector<File*>::const_iterator iter = files.begin(); iter != files.end(); iter++) {
+        FileInfo fileInfo = (*iter)->getFileInfo();
+        if (fileInfo.name == name && fileInfo.size == size) {
+            files.erase(iter);
+            success = true;
+            break;
+        }
+    }
+    return success;
 }
