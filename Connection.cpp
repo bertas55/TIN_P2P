@@ -128,6 +128,7 @@ void Connection::interpreteMessage(Message *msg) {
         {
             MessageVeto m = dynamic_cast<MessageVeto&>(*msg);
             if (fileManager->removeFile(m.fileName,m.fileSize)) logContainer->put(Log(LogType::FileVeto, m.fileName,"", m.fileSize));
+
         }
         case(MessageType::denied): {
 //            @TODO Dodanie wiadomosci do logu?

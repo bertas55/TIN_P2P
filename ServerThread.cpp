@@ -5,6 +5,8 @@
 #include "ServerThread.h"
 #include "Exceptions.h"
 #include <iostream>
+#include <cstring>
+
 ServerThread::ServerThread()
 {
     logContainer = new LogContainer();
@@ -124,13 +126,20 @@ void ServerThread::checkForMessages() {
         }
         case (MessageType::bye):{
 //            @TODO removeAll
+            if (strcmp(msg->hostName, Constants::Configuration::localhostAddress)==0)
+            {
+                fileManager->
+            }
 
             break;
         }
         case (MessageType::revokeFile):
         {
             MessageRevoke revoke = dynamic_cast<MessageRevoke&>(*msg);
-            fileManager->removeFile(revoke.fileName,revoke.fileSize);
+            if (fileManager->removeFile(revoke.fileName,revoke.fileSize))
+            {
+                logContainer->put(Log(FileRemoved,revoke.fileName,"",revoke.fileSize));
+            }
         }
         default:
         {
