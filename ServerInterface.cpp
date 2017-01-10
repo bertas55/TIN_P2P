@@ -43,17 +43,35 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::DisableFile):
         {
-            disableFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            disableFile(fileName,fileSize);
             break;
         }
         case (UserAction::EnableFile):
         {
-            enableFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            enableFile(fileName,fileSize);
             break;
         }
         case (UserAction::RemoveFile):
         {
-            removeFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            removeFile(fileName,fileSize);
             break;
         }
         case (UserAction::RefreshList):
@@ -63,7 +81,13 @@ void ServerInterface::putServerAction(UserAction action)
         }
         case (UserAction::DownloadFile):
         {
-            downloadFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            downloadFile(fileName,fileSize);
             break;
         }
         case (UserAction::Exit):
