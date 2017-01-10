@@ -20,7 +20,7 @@ public:
     ~TCPManager();
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
     void sendMyList(string hostName);
-    void sendVeto(Message*);
+    void sendVeto(string host, string fname, unsigned long fsize);
     void test(){
         FileInfo f2("testFile",10232,false,false);
         f2.hostAddress="192.168.0.98";

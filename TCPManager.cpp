@@ -47,9 +47,10 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
 void TCPManager::sendMyList(string hostName)
 {
     vector<FileInfo> list = fileManager->getFilesList();
+    Connection *c = new Connection( SocketCreator::CreateSocket(hostName,Constants::Configuration::TCPort,true),fileManager->getFilesList());
 
 }
-void TCPManager::sendVeto(Message* msg)
+void TCPManager::sendVeto(string host, string fname, unsigned long fsize)
 {
 
 }
@@ -76,3 +77,4 @@ void TCPManager::connectionAccepter()
     }
     delete s;
 }
+

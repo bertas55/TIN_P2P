@@ -42,6 +42,7 @@ File* FileManager::getFile(string name, unsigned long size) {
             return file;
         }
     }
+    return nullptr;
 }
 
 void FileManager::lockFile(string name, unsigned long size) {

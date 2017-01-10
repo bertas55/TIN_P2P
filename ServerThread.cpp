@@ -71,7 +71,6 @@ void ServerThread::broadcastMessage(Message *msg) {
 void ServerThread::checkForMessages() {
 
     Message *msg = inputMessages.get();
-    std::cout<< msg->toString() << "Mesejdz\n";
     switch(msg->type)
     {
         case(MessageType::ok): {
@@ -85,6 +84,7 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
+
             std::cout << "Odebrano wiadomosc RequestFile\n";
             break;
         }
@@ -94,31 +94,42 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestList):{
-//            @TODO Wysylanie listy powinno odbyc sie do zadanego wezla
-//            broadcastMessage(new MessageMyList());
-
+            tcpManager.sendMyList(msg->hostName);
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
         case(MessageType::veto):{
-//            @TODO sprawdzenie czy dany plik zostal przez nas dodany
+//            @TODO
             std::cout << "Odebrano wiadomosc veto\n";
             break;
         }
         case(MessageType::newFile):{
             std::cout << "Odebrano wiadomosc newFile\n";
 //            @TODO sprawdzenie czy plik posiadamy, konstruktor MesseageVeto powinien moc podac nazwe i rozmiar pliku
+            MessageNewFile msgNewFile = dynamic_cast<MessageNewFile&>(*msg);
+            File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
+            if (f!= nullptr)
+            {
+                tcpManager.sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
+            }
 //            broadcastMessage(MessageVeto());
             break;
         }
         case(MessageType::removedFile):{
             std::cout << "Odebrano wiadomosc deleteFile\n";
+//            fileInfoContainer.remove()
 //            @TODO akcja do FileManagera by usunal plik
             break;
         }
         case (MessageType::bye):{
+//            @TODO removeAll
 
             break;
+        }
+        case (MessageType::revokeFile):
+        {
+            MessageRevoke revoke = dynamic_cast<MessageRevoke&>(*msg);
+            fileManager->removeFile(revoke.fileName,revoke.fileSize);
         }
         default:
         {
@@ -136,8 +147,6 @@ void ServerThread::checkForActions() {
     {
         case (UserAction::DisableFile):
         {
-//      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
-            
             try {
                 fileManager->lockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
@@ -149,36 +158,24 @@ void ServerThread::checkForActions() {
         }
         case (UserAction::EnableFile):
         {
-//      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
             try {fileManager->unlockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
                 logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             }
-//            tcpManager.test();
             break;
         }
         case (UserAction::RemoveFile):
         {
-//        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
-//            fileManager->isOwner(action.data[0], action.arg)
-//            broadcastMessage(new MessageDeleteFile());
-//            fileManager->removeFile(action.data[0],action.arg);
-/*            if (fileManager->removeFile(action.data[0],action.arg))
-                broadcastMessage(new MessageDeleteFile(action.data[0],action.arg,"DUPA"));
-                ;*/
-            cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
+            if (!fileManager->removeFile(action.data[0], action.arg)) logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             break;
         }
         case (UserAction::RefreshList):
         {
-//          @TODO OGARNAC SWLASNE AJPI!!!!!!!!!!!!!!!!!!!!!
-            cout << "Wysylam RequestList\n";
                broadcastMessage(new MessageRequestList(Constants::Configuration::localhostAddress));
             break;
         }
         case (UserAction::DownloadFile):
         {
-//            @TODO
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
             if (fileInfo!=nullptr) tcpManager.recieveFile(fileInfo);
             break;

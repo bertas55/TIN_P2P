@@ -20,6 +20,8 @@ public:
     Connection(Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
     Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
     Connection(Socket*);
+    Connection(Socket *s, vector<FileInfo> f); // konstruktor do wysylania listy plikow
+    Connection(Socket *s, string fname, unsigned long fsize); //konstruktor do wysylania veto
     ~Connection();
 
     void sendFile(File*, int);
@@ -35,6 +37,13 @@ private:
     void interpreteMessage(Message *msg);
     void sendMessage(Message *msg);
     void testMethod();
+    void sendVeto(string fname, unsigned long fsize);
+    void sendMyList(vector<File>* vf);
+    bool receiveFileInfo();
+    bool receiveFilePart(FileDownload*);
+    bool sendFilePart(File *);
+    Message* receiveMessage();
+
 
 
 
