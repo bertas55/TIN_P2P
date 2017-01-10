@@ -18,6 +18,7 @@ TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, Messag
 }
 TCPManager::~TCPManager()
 {
+    s->Terminate();
     id.join();
 }
 
@@ -29,9 +30,10 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
      * Zarzada ktora czesc, od ktorego hosta pobrac.
      */
     std::vector<struct FileInfo> host = fileInfoContainer->getAllHostsContains(*fi);
-    if (host.size()>0)
+    unsigned int seeds = host.size();
+    if (seeds>0)
     {
-        FileDownload *file = new FileDownload(fi->name, Constants::Configuration::downloadPath, fi->size);
+        FileDownload *file = new FileDownload(fi->name, Constants::Configuration::downloadPath, fi->size,seeds);
         for (int i=0; i < host.size();++i)
         {
             cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
@@ -40,6 +42,17 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
             cout <<"Next\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
         }
+        file->waitUntilFinished();
+        if (file->partsLeftCount()==0)
+        {                               //Plik sciagniety pomyslnie
+//            fileManager->
+//            logContainer->put()
+        }
+        else
+        {                               //Pobieranie pliku nie ukonczylo sie sukcesem
+//            logContainer->put();
+        }
+
 
     }
 }
@@ -75,6 +88,7 @@ void TCPManager::connectionAccepter()
         connList.push_back(c);
         cout << "New connection\n";
     }
+    cout << "TCPListener end\n";
     delete s;
 }
 

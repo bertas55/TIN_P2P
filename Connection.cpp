@@ -81,7 +81,11 @@ void Connection::recieveFile(FileDownload* file)
             char buf[Constants::File::partSize];
 
             m=receiveMessage();
-            if (m->type!=MessageType::ok) break;
+            if (m->type!=MessageType::ok)
+            {
+                file->addPartToDownload(part);
+                break;
+            }
             sendMessage(new MessageOk());
             if (!receiveFilePart(file,part)) break;
             logContainer->put(Log(LogType::DownloadFileProgres, file->getName(),"", file->getSize()));
@@ -89,6 +93,7 @@ void Connection::recieveFile(FileDownload* file)
         else break;
     }
     sendMessage(new MessageBye());
+    file->seedDisconected();
 }
 /**
  *
@@ -131,8 +136,6 @@ void Connection::interpreteMessage(Message *msg) {
 
         }
         case(MessageType::denied): {
-//            @TODO Dodanie wiadomosci do logu?
-
             running = false;
             break;
         }

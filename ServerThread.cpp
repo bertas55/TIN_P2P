@@ -34,9 +34,13 @@ ServerThread::~ServerThread()
     exitFlag = true;
     sendExitMessage();
     delete UDPBroadcaster;
+    cout << "0serverThread End\n";
     delete UDPReciver;
+    cout << "1serverThread End\n" << tcpManager << endl;
     delete tcpManager;
+    cout << "2serverThread End\n";
     threadId.detach();
+    cout << "3serverThread End\n";
 }
 /*
  * Glowna petla watku
@@ -108,14 +112,12 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::newFile):{
             std::cout << "Odebrano wiadomosc newFile\n";
-//            @TODO sprawdzenie czy plik posiadamy, konstruktor MesseageVeto powinien moc podac nazwe i rozmiar pliku
             MessageNewFile msgNewFile = dynamic_cast<MessageNewFile&>(*msg);
             File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
             if (f!= nullptr)
             {
                 tcpManager->sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
             }
-//            broadcastMessage(MessageVeto());
             break;
         }
         case(MessageType::removedFile):{
@@ -192,8 +194,7 @@ void ServerThread::checkForActions() {
         case (UserAction::DownloadFile):
         {
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
-            if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
-            if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
+//            if (fileInfo!=nullptr) std::thread(&TCPManager::recieveFile,this,fileInfo);
             break;
         }
         case (UserAction::RevokeFile):
@@ -207,6 +208,7 @@ void ServerThread::checkForActions() {
         {
             broadcastMessage(new MessageBye());
             exitFlag = true;
+            UDPReciver->closeSocket();
             break;
         }
     }

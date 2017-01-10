@@ -36,7 +36,7 @@ UDPAdapter::~UDPAdapter() {
     }
     delete socket;
     UDPThread.join();
-    cout << "[3]";
+    cout << "[3]UDP Adapter end\n";
 
 }
 
@@ -95,4 +95,8 @@ void UDPAdapter::sendMessage(Message *msg) {
 
 void UDPAdapter::run() {
     //socket->Bind();
+}
+
+void UDPAdapter::closeSocket() {
+    socket->Terminate();
 }

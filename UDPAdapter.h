@@ -29,6 +29,7 @@ public:
     void run();
     void listen();
     void send();
+    void closeSocket();
 
 
 

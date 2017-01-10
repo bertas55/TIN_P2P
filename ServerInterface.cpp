@@ -146,9 +146,11 @@ void ServerInterface::revokeFile(string fileName, unsigned long fileSize) {
 void ServerInterface::consoleInterface() {
     int myAction;
     do {
+//        enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, AddFile, RevokeFile, Exit };
         cout << "Welcome Pirate!\n";
         cout << "0. RefreshList\n1.DownloadFile\n2.Disbale File\n";
-        cout << "3.EnableFile\n4.Remove File\n5.Exit" << endl;
+        cout << "3.EnableFile\n4.Remove File\n5.AddFile\n6.RevokeFile" << endl;
+        cout << "7. Exit\n";
         cin >> myAction;
         putServerAction((UserAction)myAction);
 ;

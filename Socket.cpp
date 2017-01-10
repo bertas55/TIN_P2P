@@ -94,3 +94,8 @@ void Socket::Close(void)
     close(descriptor);
     closed = true;
 }
+
+void Socket::Terminate() {
+    shutdown(descriptor,SHUT_RD);
+    Close();
+}

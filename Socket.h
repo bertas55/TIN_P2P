@@ -26,6 +26,7 @@ public:
     long Receive(char* bytes, unsigned long numberOfBytes);
 
     void Close(void);
+    void Terminate(void);
 };
 
 

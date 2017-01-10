@@ -92,7 +92,6 @@ char* WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
     socklen_t slen = sizeof(si_other);
     if (recvfrom(descriptor, bytes, numberOfBytes, 0, (struct sockaddr *) &si_other, &slen) == -1)
     {
-        printf("JAKIESTAM DIE;");
     }
     printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
     return  inet_ntoa(si_other.sin_addr);

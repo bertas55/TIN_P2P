@@ -4,7 +4,10 @@
 
 #include "FileDownload.h"
 
-FileDownload::FileDownload(string name, string path, unsigned int size) : File(name, path) {
+FileDownload::FileDownload(string name, string path, unsigned int size, unsigned int seeds) :
+        File(name, path),
+        seedsConnected(seeds)
+{
     this->size = size;
     int partsCount;
     partsCount = (size + Constants::File::partSize - 1) / Constants::File::partSize;
@@ -17,12 +20,14 @@ FileDownload::FileDownload(string name, string path, unsigned int size) : File(n
 }
 
 long FileDownload::getPartToDownload() {
-    std::lock_guard<std::mutex> lock(guard);
+    std::unique_lock<std::mutex> lock(guard);
+//    std::lock_guard<std::mutex> lock(guard);
     if (partsLeft.empty()) {
         return -1;
     }
     unsigned int part = partsLeft.front();
     partsLeft.pop();
+    lock.unlock();
     return part;
 }
 
@@ -32,4 +37,17 @@ unsigned long FileDownload::partsLeftCount() {
 
 void FileDownload::addPartToDownload(long partNumber) {
     partsLeft.push(partNumber);
+}
+
+void FileDownload::seedDisconected() {
+    std::unique_lock<std::mutex> lock(guard);
+    seedsConnected--;
+    lock.unlock();
+    if (seedsConnected==0) finished.notify_one();
+}
+
+void FileDownload::waitUntilFinished() {
+    std::unique_lock<std::mutex> lock(guard);
+    finished.wait(lock);
+    lock.unlock();
 }
