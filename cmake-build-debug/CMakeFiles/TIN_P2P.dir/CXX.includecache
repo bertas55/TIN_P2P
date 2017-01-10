@@ -20,16 +20,6 @@ mutex
 File.h
 /home/lukasz/CLionProjects/TIN_P2P/File.h
 
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp
-Configuration.h
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
-
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
-string
--
-Message.h
-/home/lukasz/CLionProjects/TIN_P2P/Message.h
-
 /home/lukasz/CLionProjects/TIN_P2P/Connection.cpp
 sys/socket.h
 -
@@ -39,6 +29,8 @@ Connection.h
 /home/lukasz/CLionProjects/TIN_P2P/Connection.h
 JsonParser.h
 /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Connection.h
 SocketCreator.h
@@ -55,6 +47,10 @@ FileDownload.h
 /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
 LogContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
+FileInfoContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
+Message.h
+/home/lukasz/CLionProjects/TIN_P2P/Message.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Constants.cpp
 Constants.h
@@ -275,8 +271,6 @@ dirent.h
 -
 stdlib.h
 -
-Configuration.h
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 vector
@@ -390,6 +384,10 @@ netinet/in.h
 net/if.h
 -
 cstring
+-
+sstream
+-
+stdlib.h
 -
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
@@ -529,8 +527,6 @@ thread
 -
 WcisloSocket.h
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
-Configuration.h
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp
 sys/socket.h
@@ -559,8 +555,6 @@ Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
 string
 -
-Configuration.h
-/home/lukasz/CLionProjects/TIN_P2P/Configuration.h
 
 /home/lukasz/CLionProjects/TIN_P2P/main.cpp
 iostream

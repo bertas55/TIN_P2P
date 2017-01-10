@@ -12,6 +12,7 @@
 #include "FileDownload.h"
 #include "LogContainer.h"
 #include "FileInfoContainer.h"
+#include "Message.h"
 
 /**
  * Klasa reprezentujaca polaczenie TCP
@@ -44,8 +45,8 @@ private:
     void sendVeto(string fname, unsigned long fsize);
     void sendMyList(vector<File>* vf);
     bool receiveFileInfo();
-    bool receiveFilePart(FileDownload*);
-    bool sendFilePart(File *);
+    bool receiveFilePart(FileDownload*, unsigned int);
+    bool sendFilePart(string, unsigned long, unsigned int);
     Message* receiveMessage();
 
 

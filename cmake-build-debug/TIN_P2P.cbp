@@ -90,12 +90,6 @@
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp">
-			<Option target="TIN_P2P"/>
-		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Configuration.h">
-			<Option target="TIN_P2P"/>
-		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/Connection.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>

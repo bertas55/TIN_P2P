@@ -22,7 +22,8 @@ enum MessageType {
     removedFile,
     bye,
     denied,
-    revokeFile
+    revokeFile,
+    myFile
 };
 
 struct Message {
@@ -163,7 +164,7 @@ struct MessageRevoke : Message {
 
 struct MessageMyFile : Message {
     MessageMyFile(string fileName, unsigned long fileSize, string hostName, bool locked, bool owner) {
-        type = newFile;
+        type = myFile;
         this->fileName = fileName;
         this->fileSize = fileSize;
         this->hostName = hostName;

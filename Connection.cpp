@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "Connection.h"
 #include "JsonParser.h"
+#include "Exceptions.h"
 
 Connection::Connection(LogContainer* l,Socket *s, vector<FileInfo> f):
         logContainer(l),
@@ -82,15 +83,8 @@ void Connection::recieveFile(FileDownload* file)
             m=receiveMessage();
             if (m->type!=MessageType::ok) break;
             sendMessage(new MessageOk());
-            if (!receiveFilePart(file)) break;
-
-//
-//            int numberOfBytes;
-//            if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
-//            else numberOfBytes=Constants::File::partSize;
-//            sock->Receive(buf,numberOfBytes);
-//            cout << "Odebralem dane.\n";
-//            file->saveFilePart(part,numberOfBytes,buf);
+            if (!receiveFilePart(file,part)) break;
+            logContainer->put(Log(LogType::DownloadFileProgres, file->getName(),"", file->getSize()));
         }
         else break;
     }
@@ -119,10 +113,8 @@ void Connection::interpreteMessage(Message *msg) {
     {
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
-            MessageRequestFile request = dynamic_cast<MessageRequestFile&>(*msg);
-            File *file = fileManager->getFile(request.fileName, request.fileSize);
-            if (file == nullptr) sendMessage(new MessageDenied());
-            sendFile(file,request.offset);
+            MessageRequestFile m = dynamic_cast<MessageRequestFile&>(*msg);
+            sendFilePart(m.fileName,m.fileSize,m.fileSize);
             break;
         }
         case(MessageType::myList):{
@@ -131,6 +123,11 @@ void Connection::interpreteMessage(Message *msg) {
             receiveFileInfo();
 
             break;
+        }
+        case(MessageType::veto):
+        {
+            MessageVeto m = dynamic_cast<MessageVeto&>(*msg);
+            if (fileManager->removeFile(m.fileName,m.fileSize)) logContainer->put(Log(LogType::FileVeto, m.fileName,"", m.fileSize));
         }
         case(MessageType::denied): {
 //            @TODO Dodanie wiadomosci do logu?
@@ -172,18 +169,14 @@ void Connection::sendMyList(vector<File>* vf)
     for (unsigned long i =0 ; i < vsize ; ++i)
     {
         sendMessage(new MessageMyList());
-        if (sock==NULL) return;
-        if (!sock->Receive(buf,BUFLEN)) return;
-        m = JsonParser::parse(buf);
+        m = receiveMessage();
         if (m->type!=MessageType::ok) return;
         fileName = (*vf)[i].getName();
         fileSize = (*vf)[i].getSize();
         locked = (*vf)[i].isLocked();
         owner = (*vf)[i].isOwner();
         sendMessage(new MessageMyFile(fileName,fileSize,hostName,locked,owner));
-        if (sock==NULL) return;
-        if (!sock->Receive(buf,BUFLEN)) return;
-        m = JsonParser::parse(buf);
+        m = receiveMessage();
         if (m->type!=MessageType::ok) return;
     }
     sendMessage(new MessageBye());
@@ -196,19 +189,57 @@ bool Connection::receiveFileInfo()
     char buf[BUFLEN];
     if (sock==NULL) return false;
     if (!sock->Receive(buf,BUFLEN)) return false;
-    Message *m = JsonParser::parse(buf);
+    Message *msg = JsonParser::parse(buf);
+    if (msg->type!=MessageType::myFile) return false;
+    MessageMyFile m = dynamic_cast<MessageMyFile&>(*msg);
+    fileInfoContainer->put(FileInfo(m.fileName,m.fileSize,m.locked,m.owner,m.hostName));
+    logContainer->put(Log(LogType::FileAppeared,m.fileName,m.hostName,m.fileSize));
+    return true;
 
 }
-bool Connection::receiveFilePart(FileDownload*)
+
+
+bool Connection::receiveFilePart(FileDownload* file, unsigned int part)
 {
+    unsigned long numberOfBytes;
+    char buf[Constants::File::partSize];
+    if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
+    else numberOfBytes=Constants::File::partSize;
+    sock->Receive(buf,numberOfBytes);
+    cout << "Odebralem part nr " << part << endl;
+    try{
 
+        file->saveFilePart(part,numberOfBytes,buf);
+    }catch (OutOfRangeException e)
+    {
+        logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
+        return false;
+    }catch (LoadingFileException e){
+        logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
+        return false;
+    }
+    logContainer->put(Log(LogType::DownloadFileProgres, file->getName(),"", file->getSize()));
+    return true;
 
 }
-bool Connection::sendFilePart(File *)
+
+bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned int offset)
 {
-
+    bool success = false;
+    File *file = fileManager->getFile(fileName, fileSize);
+    if (file == nullptr) sendMessage(new MessageDenied());
+    else {
+        sendFile(file, offset);
+        success = true;
+    }
+    return success;
 }
+
 Message* Connection::receiveMessage()
 {
-
+    const unsigned short BUFLEN = Constants::File::partSize;
+    char buf[BUFLEN];
+    if (sock==NULL) return nullptr;
+    if (!sock->Receive(buf,BUFLEN)) return nullptr;
+    return JsonParser::parse(buf);
 }

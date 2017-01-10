@@ -71,7 +71,7 @@ void TCPManager::connectionAccepter()
             continue;
         }
 
-        c = new Connection(logContainer, connectionSocket,fileManager);
+        c = new Connection(logContainer, connectionSocket,fileManager,fileInfoContainer);
         connList.push_back(c);
         cout << "New connection\n";
     }

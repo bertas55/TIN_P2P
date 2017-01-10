@@ -6,7 +6,6 @@
 #define TIN_P2P_WCISLOSOCKET_H
 #include "Socket.h"
 #include <string>
-#include "Configuration.h"
 /**
  * Sebek - The Horse Puncher
  * Klasa poki co do UDP broadcast i odbieranie broadcastow

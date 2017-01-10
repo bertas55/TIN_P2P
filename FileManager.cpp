@@ -7,7 +7,6 @@
 #include "Exceptions.h"
 #include <dirent.h>
 #include <stdlib.h>
-#include "Configuration.h"
 
 using namespace std;
 

@@ -417,33 +417,9 @@ CMakeFiles/TIN_P2P.dir/Constants.cpp.o.provides: CMakeFiles/TIN_P2P.dir/Constant
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/Constants.cpp.o
 
 
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.o: ../Configuration.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TIN_P2P.dir/Configuration.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/Configuration.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp
-
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIN_P2P.dir/Configuration.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp > CMakeFiles/TIN_P2P.dir/Configuration.cpp.i
-
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIN_P2P.dir/Configuration.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukasz/CLionProjects/TIN_P2P/Configuration.cpp -o CMakeFiles/TIN_P2P.dir/Configuration.cpp.s
-
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.requires:
-
-.PHONY : CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.requires
-
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.provides: CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.provides.build
-.PHONY : CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.provides
-
-CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/Configuration.cpp.o
-
-
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
 
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.i: cmake_force
@@ -467,7 +443,7 @@ CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/E
 
 CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o: ../ActionContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.cpp
 
 CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.i: cmake_force
@@ -491,7 +467,7 @@ CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o.provides.build: CMakeFiles/TIN_P2P.
 
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/TCPManager.cpp
 
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.i: cmake_force
@@ -515,7 +491,7 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/T
 
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Connection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TIN_P2P.dir/Connection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TIN_P2P.dir/Connection.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/Connection.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/Connection.cpp
 
 CMakeFiles/TIN_P2P.dir/Connection.cpp.i: cmake_force
@@ -539,7 +515,7 @@ CMakeFiles/TIN_P2P.dir/Connection.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/C
 
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o: ../FileInfoContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.cpp
 
 CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.i: cmake_force
@@ -563,7 +539,7 @@ CMakeFiles/TIN_P2P.dir/FileInfoContainer.cpp.o.provides.build: CMakeFiles/TIN_P2
 
 CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o: ../FileDownload.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/FileDownload.cpp
 
 CMakeFiles/TIN_P2P.dir/FileDownload.cpp.i: cmake_force
@@ -587,7 +563,7 @@ CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir
 
 CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
 CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o: ../LogContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/LogContainer.cpp
 
 CMakeFiles/TIN_P2P.dir/LogContainer.cpp.i: cmake_force
@@ -626,7 +602,6 @@ TIN_P2P_OBJECTS = \
 "CMakeFiles/TIN_P2P.dir/FileManager.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/Constants.cpp.o" \
-"CMakeFiles/TIN_P2P.dir/Configuration.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o" \
@@ -653,7 +628,6 @@ TIN_P2P: CMakeFiles/TIN_P2P.dir/File.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/FileManager.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/Constants.cpp.o
-TIN_P2P: CMakeFiles/TIN_P2P.dir/Configuration.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
@@ -663,7 +637,7 @@ TIN_P2P: CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/LogContainer.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/build.make
 TIN_P2P: CMakeFiles/TIN_P2P.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable TIN_P2P"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable TIN_P2P"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TIN_P2P.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -686,7 +660,6 @@ CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/File.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/FileManager.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/Constants.cpp.o.requires
-CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/Configuration.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/ActionContainer.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o.requires

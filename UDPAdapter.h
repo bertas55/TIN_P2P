@@ -9,7 +9,6 @@
 #include "MessageContainer.h"
 #include <thread>
 #include "WcisloSocket.h"
-#include "Configuration.h"
 /**
  * Klasa reprezentujaca polaczenie UDP.
  * Mozliwe tryby pracy: Broadcast, Sluchacz

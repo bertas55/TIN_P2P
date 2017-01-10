@@ -11,6 +11,8 @@
 #include <netinet/in.h>
 #include <net/if.h>
 #include <cstring>
+#include <sstream>
+#include <stdlib.h>
 #include "ServerInterface.h"
 
 
@@ -43,17 +45,35 @@ void ServerInterface::putServerAction(UserAction action)
     {
         case (UserAction::DisableFile):
         {
-            disableFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            disableFile(fileName,fileSize);
             break;
         }
         case (UserAction::EnableFile):
         {
-            enableFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            enableFile(fileName,fileSize);
             break;
         }
         case (UserAction::RemoveFile):
         {
-            removeFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            removeFile(fileName,fileSize);
             break;
         }
         case (UserAction::RefreshList):
@@ -63,7 +83,13 @@ void ServerInterface::putServerAction(UserAction action)
         }
         case (UserAction::DownloadFile):
         {
-            downloadFile("",0);
+            string fileName;
+            unsigned long fileSize;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File size: ";
+            cin >> fileSize;
+            downloadFile(fileName,fileSize);
             break;
         }
         case (UserAction::Exit):
@@ -156,4 +182,22 @@ void ServerInterface::setMyIp() {
 
     /* display result */
     printf("%s\n", inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
+}
+
+void ServerInterface::loadConfiguration() {
+    ifstream infile(Constants::Configuration::configPath);
+    std::string line;
+
+    getline(infile, line);
+    std::istringstream iss(line);
+    Constants::Configuration::port = stoi(line);
+
+    getline(infile, line);
+    Constants::Configuration::TCPort = stoi(line);
+
+    getline(infile, line);
+    strcpy(Constants::Configuration::broadcastIP, line.c_str());
+
+    getline(infile, line);
+    strcpy(Constants::Configuration::localhostAddress, line.c_str());
 }

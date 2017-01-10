@@ -66,6 +66,14 @@ struct FileInfo {
         this->blocked = blocked;
         this->owner = owner;
     }
+    FileInfo(string name, unsigned int size, bool blocked, bool owner, string host) {
+            this->name = name;
+            this->size = size;
+            this->hostAddress = host;
+            this->blocked = blocked;
+            this->owner = owner;
+    }
+
 };
 
 

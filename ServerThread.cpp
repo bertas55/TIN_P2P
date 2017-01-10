@@ -179,6 +179,7 @@ void ServerThread::checkForActions() {
         {
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
             if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
+            if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
             break;
         }
         case (UserAction::RevokeFile):
