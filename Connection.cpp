@@ -108,10 +108,7 @@ void Connection::interpreteMessage(Message *msg) {
     {
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
-            MessageRequestFile request = dynamic_cast<MessageRequestFile&>(*msg);
-            File *file = fileManager->getFile(request.fileName, request.fileSize);
-            if (file == nullptr) sendMessage(new MessageDenied());
-            sendFile(file,request.offset);
+
             break;
         }
         case(MessageType::myList):{
@@ -180,15 +177,35 @@ bool Connection::receiveFileInfo()
 {
 
 }
-bool Connection::receiveFilePart(FileDownload*)
-{
 
-}
-bool Connection::sendFilePart(File *)
+bool Connection::receiveFilePart(FileDownload* file, unsigned int part)
 {
-
+    unsigned long numberOfBytes;
+    char buf[Constants::File::partSize];
+    if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
+    else numberOfBytes=Constants::File::partSize;
+    sock->Receive(buf,numberOfBytes);
+    cout << "Odebralem part nr " << part << endl;
+    file->saveFilePart(part,numberOfBytes,buf);
 }
+
+bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned int offset)
+{
+    bool success = false;
+    File *file = fileManager->getFile(fileName, fileSize);
+    if (file == nullptr) sendMessage(new MessageDenied());
+    else {
+        sendFile(file, offset);
+        success = true;
+    }
+    return success;
+}
+
 Message* Connection::receiveMessage()
 {
-
+    const unsigned short BUFLEN = Constants::File::partSize;
+    char buf[BUFLEN];
+    if (sock==NULL) return nullptr;
+    if (!sock->Receive(buf,BUFLEN)) return nullptr;
+    return JsonParser::parse(buf);
 }
