@@ -8,6 +8,7 @@
 #include "FileManager.h"
 #include "FileInfoContainer.h"
 #include "MessageContainer.h"
+#include "LogContainer.h"
 
 /**
  * Klasa zarzadzajaca polczeniami TCP
@@ -16,7 +17,7 @@
 class TCPManager {
 
 public:
-    TCPManager(FileManager*, FileInfoContainer*, bool*, MessageContainer*);
+    TCPManager(FileManager*, FileInfoContainer*, bool*, MessageContainer*, LogContainer*);
     ~TCPManager();
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
     void sendMyList(string hostName);
@@ -36,6 +37,7 @@ private:
     FileManager *fileManager;
     FileInfoContainer *fileInfoContainer;
     MessageContainer* inputMessages;
+    LogContainer *logContainer;
     vector<Connection*> connList;
     std::thread id;
     Socket *s;

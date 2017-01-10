@@ -10,6 +10,8 @@
 #include "File.h"
 #include "FileManager.h"
 #include "FileDownload.h"
+#include "LogContainer.h"
+#include "FileInfoContainer.h"
 
 /**
  * Klasa reprezentujaca polaczenie TCP
@@ -17,11 +19,11 @@
 class Connection {
 
 public:
-    Connection(Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
-    Connection(Socket*,FileManager*);            // Konstruktor do wysylania??
-    Connection(Socket*);
-    Connection(Socket *s, vector<FileInfo> f); // konstruktor do wysylania listy plikow
-    Connection(Socket *s, string fname, unsigned long fsize); //konstruktor do wysylania veto
+    Connection(LogContainer*,Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
+    Connection(LogContainer*,Socket*,FileManager*,FileInfoContainer*);            // Konstruktor do odbierania
+    Connection(LogContainer*,Socket*);
+    Connection(LogContainer*,Socket *s, vector<FileInfo> f); // konstruktor do wysylania listy plikow
+    Connection(LogContainer*,Socket *s, string fname, unsigned long fsize); //konstruktor do wysylania veto
     ~Connection();
 
     void sendFile(File*, int);
@@ -31,6 +33,8 @@ public:
 private:
     std::thread threadId;
     FileManager *fileManager;
+    LogContainer *logContainer;
+    FileInfoContainer *fileInfoContainer;
     int descriptor;
     bool running;
     Socket *sock;

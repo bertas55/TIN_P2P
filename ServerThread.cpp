@@ -5,25 +5,25 @@
 #include "ServerThread.h"
 #include "Exceptions.h"
 #include <iostream>
-ServerThread::ServerThread() :
-        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages)
+ServerThread::ServerThread()
 {
     logContainer = new LogContainer();
     threadId = std::thread(&ServerThread::run,this);
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
+    tcpManager = new TCPManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages,logContainer);
 
 }
 ServerThread::ServerThread(ActionContainer *container, FileManager *fm, LogContainer* l) :
         actionContainer(container),
         fileManager(fm),
-        tcpManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages),
         logContainer(l)
 {
     exitFlag = false;
     UDPBroadcaster = new UDPAdapter(&outputMessage,SocketCreator::broadcasterSenderSocket(), true,&exitFlag);
     UDPReciver = new UDPAdapter(&inputMessages,SocketCreator::broadcasterSocket(), false,&exitFlag);
+    tcpManager = new TCPManager(fileManager,&fileInfoContainer,&exitFlag,&inputMessages,logContainer);
     threadId = std::thread(&ServerThread::run,this);
 }
 ServerThread::~ServerThread()
@@ -33,6 +33,7 @@ ServerThread::~ServerThread()
     sendExitMessage();
     delete UDPBroadcaster;
     delete UDPReciver;
+    delete tcpManager;
     threadId.detach();
 }
 /*
@@ -94,7 +95,7 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestList):{
-            tcpManager.sendMyList(msg->hostName);
+            tcpManager->sendMyList(msg->hostName);
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
@@ -110,7 +111,7 @@ void ServerThread::checkForMessages() {
             File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
             if (f!= nullptr)
             {
-                tcpManager.sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
+                tcpManager->sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
             }
 //            broadcastMessage(MessageVeto());
             break;
@@ -177,7 +178,7 @@ void ServerThread::checkForActions() {
         case (UserAction::DownloadFile):
         {
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
-            if (fileInfo!=nullptr) tcpManager.recieveFile(fileInfo);
+            if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
             break;
         }
         case (UserAction::RevokeFile):

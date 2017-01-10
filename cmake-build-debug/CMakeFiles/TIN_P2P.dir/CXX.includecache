@@ -53,6 +53,8 @@ FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
 FileDownload.h
 /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
+LogContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Constants.cpp
 Constants.h
@@ -499,6 +501,8 @@ FileInfoContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
 MessageContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
+LogContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
 
 /home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp
 sys/socket.h

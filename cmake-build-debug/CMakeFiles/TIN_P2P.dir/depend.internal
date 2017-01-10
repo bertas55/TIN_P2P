@@ -24,6 +24,7 @@ CMakeFiles/TIN_P2P.dir/Connection.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
  /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
+ /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h
  /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
@@ -155,6 +156,7 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+ /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Socket.h

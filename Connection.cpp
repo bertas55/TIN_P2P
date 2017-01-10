@@ -7,34 +7,41 @@
 #include "Connection.h"
 #include "JsonParser.h"
 
-Connection::Connection(Socket *s, vector<FileInfo> f):
+Connection::Connection(LogContainer* l,Socket *s, vector<FileInfo> f):
+        logContainer(l),
         sock(s),
         running(true)
 {
 
 }
-Connection::Connection(Socket *s, string fname, unsigned long fsize):
+Connection::Connection(LogContainer* l,Socket *s, string fname, unsigned long fsize):
+        logContainer(l),
         sock(s),
         running(true)
 {
 
 }
-Connection::Connection(Socket *s, FileManager *fm) :
+Connection::Connection(LogContainer* l,Socket *s, FileManager *fm,FileInfoContainer* f) :
+        logContainer(l),
         sock(s),
         running(true) ,
-        fileManager(fm)
+        fileManager(fm),
+        fileInfoContainer(f)
 {
     threadId = std::thread(&Connection::run,this);
 //    threadId.detach();
 }
-Connection::Connection(Socket *s , FileDownload *file) : sock(s), running(true)
+Connection::Connection(LogContainer* l,Socket *s , FileDownload *file) :
+        logContainer(l),
+        sock(s), running(true)
 {
 
     threadId = std::thread(&Connection::recieveFile,this,file);
 //    threadId.detach();
 }
 
-Connection::Connection(Socket *s) :
+Connection::Connection(LogContainer* l,Socket *s) :
+        logContainer(l),
         sock(s),
         running(true)
 {
@@ -62,28 +69,32 @@ void Connection::sendMessage(Message *msg) {
 
 void Connection::recieveFile(FileDownload* file)
 {
+    Message *m;
     while (true)
     {
         long part = file->getPartToDownload();
         if (part!=-1)
         {
-            sendMessage(new MessageRequestFile("ZXCZX",file->getName(),file->getSize(),part));
+            sendMessage(new MessageRequestFile(Constants::Configuration::localhostAddress,file->getName(),file->getSize(),part));
             cout << "Wyslalem wiadomosc\n";
             char buf[Constants::File::partSize];
 
-            int numberOfBytes;
-            if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
-            else numberOfBytes=Constants::File::partSize;
-            sock->Receive(buf,numberOfBytes);
-            cout << "Odebralem dane.\n";
-            file->saveFilePart(part,numberOfBytes,buf);
+            m=receiveMessage();
+            if (m->type!=MessageType::ok) break;
+            sendMessage(new MessageOk());
+            if (!receiveFilePart(file)) break;
+
+//
+//            int numberOfBytes;
+//            if (Constants::File::partSize*(part+1) > file->getSize()) numberOfBytes = file->getSize()%Constants::File::partSize;
+//            else numberOfBytes=Constants::File::partSize;
+//            sock->Receive(buf,numberOfBytes);
+//            cout << "Odebralem dane.\n";
+//            file->saveFilePart(part,numberOfBytes,buf);
         }
         else break;
-//        hostName niepotrzebny? Download manager, ktory mowi ktora czesc?
-//        Pobieranie koejnych numerkow z kontenera, w przypadku niepowodzenia odlozenie?
-//        sendMessage(MessageRequestFile( ,file->getName() ,file->getSize(),));
-//        this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
     }
+    sendMessage(new MessageBye());
 }
 /**
  *
@@ -117,12 +128,14 @@ void Connection::interpreteMessage(Message *msg) {
         case(MessageType::myList):{
 //            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
             std::cout << "Odebrano wiadomosc myList\n";
-            sendMessage(new MessageOk());
+            receiveFileInfo();
 
             break;
         }
         case(MessageType::denied): {
 //            @TODO Dodanie wiadomosci do logu?
+
+            running = false;
             break;
         }
         case (MessageType::bye):{
@@ -178,10 +191,17 @@ void Connection::sendMyList(vector<File>* vf)
 
 bool Connection::receiveFileInfo()
 {
+    sendMessage(new MessageOk);
+    const unsigned short BUFLEN = Constants::File::partSize;
+    char buf[BUFLEN];
+    if (sock==NULL) return false;
+    if (!sock->Receive(buf,BUFLEN)) return false;
+    Message *m = JsonParser::parse(buf);
 
 }
 bool Connection::receiveFilePart(FileDownload*)
 {
+
 
 }
 bool Connection::sendFilePart(File *)

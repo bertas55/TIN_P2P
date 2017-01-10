@@ -7,7 +7,8 @@
 #include "FileDownload.h"
 #include "Exceptions.h"
 
-TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, MessageContainer* mc) :
+TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, MessageContainer* mc,LogContainer* l) :
+        logContainer(l),
         fileManager(fm),
         fileInfoContainer(fic),
         exitFlag(flag),
@@ -28,14 +29,13 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
      * Zarzada ktora czesc, od ktorego hosta pobrac.
      */
     std::vector<struct FileInfo> host = fileInfoContainer->getAllHostsContains(*fi);
-    std::cout << "Zajebisty debuger\n";
     if (host.size()>0)
     {
         FileDownload *file = new FileDownload(fi->name, Constants::Configuration::downloadPath, fi->size);
         for (int i=0; i < host.size();++i)
         {
             cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
-            Connection *c = new Connection( SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), file);
+            Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), file);
             connList.push_back(c);
             cout <<"Next\n";
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
@@ -47,7 +47,7 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
 void TCPManager::sendMyList(string hostName)
 {
     vector<FileInfo> list = fileManager->getFilesList();
-    Connection *c = new Connection( SocketCreator::CreateSocket(hostName,Constants::Configuration::TCPort,true),fileManager->getFilesList());
+    Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(hostName,Constants::Configuration::TCPort,true),fileManager->getFilesList());
 
 }
 void TCPManager::sendVeto(string host, string fname, unsigned long fsize)
@@ -71,7 +71,7 @@ void TCPManager::connectionAccepter()
             continue;
         }
 
-        c = new Connection( connectionSocket,fileManager);
+        c = new Connection(logContainer, connectionSocket,fileManager);
         connList.push_back(c);
         cout << "New connection\n";
     }

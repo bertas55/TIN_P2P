@@ -31,7 +31,7 @@ private:
     ActionContainer *actionContainer;
     LogContainer* logContainer;
     FileManager *fileManager;
-    TCPManager tcpManager;
+    TCPManager *tcpManager;
     std::thread threadId;
     FileInfoContainer fileInfoContainer;
     bool exitFlag;
