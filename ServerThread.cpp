@@ -121,7 +121,7 @@ void ServerThread::checkForMessages() {
 
             break;
         }
-        case (MessageType::revokeFile)
+        case (MessageType::revokeFile):
         {
             MessageRevoke revoke = dynamic_cast<MessageRevoke&>(*msg);
             fileManager->removeFile(revoke.fileName,revoke.fileSize);
@@ -142,8 +142,6 @@ void ServerThread::checkForActions() {
     {
         case (UserAction::DisableFile):
         {
-//      @TODO Wywolanie funkcji do filemanagera o zablkowanie pliku
-
             try {
                 fileManager->lockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
@@ -155,31 +153,24 @@ void ServerThread::checkForActions() {
         }
         case (UserAction::EnableFile):
         {
-//      @TODO Wywyloanie funkcji do filemanagera o odblikowanie pliku
             try {fileManager->unlockFile(action.data[0],action.arg);
             }catch(FileNotFoundException e){
                 logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             }
-//            tcpManager.test();
             break;
         }
         case (UserAction::RemoveFile):
         {
-//        @TODO Wywolanie funkcji do filemanagera o usunieciu pliku, sprawdzenie czy jestesmy wlascicilem
-            if (!fileManager->removeFile(action.data[0], action.arg) logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
-            cout << "Zakomentowalem bo nie ma arguemntow a nie chce mi sie ich robic\n";
+            if (!fileManager->removeFile(action.data[0], action.arg)) logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             break;
         }
         case (UserAction::RefreshList):
         {
-//          @TODO OGARNAC SWLASNE AJPI!!!!!!!!!!!!!!!!!!!!!
-            cout << "Wysylam RequestList\n";
                broadcastMessage(new MessageRequestList(Constants::Configuration::localhostAddress));
             break;
         }
         case (UserAction::DownloadFile):
         {
-//            @TODO
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
             if (fileInfo!=nullptr) tcpManager.recieveFile(fileInfo);
             break;
