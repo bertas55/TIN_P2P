@@ -120,3 +120,16 @@ bool FileManager::removeFile(string name, unsigned long size)
     }
     return success;
 }
+
+FileInfo* FileManager::removeHostFile(string hostname)
+{
+    for (vector<File*>::const_iterator iter = files.begin(); iter != files.end(); iter++) {
+        FileInfo fileInfo = (*iter)->getFileInfo();
+        if (fileInfo.hostAddress == hostname) {
+            FileInfo* toRet = new FileInfo(fileInfo.name,fileInfo.size,false,false);
+            files.erase(iter);
+            return toRet;
+        }
+    }
+    return nullptr;
+}

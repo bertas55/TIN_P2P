@@ -19,7 +19,7 @@
 //enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
 ServerInterface::ServerInterface()
 {
-    setMyIp();
+    loadConfiguration();
     debug("Konstuktor ServerInterface::ServerInterface()");
     logContainer = new LogContainer();
     if (!guiDebug()) server = new ServerThread(&container,&fileManager,logContainer);
@@ -27,7 +27,7 @@ ServerInterface::ServerInterface()
 
 ServerInterface::ServerInterface(LogContainer* lg): logContainer(lg)
 {
-    setMyIp();
+    loadConfiguration();
     debug("Konstuktor ServerInterface::ServerInterface(LogContainer* lg)");
 }
 
@@ -196,8 +196,10 @@ void ServerInterface::loadConfiguration() {
     Constants::Configuration::TCPort = stoi(line);
 
     getline(infile, line);
+    Constants::Configuration::broadcastIP = new char[line.length()];
     strcpy(Constants::Configuration::broadcastIP, line.c_str());
 
     getline(infile, line);
+    Constants::Configuration::localhostAddress = new char[line.length()];
     strcpy(Constants::Configuration::localhostAddress, line.c_str());
 }

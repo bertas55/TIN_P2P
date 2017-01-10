@@ -28,6 +28,8 @@ public:
 
     bool removeFile(string name, unsigned long size);
 
+    FileInfo* removeHostFile(string hostname);
+
     vector<FileInfo> getFilesList();
 
 

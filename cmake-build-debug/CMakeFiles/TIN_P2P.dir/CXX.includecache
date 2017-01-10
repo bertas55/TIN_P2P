@@ -413,6 +413,8 @@ Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 iostream
 -
+cstring
+-
 
 /home/lukasz/CLionProjects/TIN_P2P/ServerThread.h
 Socket.h

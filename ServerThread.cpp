@@ -86,13 +86,13 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestFile):{
-//            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
+//            @TODO
 
             std::cout << "Odebrano wiadomosc RequestFile\n";
             break;
         }
         case(MessageType::myList):{
-//            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
+//            @TODO
             std::cout << "Odebrano wiadomosc myList\n";
             break;
         }
@@ -126,9 +126,14 @@ void ServerThread::checkForMessages() {
         }
         case (MessageType::bye):{
 //            @TODO removeAll
-            if (strcmp(msg->hostName, Constants::Configuration::localhostAddress)==0)
+            if (msg->hostName != Constants::Configuration::localhostAddress)
             {
-                fileManager->
+                FileInfo *f;
+                while((f = fileManager->removeHostFile(msg->hostName))!= nullptr)
+                {
+                    logContainer->put(Log(LogType::FileRemoved,f->name,"",f->size));
+                    delete f;
+                }
             }
 
             break;
