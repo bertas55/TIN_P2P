@@ -37,6 +37,24 @@ void FileInfoContainer::remove(struct FileInfo file) {
     }
 }
 
+void FileInfoContainer::remove (string name, unsigned long size, string hostName) {
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+        if (size == fileInfo->size
+            && name == fileInfo->name
+            && hostName == fileInfo->hostAddress) {
+            fileInfoVector.erase(fileInfo);
+        }
+    }
+}
+
+void FileInfoContainer::removeAll (string hostName) {
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+        if (hostName == fileInfo->hostAddress) {
+            fileInfoVector.erase(fileInfo);
+        }
+    }
+}
+
 struct FileInfo* FileInfoContainer::has(string fileName, unsigned long fileSize) {
     for (unsigned int i =0 ; i < fileInfoVector.size() ; ++i)
     {
