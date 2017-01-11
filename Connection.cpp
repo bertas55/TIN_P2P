@@ -123,7 +123,7 @@ void Connection::interpreteMessage(Message *msg) {
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
             MessageRequestFile m = dynamic_cast<MessageRequestFile&>(*msg);
-            sendFilePart(m.fileName,m.fileSize,m.fileSize);
+            sendFilePart(m.fileName,m.fileSize,m.offset);
             break;
         }
         case(MessageType::myList):{
@@ -253,11 +253,24 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
     return success;
 }
 
+//@TODO wywala sie na message Hello
 Message* Connection::receiveMessage()
 {
     const unsigned short BUFLEN = Constants::File::partSize;
     char buf[BUFLEN];
     if (sock==NULL) return nullptr;
     if (!sock->Receive(buf,BUFLEN)) return nullptr;
-    return JsonParser::parse(buf);
+    Message *msg;
+    try {
+        msg = JsonParser::parse(buf);
+    } catch(UnknownMessageException e)
+    {
+        e.what();
+        msg = nullptr;
+    }catch(JsonParsingException e)
+    {
+        e.what();
+        msg = nullptr;
+    }
+    return msg;
 }

@@ -222,6 +222,28 @@ cmath
 float.h
 -
 
+/home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.cpp
+iostream
+-
+DownloadHandler.h
+/home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
+Connection.h
+/home/lukasz/CLionProjects/TIN_P2P/Connection.h
+
+/home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
+thread
+-
+vector
+-
+File.h
+/home/lukasz/CLionProjects/TIN_P2P/File.h
+FileDownload.h
+/home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
+LogContainer.h
+/home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
+FileManager.h
+/home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
 Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
@@ -513,6 +535,8 @@ FileDownload.h
 /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
 Exceptions.h
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
+DownloadHandler.h
+/home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
 
 /home/lukasz/CLionProjects/TIN_P2P/TCPManager.h
 Connection.h
@@ -593,4 +617,6 @@ ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+JsonParser.h
+/home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
 

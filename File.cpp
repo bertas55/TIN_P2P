@@ -16,11 +16,12 @@ File::File(string name, string path) {
     this->name = name;
     this->path = path;
     this->size = readSize();
+    cout << name << path << size;
 }
 
 std::ifstream::pos_type File::readSize()
 {
-    std::ifstream in(name, std::ifstream::ate | std::ifstream::binary);
+    std::ifstream in(path, std::ifstream::ate | std::ifstream::binary);
     return in.tellg();
 }
 

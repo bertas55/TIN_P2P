@@ -231,6 +231,33 @@ Dependencies/JsonCpp/jsoncpp.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.s
 .PHONY : Dependencies/JsonCpp/jsoncpp.cpp.s
 
+DownloadHandler.o: DownloadHandler.cpp.o
+
+.PHONY : DownloadHandler.o
+
+# target to build an object file
+DownloadHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o
+.PHONY : DownloadHandler.cpp.o
+
+DownloadHandler.i: DownloadHandler.cpp.i
+
+.PHONY : DownloadHandler.i
+
+# target to preprocess a source file
+DownloadHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.i
+.PHONY : DownloadHandler.cpp.i
+
+DownloadHandler.s: DownloadHandler.cpp.s
+
+.PHONY : DownloadHandler.s
+
+# target to generate assembly for a file
+DownloadHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.s
+.PHONY : DownloadHandler.cpp.s
+
 Exceptions.o: Exceptions.cpp.o
 
 .PHONY : Exceptions.o
@@ -738,6 +765,9 @@ help:
 	@echo "... Dependencies/JsonCpp/jsoncpp.o"
 	@echo "... Dependencies/JsonCpp/jsoncpp.i"
 	@echo "... Dependencies/JsonCpp/jsoncpp.s"
+	@echo "... DownloadHandler.o"
+	@echo "... DownloadHandler.i"
+	@echo "... DownloadHandler.s"
 	@echo "... Exceptions.o"
 	@echo "... Exceptions.i"
 	@echo "... Exceptions.s"

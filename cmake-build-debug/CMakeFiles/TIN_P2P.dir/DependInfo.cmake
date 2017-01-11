@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukasz/CLionProjects/TIN_P2P/Connection.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Connection.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/Constants.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Constants.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o"
+  "/home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/File.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/File.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/FileDownload.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/FileDownload.cpp.o"

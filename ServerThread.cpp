@@ -118,6 +118,10 @@ void ServerThread::checkForMessages() {
             if (f!= nullptr)
             {
                 tcpManager->sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
+            } else{
+                cout << msgNewFile.toString();
+                fileInfoContainer.put(FileInfo(msgNewFile.fileName,msgNewFile.fileSize,false,false,msgNewFile.hostName));
+                logContainer->put(Log(LogType::FileAppeared,msgNewFile.fileName,msgNewFile.hostName,msgNewFile.fileSize));
             }
             break;
         }
@@ -200,7 +204,7 @@ void ServerThread::checkForActions() {
         case (UserAction::DownloadFile):
         {
             FileInfo *fileInfo = fileInfoContainer.has(action.data[0],action.arg);
-//            if (fileInfo!=nullptr) std::thread(&TCPManager::recieveFile,this,fileInfo);
+            if (fileInfo!=nullptr) tcpManager->recieveFile(fileInfo);
             break;
         }
         case (UserAction::RevokeFile):

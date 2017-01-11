@@ -22,21 +22,23 @@ ServerInterface::ServerInterface()
     loadConfiguration("");
     debug("Konstuktor ServerInterface::ServerInterface()");
     logContainer = new LogContainer();
-    if (!guiDebug()) server = new ServerThread(&container,&fileManager,logContainer);
+    server = new ServerThread(&container,&fileManager,logContainer);
 }
 
-ServerInterface::ServerInterface(LogContainer* lg,string currentPath): logContainer(lg)
+ServerInterface::ServerInterface(string currentPath)
 {
     loadConfiguration(currentPath);
+    logContainer = new LogContainer();
+    server = new ServerThread(&container,&fileManager,logContainer);
     debug("Konstuktor ServerInterface::ServerInterface(LogContainer* lg)");
 }
 
 ServerInterface::~ServerInterface()
 {
-    if (!guiDebug()) {
-        delete server;
-        delete logContainer;
-    }
+
+    delete server;
+    delete logContainer;
+
 }
 
 void ServerInterface::putServerAction(UserAction action)
@@ -90,6 +92,16 @@ void ServerInterface::putServerAction(UserAction action)
             cout << "File size: ";
             cin >> fileSize;
             downloadFile(fileName,fileSize);
+            break;
+        }
+        case (UserAction::AddFile):
+        {
+            string fileName;
+            string filePath;
+            cout << "File name: ";
+            cin >> fileName;
+            cout << "File path:  ";
+            cin >> filePath;
             break;
         }
         case (UserAction::Exit):
@@ -206,4 +218,11 @@ void ServerInterface::loadConfiguration(string currentPath) {
     getline(infile, line);
     Constants::Configuration::localhostAddress = new char[line.length()];
     strcpy(Constants::Configuration::localhostAddress, line.c_str());
+
+    cout <<Constants::Configuration::broadcastIP;
+}
+
+LogContainer* ServerInterface::getLogContainer()
+{
+    return logContainer;
 }

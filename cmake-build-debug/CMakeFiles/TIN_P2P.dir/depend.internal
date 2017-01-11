@@ -30,6 +30,20 @@ CMakeFiles/TIN_P2P.dir/Constants.cpp.o
 CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/jsoncpp.cpp
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o
+ /home/lukasz/CLionProjects/TIN_P2P/Connection.h
+ /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.cpp
+ /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
+ /home/lukasz/CLionProjects/TIN_P2P/File.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
+ /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+ /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
+ /home/lukasz/CLionProjects/TIN_P2P/Message.h
+ /home/lukasz/CLionProjects/TIN_P2P/Socket.h
+ /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
@@ -139,6 +153,7 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
  /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
  /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
@@ -184,10 +199,13 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/ActionContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Connection.h
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
+ /home/lukasz/CLionProjects/TIN_P2P/Dependencies/JsonCpp/json/json.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
  /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+ /home/lukasz/CLionProjects/TIN_P2P/JsonCreator.h
+ /home/lukasz/CLionProjects/TIN_P2P/JsonParser.h
  /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
  /home/lukasz/CLionProjects/TIN_P2P/Message.h
  /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h

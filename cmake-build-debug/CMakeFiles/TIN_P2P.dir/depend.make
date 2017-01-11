@@ -30,6 +30,20 @@ CMakeFiles/TIN_P2P.dir/Constants.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/Dependencies/JsonCpp/jsoncpp.cpp.o: ../Dependencies/JsonCpp/jsoncpp.cpp
 
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Connection.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../DownloadHandler.cpp
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../DownloadHandler.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../File.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../FileDownload.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../FileInfoContainer.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../LogContainer.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Message.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Socket.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../SocketCreator.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../WcisloSocket.h
+
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.cpp
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.h
 
@@ -138,6 +152,7 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../WcisloSocket.h
 
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Connection.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../DownloadHandler.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../FileDownload.h
@@ -183,10 +198,13 @@ CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Connection.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Dependencies/JsonCpp/json/json.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileDownload.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileInfoContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../FileManager.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../JsonCreator.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../JsonParser.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../MessageContainer.h

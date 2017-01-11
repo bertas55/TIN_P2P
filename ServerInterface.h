@@ -17,7 +17,7 @@
 class ServerInterface {
 public:
     ServerInterface();
-    ServerInterface(LogContainer*,string currentPath);                         // W gui z tego korzystac
+    ServerInterface(string currentPath);                         // W gui z tego korzystac
     ~ServerInterface();
 
     void consoleInterface();
@@ -30,6 +30,7 @@ public:
     void removeFile(string fileName,string fileSize);       // Wywlane, gdy uzytkownik usuwa wlasny plik
     void revokeFile(string fileName,string fileSize);       // Wywolane gdy uzytkownik chce uniewaznic plik
     void loadConfiguration(string);
+    LogContainer* getLogContainer();
 
 private:
     ServerThread *server;
@@ -43,6 +44,7 @@ private:
     void debug(string);
     bool guiDebug();
     void setMyIp();
+    void test();
 };
 
 
