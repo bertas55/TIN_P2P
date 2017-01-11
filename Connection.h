@@ -30,6 +30,7 @@ public:
     void sendFile(File*, int);
     void recieveFile(FileDownload*);
     void run();
+    void shutdown();
 
 private:
     std::thread threadId;

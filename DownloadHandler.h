@@ -12,6 +12,7 @@
 #include "FileDownload.h"
 #include "LogContainer.h"
 #include "FileManager.h"
+#include "Connection.h"
 
 /**
  * Klasa reprezentujaca watek sciagajacy plik.
@@ -27,8 +28,10 @@ private:
     FileManager* fileManager;
     LogContainer* logContainer;
     std::vector<FileInfo> hosts;
+    std::vector<Connection*> conList;
     bool* exitFlag;
     void startDownload(FileDownload* file);
+    void shutdownConnections();
 
 };
 

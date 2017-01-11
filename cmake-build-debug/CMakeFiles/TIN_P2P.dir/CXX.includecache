@@ -227,8 +227,8 @@ iostream
 -
 DownloadHandler.h
 /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
-Connection.h
-/home/lukasz/CLionProjects/TIN_P2P/Connection.h
+Exceptions.h
+/home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
 
 /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
 thread
@@ -243,6 +243,8 @@ LogContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/LogContainer.h
 FileManager.h
 /home/lukasz/CLionProjects/TIN_P2P/FileManager.h
+Connection.h
+/home/lukasz/CLionProjects/TIN_P2P/Connection.h
 
 /home/lukasz/CLionProjects/TIN_P2P/Exceptions.cpp
 Exceptions.h

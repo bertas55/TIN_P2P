@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "DownloadHandler.h"
-#include "Connection.h"
+#include "Exceptions.h"
 
 DownloadHandler::DownloadHandler(std::vector<FileInfo> h,
                                  FileDownload* file,
@@ -28,12 +28,23 @@ void DownloadHandler::startDownload(FileDownload *file)
     for (int i=0; i < hosts.size();++i)
     {
         cout << "Uruchamiam polaczenie z :" << hosts[i].hostAddress << endl;
-        Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(hosts[i].hostAddress,Constants::Configuration::TCPort,true), file);
+        try {
+            Socket* s = SocketCreator::CreateSocket(hosts[i].hostAddress,
+                                                    Constants::Configuration::TCPort,
+                                                    true);
+            Connection *c = new Connection(logContainer, s, file);
+            conList.push_back(c);
+        }catch(ConnectionException e)
+        {
+            e.what();
+            continue;
+        }
         cout <<"Next\n";
-        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
+//        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
-    file->waitUntilFinished();
-
+    while (!file->isFinished() || !(*exitFlag)) this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
+    if (*exitFlag) shutdownConnections();
+    cout << "Finished!\n";
     if (!(*exitFlag) && file->partsLeftCount()==0)
     {                               //Plik sciagniety pomyslnie
         fileManager->addFile(file);
@@ -43,4 +54,14 @@ void DownloadHandler::startDownload(FileDownload *file)
         if (!(*exitFlag)) logContainer->put(Log(LogType::DownloadFileError, file->getName(), "Pobieranie pliku zakonczylo sie niepowodzeniem.", file->getSize()));
         delete file;
     }
+}
+
+void DownloadHandler::shutdownConnections() {
+    for (unsigned int i = 0 ; i< conList.size() ; ++i)
+    {
+        if (conList[i]!=NULL) {
+            conList[i]->shutdown();
+        }
+    }
+
 }

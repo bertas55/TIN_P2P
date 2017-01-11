@@ -26,6 +26,8 @@ public:
 
     void waitUntilFinished();
 
+    bool isFinished();
+
 
 private:
     queue<long> partsLeft;
@@ -33,6 +35,7 @@ private:
     unsigned int seedsConnected;
 
     condition_variable finished;
+    bool end;
 };
 
 

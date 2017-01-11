@@ -34,6 +34,7 @@ CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Connection.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Constants.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../DownloadHandler.cpp
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../DownloadHandler.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../File.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../FileDownload.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../FileInfoContainer.h

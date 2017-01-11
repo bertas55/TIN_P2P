@@ -275,3 +275,8 @@ Message* Connection::receiveMessage()
     }
     return msg;
 }
+
+void Connection::shutdown()
+{
+    sock->Terminate();
+}

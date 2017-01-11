@@ -87,6 +87,12 @@ void TCPManager::connectionAccepter()
         connList.push_back(c);
         cout << "New connection\n";
     }
+    if (*exitFlag){
+        for (unsigned int i = 0; i < connList.size() ; ++i)
+        {
+            if (connList[i]!=NULL) connList[i]->shutdown();
+        }
+    }
     cout << "TCPListener end\n";
     delete s;
 }

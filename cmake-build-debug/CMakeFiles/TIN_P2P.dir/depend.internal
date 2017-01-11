@@ -35,6 +35,7 @@ CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o
  /home/lukasz/CLionProjects/TIN_P2P/Constants.h
  /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.cpp
  /home/lukasz/CLionProjects/TIN_P2P/DownloadHandler.h
+ /home/lukasz/CLionProjects/TIN_P2P/Exceptions.h
  /home/lukasz/CLionProjects/TIN_P2P/File.h
  /home/lukasz/CLionProjects/TIN_P2P/FileDownload.h
  /home/lukasz/CLionProjects/TIN_P2P/FileInfoContainer.h

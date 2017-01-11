@@ -91,7 +91,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File size: ";
             cin >> fileSize;
-            downloadFile("test.png","5115");
+            downloadFile("testFile","10232");
             break;
         }
         case (UserAction::AddFile):
@@ -115,7 +115,7 @@ void ServerInterface::putServerAction(UserAction action)
 
 void ServerInterface::downloadFile(string fileName,string fileSize)
 {
-    debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+",");
+    debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+","+fileSize);
     if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,"", stoul(fileSize)));
 }
 void ServerInterface::refreshList()
