@@ -90,27 +90,28 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::requestFile):{
-//            @TODO
-
+            /*Wiadomosc requestFile powinna przyjsc na TCP, dlatego tutaj nie jest obslugiwana*/
             std::cout << "Odebrano wiadomosc RequestFile\n";
             break;
         }
         case(MessageType::myList):{
-//            @TODO
+            /*Wiadomosc myList powinna przyjsc na TCP, dlatego tutaj nie jest obslugiwana*/
             std::cout << "Odebrano wiadomosc myList\n";
             break;
         }
         case(MessageType::requestList):{
+            /*Jako odpowiedz na wiadomosc requestList, tworzymy polaczenie TCP z nadawca i wysylamy mu nasze pliki*/
             tcpManager->sendMyList(msg->hostName);
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
         case(MessageType::veto):{
-//            @TODO
+            /*Wiadomosc veto powinna przyjsc na TCP, dlatego tutaj nie jest obslugiwana*/
             std::cout << "Odebrano wiadomosc veto\n";
             break;
         }
         case(MessageType::newFile):{
+            /*Sprawdzamy czy posiadamy plik o takiej samej nazwie i rozmiarze. Jezeli tak, wysylamy na TCP nadawcy wiadomosc veto*/
             std::cout << "Odebrano wiadomosc newFile\n";
             MessageNewFile msgNewFile = dynamic_cast<MessageNewFile&>(*msg);
             File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
@@ -121,13 +122,14 @@ void ServerThread::checkForMessages() {
             break;
         }
         case(MessageType::removedFile):{
+            /*Sprawdzenie i usuniecie zasobu dostepnego sieciowo*/
             std::cout << "Odebrano wiadomosc deleteFile\n";
-//            fileInfoContainer.remove()
-//            @TODO akcja do FileManagera by usunal plik
+            MessageFileRemoved toRemove = dynamic_cast<MessageFileRemoved&>(*msg);
+            fileInfoContainer.remove(toRemove.fileName,toRemove.fileSize,toRemove.hostName);
             break;
         }
         case (MessageType::bye):{
-//            @TODO removeAll
+            /*Jezeli to nie jest nasz adres, usuwamy pliki dostepne sieciowo od zadanego hosta*/
             if (msg->hostName != Constants::Configuration::localhostAddress)
             {
                 FileInfo *f;
@@ -146,6 +148,7 @@ void ServerThread::checkForMessages() {
             if (fileManager->removeFile(revoke.fileName,revoke.fileSize))
             {
                 logContainer->put(Log(FileRemoved,revoke.fileName,"",revoke.fileSize));
+                broadcastMessage(new MessageFileRemoved(revoke.fileName,revoke.fileSize,Constants::Configuration::localhostAddress));
             }
         }
         default:
@@ -166,6 +169,7 @@ void ServerThread::checkForActions() {
         {
             try {
                 fileManager->lockFile(action.data[0],action.arg);
+                logContainer->put(Log(LogType::FileBlocked,action.data[0],action.data[1],action.arg));
             }catch(FileNotFoundException e){
                 logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             }
@@ -175,7 +179,9 @@ void ServerThread::checkForActions() {
         }
         case (UserAction::EnableFile):
         {
-            try {fileManager->unlockFile(action.data[0],action.arg);
+            try {
+                fileManager->unlockFile(action.data[0],action.arg);
+                logContainer->put(Log(LogType::FileUnblocked,action.data[0],action.data[1],action.arg));
             }catch(FileNotFoundException e){
                 logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
             }
@@ -210,6 +216,11 @@ void ServerThread::checkForActions() {
             exitFlag = true;
             UDPReciver->closeSocket();
             break;
+        }
+        case (UserAction::AddFile):
+        {
+            File* file = fileManager->addFile(action.data[0],action.data[1]);
+            if (file!=nullptr) broadcastMessage(new MessageNewFile(file->getName(),file->getSize(),Constants::Configuration::localhostAddress));
         }
     }
 

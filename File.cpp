@@ -58,7 +58,7 @@ Data File::getFilePart(unsigned int partNumber) {
     if (offset >= size) {
         throw OutOfRangeException();
     }
-    string fullPath = path + name;
+    string fullPath = path;
     ifstream file(fullPath);
     if (!file.is_open()) {
         throw LoadingFileException();
@@ -72,19 +72,23 @@ Data File::getFilePart(unsigned int partNumber) {
     return Data(buff, checksum);
 }
 
-void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, char *data) {
+void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* data) {
     std::lock_guard<std::mutex> lock(guard);
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset + dataLength >= size) {
         throw OutOfRangeException();
     }
-    string fullPath = path + name;
+    string fullPath = path;
     ofstream file(fullPath,ios::in | ios::out | ios::binary);
     if (!file.is_open()) {
         throw LoadingFileException();
     }
+    if (genChecksum(data->data)!=data->checksum)
+    {
+        throw ChecksumException();
+    }
     file.seekp(offset, ios::beg);
-    file.write(data, dataLength);
+    file.write(data->data, dataLength);
     file.close();
 }
 

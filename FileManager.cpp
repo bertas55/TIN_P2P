@@ -11,9 +11,20 @@
 using namespace std;
 
 FileManager::FileManager() {
-    loadFiles();
+//    loadFiles();
 }
 
+File* FileManager::addFile(string name, string path)
+{
+    File* newFile = new File(name,path);
+    files.push_back(newFile);
+    return newFile;
+}
+
+void FileManager::addFile(File* file)
+{
+    files.push_back(file);
+}
 void FileManager::loadFiles() {
     if (Constants::Configuration::debugMode) {
         DIR *dir;

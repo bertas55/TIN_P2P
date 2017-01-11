@@ -50,5 +50,11 @@ struct ConnectionException : public exception
     }
 };
 
+struct ChecksumException : public exception
+{
+    const char * what () const throw () {
+        return "Checksum is incorrect";
+    }
+};
 
 #endif //TIN_P2P_EXCEPTIONS_H

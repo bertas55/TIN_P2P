@@ -3,7 +3,7 @@
 //
 
 #include <sys/socket.h>
-#include <unistd.h>
+#include <stdlib.h>
 #include "Connection.h"
 #include "JsonParser.h"
 #include "Exceptions.h"
@@ -70,7 +70,7 @@ void Connection::sendMessage(Message *msg) {
 
 void Connection::recieveFile(FileDownload* file)
 {
-    Message *m;
+    Message *msg;
     while (true)
     {
         long part = file->getPartToDownload();
@@ -80,14 +80,18 @@ void Connection::recieveFile(FileDownload* file)
             cout << "Wyslalem wiadomosc\n";
             char buf[Constants::File::partSize];
 
-            m=receiveMessage();
-            if (m->type!=MessageType::ok)
+            msg=receiveMessage();
+            if (msg->type!=MessageType::checksumPart)
             {
                 file->addPartToDownload(part);
                 break;
             }
             sendMessage(new MessageOk());
-            if (!receiveFilePart(file,part)) break;
+            MessageChecksum m = dynamic_cast<MessageChecksum&>(*msg);
+            if (!receiveFilePart(file,part,m.checksum)) {
+                file->addPartToDownload(part);
+                break;
+            }
             logContainer->put(Log(LogType::DownloadFileProgres, file->getName(),"", file->getSize()));
         }
         else break;
@@ -133,6 +137,8 @@ void Connection::interpreteMessage(Message *msg) {
         {
             MessageVeto m = dynamic_cast<MessageVeto&>(*msg);
             if (fileManager->removeFile(m.fileName,m.fileSize)) logContainer->put(Log(LogType::FileVeto, m.fileName,"", m.fileSize));
+            running = false;
+            break;
 
         }
         case(MessageType::denied): {
@@ -203,7 +209,7 @@ bool Connection::receiveFileInfo()
 }
 
 
-bool Connection::receiveFilePart(FileDownload* file, unsigned int part)
+bool Connection::receiveFilePart(FileDownload* file, unsigned int part, string checksum)
 {
     unsigned long numberOfBytes;
     char buf[Constants::File::partSize];
@@ -211,14 +217,17 @@ bool Connection::receiveFilePart(FileDownload* file, unsigned int part)
     else numberOfBytes=Constants::File::partSize;
     sock->Receive(buf,numberOfBytes);
     cout << "Odebralem part nr " << part << endl;
+    Data data(buf,stoul(checksum));
     try{
-
-        file->saveFilePart(part,numberOfBytes,buf);
+        file->saveFilePart(part,numberOfBytes,&data);
     }catch (OutOfRangeException e)
     {
         logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
         return false;
     }catch (LoadingFileException e){
+        logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
+        return false;
+    }catch (ChecksumException e){
         logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
         return false;
     }
@@ -234,8 +243,12 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
     if (file == nullptr) sendMessage(new MessageDenied());
     else {
         Data data = file->getFilePart(offset);
-        sendFile(file, offset);
-        success = true;
+        sendMessage(new MessageChecksum(std::to_string(data.checksum)));
+        Message *m = receiveMessage();
+        if (m->type==MessageType::ok) {
+            sendFile(file, offset);
+            success = true;
+        }
     }
     return success;
 }

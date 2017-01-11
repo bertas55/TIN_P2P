@@ -36,7 +36,6 @@ UDPAdapter::~UDPAdapter() {
     }
     delete socket;
     UDPThread.join();
-    cout << "[3]UDP Adapter end\n";
 
 }
 
@@ -76,8 +75,8 @@ void UDPAdapter::send() {
             msg = serverMessageContainer->get();
             sendMessage(msg);
         } catch(NoElementsException e) {
-//            cout << "No message in container. Going to sleep for 2 seconds.\n";
-            this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
+//            cout << "No message in container. Going to sleep for 1 seconds.\n";
+            this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
             continue;
         }
 

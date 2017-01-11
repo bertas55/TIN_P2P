@@ -34,7 +34,7 @@ public:
 
     Data getFilePart(unsigned int);
 
-    void saveFilePart(unsigned int, unsigned int, char*);
+    void saveFilePart(unsigned int, unsigned int, Data*);
 
     string getName();
 

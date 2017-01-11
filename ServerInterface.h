@@ -17,19 +17,19 @@
 class ServerInterface {
 public:
     ServerInterface();
-    ServerInterface(LogContainer*);                         // W gui z tego korzystac
+    ServerInterface(LogContainer*,string currentPath);                         // W gui z tego korzystac
     ~ServerInterface();
 
     void consoleInterface();
-    void downloadFile(string fileName,unsigned long fileSize);     // Wywylanie w momencie, gdy uzytkownik wybierze z listy plik do pobrania
+    void downloadFile(string fileName,string fileSize);     // Wywylanie w momencie, gdy uzytkownik wybierze z listy plik do pobrania
     void refreshList();                                            // W momencie wywolania czyszczona jest lista dostepnych plikow sieciowo w GUI, pliki beda sie pojawiac poprzez odczytanie odpowiedniego logu
-    void enableFile(string fileName,unsigned long fileSize);       // Wywolanie w momencie gdy uzytkownik odblkouje plik
-    void disableFile(string fileName,unsigned long fileSize);      // Wywolanie w momencie gdy uzytkownik zablkouje plik
+    void enableFile(string fileName,string fileSize);       // Wywolanie w momencie gdy uzytkownik odblkouje plik
+    void disableFile(string fileName,string fileSize);      // Wywolanie w momencie gdy uzytkownik zablkouje plik
     void addFile(string fileName, string filePath);                // Wywlanie w momencie gdy dodawany jest plik
     void userExit();                                               // wywolane w momencie gdy uzytkownik konczy dzialanie programu
-    void removeFile(string fileName,unsigned long fileSize);       // Wywlane, gdy uzytkownik usuwa wlasny plik
-    void revokeFile(string fileName,unsigned long fileSize);       // Wywolane gdy uzytkownik chce uniewaznic plik
-    void loadConfiguration();
+    void removeFile(string fileName,string fileSize);       // Wywlane, gdy uzytkownik usuwa wlasny plik
+    void revokeFile(string fileName,string fileSize);       // Wywolane gdy uzytkownik chce uniewaznic plik
+    void loadConfiguration(string);
 
 private:
     ServerThread *server;

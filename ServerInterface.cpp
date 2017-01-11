@@ -19,15 +19,15 @@
 //enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, Exit };
 ServerInterface::ServerInterface()
 {
-    loadConfiguration();
+    loadConfiguration("");
     debug("Konstuktor ServerInterface::ServerInterface()");
     logContainer = new LogContainer();
     if (!guiDebug()) server = new ServerThread(&container,&fileManager,logContainer);
 }
 
-ServerInterface::ServerInterface(LogContainer* lg): logContainer(lg)
+ServerInterface::ServerInterface(LogContainer* lg,string currentPath): logContainer(lg)
 {
-    loadConfiguration();
+    loadConfiguration(currentPath);
     debug("Konstuktor ServerInterface::ServerInterface(LogContainer* lg)");
 }
 
@@ -46,7 +46,7 @@ void ServerInterface::putServerAction(UserAction action)
         case (UserAction::DisableFile):
         {
             string fileName;
-            unsigned long fileSize;
+            string fileSize;
             cout << "File name: ";
             cin >> fileName;
             cout << "File size: ";
@@ -57,7 +57,7 @@ void ServerInterface::putServerAction(UserAction action)
         case (UserAction::EnableFile):
         {
             string fileName;
-            unsigned long fileSize;
+            string fileSize;
             cout << "File name: ";
             cin >> fileName;
             cout << "File size: ";
@@ -68,7 +68,7 @@ void ServerInterface::putServerAction(UserAction action)
         case (UserAction::RemoveFile):
         {
             string fileName;
-            unsigned long fileSize;
+            string fileSize;
             cout << "File name: ";
             cin >> fileName;
             cout << "File size: ";
@@ -84,7 +84,7 @@ void ServerInterface::putServerAction(UserAction action)
         case (UserAction::DownloadFile):
         {
             string fileName;
-            unsigned long fileSize;
+            string fileSize;
             cout << "File name: ";
             cin >> fileName;
             cout << "File size: ";
@@ -100,10 +100,10 @@ void ServerInterface::putServerAction(UserAction action)
     }
 }
 
-void ServerInterface::downloadFile(string fileName,unsigned long fileSize)
+void ServerInterface::downloadFile(string fileName,string fileSize)
 {
     debug("Wywolano funkcje ServerInterface::downloadFile("+fileName+",");
-    if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,"", fileSize));
+    if (!guiDebug())container.put(Action(UserAction::DownloadFile, fileName,"", stoul(fileSize)));
 }
 void ServerInterface::refreshList()
 {
@@ -111,15 +111,15 @@ void ServerInterface::refreshList()
     if (!guiDebug()) container.put(Action(UserAction::RefreshList,"","",0));
 
 }
-void ServerInterface::enableFile(string fileName,unsigned long fileSize)
+void ServerInterface::enableFile(string fileName,string fileSize)
 {
     debug("Wywolano funkcje ServerInterface::enableFile("+fileName+",");
-    if (!guiDebug()) container.put(Action(UserAction::EnableFile,fileName,"",fileSize));
+    if (!guiDebug()) container.put(Action(UserAction::EnableFile,fileName,"",stoul(fileSize)));
 }
-void ServerInterface::disableFile(string fileName,unsigned long fileSize)
+void ServerInterface::disableFile(string fileName,string fileSize)
 {
     debug("Wywolano funkcje ServerInterface::disableFile("+fileName+",");
-    if (!guiDebug()) container.put(Action(UserAction::DisableFile,fileName,"",fileSize));
+    if (!guiDebug()) container.put(Action(UserAction::DisableFile,fileName,"",stoul(fileSize)));
 }
 void ServerInterface::userExit()
 {
@@ -127,10 +127,10 @@ void ServerInterface::userExit()
     if (!guiDebug()) container.put(Action(UserAction::Exit,"","",0));
 }
 
-void ServerInterface::removeFile(string fileName, unsigned long fileSize) {
+void ServerInterface::removeFile(string fileName, string fileSize) {
     debug("Wywolano funkcje ServerInterface::enableFile("+fileName);
     if (!guiDebug())
-        container.put(Action(UserAction::RemoveFile,fileName,"",fileSize));
+        container.put(Action(UserAction::RemoveFile,fileName,"",stoul(fileSize)));
 }
 
 void ServerInterface::addFile(string fileName, string filePath) {
@@ -138,8 +138,8 @@ void ServerInterface::addFile(string fileName, string filePath) {
     if (!guiDebug()) container.put(Action(UserAction::AddFile,fileName,filePath,0));
 }
 
-void ServerInterface::revokeFile(string fileName, unsigned long fileSize) {
-    if (!guiDebug()) container.put(Action(UserAction::RevokeFile,fileName,"",fileSize));
+void ServerInterface::revokeFile(string fileName, string fileSize) {
+    if (!guiDebug()) container.put(Action(UserAction::RevokeFile,fileName,"",stoul(fileSize)));
 }
 
 
@@ -186,10 +186,12 @@ void ServerInterface::setMyIp() {
     printf("%s\n", inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
 }
 
-void ServerInterface::loadConfiguration() {
-    ifstream infile(Constants::Configuration::configPath);
+void ServerInterface::loadConfiguration(string currentPath) {
+    string path;
+    if (currentPath.length()==0) path= Constants::Configuration::configPath;
+    else path = currentPath + "/" + Constants::Configuration::configPath;
+    ifstream infile(path);
     std::string line;
-
     getline(infile, line);
     std::istringstream iss(line);
     Constants::Configuration::port = stoi(line);

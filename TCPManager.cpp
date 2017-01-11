@@ -43,17 +43,16 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
             this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
         }
         file->waitUntilFinished();
-        if (file->partsLeftCount()==0)
+
+        if (!(*exitFlag) && file->partsLeftCount()==0)
         {                               //Plik sciagniety pomyslnie
-//            fileManager->
-//            logContainer->put()
+            fileManager->addFile(file);
         }
         else
         {                               //Pobieranie pliku nie ukonczylo sie sukcesem
-//            logContainer->put();
+            if (!(*exitFlag)) logContainer->put(Log(LogType::DownloadFileError, file->getName(), "Pobieranie pliku zakonczylo sie niepowodzeniem.", file->getSize()));
+            delete file;
         }
-
-
     }
 }
 
@@ -75,8 +74,6 @@ void TCPManager::connectionAccepter()
     Socket *connectionSocket;
     while (!(*exitFlag))
     {
-//        @TODO jakies wyjatki?
-//        Socket *newSocket = s->Accept();
         try {
             connectionSocket = s->Accept();
         } catch (ConnectionException e){

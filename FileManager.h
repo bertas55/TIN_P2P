@@ -26,6 +26,12 @@ public:
 
     bool isOwner(string name, unsigned long size);
 
+    File* addFile(string name, string path);
+
+    void addFile(File* file);
+
+
+
     bool removeFile(string name, unsigned long size);
 
     FileInfo* removeHostFile(string hostname);
