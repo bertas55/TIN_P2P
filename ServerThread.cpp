@@ -224,7 +224,11 @@ void ServerThread::checkForActions() {
         case (UserAction::AddFile):
         {
             File* file = fileManager->addFile(action.data[0],action.data[1]);
-            if (file!=nullptr) broadcastMessage(new MessageNewFile(file->getName(),file->getSize(),Constants::Configuration::localhostAddress));
+            if (file!=nullptr)
+            {
+                cout << "Broadcast AddFile\n";
+                broadcastMessage(new MessageNewFile(file->getName(),file->getSize(),Constants::Configuration::localhostAddress));
+            }
         }
     }
 

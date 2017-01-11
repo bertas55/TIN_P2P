@@ -107,7 +107,7 @@ void Connection::run()
     const unsigned short BUFLEN = Constants::File::partSize;
     char buf[BUFLEN];
     Message *m;
-    while (true)
+    while (running)
     {
         if (sock==NULL) return;
         if (!sock->Receive(buf,BUFLEN)) break;
@@ -247,7 +247,7 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
         Message *m = receiveMessage();
         if (m->type==MessageType::ok) {
             int i = sizeof(data.data);
-            sock->Send(data.data,sizeof(data.data));
+            sock->Send(data.data,Constants::File::partSize);
             success = true;
         }
     }

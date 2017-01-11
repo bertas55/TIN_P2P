@@ -8,6 +8,7 @@ FileDownload::FileDownload(string name, string path, unsigned int size, unsigned
         File(name, path),
         seedsConnected(seeds)
 {
+    this->path = path + name;
     this->size = size;
     int partsCount;
     partsCount = (size + Constants::File::partSize - 1) / Constants::File::partSize;
