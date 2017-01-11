@@ -30,6 +30,7 @@ namespace Constants {
         const char* revoke = "Revoke";
         const char* myFile = "MyFile";
         const char* checksum = "Checksum";
+        const unsigned short maxMessageSize = 512;
     }
 
     namespace File {

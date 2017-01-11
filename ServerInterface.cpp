@@ -91,7 +91,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File size: ";
             cin >> fileSize;
-            downloadFile(fileName,fileSize);
+            downloadFile("test.png","5115");
             break;
         }
         case (UserAction::AddFile):
@@ -102,6 +102,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File path:  ";
             cin >> filePath;
+            addFile("test.png","/home/lukasz/Pobrane/test.png");
             break;
         }
         case (UserAction::Exit):

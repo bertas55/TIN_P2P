@@ -33,6 +33,7 @@ namespace Constants {
         extern const char* revoke;
         extern const char* myFile;
         extern const char* checksum;
+        extern const unsigned short maxMessageSize;
     }
 
     namespace File {

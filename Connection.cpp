@@ -59,7 +59,7 @@ Connection::~Connection()
 void Connection::sendFile(File* file, int offset)
 {
 
-    sock->Send(file->getFilePart(offset).data, Constants::File::partSize);
+    sock->Send(file->getFilePart(offset).data, Constants::MessageTypes::maxMessageSize);
 
 }
 
@@ -167,7 +167,7 @@ void Connection::sendVeto(string fname, unsigned long fsize)
 }
 void Connection::sendMyList(vector<File>* vf)
 {
-    const unsigned short BUFLEN = Constants::File::partSize;
+    const unsigned short BUFLEN =Constants::MessageTypes::maxMessageSize;
     char buf[BUFLEN];
     Message *m;
     unsigned long vsize = vf->size();
@@ -195,7 +195,7 @@ void Connection::sendMyList(vector<File>* vf)
 bool Connection::receiveFileInfo()
 {
     sendMessage(new MessageOk);
-    const unsigned short BUFLEN = Constants::File::partSize;
+    const unsigned short BUFLEN = Constants::MessageTypes::maxMessageSize;
     char buf[BUFLEN];
     if (sock==NULL) return false;
     if (!sock->Receive(buf,BUFLEN)) return false;
@@ -240,7 +240,7 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
 {
     bool success = false;
     File *file = fileManager->getFile(fileName, fileSize);
-    if (file == nullptr) sendMessage(new MessageDenied());
+    if (file == nullptr || file->isLocked()) sendMessage(new MessageDenied());
     else {
         Data data = file->getFilePart(offset);
         sendMessage(new MessageChecksum(std::to_string(data.checksum)));
@@ -256,7 +256,7 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
 //@TODO wywala sie na message Hello
 Message* Connection::receiveMessage()
 {
-    const unsigned short BUFLEN = Constants::File::partSize;
+    const unsigned short BUFLEN = Constants::MessageTypes::maxMessageSize;
     char buf[BUFLEN];
     if (sock==NULL) return nullptr;
     if (!sock->Receive(buf,BUFLEN)) return nullptr;
