@@ -55,7 +55,7 @@ Connection::~Connection()
     sendMessage(new MessageBye);
     threadId.join();
 }
-
+// z tego raczej nie bedziemy korzystac
 void Connection::sendFile(File* file, int offset)
 {
 
@@ -65,7 +65,7 @@ void Connection::sendFile(File* file, int offset)
 
 void Connection::sendMessage(Message *msg) {
 
-    sock->Send(msg->toString().c_str(),512);
+    sock->Send(msg->toString().c_str(),msg->toString().length());
 }
 
 void Connection::recieveFile(FileDownload* file)
@@ -246,7 +246,8 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
         sendMessage(new MessageChecksum(std::to_string(data.checksum)));
         Message *m = receiveMessage();
         if (m->type==MessageType::ok) {
-            sendFile(file, offset);
+            int i = sizeof(data.data);
+            sock->Send(data.data,sizeof(data.data));
             success = true;
         }
     }
