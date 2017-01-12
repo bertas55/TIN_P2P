@@ -36,37 +36,32 @@ void TCPManager::recieveFile(struct FileInfo* fi) /*Pobieranie pliku*/
     {
         FileDownload *file = new FileDownload(fi->name, Constants::Configuration::downloadPath, fi->size,seeds);
         DownloadHandler* downloadHandler = new DownloadHandler(host,file,fileManager,logContainer,exitFlag);
-//        for (int i=0; i < host.size();++i)
-//        {
-//            cout << "Uruchamiam polaczenie z :" << host[i].hostAddress << endl;
-//            Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(host[i].hostAddress,Constants::Configuration::TCPort,true), file);
-//            connList.push_back(c);
-//            cout <<"Next\n";
-//            this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
-//        }
-//        file->waitUntilFinished();
-//
-//        if (!(*exitFlag) && file->partsLeftCount()==0)
-//        {                               //Plik sciagniety pomyslnie
-//            fileManager->addFile(file);
-//        }
-//        else
-//        {                               //Pobieranie pliku nie ukonczylo sie sukcesem
-//            if (!(*exitFlag)) logContainer->put(Log(LogType::DownloadFileError, file->getName(), "Pobieranie pliku zakonczylo sie niepowodzeniem.", file->getSize()));
-//            delete file;
-//        }
     }
 }
 
 void TCPManager::sendMyList(string hostName)
 {
     vector<FileInfo> list = fileManager->getFilesList();
-    Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(hostName,Constants::Configuration::TCPort,true),fileManager->getFilesList());
+    try {
+        Socket *connectionSocket = SocketCreator::CreateSocket(hostName, Constants::Configuration::TCPort, true);
+        Connection *c = new Connection(logContainer,
+                                       connectionSocket,
+                                       fileManager->getFilesList());
+    }catch(ConnectionException e)
+    {
+        e.what();
+    }
 
 }
 void TCPManager::sendVeto(string host, string fname, unsigned long fsize)
 {
-    Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(host,Constants::Configuration::TCPort,true),fname,fsize);
+    try {
+        Socket *connectionSocket = SocketCreator::CreateSocket(host, Constants::Configuration::TCPort, true);
+        Connection *c = new Connection(logContainer, connectionSocket, fname, fsize);
+    }catch(ConnectionException e)
+    {
+        e.what();
+    }
 }
 
 void TCPManager::connectionAccepter()

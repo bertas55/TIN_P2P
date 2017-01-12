@@ -37,6 +37,7 @@ Connection::Connection(LogContainer* l,Socket *s , FileDownload *file) :
 {
 
     threadId = std::thread(&Connection::recieveFile,this,file);
+
 }
 
 Connection::Connection(LogContainer* l,Socket *s) :
@@ -51,6 +52,7 @@ Connection::~Connection()
 {
     sendMessage(new MessageBye);
     threadId.join();
+    delete sock;
 }
 // z tego raczej nie bedziemy korzystac
 void Connection::sendFile(File* file, int offset)
