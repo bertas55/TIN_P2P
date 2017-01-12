@@ -28,39 +28,51 @@ std::vector<struct FileInfo> FileInfoContainer::getAllHostsContains(struct FileI
 }
 
 bool FileInfoContainer::remove(struct FileInfo file) {
-    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+    unsigned int index = 0;
+    bool success = false;
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); ++index,fileInfo++) {
         if (file.size== fileInfo->size
             && file.name == fileInfo->name
             && file.hostAddress == fileInfo->hostAddress) {
-            fileInfoVector.erase(fileInfo);
-            return true;
+//            fileInfoVector.erase(fileInfo);
+            success = true;
+            break;
         }
     }
-    return false;
+    if (success) fileInfoVector.erase(fileInfoVector.begin()+index);
+    return success;
 }
 
 bool FileInfoContainer::remove (string name, unsigned long size, string hostName) {
-    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+    unsigned int index = 0;
+    bool success = false;
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end();++index, fileInfo++) {
         if (size == fileInfo->size
             && name == fileInfo->name
             && hostName == fileInfo->hostAddress) {
-            fileInfoVector.erase(fileInfo);
-            return true;
+//            fileInfoVector.erase(fileInfo);
+            success = true;
+            break;
         }
     }
-    return false;
+    if (success) fileInfoVector.erase(fileInfoVector.begin()+index);
+    return success;
 }
 
 struct FileInfo* FileInfoContainer::remove (string hostName)
 {
     FileInfo* toRet;
-    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
+    unsigned int index = 0;
+    bool success = false;
+    for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end();++index, fileInfo++) {
         if (hostName == fileInfo->hostAddress) {
             toRet = new FileInfo((*fileInfo).name,(*fileInfo).size,false,false,(*fileInfo).hostAddress);
-            fileInfoVector.erase(fileInfo);
-            return toRet;
+//            fileInfoVector.erase(fileInfo);
+            success = true;
+            break;
         }
     }
+    if (success) fileInfoVector.erase(fileInfoVector.begin()+index);
     return NULL;
 }
 
