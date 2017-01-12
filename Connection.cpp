@@ -133,13 +133,13 @@ void Connection::interpreteMessage(Message *msg) {
         case(MessageType::requestFile):{
 //            @TODO akcja do TCPManagera by sprawdzil czy dany plik moze byc wyslany i nawiazal polaczenie z wezlem
             MessageRequestFile m = dynamic_cast<MessageRequestFile&>(*msg);
-            sendFilePart(m.fileName,m.fileSize,m.offset);
+            if(!sendFilePart(m.fileName,m.fileSize,m.offset)) running = false;
             break;
         }
         case(MessageType::myList):{
 //            @TODO Odczytanie listy elementow i zapisanie do listy dostepnych wezlow
             std::cout << "Odebrano wiadomosc myList\n";
-            receiveFileInfo();
+            if (!receiveFileInfo()) running = false;
 
             break;
         }
@@ -232,12 +232,15 @@ bool Connection::receiveFilePart(FileDownload* file, unsigned int part, string c
         file->saveFilePart(part,numberOfBytes,&data);
     }catch (OutOfRangeException e)
     {
+        e.what();
         logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
         return false;
     }catch (LoadingFileException e){
+        e.what();
         logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
         return false;
     }catch (ChecksumException e){
+        e.what();
         logContainer->put(Log(LogType::DownloadFileError, file->getName(),e.what() ,file->getSize()));
         return false;
     }

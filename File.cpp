@@ -16,6 +16,7 @@ File::File(string name, string path) {
     this->name = name;
     this->path = path;
     this->size = readSize();
+    locked = false;
     cout << name << path << size;
 }
 
@@ -55,6 +56,10 @@ struct FileInfo File::getFileInfo() {
 
 Data File::getFilePart(unsigned int partNumber) {
     cout << "Get part: " << partNumber << endl;
+    if (partNumber==40)
+    {
+        int j=33+partNumber;
+    }
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset >= size) {
         throw OutOfRangeException();
@@ -75,8 +80,12 @@ Data File::getFilePart(unsigned int partNumber) {
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* data) {
     std::lock_guard<std::mutex> lock(guard);
+    if (partNumber==40)
+    {
+        int j=33+partNumber;
+    }
     unsigned int offset = partNumber * Constants::File::partSize;
-    if (offset + dataLength >= size) {
+    if (offset + dataLength > size) {
         throw OutOfRangeException();
     }
     string fullPath = path;

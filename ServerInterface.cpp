@@ -91,7 +91,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File size: ";
             cin >> fileSize;
-            downloadFile("testFile","10232");
+            downloadFile("testFile","10272");
             break;
         }
         case (UserAction::AddFile):
