@@ -36,6 +36,7 @@ void DownloadHandler::startDownload(FileDownload *file)
             conList.push_back(c);
         }catch(ConnectionException e)
         {
+            file->seedDisconected();
             e.what();
             continue;
         }

@@ -66,11 +66,13 @@ void Connection::sendFile(File* file, int offset)
 void Connection::sendMessage(Message *msg) {
 
     sock->Send(msg->toString().c_str(),msg->toString().length());
+    delete msg;
 }
 
 void Connection::recieveFile(FileDownload* file)
 {
     Message *msg;
+    int attempt = 0;
     while (true)
     {
         long part = file->getPartToDownload();
@@ -81,6 +83,14 @@ void Connection::recieveFile(FileDownload* file)
             char buf[Constants::File::partSize];
 
             msg=receiveMessage();
+            if (msg==NULL)
+            {
+                cout << "Message is NULL. Suposed to be ChecksumPart\n";
+                attempt++;
+                if (attempt>5) break;
+
+            }
+            attempt = 0;
             if (msg->type!=MessageType::checksumPart)
             {
                 file->addPartToDownload(part);
@@ -113,8 +123,8 @@ void Connection::run()
         if (!sock->Receive(buf,BUFLEN)) break;
         m = JsonParser::parse(buf);
         interpreteMessage(m);
+        delete m;
     }
-    delete m;
 }
 
 void Connection::interpreteMessage(Message *msg) {
@@ -217,7 +227,7 @@ bool Connection::receiveFilePart(FileDownload* file, unsigned int part, string c
     else numberOfBytes=Constants::File::partSize;
     sock->Receive(buf,numberOfBytes);
     cout << "Odebralem part nr " << part << endl;
-    Data data(buf,stoul(checksum));
+    Data data(buf,stoul(checksum),numberOfBytes);
     try{
         file->saveFilePart(part,numberOfBytes,&data);
     }catch (OutOfRangeException e)
@@ -245,9 +255,10 @@ bool Connection::sendFilePart(string fileName, unsigned long fileSize, unsigned 
         Data data = file->getFilePart(offset);
         sendMessage(new MessageChecksum(std::to_string(data.checksum)));
         Message *m = receiveMessage();
-        if (m->type==MessageType::ok) {
+        if (m == NULL) cout << "Suposed to be MessageOk, but message is NULL\n";
+        else if (m->type==MessageType::ok) {
             int i = sizeof(data.data);
-            sock->Send(data.data,Constants::File::partSize);
+            sock->Send(data.data, data.size);
             success = true;
         }
     }
@@ -273,6 +284,7 @@ Message* Connection::receiveMessage()
         e.what();
         msg = nullptr;
     }
+    if (msg==NULL) msg = receiveMessage();
     return msg;
 }
 

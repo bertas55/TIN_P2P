@@ -70,7 +70,7 @@ Data File::getFilePart(unsigned int partNumber) {
     file.read(buff, readLength);
     file.close();
     unsigned int checksum = genChecksum(buff);
-    return Data(buff, checksum);
+    return Data(buff, checksum,readLength);
 }
 
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* data) {

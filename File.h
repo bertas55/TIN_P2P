@@ -20,10 +20,12 @@ enum FileState {
 struct Data {
     char* data;
     unsigned int checksum;
+    unsigned int size;
 
-    Data(char* data, unsigned int checksum) {
+    Data(char* data, unsigned int checksum,unsigned int size) {
             this->data = data;
             this->checksum = checksum;
+            this->size=size;
     }
 };
 
