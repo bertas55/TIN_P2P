@@ -27,32 +27,41 @@ std::vector<struct FileInfo> FileInfoContainer::getAllHostsContains(struct FileI
     return vectorToReturn;
 }
 
-void FileInfoContainer::remove(struct FileInfo file) {
+bool FileInfoContainer::remove(struct FileInfo file) {
     for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
         if (file.size== fileInfo->size
             && file.name == fileInfo->name
             && file.hostAddress == fileInfo->hostAddress) {
             fileInfoVector.erase(fileInfo);
+            return true;
         }
     }
+    return false;
 }
 
-void FileInfoContainer::remove (string name, unsigned long size, string hostName) {
+bool FileInfoContainer::remove (string name, unsigned long size, string hostName) {
     for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
         if (size == fileInfo->size
             && name == fileInfo->name
             && hostName == fileInfo->hostAddress) {
             fileInfoVector.erase(fileInfo);
+            return true;
         }
     }
+    return false;
 }
 
-void FileInfoContainer::removeAll (string hostName) {
+struct FileInfo* FileInfoContainer::remove (string hostName)
+{
+    FileInfo* toRet;
     for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end(); fileInfo++) {
         if (hostName == fileInfo->hostAddress) {
+            toRet = new FileInfo((*fileInfo).name,(*fileInfo).size,false,false,(*fileInfo).hostAddress);
             fileInfoVector.erase(fileInfo);
+            return toRet;
         }
     }
+    return NULL;
 }
 
 struct FileInfo* FileInfoContainer::has(string fileName, unsigned long fileSize) {

@@ -66,7 +66,7 @@ void TCPManager::sendMyList(string hostName)
 }
 void TCPManager::sendVeto(string host, string fname, unsigned long fsize)
 {
-
+    Connection *c = new Connection(logContainer, SocketCreator::CreateSocket(host,Constants::Configuration::TCPort,true),fname,fsize);
 }
 
 void TCPManager::connectionAccepter()
@@ -96,4 +96,3 @@ void TCPManager::connectionAccepter()
     cout << "TCPListener end\n";
     delete listenerSocket;
 }
-

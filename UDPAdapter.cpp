@@ -89,7 +89,7 @@ void UDPAdapter::sendMessage(Message *msg) {
     const int BUFLEN = 512;
     char buf[BUFLEN];
     strncpy(buf,msg->toString().c_str(),sizeof(buf));
-    socket->Send(buf,BUFLEN);
+    socket->Send(buf,strlen(buf));
 }
 
 void UDPAdapter::run() {

@@ -13,14 +13,14 @@ Connection::Connection(LogContainer* l,Socket *s, vector<FileInfo> f):
         sock(s),
         running(true)
 {
-
+    threadId = std::thread(&Connection::sendMyList,this,f);
 }
 Connection::Connection(LogContainer* l,Socket *s, string fname, unsigned long fsize):
         logContainer(l),
         sock(s),
         running(true)
 {
-
+    threadId = std::thread(&Connection::sendVeto,this,fname,fsize);
 }
 Connection::Connection(LogContainer* l,Socket *s, FileManager *fm,FileInfoContainer* f) :
         logContainer(l),
@@ -30,7 +30,6 @@ Connection::Connection(LogContainer* l,Socket *s, FileManager *fm,FileInfoContai
         fileInfoContainer(f)
 {
     threadId = std::thread(&Connection::run,this);
-//    threadId.detach();
 }
 Connection::Connection(LogContainer* l,Socket *s , FileDownload *file) :
         logContainer(l),
@@ -38,7 +37,6 @@ Connection::Connection(LogContainer* l,Socket *s , FileDownload *file) :
 {
 
     threadId = std::thread(&Connection::recieveFile,this,file);
-//    threadId.detach();
 }
 
 Connection::Connection(LogContainer* l,Socket *s) :
@@ -47,7 +45,6 @@ Connection::Connection(LogContainer* l,Socket *s) :
         running(true)
 {
     threadId = std::thread(&Connection::run,this);
-//    threadId.detach();
 }
 
 Connection::~Connection()
@@ -184,12 +181,12 @@ void Connection::sendVeto(string fname, unsigned long fsize)
  * Przesylanie informacji o zasobach dostepnych na maszyni.
  * @param vf - wskaznik na wektor plikow, przechowujacy posiadane pliki
  */
-void Connection::sendMyList(vector<File>* vf)
+void Connection::sendMyList(vector<FileInfo> vf)
 {
     const unsigned short BUFLEN =Constants::MessageTypes::maxMessageSize;
     char buf[BUFLEN];
     Message *m;
-    unsigned long vsize = vf->size();
+    unsigned long vsize = vf.size();
     string fileName;
     unsigned long fileSize;
     string hostName = Constants::Configuration::localhostAddress;
@@ -200,10 +197,10 @@ void Connection::sendMyList(vector<File>* vf)
         sendMessage(new MessageMyList());
         m = receiveMessage();
         if (m->type!=MessageType::ok) return;
-        fileName = (*vf)[i].getName();
-        fileSize = (*vf)[i].getSize();
-        locked = (*vf)[i].isLocked();
-        owner = (*vf)[i].isOwner();
+        fileName = vf[i].name;
+        fileSize = vf[i].size;
+        locked = vf[i].blocked;
+        owner = vf[i].owner;
         sendMessage(new MessageMyFile(fileName,fileSize,hostName,locked,owner));
         m = receiveMessage();
         if (m->type!=MessageType::ok) return;

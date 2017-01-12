@@ -113,34 +113,39 @@ void ServerThread::checkForMessages() {
         case(MessageType::newFile):{
             /*Sprawdzamy czy posiadamy plik o takiej samej nazwie i rozmiarze. Jezeli tak, wysylamy na TCP nadawcy wiadomosc veto*/
             std::cout << "Odebrano wiadomosc newFile\n";
-            MessageNewFile msgNewFile = dynamic_cast<MessageNewFile&>(*msg);
-            File *f = fileManager->getFile(msgNewFile.fileName,msgNewFile.fileSize);
-            if (f!= nullptr)
-            {
-                tcpManager->sendVeto(msgNewFile.hostName,msgNewFile.fileName,msgNewFile.fileSize);
-            } else{
-                cout << msgNewFile.toString();
-                fileInfoContainer.put(FileInfo(msgNewFile.fileName,msgNewFile.fileSize,false,false,msgNewFile.hostName));
-                logContainer->put(Log(LogType::FileAppeared,msgNewFile.fileName,msgNewFile.hostName,msgNewFile.fileSize));
+            if (msg->hostName!=Constants::Configuration::localhostAddress) {
+                MessageNewFile msgNewFile = dynamic_cast<MessageNewFile &>(*msg);
+                File *f = fileManager->getFile(msgNewFile.fileName, msgNewFile.fileSize);
+                if (f != nullptr) {
+                    tcpManager->sendVeto(msgNewFile.hostName, msgNewFile.fileName, msgNewFile.fileSize);
+                } else {
+                    cout << msgNewFile.toString();
+                    fileInfoContainer.put(
+                            FileInfo(msgNewFile.fileName, msgNewFile.fileSize, false, false, msgNewFile.hostName));
+                    logContainer->put(
+                            Log(LogType::FileAppeared, msgNewFile.fileName, msgNewFile.hostName, msgNewFile.fileSize));
+                }
             }
             break;
         }
-        case(MessageType::removedFile):{
+        case(MessageType::removedFile): {
             /*Sprawdzenie i usuniecie zasobu dostepnego sieciowo*/
-            std::cout << "Odebrano wiadomosc deleteFile\n";
-            MessageFileRemoved toRemove = dynamic_cast<MessageFileRemoved&>(*msg);
-            fileInfoContainer.remove(toRemove.fileName,toRemove.fileSize,toRemove.hostName);
+            if (msg->hostName != Constants::Configuration::localhostAddress) {
+                std::cout << "Odebrano wiadomosc deleteFile\n";
+                MessageFileRemoved toRemove = dynamic_cast<MessageFileRemoved &>(*msg);
+                if (fileInfoContainer.remove(toRemove.fileName, toRemove.fileSize, toRemove.hostName))
+                    logContainer->put(Log(LogType::FileDisappeared, toRemove.fileName,toRemove.hostName  ,toRemove.fileSize));
+            }
             break;
         }
         case (MessageType::bye):{
             /*Jezeli to nie jest nasz adres, usuwamy pliki dostepne sieciowo od zadanego hosta*/
             if (msg->hostName != Constants::Configuration::localhostAddress)
             {
-                FileInfo *f;
-                while((f = fileManager->removeHostFile(msg->hostName))!= nullptr)
+                FileInfo* f;
+                while((f=fileInfoContainer.remove(msg->hostName))!=NULL)
                 {
-                    logContainer->put(Log(LogType::FileRemoved,f->name,"",f->size));
-                    delete f;
+                    logContainer->put(Log(LogType::FileDisappeared, f->name,f->hostAddress  ,f->size));
                 }
             }
 
@@ -148,11 +153,13 @@ void ServerThread::checkForMessages() {
         }
         case (MessageType::revokeFile):
         {
-            MessageRevoke revoke = dynamic_cast<MessageRevoke&>(*msg);
-            if (fileManager->removeFile(revoke.fileName,revoke.fileSize))
-            {
-                logContainer->put(Log(FileRemoved,revoke.fileName,"",revoke.fileSize));
-                broadcastMessage(new MessageFileRemoved(revoke.fileName,revoke.fileSize,Constants::Configuration::localhostAddress));
+            if (msg->hostName!=Constants::Configuration::localhostAddress) {
+                MessageRevoke revoke = dynamic_cast<MessageRevoke &>(*msg);
+                if (fileManager->removeFile(revoke.fileName, revoke.fileSize)) {
+                    logContainer->put(Log(FileRemoved, revoke.fileName, "", revoke.fileSize));
+                    broadcastMessage(new MessageFileRemoved(revoke.fileName, revoke.fileSize,
+                                                            Constants::Configuration::localhostAddress));
+                }
             }
         }
         default:
@@ -194,6 +201,7 @@ void ServerThread::checkForActions() {
         case (UserAction::RemoveFile):
         {
             if (!fileManager->removeFile(action.data[0], action.arg)) logContainer->put(Log(LogType::ServerError,"Nie znaleziono pliku", "",0));
+            else broadcastMessage(new MessageFileRemoved(action.data[0],action.arg,Constants::Configuration::localhostAddress));
             break;
         }
         case (UserAction::RefreshList):

@@ -20,11 +20,11 @@
 class Connection {
 
 public:
-    Connection(LogContainer*,Socket*, FileDownload*);     // Konstruktor z podanym plikiem do wysylania
+    Connection(LogContainer*,Socket*, FileDownload*);                           // Konstruktor z podanym plikiem do wysylania
     Connection(LogContainer*,Socket*,FileManager*,FileInfoContainer*);            // Konstruktor do odbierania
     Connection(LogContainer*,Socket*);
-    Connection(LogContainer*,Socket *s, vector<FileInfo> f); // konstruktor do wysylania listy plikow
-    Connection(LogContainer*,Socket *s, string fname, unsigned long fsize); //konstruktor do wysylania veto
+    Connection(LogContainer*,Socket *s, vector<FileInfo> f);                    // konstruktor do wysylania listy plikow
+    Connection(LogContainer*,Socket *s, string fname, unsigned long fsize);     //konstruktor do wysylania veto
     ~Connection();
 
     void sendFile(File*, int);
@@ -44,7 +44,7 @@ private:
     void sendMessage(Message *msg);
     void testMethod();
     void sendVeto(string fname, unsigned long fsize);
-    void sendMyList(vector<File>* vf);
+    void sendMyList(vector<FileInfo> f);
     bool receiveFileInfo();
     bool receiveFilePart(FileDownload*, unsigned int,string);
     bool sendFilePart(string, unsigned long, unsigned int);

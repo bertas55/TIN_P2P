@@ -43,6 +43,7 @@ ServerInterface::~ServerInterface()
 
 void ServerInterface::putServerAction(UserAction action)
 {
+    cout << "Myaction: " << action << " removeFileAction:" << UserAction ::RemoveFile << endl;
     switch (action)
     {
         case (UserAction::DisableFile):
@@ -102,7 +103,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File path:  ";
             cin >> filePath;
-            addFile("test.png","/home/lukasz/Pobrane/test.png");
+            addFile("testFile","testFile");
             break;
         }
         case (UserAction::Exit):
