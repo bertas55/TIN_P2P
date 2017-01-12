@@ -40,10 +40,9 @@ void DownloadHandler::startDownload(FileDownload *file)
             e.what();
             continue;
         }
-        cout <<"Next\n";
-//        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
-    while (!file->isFinished() || !(*exitFlag)) this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
+//    @TODO teoretycznie przydaloby sie, by jakos komunikowac innym ze sciagnelismy plik, ale kij z tym. Musza dac refresha, wtedy zobacza.
+    file->waitUntilFinished();
     if (*exitFlag) shutdownConnections();
     cout << "Finished!\n";
     if (!(*exitFlag) && file->partsLeftCount()==0)
