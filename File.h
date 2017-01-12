@@ -16,7 +16,9 @@ enum FileState {
     toRemove,
     s
 };
-
+/**
+ * Struktura sluzaca do przechowywania danych czesci pliku.
+ */
 struct Data {
     char* data;
     unsigned int checksum;
@@ -28,7 +30,9 @@ struct Data {
             this->size=size;
     }
 };
-
+/**
+ * Klasa reprezentujaca posiadany plik.
+ */
 class File {
 
 public:

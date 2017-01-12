@@ -22,7 +22,7 @@ CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../SocketCreator.h
-CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/Connection.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o: ../Constants.cpp
 CMakeFiles/TIN_P2P.dir/Constants.cpp.o: ../Constants.h
@@ -43,7 +43,7 @@ CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../LogContainer.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Message.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../SocketCreator.h
-CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/DownloadHandler.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.cpp
 CMakeFiles/TIN_P2P.dir/Exceptions.cpp.o: ../Exceptions.h
@@ -119,7 +119,7 @@ CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../TCPManager.h
 CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../UDPAdapter.h
-CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Connection.h
@@ -138,7 +138,7 @@ CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../TCPManager.h
 CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../UDPAdapter.h
-CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/ServerThread.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/Socket.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/Socket.cpp.o: ../Socket.cpp
@@ -149,7 +149,7 @@ CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../Exceptions.h
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../SocketCreator.cpp
 CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../SocketCreator.h
-CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Connection.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Constants.h
@@ -166,7 +166,7 @@ CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.cpp
 CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../TCPManager.h
-CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../Connection.h
@@ -189,12 +189,12 @@ CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../TCPManager.h
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPAdapter.cpp
 CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPAdapter.h
-CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o: ../UDPSocket.h
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../Constants.h
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../Socket.h
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.cpp
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: ../Constants.h
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: ../Socket.h
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: ../UDPSocket.cpp
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: ../UDPSocket.h
 
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../ActionContainer.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Connection.h
@@ -215,6 +215,6 @@ CMakeFiles/TIN_P2P.dir/main.cpp.o: ../Socket.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../SocketCreator.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../TCPManager.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../UDPAdapter.h
-CMakeFiles/TIN_P2P.dir/main.cpp.o: ../WcisloSocket.h
+CMakeFiles/TIN_P2P.dir/main.cpp.o: ../UDPSocket.h
 CMakeFiles/TIN_P2P.dir/main.cpp.o: ../main.cpp
 

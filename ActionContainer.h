@@ -10,6 +10,9 @@
 #include "File.h"
 
 enum UserAction{ RefreshList, DownloadFile, DisableFile, EnableFile, RemoveFile, AddFile, RevokeFile, Exit };
+/**
+ * Struktura przechowujaca dane o akcji.
+ */
 typedef struct Actions {
     UserAction action;
     string data[2];
@@ -21,7 +24,10 @@ typedef struct Actions {
     };
 
 }Action;
-
+/**
+ * Klasa reprezentujaca kontener na akcje.
+ * Dostep jest kontrolowany poprzez mutex.
+ */
 class ActionContainer {
 public:
 

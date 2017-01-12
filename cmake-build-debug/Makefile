@@ -690,32 +690,32 @@ UDPAdapter.cpp.s:
 	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.s
 .PHONY : UDPAdapter.cpp.s
 
-WcisloSocket.o: WcisloSocket.cpp.o
+UDPSocket.o: UDPSocket.cpp.o
 
-.PHONY : WcisloSocket.o
+.PHONY : UDPSocket.o
 
 # target to build an object file
-WcisloSocket.cpp.o:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
-.PHONY : WcisloSocket.cpp.o
+UDPSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o
+.PHONY : UDPSocket.cpp.o
 
-WcisloSocket.i: WcisloSocket.cpp.i
+UDPSocket.i: UDPSocket.cpp.i
 
-.PHONY : WcisloSocket.i
+.PHONY : UDPSocket.i
 
 # target to preprocess a source file
-WcisloSocket.cpp.i:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.i
-.PHONY : WcisloSocket.cpp.i
+UDPSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.i
+.PHONY : UDPSocket.cpp.i
 
-WcisloSocket.s: WcisloSocket.cpp.s
+UDPSocket.s: UDPSocket.cpp.s
 
-.PHONY : WcisloSocket.s
+.PHONY : UDPSocket.s
 
 # target to generate assembly for a file
-WcisloSocket.cpp.s:
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
-.PHONY : WcisloSocket.cpp.s
+UDPSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.s
+.PHONY : UDPSocket.cpp.s
 
 main.o: main.cpp.o
 
@@ -816,9 +816,9 @@ help:
 	@echo "... UDPAdapter.o"
 	@echo "... UDPAdapter.i"
 	@echo "... UDPAdapter.s"
-	@echo "... WcisloSocket.o"
-	@echo "... WcisloSocket.i"
-	@echo "... WcisloSocket.s"
+	@echo "... UDPSocket.o"
+	@echo "... UDPSocket.i"
+	@echo "... UDPSocket.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

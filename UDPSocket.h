@@ -7,12 +7,13 @@
 #include "Socket.h"
 #include <string>
 /**
+ * Klasa reprezentujaca gniazdo UDP
  */
-class WcisloSocket : public Socket {
+class UDPSocket : public Socket {
 
 public:
-    WcisloSocket(int);
-    ~WcisloSocket();
+    UDPSocket(int);
+    ~UDPSocket();
     bool Bind(unsigned short port);
     bool Listen(void);
     Socket* Accept(void);

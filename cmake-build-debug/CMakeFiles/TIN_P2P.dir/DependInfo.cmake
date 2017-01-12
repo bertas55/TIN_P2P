@@ -25,7 +25,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukasz/CLionProjects/TIN_P2P/SocketCreator.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/TCPManager.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/TCPManager.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/UDPAdapter.cpp.o"
-  "/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o"
+  "/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o"
   "/home/lukasz/CLionProjects/TIN_P2P/main.cpp" "/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles/TIN_P2P.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

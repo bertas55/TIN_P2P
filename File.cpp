@@ -17,6 +17,7 @@ File::File(string name, string path) {
     this->path = path;
     this->size = readSize();
     locked = false;
+    owner = true;
     cout << name << path << size;
 }
 
@@ -53,8 +54,13 @@ unsigned long File::getSize() {
 struct FileInfo File::getFileInfo() {
     return FileInfo(name, size, blocked, owner);
 }
-
+/**
+ * Pobieranie czesci pliku
+ * @param partNumber - numer czesci
+ * @return - struktura Data, w ktorej zapisane sa dane,rozmiar danych i suma kontrolna
+ */
 Data File::getFilePart(unsigned int partNumber) {
+    std::lock_guard<std::mutex> lock(guard);
     cout << "Get part: " << partNumber << endl;
     if (partNumber==40)
     {
@@ -77,7 +83,12 @@ Data File::getFilePart(unsigned int partNumber) {
     unsigned int checksum = genChecksum(buff);
     return Data(buff, checksum,readLength);
 }
-
+/**
+ * Zapisywanie czesci pliku
+ * @param partNumber - numer czesci
+ * @param dataLength - rozmiar danych
+ * @param data       - zapisane sa dane,rozmiar danych i suma kontrolna
+ */
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* data) {
     std::lock_guard<std::mutex> lock(guard);
     if (partNumber==40)
@@ -102,6 +113,11 @@ void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* 
     file.close();
 }
 
+/**
+ * Generowanie sumy kontrolnej
+ * @param data  - bufor dla ktorego generowana jest suma kontrolna
+ * @return      - suma kontrolna
+ */
 unsigned int File::genChecksum(char* data) {
     return CRC::Calculate(data, sizeof(data), CRC::CRC_32());
 }

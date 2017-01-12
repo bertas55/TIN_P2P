@@ -22,7 +22,11 @@ DownloadHandler::~DownloadHandler()
 {
     threadId.join();
 }
-
+/**
+ * Funkcja tworzaca polaczenia TCP z hostami posiadajacymi plik.
+ * Watek zawiesza sie na zmiennej warunkowej, dopoki wszyskie seedy nie skoncza dzialania
+ * @param file - wskaznik na pobierany plik
+ */
 void DownloadHandler::startDownload(FileDownload *file)
 {
     for (int i=0; i < hosts.size();++i)
@@ -43,7 +47,7 @@ void DownloadHandler::startDownload(FileDownload *file)
     }
 //    @TODO teoretycznie przydaloby sie, by jakos komunikowac innym ze sciagnelismy plik, ale kij z tym. Musza dac refresha, wtedy zobacza.
     file->waitUntilFinished();
-    if (*exitFlag) shutdownConnections();
+    if (*exitFlag) shutdownConnections(); // teoretycznie jezeli dojdzie do tego miejsca, wszystkie polaczenia sa juz zakonczone :|
     cout << "Finished!\n";
     if (!(*exitFlag) && file->partsLeftCount()==0)
     {                               //Plik sciagniety pomyslnie

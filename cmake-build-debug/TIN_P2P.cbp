@@ -207,10 +207,10 @@
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/UDPAdapter.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp">
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp">
 			<Option target="TIN_P2P"/>
 		</Unit>
-		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h">
+		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.h">
 			<Option target="TIN_P2P"/>
 		</Unit>
 		<Unit filename="/home/lukasz/CLionProjects/TIN_P2P/main.cpp">

@@ -11,6 +11,10 @@
 #include <mutex>
 using namespace std;
 
+/**
+ * Kontener wiadomosci.
+ * Dodawanie i pobieranie wiadomosci jest kontrolowane przez mutex.
+ */
 class MessageContainer {
 
 public:

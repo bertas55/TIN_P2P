@@ -9,7 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o"
   "CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o"
   "CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o"
-  "CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o"
+  "CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o"
   "CMakeFiles/TIN_P2P.dir/File.cpp.o"
   "CMakeFiles/TIN_P2P.dir/FileManager.cpp.o"
   "CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o"

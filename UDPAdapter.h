@@ -8,14 +8,14 @@
 #include "Socket.h"
 #include "MessageContainer.h"
 #include <thread>
-#include "WcisloSocket.h"
+#include "UDPSocket.h"
 /**
  * Klasa reprezentujaca polaczenie UDP.
- * Mozliwe tryby pracy: Broadcast, Sluchacz
+ * Mozliwe tryby pracy: Broadcast, Listener
  */
 class UDPAdapter {
 private:
-    WcisloSocket* socket;
+    UDPSocket* socket;
     bool *exitFlag;
     std::thread UDPThread;
     MessageContainer *serverMessageContainer;
@@ -24,7 +24,7 @@ private:
 
 
 public:
-    UDPAdapter(MessageContainer*, WcisloSocket*,bool,bool*);
+    UDPAdapter(MessageContainer*, UDPSocket*,bool,bool*);
     ~UDPAdapter();
     void run();
     void listen();

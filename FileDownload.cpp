@@ -9,6 +9,7 @@ FileDownload::FileDownload(string name, string path, unsigned int size, unsigned
         seedsConnected(seeds)
 {
     end=false;
+    owner=false;
     this->path = path + name;
     this->size = size;
     int partsCount;

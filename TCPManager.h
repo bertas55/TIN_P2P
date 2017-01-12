@@ -11,8 +11,9 @@
 #include "LogContainer.h"
 
 /**
- * Klasa zarzadzajaca polczeniami TCP
- *
+ * Klasa zarzadzajaca polczeniami TCP.
+ * Tworzy watek sluchacza TCP, ktory akceptuje polaczenia.
+ * Tworzy watki zarzadcy pobierania (DownloadHandler).
  */
 class TCPManager {
 
@@ -40,7 +41,7 @@ private:
     LogContainer *logContainer;
     vector<Connection*> connList;
     std::thread id;
-    Socket *s;
+    Socket *listenerSocket;
     bool *exitFlag;
 
     void connectionAccepter();

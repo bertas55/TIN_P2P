@@ -19,7 +19,7 @@ TCPManager::TCPManager(FileManager* fm, FileInfoContainer*fic,bool *flag, Messag
 }
 TCPManager::~TCPManager()
 {
-    s->Terminate();
+    listenerSocket->Terminate();
     id.join();
 }
 
@@ -71,13 +71,13 @@ void TCPManager::sendVeto(string host, string fname, unsigned long fsize)
 
 void TCPManager::connectionAccepter()
 {
-    s = SocketCreator::createTCPListener();
+    listenerSocket = SocketCreator::createTCPListener();
     Connection *c;
     Socket *connectionSocket;
     while (!(*exitFlag))
     {
         try {
-            connectionSocket = s->Accept();
+            connectionSocket = listenerSocket->Accept();
         } catch (ConnectionException e){
             e.what();
             continue;
@@ -94,6 +94,6 @@ void TCPManager::connectionAccepter()
         }
     }
     cout << "TCPListener end\n";
-    delete s;
+    delete listenerSocket;
 }
 

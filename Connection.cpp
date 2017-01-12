@@ -126,7 +126,10 @@ void Connection::run()
         delete m;
     }
 }
-
+/**
+ * Funkcja interpretujaca otrzymana wiadomosc. Na podstawie typu wiadomosci okresla dalsze akcje
+ * @param msg - wiadomosc
+ */
 void Connection::interpreteMessage(Message *msg) {
     switch(msg->type)
     {
@@ -161,7 +164,9 @@ void Connection::interpreteMessage(Message *msg) {
         }
     }
 }
-
+/**
+ * Do wyrzucenia
+ */
 void Connection::testMethod() {
 
     for (int i=0;i<10;i++)
@@ -175,6 +180,10 @@ void Connection::sendVeto(string fname, unsigned long fsize)
 {
     sendMessage(new MessageVeto(fname,fsize));
 }
+/**
+ * Przesylanie informacji o zasobach dostepnych na maszyni.
+ * @param vf - wskaznik na wektor plikow, przechowujacy posiadane pliki
+ */
 void Connection::sendMyList(vector<File>* vf)
 {
     const unsigned short BUFLEN =Constants::MessageTypes::maxMessageSize;

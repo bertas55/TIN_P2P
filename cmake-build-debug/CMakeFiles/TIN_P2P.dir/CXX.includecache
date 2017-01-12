@@ -525,8 +525,8 @@ arpa/inet.h
 /home/lukasz/CLionProjects/TIN_P2P/SocketCreator.h
 Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
-WcisloSocket.h
-/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+UDPSocket.h
+/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.h
 
 /home/lukasz/CLionProjects/TIN_P2P/TCPManager.cpp
 iostream
@@ -575,10 +575,10 @@ MessageContainer.h
 /home/lukasz/CLionProjects/TIN_P2P/MessageContainer.h
 thread
 -
-WcisloSocket.h
-/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+UDPSocket.h
+/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.h
 
-/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp
+/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp
 sys/socket.h
 -
 sys/types.h
@@ -591,8 +591,8 @@ unistd.h
 -
 iostream
 -
-WcisloSocket.h
-/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+UDPSocket.h
+/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.h
 cstring
 -
 arpa/inet.h
@@ -600,7 +600,7 @@ arpa/inet.h
 Constants.h
 /home/lukasz/CLionProjects/TIN_P2P/Constants.h
 
-/home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.h
+/home/lukasz/CLionProjects/TIN_P2P/UDPSocket.h
 Socket.h
 /home/lukasz/CLionProjects/TIN_P2P/Socket.h
 string

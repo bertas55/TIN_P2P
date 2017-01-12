@@ -10,6 +10,9 @@
 #include <condition_variable>
 #include "File.h"
 
+/**
+ * Klasa reprezentujaca pobierany plik.
+ */
 class FileDownload : public File {
 
 public:

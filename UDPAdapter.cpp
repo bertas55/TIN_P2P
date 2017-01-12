@@ -10,7 +10,7 @@
 #include "Exceptions.h"
 #include "JsonParser.h"
 
-UDPAdapter::UDPAdapter(MessageContainer *container, WcisloSocket *_socket,bool broadcastEnable,bool *exit) :
+UDPAdapter::UDPAdapter(MessageContainer *container, UDPSocket *_socket,bool broadcastEnable,bool *exit) :
         serverMessageContainer(container),
         socket(_socket),
         broadcaster(broadcastEnable),

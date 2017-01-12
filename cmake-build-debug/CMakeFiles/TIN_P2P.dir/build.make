@@ -297,28 +297,28 @@ CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o.provides: CMakeFiles/TIN_P2P.dir/JsonPar
 CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o
 
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o: ../WcisloSocket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o: ../UDPSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukasz/CLionProjects/TIN_P2P/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o -c /home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp > CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.i
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp > CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.i
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukasz/CLionProjects/TIN_P2P/WcisloSocket.cpp -o CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.s
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukasz/CLionProjects/TIN_P2P/UDPSocket.cpp -o CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.s
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.requires:
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.requires:
 
-.PHONY : CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.requires
+.PHONY : CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.requires
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.provides: CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.provides.build
-.PHONY : CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.provides
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.provides: CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TIN_P2P.dir/build.make CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.provides
 
-CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
+CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.provides.build: CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o
 
 
 CMakeFiles/TIN_P2P.dir/File.cpp.o: CMakeFiles/TIN_P2P.dir/flags.make
@@ -621,7 +621,7 @@ TIN_P2P_OBJECTS = \
 "CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o" \
-"CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o" \
+"CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/File.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/FileManager.cpp.o" \
 "CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o" \
@@ -648,7 +648,7 @@ TIN_P2P: CMakeFiles/TIN_P2P.dir/Message.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o
-TIN_P2P: CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o
+TIN_P2P: CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/File.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/FileManager.cpp.o
 TIN_P2P: CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o
@@ -681,7 +681,7 @@ CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/Message.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/MessageContainer.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/SocketCreator.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/JsonParser.cpp.o.requires
-CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/WcisloSocket.cpp.o.requires
+CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/UDPSocket.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/File.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/FileManager.cpp.o.requires
 CMakeFiles/TIN_P2P.dir/requires: CMakeFiles/TIN_P2P.dir/ServerInterface.cpp.o.requires

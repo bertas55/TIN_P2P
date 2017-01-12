@@ -7,23 +7,23 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <iostream>
-#include "WcisloSocket.h"
+#include "UDPSocket.h"
 #include <cstring>
 #include <arpa/inet.h>
 #include "Constants.h"
 
-WcisloSocket::WcisloSocket(int _descriptor) : Socket(_descriptor)
+UDPSocket::UDPSocket(int _descriptor) : Socket(_descriptor)
 {
     broadcastEnable = 0;
 }
-WcisloSocket::~WcisloSocket()
+UDPSocket::~UDPSocket()
 {
     if(!closed)
     {
         Close();
     }
 }
-bool WcisloSocket::Bind(unsigned short port)
+bool UDPSocket::Bind(unsigned short port)
 {
     sockaddr_in server;
     server.sin_family = AF_INET;
@@ -32,12 +32,12 @@ bool WcisloSocket::Bind(unsigned short port)
     return bind(descriptor, reinterpret_cast<sockaddr*>(&server), sizeof(server)) == 0;
 }
 
-bool WcisloSocket::Listen(void)
+bool UDPSocket::Listen(void)
 {
     return listen(descriptor, SOMAXCONN) == 0;
 }
 
-Socket* WcisloSocket::Accept(void)
+Socket* UDPSocket::Accept(void)
 {
     int socketDescriptor = accept(descriptor, nullptr, nullptr);
     if(socketDescriptor == -1)
@@ -47,7 +47,7 @@ Socket* WcisloSocket::Accept(void)
     return new Socket(socketDescriptor);
 }
 
-bool WcisloSocket::setBroadcast() {
+bool UDPSocket::setBroadcast() {
     broadcastEnable=1;
     int ret=setsockopt(descriptor, SOL_SOCKET, SO_BROADCAST, &broadcastEnable, sizeof(broadcastEnable));
     struct sockaddr_in broadcastAddr;
@@ -59,7 +59,7 @@ bool WcisloSocket::setBroadcast() {
 /* Add other code, sockaddr, sendto() etc. */
 }
 
-bool WcisloSocket::setBroadcastListerner() {
+bool UDPSocket::setBroadcastListerner() {
     struct sockaddr_in broadcastAddr;
     broadcastAddr.sin_family = AF_INET;
     broadcastAddr.sin_port = htons(Constants::Configuration::port);
@@ -67,7 +67,7 @@ bool WcisloSocket::setBroadcastListerner() {
     return bind(descriptor,reinterpret_cast<sockaddr*>(&broadcastAddr),sizeof(broadcastAddr))==0;
 }
 
-long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
+long UDPSocket::Send(const char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;
     memset((char *) &si_other, 0, sizeof(si_other));
@@ -85,7 +85,7 @@ long WcisloSocket::Send(const char* bytes, unsigned long numberOfBytes)
 }
 
 //@TODO hostname niech zapisuje do wskznika (+1 arguemnt)
-char* WcisloSocket::Receive(char* bytes, unsigned long numberOfBytes)
+char* UDPSocket::Receive(char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;
     int s, i;

@@ -52,7 +52,7 @@ Socket* SocketCreator::CreateSocket(const string &address, unsigned short port, 
 
 }
 
-WcisloSocket* SocketCreator::CreateServerSocket(void)
+UDPSocket* SocketCreator::CreateServerSocket(void)
 {
     //
     int descriptor = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
@@ -77,12 +77,12 @@ WcisloSocket* SocketCreator::CreateServerSocket(void)
     if( bind(s , (struct sockaddr*)&si_me, sizeof(si_me) ) == -1)
     {
     }
-    return new WcisloSocket(descriptor);
+    return new UDPSocket(descriptor);
 }
 
-WcisloSocket* SocketCreator::CreateServerSocket(unsigned short port)
+UDPSocket* SocketCreator::CreateServerSocket(unsigned short port)
 {
-    WcisloSocket* s = CreateServerSocket();
+    UDPSocket* s = CreateServerSocket();
     if(s == nullptr)
     {
         return nullptr;
@@ -101,7 +101,7 @@ WcisloSocket* SocketCreator::CreateServerSocket(unsigned short port)
     return s;
 }
 
-WcisloSocket* SocketCreator::broadcasterSocket(void)
+UDPSocket* SocketCreator::broadcasterSocket(void)
 {
     struct sockaddr_in si_me, si_other;
     const int BUFLEN = 512;
@@ -126,9 +126,9 @@ WcisloSocket* SocketCreator::broadcasterSocket(void)
     {
 //        die("bind");
     }
-    return new WcisloSocket(s);
+    return new UDPSocket(s);
 }
-WcisloSocket* SocketCreator::broadcasterSenderSocket(void)
+UDPSocket* SocketCreator::broadcasterSenderSocket(void)
 {
     struct sockaddr_in si_other;
     int s, i;
@@ -152,7 +152,7 @@ WcisloSocket* SocketCreator::broadcasterSenderSocket(void)
         fprintf(stderr, "inet_aton() failed\n");
     }
 
-    return new WcisloSocket(s);
+    return new UDPSocket(s);
 }
 
 
