@@ -76,7 +76,7 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File size: ";
             cin >> fileSize;
-            removeFile(fileName,fileSize);
+            removeFile("test.png","5115");
             break;
         }
         case (UserAction::RefreshList):
@@ -103,8 +103,12 @@ void ServerInterface::putServerAction(UserAction action)
             cin >> fileName;
             cout << "File path:  ";
             cin >> filePath;
-            addFile("testFile","testFile");
+            addFile("test.png","/home/lukasz/Pobrane/test.png");
             break;
+        }
+        case(UserAction::RevokeFile):
+        {
+            revokeFile("test.png","5115");
         }
         case (UserAction::Exit):
         {

@@ -82,7 +82,6 @@ void ServerThread::checkForMessages() {
     {
         case(MessageType::ok): {
             std::cout << "Odebrano wiadomosc Hello\n";
-
             break;
         }
         case(MessageType::handshake):{
@@ -121,9 +120,9 @@ void ServerThread::checkForMessages() {
                 } else {
                     cout << msgNewFile.toString();
                     fileInfoContainer.put(
-                            FileInfo(msgNewFile.fileName, msgNewFile.fileSize, false, false, msgNewFile.hostName));
+                            FileInfo(msgNewFile.fileName, msgNewFile.fileSize, false, false, msg->hostName));
                     logContainer->put(
-                            Log(LogType::FileAppeared, msgNewFile.fileName, msgNewFile.hostName, msgNewFile.fileSize));
+                            Log(LogType::FileAppeared, msgNewFile.fileName, msg->hostName, msgNewFile.fileSize));
                 }
             }
             break;
@@ -133,8 +132,8 @@ void ServerThread::checkForMessages() {
             if (msg->hostName != Constants::Configuration::localhostAddress) {
                 std::cout << "Odebrano wiadomosc deleteFile\n";
                 MessageFileRemoved toRemove = dynamic_cast<MessageFileRemoved &>(*msg);
-                if (fileInfoContainer.remove(toRemove.fileName, toRemove.fileSize, toRemove.hostName))
-                    logContainer->put(Log(LogType::FileDisappeared, toRemove.fileName,toRemove.hostName  ,toRemove.fileSize));
+                if (fileInfoContainer.remove(toRemove.fileName, toRemove.fileSize, msg->hostName))
+                    logContainer->put(Log(LogType::FileDisappeared, toRemove.fileName,msg->hostName  ,toRemove.fileSize));
             }
             break;
         }
@@ -148,7 +147,6 @@ void ServerThread::checkForMessages() {
                     logContainer->put(Log(LogType::FileDisappeared, f->name,f->hostAddress  ,f->size));
                 }
             }
-
             break;
         }
         case (MessageType::revokeFile):
@@ -161,6 +159,7 @@ void ServerThread::checkForMessages() {
                                                             Constants::Configuration::localhostAddress));
                 }
             }
+            break;
         }
         default:
         {
@@ -221,12 +220,6 @@ void ServerThread::checkForActions() {
             {
                 broadcastMessage(new MessageRevoke(action.data[0],action.arg));
             }
-        }
-        case (UserAction::Exit):
-        {
-            broadcastMessage(new MessageBye());
-            exitFlag = true;
-            UDPReciver->closeSocket();
             break;
         }
         case (UserAction::AddFile):
@@ -237,6 +230,14 @@ void ServerThread::checkForActions() {
                 cout << "Broadcast AddFile\n";
                 broadcastMessage(new MessageNewFile(file->getName(),file->getSize(),Constants::Configuration::localhostAddress));
             }
+            break;
+        }
+        case (UserAction::Exit):
+        {
+            broadcastMessage(new MessageBye());
+            exitFlag = true;
+            UDPReciver->closeSocket();
+            break;
         }
     }
 
