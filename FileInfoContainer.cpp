@@ -59,7 +59,7 @@ bool FileInfoContainer::remove (string name, unsigned long size, string hostName
 
 struct FileInfo* FileInfoContainer::remove (string hostName)
 {
-    FileInfo* toRet;
+    FileInfo* toRet = NULL;
     unsigned int index = 0;
     bool success = false;
     for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end();++index, fileInfo++) {
@@ -70,7 +70,7 @@ struct FileInfo* FileInfoContainer::remove (string hostName)
         }
     }
     if (success) fileInfoVector.erase(fileInfoVector.begin()+index);
-    return NULL;
+    return toRet;
 }
 
 struct FileInfo* FileInfoContainer::has(string fileName, unsigned long fileSize) {

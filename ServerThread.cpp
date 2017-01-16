@@ -96,7 +96,7 @@ void ServerThread::checkForMessages() {
         }
         case(MessageType::requestList):{
             /*Jako odpowiedz na wiadomosc requestList, tworzymy polaczenie TCP z nadawca i wysylamy mu nasze pliki*/
-            tcpManager->sendMyList(msg->hostName);
+            if (msg->hostName!=Constants::Configuration::localhostAddress) tcpManager->sendMyList(msg->hostName);
             std::cout << "Odebrano wiadomosc requestList\n";
             break;
         }
@@ -239,10 +239,6 @@ void ServerThread::checkForActions() {
 
 }
 
-void ServerThread::sendInitialMessage()
-{
-    broadcastMessage(new MessageOk());
-}
 void ServerThread::sendExitMessage()
 {
     broadcastMessage(new MessageBye());

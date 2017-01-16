@@ -36,7 +36,6 @@ private:
     FileInfoContainer fileInfoContainer;
     bool exitFlag;
 
-    void sendInitialMessage();
     void sendExitMessage();
     void broadcastMessage(Message*);
     void checkForMessages();
