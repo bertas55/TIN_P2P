@@ -44,17 +44,6 @@ struct MessageOk : virtual Message {
     string toString();
 };
 
-struct MessageHandshake : Message {
-    MessageHandshake(string hostName) {
-        type = handshake;
-        this->hostName = hostName;
-    }
-
-    string hostName;
-
-    string toString();
-};
-
 struct MessageRequestFile : Message {
     MessageRequestFile(string hostName, string fileName, unsigned long fileSize, unsigned int offset) {
         type = requestFile;

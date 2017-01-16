@@ -23,15 +23,6 @@ public:
     void recieveFile(struct FileInfo*); /*Pobieranie pliku*/
     void sendMyList(string hostName);
     void sendVeto(string host, string fname, unsigned long fsize);
-    void test(){
-        FileInfo f2("testFile",10232,false,false);
-        f2.hostAddress="192.168.0.98";
-//        fileInfoContainer->put(f2);
-        FileInfo f("testFile",10232,false,false);
-        f.hostAddress="192.168.0.10";
-        fileInfoContainer->put(f);
-        recieveFile(&f2);
-    }
 
 
 private:

@@ -615,6 +615,8 @@ ifaddrs.h
 -
 arpa/inet.h
 -
+net/if.h
+-
 ServerInterface.h
 /home/lukasz/CLionProjects/TIN_P2P/ServerInterface.h
 FileManager.h

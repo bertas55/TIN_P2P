@@ -147,7 +147,7 @@ UDPSocket* SocketCreator::broadcasterSenderSocket(void)
     si_other.sin_family = AF_INET;
     si_other.sin_port = htons(8888);
 
-    if (inet_aton("192.168.0.255" , &si_other.sin_addr) == 0)
+    if (inet_aton(Constants::Configuration::broadcastIP , &si_other.sin_addr) == 0)
     {
         fprintf(stderr, "inet_aton() failed\n");
     }
@@ -166,7 +166,7 @@ Socket* SocketCreator::createTCPListener()
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock == -1) {
-//        @TODO Socket creationException
+        throw ConnectionException();
         perror("opening stream socket");
     }
     Socket *s = new Socket(sock);

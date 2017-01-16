@@ -84,7 +84,6 @@ long UDPSocket::Send(const char* bytes, unsigned long numberOfBytes)
 //    sendto(s, message, strlen(message) , 0 , (struct sockaddr *) &si_other, slen
 }
 
-//@TODO hostname niech zapisuje do wskznika (+1 arguemnt)
 char* UDPSocket::Receive(char* bytes, unsigned long numberOfBytes)
 {
     struct sockaddr_in si_other;

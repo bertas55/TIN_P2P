@@ -34,13 +34,9 @@ ServerThread::~ServerThread()
     exitFlag = true;
     sendExitMessage();
     delete UDPBroadcaster;
-    cout << "0serverThread End\n";
     delete UDPReciver;
-    cout << "1serverThread End\n" << tcpManager << endl;
     delete tcpManager;
-    cout << "2serverThread End\n";
     threadId.detach();
-    cout << "3serverThread End\n";
 }
 /*
  * Glowna petla watku

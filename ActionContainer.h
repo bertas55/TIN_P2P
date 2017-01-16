@@ -37,7 +37,6 @@ public:
 
     void put(Action);
 
-    int getSize();
 
 private:
     queue<Action> actionQueue;

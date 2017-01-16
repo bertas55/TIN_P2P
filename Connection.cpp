@@ -40,26 +40,12 @@ Connection::Connection(LogContainer* l,Socket *s , FileDownload *file) :
 
 }
 
-Connection::Connection(LogContainer* l,Socket *s) :
-        logContainer(l),
-        sock(s),
-        running(true)
-{
-    threadId = std::thread(&Connection::run,this);
-}
 
 Connection::~Connection()
 {
     sendMessage(new MessageBye);
     threadId.join();
     delete sock;
-}
-// z tego raczej nie bedziemy korzystac
-void Connection::sendFile(File* file, int offset)
-{
-
-    sock->Send(file->getFilePart(offset).data, Constants::MessageTypes::maxMessageSize);
-
 }
 
 void Connection::sendMessage(Message *msg) {
@@ -78,19 +64,10 @@ void Connection::recieveFile(FileDownload* file)
         if (part!=-1)
         {
             sendMessage(new MessageRequestFile(Constants::Configuration::localhostAddress,file->getName(),file->getSize(),part));
-            cout << "Wyslalem wiadomosc\n";
             char buf[Constants::File::partSize];
 
             msg=receiveMessage();
-            if (msg==NULL)
-            {
-                cout << "Message is NULL. Suposed to be ChecksumPart\n";
-                attempt++;
-                if (attempt>5) break;
-
-            }
-            attempt = 0;
-            if (msg->type!=MessageType::checksumPart)
+            if (msg != NULL && msg->type!=MessageType::checksumPart)
             {
                 file->addPartToDownload(part);
                 break;
@@ -161,17 +138,6 @@ void Connection::interpreteMessage(Message *msg) {
             running = false;
             break;
         }
-    }
-}
-/**
- * Do wyrzucenia
- */
-void Connection::testMethod() {
-
-    for (int i=0;i<10;i++)
-    {
-        cout << "dzialam\n";
-        this_thread::__sleep_for(chrono::seconds(2),chrono::nanoseconds(0));
     }
 }
 

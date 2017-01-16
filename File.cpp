@@ -62,10 +62,6 @@ struct FileInfo File::getFileInfo() {
 Data File::getFilePart(unsigned int partNumber) {
     std::lock_guard<std::mutex> lock(guard);
     cout << "Get part: " << partNumber << endl;
-    if (partNumber==40)
-    {
-        int j=33+partNumber;
-    }
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset >= size) {
         throw OutOfRangeException();
@@ -91,10 +87,6 @@ Data File::getFilePart(unsigned int partNumber) {
  */
 void File::saveFilePart(unsigned int partNumber, unsigned int dataLength, Data* data) {
     std::lock_guard<std::mutex> lock(guard);
-    if (partNumber==40)
-    {
-        int j=33+partNumber;
-    }
     unsigned int offset = partNumber * Constants::File::partSize;
     if (offset + dataLength > size) {
         throw OutOfRangeException();

@@ -20,7 +20,6 @@ public:
     bool remove (struct FileInfo);
     bool remove (string name, unsigned long size, string hostName);
     struct FileInfo* remove (string hostName);
-//    void removeAll(string hostName);
     struct FileInfo* has(string fileName, unsigned long fileSize);
 
 private:

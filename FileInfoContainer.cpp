@@ -34,7 +34,6 @@ bool FileInfoContainer::remove(struct FileInfo file) {
         if (file.size== fileInfo->size
             && file.name == fileInfo->name
             && file.hostAddress == fileInfo->hostAddress) {
-//            fileInfoVector.erase(fileInfo);
             success = true;
             break;
         }
@@ -50,7 +49,6 @@ bool FileInfoContainer::remove (string name, unsigned long size, string hostName
         if (size == fileInfo->size
             && name == fileInfo->name
             && hostName == fileInfo->hostAddress) {
-//            fileInfoVector.erase(fileInfo);
             success = true;
             break;
         }
@@ -67,7 +65,6 @@ struct FileInfo* FileInfoContainer::remove (string hostName)
     for (vector<FileInfo>::const_iterator fileInfo = fileInfoVector.begin(); fileInfo != fileInfoVector.end();++index, fileInfo++) {
         if (hostName == fileInfo->hostAddress) {
             toRet = new FileInfo((*fileInfo).name,(*fileInfo).size,false,false,(*fileInfo).hostAddress);
-//            fileInfoVector.erase(fileInfo);
             success = true;
             break;
         }

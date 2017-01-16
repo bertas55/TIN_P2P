@@ -16,10 +16,6 @@ string MessageOk::toString() {
     return JsonCreator::ok();
 }
 
-string MessageHandshake::toString() {
-    return JsonCreator::handshake(hostName);
-}
-
 string MessageRequestFile::toString() {
     return JsonCreator::requestFile(hostName, fileName, fileSize, offset);
 }

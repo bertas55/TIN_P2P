@@ -26,7 +26,6 @@ private:
 public:
     UDPAdapter(MessageContainer*, UDPSocket*,bool,bool*);
     ~UDPAdapter();
-    void run();
     void listen();
     void send();
     void closeSocket();

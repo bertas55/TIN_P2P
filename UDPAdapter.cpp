@@ -29,10 +29,8 @@ UDPAdapter::~UDPAdapter() {
 
     if (broadcaster){
         sendMessage(new MessageBye());
-        cout << "Sender destruction.\n";
     }
     else {
-        cout << "Listener destruction.\n";
     }
     delete socket;
     UDPThread.join();
@@ -61,9 +59,6 @@ void UDPAdapter::listen() {
             e.what();
         }
     }
-    cout <<"Listend end.\n";
-
-
 }
 
 void UDPAdapter::send() {
@@ -75,14 +70,11 @@ void UDPAdapter::send() {
             msg = serverMessageContainer->get();
             sendMessage(msg);
         } catch(NoElementsException e) {
-//            cout << "No message in container. Going to sleep for 1 seconds.\n";
             this_thread::__sleep_for(chrono::seconds(1),chrono::nanoseconds(0));
             continue;
         }
 
     }
-    cout <<"Send end.\n";
-
 }
 
 void UDPAdapter::sendMessage(Message *msg) {
@@ -90,10 +82,6 @@ void UDPAdapter::sendMessage(Message *msg) {
     char buf[BUFLEN];
     strncpy(buf,msg->toString().c_str(),sizeof(buf));
     socket->Send(buf,strlen(buf));
-}
-
-void UDPAdapter::run() {
-    //socket->Bind();
 }
 
 void UDPAdapter::closeSocket() {

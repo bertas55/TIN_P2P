@@ -18,7 +18,6 @@ Message* JsonParser::parse(string jsonMessage) {
         const char* messageType = messageTypeVal.asCString();
 
         if (strcmp(messageType, Constants::MessageTypes::ok) == 0) {
-            // hello, is it me you looking for?
             messageToReturn = new MessageOk();
         } else if (strcmp(messageType, Constants::MessageTypes::requestFile) == 0) {
             string hostName = parsedJson[Constants::JsonKeys::hostName].asString();

@@ -13,8 +13,6 @@
 namespace JsonCreator {
     // Hello
     std::string ok();
-    // Handshake
-    std::string handshake(std::string);
     // RequestFile
     std::string requestFile(std::string, std::string, unsigned long, unsigned int);
     // RequestList

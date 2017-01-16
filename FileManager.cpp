@@ -25,6 +25,9 @@ void FileManager::addFile(File* file)
 {
     files.push_back(file);
 }
+/**
+ * Metoda stworzona do testow
+ */
 void FileManager::loadFiles() {
     if (Constants::Configuration::debugMode) {
         DIR *dir;

@@ -18,14 +18,6 @@ namespace JsonCreator {
         return fastWriter.write(json);
     }
 
-    string handshake(string hostName) {
-        Json::Value json;
-        json[Constants::JsonKeys::type] = Constants::MessageTypes::ok;
-        json[Constants::JsonKeys::hostName] = hostName;
-        Json::FastWriter fastWriter;
-        return fastWriter.write(json);
-    }
-
     string requestFile(string hostName, string fileName, unsigned long fileSize, unsigned int offset) {
         Json::Value json;
         json[Constants::JsonKeys::type] = Constants::MessageTypes::requestFile;

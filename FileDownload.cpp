@@ -8,7 +8,6 @@ FileDownload::FileDownload(string name, string path, unsigned int size, unsigned
         File(name, path),
         seedsConnected(seeds)
 {
-    end=false;
     owner=false;
     this->path = path + name;
     this->size = size;
@@ -21,17 +20,13 @@ FileDownload::FileDownload(string name, string path, unsigned int size, unsigned
     ofs.seekp(size - 1);
     ofs.write("", 1);
 }
-bool FileDownload::isFinished()
-{
-    return end;
-}
+
 long FileDownload::getPartToDownload() {
     std::unique_lock<std::mutex> lock(guard);
-//    std::lock_guard<std::mutex> lock(guard);
     if (partsLeft.empty()) {
         return -1;
     }
-    unsigned int part = partsLeft.front();
+     long part = partsLeft.front();
     partsLeft.pop();
     lock.unlock();
     return part;
@@ -50,7 +45,6 @@ void FileDownload::seedDisconected() {
     seedsConnected--;
     lock.unlock();
     if (seedsConnected==0) {
-        end= true;
         finished.notify_one();
     }
 }
