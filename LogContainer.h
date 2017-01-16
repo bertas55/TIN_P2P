@@ -1,5 +1,5 @@
 //
-// Created by lukasz on 09.01.17.
+// Created by Lukasz Niedzwiedz on 09.01.17.
 //
 
 #ifndef TIN_P2P_LOGCONTAINER_H

@@ -1,5 +1,5 @@
 //
-// Created by lukasz on 07.01.17.
+// Created by Lukasz Niedzwiedz on 07.01.17.
 //
 
 #ifndef TIN_P2P_FILEINFOCONTAINER_H

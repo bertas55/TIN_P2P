@@ -1,5 +1,5 @@
 //
-// Created by lukasz on 11.01.17.
+// Created by Lukasz Niedzwiedz on 11.01.17.
 //
 
 #ifndef TIN_P2P_DOWNLOADHANDLER_H

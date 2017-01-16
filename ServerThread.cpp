@@ -1,5 +1,5 @@
 //
-// Created by Lukasz Niedzwiedz on 05.01.17.
+// Created by Lukasz Niedzwiedz Niedzwiedz on 05.01.17.
 //
 
 #include "ServerThread.h"

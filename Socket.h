@@ -1,5 +1,5 @@
 //
-// Created by lukasz on 05.01.17.
+// Created by Lukasz Niedzwiedz on 05.01.17.
 //
 
 #ifndef TIN_P2P_SOCKET_H
